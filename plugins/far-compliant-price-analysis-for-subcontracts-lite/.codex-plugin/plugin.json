@@ -1,0 +1,18 @@
+{
+  "name": "far-compliant-price-analysis-for-subcontracts-lite",
+  "version": "0.1.0+codex.20260923004847",
+  "description": "Procurement-file-ready subcontract bid summaries and price analyses",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "FAR-Compliant Price Analysis for Subcontracts (Lite)",
+    "shortDescription": "Draft subcontract bid summaries and price analyses.",
+    "longDescription": "Draft procurement-file-ready BID SUMMARY & PRICE ANALYSIS write-ups for subcontract awards, option periods, and modifications.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Draft a subcontract bid summary and price analysis from these facts."
+  }
+}

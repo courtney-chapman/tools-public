@@ -1,0 +1,22 @@
+{
+  "name": "far-compliant-price-analysis-for-goods",
+  "version": "0.1.0+codex.20260923004502",
+  "description": "Procurement-file-ready price analysis for government-funded FFP goods and routine commercial buys",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "FAR-Compliant Price Analysis for Goods",
+    "shortDescription": "Analyze vendor quotes and document fair and reasonable pricing.",
+    "longDescription": "Draft procurement-file-ready price analysis justifications for government-funded FFP goods, COTS, commercial products, software, materials, and routine buys.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Can you analyze these vendor quotes for fairness?",
+      "What price analysis method should I use?",
+      "Help me structure a best value trade-off analysis."
+    ]
+  }
+}

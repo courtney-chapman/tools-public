@@ -1,0 +1,18 @@
+{
+  "name": "indirect-and-commercial-price-analysis-for-services-lite",
+  "version": "0.1.0+codex.20260923004847",
+  "description": "Threshold-scaled Commercial and Indirect procurement price analysis",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indirect and Commercial Price Analysis for Services (Lite)",
+    "shortDescription": "Analyze Commercial and Indirect procurement pricing.",
+    "longDescription": "Draft threshold-scaled, procurement-file-ready price analyses for Commercial and Indirect services, SaaS, software, equipment, and routine supplier buys.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Draft a Commercial or Indirect price analysis from these procurement facts."
+  }
+}

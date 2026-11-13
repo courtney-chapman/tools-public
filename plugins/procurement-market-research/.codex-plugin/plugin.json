@@ -1,0 +1,22 @@
+{
+  "name": "procurement-market-research",
+  "version": "0.1.0+codex.20260923011421",
+  "description": "Procurement Market Research plugin",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Procurement Market Research",
+    "shortDescription": "Use Procurement Market Research in Codex.",
+    "longDescription": "Federal procurement market research for COTS items and services.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Find US-based vendors for this product.",
+      "Search for resellers with federal procurement experience.",
+      "Analyze vendors for this item, including GSA options."
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.build/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Real cases, evidence, drafts, and generated deliverables never belong here
+cases/
+case-files/
+evidence/
+drafts/
+outputs/
+generated/
+research-records/

@@ -1,0 +1,104 @@
+{
+  "name": "tools-public",
+  "interface": {
+    "displayName": "Tools Public"
+  },
+  "plugins": [
+    {
+      "name": "procurement-market-research",
+      "source": {
+        "source": "local",
+        "path": "./plugins/procurement-market-research"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "government-property-ltdd-relief-letter-generator",
+      "source": {
+        "source": "local",
+        "path": "./plugins/government-property-ltdd-relief-letter-generator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "software-saas-negotiation-strategy",
+      "source": {
+        "source": "local",
+        "path": "./plugins/software-saas-negotiation-strategy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "far-compliant-commercial-item-determination",
+      "source": {
+        "source": "local",
+        "path": "./plugins/far-compliant-commercial-item-determination"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "far-compliant-non-competitive-source-justification",
+      "source": {
+        "source": "local",
+        "path": "./plugins/far-compliant-non-competitive-source-justification"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "far-compliant-price-analysis-for-goods",
+      "source": {
+        "source": "local",
+        "path": "./plugins/far-compliant-price-analysis-for-goods"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "far-compliant-price-analysis-for-subcontracts-lite",
+      "source": {
+        "source": "local",
+        "path": "./plugins/far-compliant-price-analysis-for-subcontracts-lite"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "indirect-and-commercial-price-analysis-for-services-lite",
+      "source": {
+        "source": "local",
+        "path": "./plugins/indirect-and-commercial-price-analysis-for-services-lite"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

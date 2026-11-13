@@ -1,0 +1,22 @@
+{
+  "name": "software-saas-negotiation-strategy",
+  "version": "0.1.0+codex.20260923005822",
+  "description": "Federal SaaS negotiation strategy for acquisitions under the SAT",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Software/SaaS Negotiation Strategy",
+    "shortDescription": "Prepare federal SaaS negotiations under the SAT.",
+    "longDescription": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Identify the internal questions Procurement should ask before engaging a SaaS vendor.",
+      "Generate questions Procurement should ask a software vendor.",
+      "Build a SaaS negotiation strategy from the information gathered."
+    ]
+  }
+}

@@ -3,14 +3,14 @@
   "version": "0.1.0+codex.20260923011421",
   "description": "Procurement Market Research plugin",
   "author": {
-    "name": "Local developer"
+    "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Procurement Market Research",
     "shortDescription": "Use Procurement Market Research in Codex.",
     "longDescription": "Federal procurement market research for COTS items and services.",
-    "developerName": "Local developer",
+    "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [

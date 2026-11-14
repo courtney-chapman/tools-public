@@ -16,5 +16,9 @@ Validate the plugin catalog and repository structure locally with:
 python3 support/scripts/validate_repository.py
 ```
 
+Build the individual plugin ZIPs from tracked source files with
+`python3 support/scripts/package_plugins.py`. Attach the generated files in
+the ignored `.build/plugin-zips/` directory to one GitHub Release.
+
 Review plugin instructions and references before distribution. Keep private
 case material, credentials, and personal information out of this repository.

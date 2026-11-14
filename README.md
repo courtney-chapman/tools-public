@@ -6,6 +6,13 @@ Codex plugins for specialized professional workflows. This repository is the cur
 
 Review each plugin and its supporting references before using it for a real matter.
 
+## Get a plugin
+
+- **Codex desktop or CLI:** Add this repository as a marketplace with `codex plugin marketplace add courtney-chapman/tools-public`, then browse and install the plugin you want.
+- **ChatGPT web with ZIP upload access:** Download one plugin ZIP from [Releases](https://github.com/courtney-chapman/tools-public/releases), then use the plugin upload option in your account. Upload availability depends on your plan and permissions.
+
+Each ZIP contains one plugin and the repository license. The plugin folders below remain the source for future releases.
+
 ## Plugins
 
 ### Procurement Market Research

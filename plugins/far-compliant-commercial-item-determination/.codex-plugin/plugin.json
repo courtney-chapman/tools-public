@@ -3,14 +3,14 @@
   "version": "0.1.0+codex.20260923005822",
   "description": "Evidence-based FAR commercial product, commercial service, and COTS determinations",
   "author": {
-    "name": "Local developer"
+    "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "FAR-Compliant Commercial Item Determination",
     "shortDescription": "Evaluate commerciality and COTS status under FAR 2.101.",
     "longDescription": "Prepare evidence-based buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under FAR 2.101.",
-    "developerName": "Local developer",
+    "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [

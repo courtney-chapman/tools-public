@@ -3,14 +3,14 @@
   "version": "0.1.0+codex.20260923005822",
   "description": "Generate and validate audit-defensive Government Property LTDD relief letters.",
   "author": {
-    "name": "Local developer"
+    "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Government Property LTDD Relief Letter Generator",
     "shortDescription": "Draft and validate Government Property LTDD relief letters.",
     "longDescription": "Generate or validate fact-based, audit-defensive Government Property LTDD relief packages under FAR 52.245-1(f)(1)(vii)(B).",
-    "developerName": "Local developer",
+    "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [
       "Web Search"

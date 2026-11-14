@@ -3,14 +3,14 @@
   "version": "0.1.0+codex.20260923005822",
   "description": "Draft and review noncompetitive source justifications for federal prime-contractor subcontract procurements.",
   "author": {
-    "name": "Local developer"
+    "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "FAR-Compliant Non-Competitive Source Justification",
     "shortDescription": "Draft and review subcontract source justifications.",
     "longDescription": "Create practical, evidence-aware noncompetitive source justifications for federal prime-contractor subcontract procurement files.",
-    "developerName": "Local developer",
+    "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [
       "Web Search"

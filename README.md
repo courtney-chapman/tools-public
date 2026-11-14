@@ -1,11 +1,12 @@
-# Tools Public
+# Tools and Plugins
 
-Codex plugins for specialized professional workflows.
+Codex plugins for specialized professional workflows. This repository is the current catalog and source for the plugin packages.
 
-The GitHub visibility indicator shows whether this source is publicly accessible.
+[My Portfolio](https://github.com/courtney-chapman/portfolio-public) shows the projects and demonstrations behind related tools. [Visual portfolio](https://courtneypetersonchapman.notion.site/) presents the same work in Notion.
+
 Review each plugin and its supporting references before using it for a real matter.
 
-## Packaged publication candidates
+## Plugins
 
 ### Procurement Market Research
 
@@ -73,7 +74,7 @@ thresholds only when the buyer supplies the applicable rules.
 
 ## Repository layout
 
-- `plugins/` contains packaged Codex plugins prepared for possible release.
+- `plugins/` contains the public Codex plugin packages.
 - `.agents/plugins/marketplace.json` publishes the repository's plugin catalog.
 - `support/` contains repository validation guidance.
 
@@ -90,5 +91,5 @@ Private review evidence does not belong in this repository.
 
 Security concerns should follow the [security policy](SECURITY.md).
 
-Original repository content is licensed under [CC BY 4.0](LICENSE). Third-party
+Original repository content is licensed under [CC BY-NC 4.0](LICENSE). Third-party
 material remains subject to its own terms.

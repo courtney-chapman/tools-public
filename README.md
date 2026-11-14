@@ -13,6 +13,12 @@ Review each plugin and its supporting references before using it for a real matt
 
 Each ZIP contains one plugin and the repository license. The plugin folders below remain the source for future releases.
 
+## Standalone browser app
+
+### DD Form 1149 Generator
+
+Prepare a DD1149-style shipping document and continuation sheets locally in your browser. Download the `dd1149-generator.zip` asset from [Releases](https://github.com/courtney-chapman/tools-public/releases), unzip it, and open `index.html`. No installation or account is required. The [app guide](apps/dd1149-generator/README.md) explains the data format and use limits. This app is not a Codex plugin and is not part of the marketplace catalog.
+
 ## Plugins
 
 ### Procurement Market Research
@@ -82,6 +88,7 @@ thresholds only when the buyer supplies the applicable rules.
 ## Repository layout
 
 - `plugins/` contains the public Codex plugin packages.
+- `apps/dd1149-generator/` contains the standalone browser app.
 - `.agents/plugins/marketplace.json` publishes the repository's plugin catalog.
 - `support/` contains repository validation guidance.
 
@@ -98,5 +105,6 @@ Private review evidence does not belong in this repository.
 
 Security concerns should follow the [security policy](SECURITY.md).
 
-Original repository content is licensed under [CC BY-NC 4.0](LICENSE). Third-party
-material remains subject to its own terms.
+Original repository content is licensed under [CC BY-NC 4.0](LICENSE), **except**
+`apps/dd1149-generator/`, which is licensed under its own [MIT license](apps/dd1149-generator/LICENSE).
+Third-party material remains subject to its own terms.

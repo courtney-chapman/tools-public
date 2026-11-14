@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""Build reproducible, single-plugin ZIPs from tracked marketplace files."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
+
+
+ROOT = Path(__file__).resolve().parents[2]
+OUTPUT = ROOT / ".build/plugin-zips"
+STAMP = (1980, 1, 1, 0, 0, 0)
+
+
+def add_file(archive: ZipFile, name: str, data: bytes) -> None:
+    info = ZipInfo(name, date_time=STAMP)
+    info.compress_type = ZIP_DEFLATED
+    info.external_attr = 0o100644 << 16
+    archive.writestr(info, data, compress_type=ZIP_DEFLATED, compresslevel=9)
+
+
+def main() -> None:
+    catalog = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text())
+    tracked = subprocess.check_output(
+        ["git", "ls-files", "-z", "--", "plugins"], cwd=ROOT
+    ).decode().strip("\0").split("\0")
+    license_bytes = (ROOT / "LICENSE").read_bytes()
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    expected_zips = {f'{entry["name"]}.zip' for entry in catalog["plugins"]}
+    stale_zips = {path.name for path in OUTPUT.glob("*.zip")} - expected_zips
+    if stale_zips:
+        raise ValueError(f"remove stale plugin ZIPs before release: {sorted(stale_zips)}")
+
+    for entry in catalog["plugins"]:
+        name = entry["name"]
+        source = entry["source"]["path"]
+        if source != f"./plugins/{name}":
+            raise ValueError(f"unexpected plugin source for {name}: {source}")
+        plugin_root = ROOT / "plugins" / name
+        manifest_path = f"{name}/.codex-plugin/plugin.json"
+        skill_path = f"{name}/skills/{name}/SKILL.md"
+        files = sorted(path for path in tracked if path.startswith(f"plugins/{name}/"))
+        if not files or any(path == f"plugins/{name}/LICENSE" for path in files):
+            raise ValueError(f"missing plugin files or conflicting license: {name}")
+
+        destination = OUTPUT / f"{name}.zip"
+        with ZipFile(destination, "w") as archive:
+            for path in files:
+                file = ROOT / path
+                if not file.is_file() or file.is_symlink():
+                    raise ValueError(f"unsafe plugin file: {path}")
+                add_file(archive, f"{name}/{file.relative_to(plugin_root)}", file.read_bytes())
+            add_file(archive, f"{name}/LICENSE", license_bytes)
+
+        with ZipFile(destination) as archive:
+            names = archive.namelist()
+            if manifest_path not in names or skill_path not in names or archive.testzip():
+                raise ValueError(f"invalid plugin ZIP: {destination}")
+            if json.loads(archive.read(manifest_path))["name"] != name:
+                raise ValueError(f"plugin manifest mismatch: {name}")
+            if any(not path.startswith(f"{name}/") for path in names):
+                raise ValueError(f"multiple plugin roots: {destination}")
+
+        digest = hashlib.sha256(destination.read_bytes()).hexdigest()
+        print(f"{destination.name}  sha256:{digest}")
+
+
+if __name__ == "__main__":
+    main()

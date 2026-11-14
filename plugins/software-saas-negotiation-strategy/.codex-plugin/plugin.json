@@ -3,14 +3,14 @@
   "version": "0.1.0+codex.20260923005822",
   "description": "Federal SaaS negotiation strategy for acquisitions under the SAT",
   "author": {
-    "name": "Local developer"
+    "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Software/SaaS Negotiation Strategy",
     "shortDescription": "Prepare federal SaaS negotiations under the SAT.",
     "longDescription": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",
-    "developerName": "Local developer",
+    "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [

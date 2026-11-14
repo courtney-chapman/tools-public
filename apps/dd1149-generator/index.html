@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DD Form 1149 Generator</title>
+  <meta name="description" content="Prepare and print DD Form 1149 with continuation sheets in your browser">
+  <link rel="stylesheet" href="styles.css?v=20261114b">
+</head>
+<body>
+  <header class="topbar app-controls">
+    <div>
+      <p class="eyebrow">Shipping document workspace</p>
+      <h1>DD Form 1149 Generator</h1>
+      <p class="subtitle">Enter shipment details, review the form, then print or save a PDF. Information you enter stays in this browser unless you choose to save a draft or print.</p>
+      <p class="subtitle">Independent, unofficial preparation tool. Confirm the correct form and reporting process for your contract before use.</p>
+    </div>
+    <a class="source-link" href="https://www.esd.whs.mil/Directives/forms/dd1000_1499/DD1149/" target="_blank" rel="noopener noreferrer">View official form <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="workspace">
+    <section class="editor app-controls" aria-label="DD1149 information editor">
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+      <section class="panel" aria-labelledby="shipment-heading">
+        <div class="panel-heading">
+          <div><span class="step">01</span><h2 id="shipment-heading">Shipment</h2></div>
+          <span class="required-note">* Required to print</span>
+        </div>
+        <div class="form-grid thirds">
+          <label class="field span-1">From organization &amp; address *
+            <textarea id="from" data-path="shipment.from" rows="5" placeholder="Organization&#10;Street address&#10;City, State ZIP"></textarea>
+            <span class="field-error" id="error-from"></span>
+          </label>
+          <label class="field span-1">To organization &amp; address *
+            <textarea id="to" data-path="shipment.to" rows="5" placeholder="Receiving organization&#10;Street address&#10;City, State ZIP"></textarea>
+            <span class="field-error" id="error-to"></span>
+          </label>
+          <label class="field span-1">Ship To / Mark For
+            <textarea id="shipToMarkFor" data-path="shipment.shipToMarkFor" rows="5" placeholder="Delivery location, point of contact, or marking instructions"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="authority-heading">
+        <div class="panel-heading"><div><span class="step">02</span><h2 id="authority-heading">Purpose &amp; Authority</h2></div><span class="required-note">* Required to print</span></div>
+        <div class="form-grid halves">
+          <label class="field"><span class="field-label">Contract number <strong class="required-mark" aria-label="required">*</strong></span>
+            <input id="contract" data-path="authority.contract" autocomplete="off" placeholder="Enter governing contract number" required aria-required="true">
+            <span class="field-error" id="error-contract"></span>
+          </label>
+          <label class="field">Document date
+            <input id="documentDate" data-path="authority.documentDate" type="date">
+          </label>
+          <label class="field">Purpose
+            <input id="purpose" data-path="authority.purpose" autocomplete="off" placeholder="Enter the shipment purpose">
+          </label>
+          <label class="field">Authorization / reference
+            <input id="authorization" data-path="authority.authorization" autocomplete="off" placeholder="Enter an applicable authority or reference">
+          </label>
+        </div>
+      </section>
+
+      <section class="panel property-panel" aria-labelledby="property-heading">
+        <div class="panel-heading property-heading">
+          <div><span class="step">03</span><h2 id="property-heading">Property</h2></div>
+          <div class="button-row compact">
+            <button type="button" class="button primary" id="addProperty">+ Add property</button>
+            <label class="button secondary file-button">Upload CSV<input id="csvInput" type="file" accept=".csv,text/csv"></label>
+            <button type="button" class="button tertiary" id="downloadTemplate">Download CSV template</button>
+          </div>
+        </div>
+        <p class="helper">Add one row for each property item. Leave unknown values blank; blank values will not print as zero. Scroll the table to see every field on smaller screens.</p>
+        <div class="table-scroll">
+          <table class="property-table">
+            <thead><tr><th scope="col">#</th><th scope="col">Description *</th><th scope="col">Qty *</th><th scope="col">UOM *</th><th scope="col">Tag</th><th scope="col">Serial number</th><th scope="col">Unit cost</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+            <tbody id="propertyRows"></tbody>
+          </table>
+        </div>
+        <div id="propertyError" class="section-error" role="alert"></div>
+      </section>
+
+      <details class="panel collapsible">
+        <summary><span><span class="step">04</span>Shipping Details <small>Optional</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="details-body form-grid thirds">
+          <label class="field">Date shipped<input data-path="shipping.dateShipped" type="date"></label>
+          <label class="field">Mode of shipment<input data-path="shipping.mode" placeholder="Motor freight"></label>
+          <label class="field">Bill of lading number<input data-path="shipping.billOfLading"></label>
+          <label class="field">Air movement / port reference<input data-path="shipping.airMovement"></label>
+          <label class="field span-2">Transportation via AMC or MSC chargeable to<textarea data-path="shipping.transportChargeableTo" rows="2"></textarea></label>
+          <label class="field span-1">Special handling<textarea data-path="shipping.specialHandling" rows="2"></textarea></label>
+        </div>
+      </details>
+
+      <details class="panel collapsible">
+        <summary><span><span class="step">05</span>Packing Details <small>Optional</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="details-body form-grid quarters">
+          <label class="field">Issued / loaded by<input data-path="packing.issuedBy"></label>
+          <label class="field">Checked by<input data-path="packing.checkedBy"></label>
+          <label class="field">Packed by<input data-path="packing.packedBy"></label>
+          <label class="field">Total containers<input data-path="packing.totalContainers" inputmode="numeric"></label>
+          <label class="field">Container type<input data-path="packing.containerType"></label>
+          <label class="field">Container description<input data-path="packing.containerDescription"></label>
+          <label class="field">Total weight<input data-path="packing.totalWeight" placeholder="125 LB"></label>
+          <label class="field">Total cube<input data-path="packing.totalCube" placeholder="18 CU FT"></label>
+        </div>
+      </details>
+
+      <details class="panel collapsible">
+        <summary><span><span class="step">06</span>Advanced DD1149 Fields</span><span class="chevron" aria-hidden="true">⌄</span></summary>
+        <div class="details-body">
+          <div class="form-grid quarters">
+            <label class="field span-2">Appropriations data<textarea data-path="advanced.appropriations" rows="2"></textarea></label>
+            <label class="field">Requisition number<input data-path="advanced.requisitionNumber"></label>
+            <label class="field">Date material required<input data-path="advanced.requiredDate" type="date"></label>
+            <label class="field">Priority<input data-path="advanced.priority"></label>
+            <label class="field">Originator signature / name<input data-path="advanced.signature"></label>
+            <label class="field">Voucher number &amp; date<input data-path="advanced.voucherNumberDate"></label>
+            <label class="field">Supply action<input data-path="advanced.supplyAction"></label>
+          </div>
+          <h3>Receiving portion <small>Leave blank for the receiving party</small></h3>
+          <div class="form-grid thirds">
+            <label class="field">Containers received except as noted<input data-path="advanced.containersReceived"></label>
+            <label class="field">Quantities received except as noted<input data-path="advanced.quantitiesReceived"></label>
+            <label class="field">Received by<input data-path="advanced.receivedBy"></label>
+            <label class="field">Date received<input data-path="advanced.receivedDate" type="date"></label>
+            <label class="field">Receiver's voucher number<input data-path="advanced.receiverVoucherNumber"></label>
+            <label class="field">Posted by / date<input data-path="advanced.posted"></label>
+          </div>
+        </div>
+      </details>
+
+      <div class="actionbar">
+        <div class="button-row">
+          <button type="button" class="button primary large" id="printButton">Print / Save PDF</button>
+          <button type="button" class="button secondary" id="saveDraft">Save Draft</button>
+          <label class="button secondary file-button">Open Draft<input id="draftInput" type="file" accept=".json,application/json"></label>
+          <button type="button" class="button danger-quiet" id="clearForm">Clear Form</button>
+        </div>
+        <p class="helper">This unofficial copy does not transfer accountability between DoD contracts. Follow applicable <a href="https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property." target="_blank" rel="noopener noreferrer">PIEE GFP Module reporting</a> requirements.</p>
+        <p id="validationSummary" class="validation-summary" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="preview-area" aria-labelledby="preview-heading">
+      <div class="preview-toolbar app-controls">
+        <div><p class="eyebrow">Print preview</p><h2 id="preview-heading">DD Form 1149</h2></div>
+        <div class="preview-meta"><span id="sheetCount">1 sheet</span><span id="previewTotal">Total: -</span></div>
+      </div>
+      <p class="preview-hint app-controls">On smaller screens, scroll sideways to inspect the full sheet.</p>
+      <div class="preview-scroll"><div id="previewPages" class="preview-pages"></div></div>
+    </section>
+  </main>
+
+  <template id="propertyRowTemplate">
+    <tr class="property-row">
+      <td class="row-number"></td>
+      <td><textarea class="cell-input description" rows="2" aria-label="Property description"></textarea><span class="inline-error description-error"></span></td>
+      <td><input class="cell-input quantity" inputmode="decimal" aria-label="Quantity"><span class="inline-error quantity-error"></span></td>
+      <td><input class="cell-input uom" aria-label="Unit of measure" placeholder="EA"><span class="inline-error uom-error"></span></td>
+      <td><input class="cell-input tag" aria-label="Property tag"></td>
+      <td><input class="cell-input serial_number" aria-label="Serial number"></td>
+      <td><input class="cell-input unit_cost" inputmode="decimal" aria-label="Unit cost" placeholder="0.00"></td>
+      <td><button type="button" class="icon-button delete-row" aria-label="Delete property row">×</button></td>
+    </tr>
+    <tr class="property-row-details">
+      <td></td>
+      <td colspan="7"><div class="row-details-grid">
+        <label>Part number<input class="cell-input part_number"></label>
+        <label>NSN<input class="cell-input nsn"></label>
+        <label>Condition<input class="cell-input condition"></label>
+        <label>Container type<input class="cell-input container_type"></label>
+        <label>Container number<input class="cell-input container_number"></label>
+        <label>Notes<input class="cell-input notes"></label>
+      </div></td>
+    </tr>
+  </template>
+
+  <script src="app.js?v=20261114a"></script>
+</body>
+</html>

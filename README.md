@@ -1,10 +1,10 @@
-# Tools and Plugins
-
-Codex plugins for specialized professional workflows. This repository is the current catalog and source for the plugin packages.
+<img src="docs/readme/readme_header.png" alt="Tools and Plugins: offline browser apps and Codex plugins for government property and procurement work." width="100%">
 
 [My Portfolio](https://github.com/courtney-chapman/portfolio-public) shows the projects and demonstrations behind related tools. [Visual portfolio](https://courtneypetersonchapman.notion.site/) presents the same work in Notion.
 
 **Project status:** These tools are independent demonstrations provided as-is, not managed services. They are not guaranteed to reflect subsequent regulatory changes. Users are responsible for verifying applicable requirements, source currency and outputs before operational use.
+
+**Start here:** [Browser apps](#standalone-browser-apps) · [Plugins](#plugins) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
 
 ## Get a plugin
 
@@ -15,89 +15,36 @@ Each ZIP contains one plugin and the repository license. The plugin folders belo
 
 ## Standalone browser apps
 
-### DD Form 1149 Generator
+<img src="docs/readme/readme_open_app.png" alt="Open a browser app: download the ZIP from Releases, unzip it, and open index.html in a desktop browser. No install, no account, works offline." width="100%">
 
-Prepare a DD1149-style shipping document and continuation sheets locally in your browser. Download the `dd1149-generator.zip` asset from [Releases](https://github.com/courtney-chapman/tools-public/releases), unzip it, and open `index.html`. No installation or account is required. The [app guide](apps/dd1149-generator/README.md) explains the data format and use limits. This app is not a Codex plugin and is not part of the marketplace catalog.
+These offline browser apps are separate from the Codex plugins.
 
-### Government Property Record Template Generator
-
-Create related property snapshot and transaction-history CSV templates, explore synthetic examples, and review selected CSV files locally. Download `government-property-record-template-generator.zip` from [Releases](https://github.com/courtney-chapman/tools-public/releases), unzip it, and open `index.html`. The [app guide](apps/government-property-record-template-generator/README.md) explains the limited CSV review and use limits; [Revision 1 sources](apps/government-property-record-template-generator/docs/sources.md) lists the public regulatory references. The app runs offline and is not a Codex plugin or part of the marketplace catalog.
-
-### Physical Inventory Count Sheet Generator
-
-Prepare standard or blind count sheets from a working property list, enter observations, and export results and discrepancies. Download `physical-inventory-count-sheet-generator.zip` from [Releases](https://github.com/courtney-chapman/tools-public/releases), unzip it, and open `index.html`. The [app guide](apps/physical-inventory-count-sheet-generator/README.md) explains the workflow and limits; [Revision 1 sources](apps/physical-inventory-count-sheet-generator/docs/sources.md) lists the public regulatory references. The app runs offline and is not a Codex plugin or part of the marketplace catalog.
-
-### Government Property Custody Receipt Generator
-
-Prepare printable property issuance receipts, property return receipts, and custody acknowledgments with multiple item lines. Download `property-custody-receipt-generator.zip` from [Releases](https://github.com/courtney-chapman/tools-public/releases), unzip it, and open `index.html`. The [app guide](apps/property-custody-receipt-generator/README.md) explains the four-step workflow and limits; [Revision 1 sources](apps/property-custody-receipt-generator/docs/sources.md) lists the public references. The app runs offline and is not a Codex plugin or part of the marketplace catalog.
+| App | Description and links |
+| --- | --- |
+| <img src="docs/readme/icons/dd1149-generator.png" width="56" alt=""> **DD Form 1149 Generator** | Prepare a DD1149-style shipping document and continuation sheets locally in your browser.<br>[Download](https://github.com/courtney-chapman/tools-public/releases/tag/dd1149-generator-v1.0.1) · [Guide](apps/dd1149-generator/README.md) |
+| <img src="docs/readme/icons/government-property-record-template-generator.png" width="56" alt=""> **Government Property Record Template Generator** | Create related property snapshot and transaction-history CSV templates, explore synthetic examples, and review selected CSV files locally.<br>[Download](https://github.com/courtney-chapman/tools-public/releases/tag/government-property-record-template-generator-v1.0.0) · [Guide](apps/government-property-record-template-generator/README.md) · [Sources](apps/government-property-record-template-generator/docs/sources.md) |
+| <img src="docs/readme/icons/physical-inventory-count-sheet-generator.png" width="56" alt=""> **Physical Inventory Count Sheet Generator** | Prepare standard or blind count sheets from a working property list, enter observations, and export results and discrepancies.<br>[Download](https://github.com/courtney-chapman/tools-public/releases/tag/physical-inventory-count-sheet-generator-v1.0.0) · [Guide](apps/physical-inventory-count-sheet-generator/README.md) · [Sources](apps/physical-inventory-count-sheet-generator/docs/sources.md) |
+| <img src="docs/readme/icons/property-custody-receipt-generator.png" width="56" alt=""> **Government Property Custody Receipt Generator** | Prepare printable property issuance receipts, property return receipts, and custody acknowledgments with multiple item lines.<br>[Download](https://github.com/courtney-chapman/tools-public/releases/tag/property-custody-receipt-generator-v1.0.0) · [Guide](apps/property-custody-receipt-generator/README.md) · [Sources](apps/property-custody-receipt-generator/docs/sources.md) |
 
 ## Plugins
 
-### Procurement Market Research
+### Procurement
 
-Supports federal-prime-contractor market research for commercial products and
-services, including supplier discovery, public pricing, procurement evidence,
-and vendor diligence.
+| Plugin | Description and links |
+| --- | --- |
+| <img src="docs/readme/icons/procurement-market-research.png" width="56" alt=""> **Procurement Market Research** | Supports federal-prime-contractor market research for commercial products and services, including supplier discovery, public pricing, procurement evidence, and vendor diligence.<br>[Instructions](plugins/procurement-market-research/skills/procurement-market-research/SKILL.md) |
+| <img src="docs/readme/icons/far-compliant-commercial-item-determination.png" width="56" alt=""> **FAR-Compliant Commercial Item Determination** | Evaluates products, software, SaaS, services, and mixed acquisitions for commercial product, commercial service, and COTS treatment under FAR 2.101 and produces buyer guidance or procurement-file-ready determinations.<br>[Instructions](plugins/far-compliant-commercial-item-determination/skills/far-compliant-commercial-item-determination/SKILL.md) |
+| <img src="docs/readme/icons/far-compliant-non-competitive-source-justification.png" width="56" alt=""> **FAR-Compliant Non-Competitive Source Justification** | Helps federal-prime-contractor Program Managers draft post-market-research sole-source and noncompetitive justifications, including alternate-supplier disqualification language and targeted fields for missing supporting details.<br>[Instructions](plugins/far-compliant-non-competitive-source-justification/skills/far-compliant-non-competitive-source-justification/SKILL.md) |
+| <img src="docs/readme/icons/far-compliant-price-analysis-for-goods.png" width="56" alt=""> **FAR-Compliant Price Analysis for Goods** | Drafts procurement-file-ready price analysis justifications for government-funded FFP goods, COTS, commercial products, software, materials, and routine buys using the buyer's supplied rules and evidence for competition, market pricing, and best value.<br>[Instructions](plugins/far-compliant-price-analysis-for-goods/skills/far-compliant-price-analysis-for-goods/SKILL.md) |
+| <img src="docs/readme/icons/far-compliant-price-analysis-for-subcontracts-lite.png" width="56" alt=""> **FAR-Compliant Price Analysis for Subcontracts (Lite)** | Drafts BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications.<br>[Instructions](plugins/far-compliant-price-analysis-for-subcontracts-lite/skills/far-compliant-price-analysis-for-subcontracts-lite/SKILL.md) |
+| <img src="docs/readme/icons/indirect-and-commercial-price-analysis-for-services-lite.png" width="56" alt=""> **Commercial and Indirect Price Analysis (Lite)** | Drafts concise price analyses for a company's Commercial and Indirect purchases, including services, SaaS, software, consulting, equipment, and routine supplier buys.<br>[Instructions](plugins/indirect-and-commercial-price-analysis-for-services-lite/skills/indirect-and-commercial-price-analysis-for-services-lite/SKILL.md) |
+| <img src="docs/readme/icons/software-saas-negotiation-strategy.png" width="56" alt=""> **Software/SaaS Negotiation Strategy** | Guides federal procurement professionals through internal discovery, vendor questions, negotiation strategy, and optional practice for SaaS acquisitions under the Simplified Acquisition Threshold.<br>[Instructions](plugins/software-saas-negotiation-strategy/skills/software-saas-negotiation-strategy/SKILL.md) |
 
-- [Plugin instructions](plugins/procurement-market-research/skills/procurement-market-research/SKILL.md)
+### Government property
 
-### Government Property LTDD Relief Letter Generator
-
-Generates and validates audit-defensive Government Property LTDD relief
-packages while preserving the distinction between verified facts, interview
-statements, assumptions, and missing evidence.
-
-- [Plugin instructions](plugins/government-property-ltdd-relief-letter-generator/skills/government-property-ltdd-relief-letter-generator/SKILL.md)
-
-### Software/SaaS Negotiation Strategy
-
-Guides federal procurement professionals through internal discovery, vendor
-questions, negotiation strategy, and optional practice for SaaS acquisitions
-under the Simplified Acquisition Threshold.
-
-- [Plugin instructions](plugins/software-saas-negotiation-strategy/skills/software-saas-negotiation-strategy/SKILL.md)
-
-### FAR-Compliant Commercial Item Determination
-
-Evaluates products, software, SaaS, services, and mixed acquisitions for
-commercial product, commercial service, and COTS treatment under FAR 2.101 and
-produces buyer guidance or procurement-file-ready determinations.
-
-- [Plugin instructions](plugins/far-compliant-commercial-item-determination/skills/far-compliant-commercial-item-determination/SKILL.md)
-
-### FAR-Compliant Non-Competitive Source Justification
-
-Helps federal-prime-contractor Program Managers draft post-market-research
-sole-source and noncompetitive justifications, including alternate-supplier
-disqualification language and targeted fields for missing supporting details.
-
-- [Plugin instructions](plugins/far-compliant-non-competitive-source-justification/skills/far-compliant-non-competitive-source-justification/SKILL.md)
-
-### FAR-Compliant Price Analysis for Goods
-
-Drafts procurement-file-ready price analysis justifications for government-funded
-FFP goods, COTS, commercial products, software, materials, and routine buys using
-the buyer's supplied rules and evidence for competition, market pricing, and best value.
-
-- [Plugin instructions](plugins/far-compliant-price-analysis-for-goods/skills/far-compliant-price-analysis-for-goods/SKILL.md)
-
-### FAR-Compliant Price Analysis for Subcontracts (Lite)
-
-Drafts BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards,
-option exercises, and modifications. Selects supported price comparisons,
-examines individual elements when warranted, and ends with a findings table.
-Prior pricing is optional.
-
-- [Plugin instructions](plugins/far-compliant-price-analysis-for-subcontracts-lite/skills/far-compliant-price-analysis-for-subcontracts-lite/SKILL.md)
-
-### Commercial and Indirect Price Analysis (Lite)
-
-Drafts concise price analyses for a company's Commercial and Indirect purchases,
-including services, SaaS, software, consulting, equipment, and routine supplier
-buys. Uses the buyer's policy and price evidence; no federal acquisition
-requirements are assumed.
-
-- [Plugin instructions](plugins/indirect-and-commercial-price-analysis-for-services-lite/skills/indirect-and-commercial-price-analysis-for-services-lite/SKILL.md)
+| Plugin | Description and links |
+| --- | --- |
+| <img src="docs/readme/icons/government-property-ltdd-relief-letter-generator.png" width="56" alt=""> **Government Property LTDD Relief Letter Generator** | Generates and validates audit-defensive Government Property LTDD relief packages while preserving the distinction between verified facts, interview statements, assumptions, and missing evidence.<br>[Instructions](plugins/government-property-ltdd-relief-letter-generator/skills/government-property-ltdd-relief-letter-generator/SKILL.md) |
 
 ## Repository layout
 
@@ -107,6 +54,7 @@ requirements are assumed.
 - `apps/physical-inventory-count-sheet-generator/` contains the offline physical inventory app.
 - `apps/property-custody-receipt-generator/` contains the offline custody receipt app.
 - `.agents/plugins/marketplace.json` publishes the repository's plugin catalog.
+- `docs/` contains README graphics and release images.
 - `support/` contains repository validation guidance.
 
 ## Repository guide

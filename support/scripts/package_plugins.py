@@ -41,6 +41,7 @@ def main() -> None:
             raise ValueError(f"unexpected plugin source for {name}: {source}")
         plugin_root = ROOT / "plugins" / name
         manifest_path = f"{name}/.codex-plugin/plugin.json"
+        claude_manifest_path = f"{name}/.claude-plugin/plugin.json"
         skill_path = f"{name}/skills/{name}/SKILL.md"
         files = sorted(path for path in tracked if path.startswith(f"plugins/{name}/"))
         if not files or any(path == f"plugins/{name}/LICENSE" for path in files):
@@ -57,10 +58,19 @@ def main() -> None:
 
         with ZipFile(destination) as archive:
             names = archive.namelist()
-            if manifest_path not in names or skill_path not in names or archive.testzip():
+            if (
+                manifest_path not in names
+                or claude_manifest_path not in names
+                or skill_path not in names
+                or archive.testzip()
+            ):
                 raise ValueError(f"invalid plugin ZIP: {destination}")
-            if json.loads(archive.read(manifest_path))["name"] != name:
+            codex_manifest = json.loads(archive.read(manifest_path))
+            claude_manifest = json.loads(archive.read(claude_manifest_path))
+            if codex_manifest["name"] != name or claude_manifest["name"] != name:
                 raise ValueError(f"plugin manifest mismatch: {name}")
+            if codex_manifest["version"] != claude_manifest["version"]:
+                raise ValueError(f"plugin manifest version mismatch: {name}")
             if any(not path.startswith(f"{name}/") for path in names):
                 raise ValueError(f"multiple plugin roots: {destination}")
 

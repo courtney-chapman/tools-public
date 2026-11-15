@@ -19,6 +19,8 @@ jobs:
           python-version: "3.12"
       - name: Validate plugin catalog
         run: python3 support/scripts/validate_repository.py
+      - name: Validate plugin ZIPs
+        run: python3 support/scripts/package_plugins.py
       - name: Validate property app package
         run: python3 support/scripts/package_government_property_records.py
       - name: Validate physical inventory app package

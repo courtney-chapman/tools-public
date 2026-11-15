@@ -23,3 +23,5 @@ jobs:
         run: python3 support/scripts/package_government_property_records.py
       - name: Validate physical inventory app package
         run: python3 support/scripts/package_physical_inventory.py
+      - name: Validate custody receipt app package
+        run: python3 support/scripts/package_property_custody_receipt.py

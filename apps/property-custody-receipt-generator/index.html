@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Government Property Custody Receipt Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap"><p class="eyebrow">Offline document tool · Revision 1</p><h1>Government Property Custody Receipt Generator</h1>
+      <p>Document an issuance, return, or custody acknowledgment in a printable receipt.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <p class="notice">Entered information stays in this browser session and is lost when the page closes or reloads. The tool does not send or save it.</p>
+    <nav class="page-nav" aria-label="Tool steps">
+      <a href="#step-1" data-step-link="1"><span>1</span><strong>Transaction</strong><small>Type and date</small></a>
+      <a href="#step-2" data-step-link="2"><span>2</span><strong>Parties</strong><small>Issuing and receiving</small></a>
+      <a href="#step-3" data-step-link="3"><span>3</span><strong>Property</strong><small>Items and condition</small></a>
+      <a href="#step-4" data-step-link="4"><span>4</span><strong>Preview &amp; print</strong><small>Review the receipt</small></a>
+    </nav>
+    <div class="actions"><button type="button" id="sample" class="secondary">Load fictional sample</button><button type="button" id="reset" class="quiet">Clear form</button></div>
+    <div id="validation" class="validation" role="alert" aria-live="polite"></div>
+    <form id="receipt-form" novalidate>
+      <section id="step-1" class="panel step-panel" data-step="1"><div class="section-title"><span>1</span><div><h2>Transaction information</h2><p>Choose the document type and enter the date.</p></div></div>
+        <div class="grid two">
+          <label>Document type <select id="type" required><option value="">Select a document type</option><option value="issuance">Property Issuance Receipt</option><option value="return">Property Return Receipt</option><option value="custody">Property Custody Acknowledgment</option></select></label>
+          <label>Transaction date <input id="date" type="date" required></label>
+          <label>Receipt reference <span class="optional">Optional</span><input id="reference" type="text" maxlength="80" placeholder="Your reference, if used"></label>
+          <label>Transaction location <span class="optional">Optional</span><input id="location" type="text" maxlength="160"></label>
+        </div>
+        <label>Purpose or reason <span class="optional">Optional</span><input id="purpose" type="text" maxlength="300"></label>
+        <label>General remarks <span class="optional">Optional</span><textarea id="remarks" rows="2" maxlength="1500"></textarea></label>
+        <a class="next-link" href="#step-2">Next: add parties →</a>
+      </section>
+      <section id="step-2" class="panel step-panel" data-step="2" hidden><div class="section-title"><span>2</span><div><h2>Issuing and receiving parties</h2><p>Use names or identifiers suitable for your organization. No contact details are needed.</p></div></div>
+        <div class="party-grid">
+          <fieldset><legend>Issuing party</legend><label>Name or identifier <input id="issuer-name" type="text" maxlength="160" required></label><label>Organization or department <span class="optional">Optional</span><input id="issuer-org" type="text" maxlength="160"></label><label>Role or title <span class="optional">Optional</span><input id="issuer-role" type="text" maxlength="160"></label></fieldset>
+          <fieldset><legend>Receiving party</legend><label>Name or identifier <input id="receiver-name" type="text" maxlength="160" required></label><label>Organization or department <span class="optional">Optional</span><input id="receiver-org" type="text" maxlength="160"></label><label>Role or title <span class="optional">Optional</span><input id="receiver-role" type="text" maxlength="160"></label></fieldset>
+        </div>
+        <a class="next-link" href="#step-3">Next: add property →</a>
+      </section>
+      <section id="step-3" class="panel step-panel" data-step="3" hidden><div class="section-title"><span>3</span><div><h2>Property items</h2><p>Add equipment or quantity-managed material. Serial and asset identifiers are optional.</p></div></div>
+        <div id="item-list" class="item-list"></div><button type="button" id="add-item" class="secondary">Add property item</button>
+        <div><a class="next-link" href="#step-4">Next: preview and print →</a></div>
+      </section>
+      <section id="step-4" class="panel step-panel" data-step="4" hidden><div class="section-title"><span>4</span><div><h2>Preview and print</h2><p>Review the receipt, then use your browser to print or save as PDF.</p></div></div>
+        <div class="actions"><button type="button" id="print">Print or save as PDF</button><span class="helper">Signature and date lines are blank until completed outside this app.</span></div>
+        <article id="receipt" aria-label="Receipt preview">
+          <div class="receipt-top"><p class="document-kicker">Government Property · Custody documentation</p><h2 id="r-title">Select a document type</h2><div class="receipt-meta"><p><strong>Reference</strong><br><span id="r-ref">—</span></p><p><strong>Transaction date</strong><br><span id="r-date">—</span></p><p id="r-location-wrap"><strong>Location</strong><br><span id="r-location">—</span></p></div></div>
+          <p id="r-purpose-wrap" class="receipt-purpose"><strong>Purpose or reason:</strong> <span id="r-purpose"></span></p>
+          <div class="receipt-parties"><div><h3>Issuing party</h3><p id="r-issuer-name">—</p><p id="r-issuer-detail"></p></div><div><h3>Receiving party</h3><p id="r-receiver-name">—</p><p id="r-receiver-detail"></p></div></div>
+          <table class="receipt-table"><thead><tr class="continuation"><th colspan="6"><span id="r-table-title">Property receipt</span> · <span id="r-table-ref">No reference</span></th></tr><tr><th>#</th><th>Property and identifiers</th><th>Qty</th><th>Unit</th><th>Condition</th><th>Remarks</th></tr></thead><tbody id="r-items"></tbody></table>
+          <div class="acknowledgment"><h3>Acknowledgment</h3><p id="r-statement"></p><div class="signature-grid"><div><span>Issuing-party signature</span><i></i><span>Date</span><i></i></div><div><span>Receiving-party signature</span><i></i><span>Date</span><i></i></div></div></div>
+          <p id="r-remarks-wrap" class="receipt-remarks"><strong>General remarks:</strong> <span id="r-remarks"></span></p>
+          <p class="document-limit">This receipt documents an acknowledgment only. It does not authorize a transfer, change contractual accountability, establish Government approval, or relieve stewardship. Follow applicable contracts, procedures, and approval requirements.</p>
+        </article>
+      </section>
+    </form>
+  </main>
+  <footer class="site-footer"><div class="wrap"><p>Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p>Revision 1 · <a href="docs/sources.md">Public sources</a></p></div></footer>
+</body>
+</html>

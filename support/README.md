@@ -8,6 +8,7 @@ This directory contains repository-level maintenance guidance.
 - `apps/dd1149-generator/` contains a standalone browser app, outside the plugin catalog.
 - `apps/government-property-record-template-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/physical-inventory-count-sheet-generator/` contains a standalone offline browser app, outside the plugin catalog.
+- `apps/property-custody-receipt-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the repository marketplace catalog.
 - `support/` contains repository maintenance guidance.
 
@@ -39,4 +40,9 @@ records and test files.
 Build the Physical Inventory Count Sheet Generator download with
 `python3 support/scripts/package_physical_inventory.py`. The deterministic,
 10-file ZIP is written to `.build/app-zips/physical-inventory-count-sheet-generator.zip`
+for attachment to a GitHub Release.
+
+Build the Government Property Custody Receipt Generator download with
+`python3 support/scripts/package_property_custody_receipt.py`. The deterministic,
+7-file ZIP is written to `.build/app-zips/property-custody-receipt-generator.zip`
 for attachment to a GitHub Release.

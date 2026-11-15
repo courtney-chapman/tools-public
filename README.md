@@ -27,6 +27,10 @@ Create related property snapshot and transaction-history CSV templates, explore 
 
 Prepare standard or blind count sheets from a working property list, enter observations, and export results and discrepancies. Download `physical-inventory-count-sheet-generator.zip` from [Releases](https://github.com/courtney-chapman/tools-public/releases), unzip it, and open `index.html`. The [app guide](apps/physical-inventory-count-sheet-generator/README.md) explains the workflow and limits; [Revision 1 sources](apps/physical-inventory-count-sheet-generator/docs/sources.md) lists the public regulatory references. The app runs offline and is not a Codex plugin or part of the marketplace catalog.
 
+### Government Property Custody Receipt Generator
+
+Prepare printable property issuance receipts, property return receipts, and custody acknowledgments with multiple item lines. Download `property-custody-receipt-generator.zip` from [Releases](https://github.com/courtney-chapman/tools-public/releases), unzip it, and open `index.html`. The [app guide](apps/property-custody-receipt-generator/README.md) explains the four-step workflow and limits; [Revision 1 sources](apps/property-custody-receipt-generator/docs/sources.md) lists the public references. The app runs offline and is not a Codex plugin or part of the marketplace catalog.
+
 ## Plugins
 
 ### Procurement Market Research
@@ -101,6 +105,7 @@ requirements are assumed.
 - `apps/dd1149-generator/` contains the standalone browser app.
 - `apps/government-property-record-template-generator/` contains the offline property template app.
 - `apps/physical-inventory-count-sheet-generator/` contains the offline physical inventory app.
+- `apps/property-custody-receipt-generator/` contains the offline custody receipt app.
 - `.agents/plugins/marketplace.json` publishes the repository's plugin catalog.
 - `support/` contains repository validation guidance.
 
@@ -118,5 +123,5 @@ Private review evidence does not belong in this repository.
 Security concerns should follow the [security policy](SECURITY.md).
 
 Original repository content is licensed under [CC BY-NC 4.0](LICENSE), **except**
-`apps/dd1149-generator/`, `apps/government-property-record-template-generator/`, and `apps/physical-inventory-count-sheet-generator/`, each licensed under its own MIT license ([DD1149](apps/dd1149-generator/LICENSE); [property templates](apps/government-property-record-template-generator/LICENSE); [physical inventory](apps/physical-inventory-count-sheet-generator/LICENSE)).
+`apps/dd1149-generator/`, `apps/government-property-record-template-generator/`, `apps/physical-inventory-count-sheet-generator/`, and `apps/property-custody-receipt-generator/`, each licensed under its own MIT license ([DD1149](apps/dd1149-generator/LICENSE); [property templates](apps/government-property-record-template-generator/LICENSE); [physical inventory](apps/physical-inventory-count-sheet-generator/LICENSE); [custody receipt](apps/property-custody-receipt-generator/LICENSE)).
 Third-party material remains subject to its own terms.

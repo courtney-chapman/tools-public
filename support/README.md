@@ -46,3 +46,15 @@ Build the Government Property Custody Receipt Generator download with
 `python3 support/scripts/package_property_custody_receipt.py`. The deterministic,
 7-file ZIP is written to `.build/app-zips/property-custody-receipt-generator.zip`
 for attachment to a GitHub Release.
+
+## Release presentation
+
+- Use the product name shown on its release card as the release title. Keep the
+  version in one descriptive Git tag; do not create an unversioned alias tag.
+- Store reviewed PNG release cards in `docs/release-images/`. Link each release
+  note to the image at its committed revision so older releases keep their image.
+- Order release notes as: image, purpose, download or installation, use limits,
+  then version, source commit, and ZIP SHA-256 where applicable. Keep the ZIP
+  checksum tied to the exact attached file.
+- Before publishing, check the image and notes for private material and verify
+  the release title, tag, attached files, links, and rendered content.

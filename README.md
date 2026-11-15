@@ -22,12 +22,11 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 ## Plugins
 
+<img src="docs/readme/readme_get_plugin.png" alt="Get a plugin: add the courtney-chapman/tools-public marketplace in Codex or Claude Code, install a plugin from the catalog, then describe the task and review the draft. ZIPs are also in Releases." width="100%">
+
 ### Use with Codex
 
-<img src="docs/readme/readme_get_plugin.png" alt="Get a Codex plugin: add the courtney-chapman/tools-public marketplace, install a plugin from the catalog in Codex, then describe the task and review the draft. ZIPs are also in Releases." width="100%">
-
-- **Codex desktop or CLI:** Add this repository as a marketplace with `codex plugin marketplace add courtney-chapman/tools-public`, then browse and install the plugin you want.
-- **ChatGPT web with ZIP upload access:** Download one plugin ZIP from [Releases](https://github.com/courtney-chapman/tools-public/releases), then use the plugin upload option in your account. Upload availability depends on your plan and permissions.
+In Codex desktop or CLI, add this repository as a marketplace with `codex plugin marketplace add courtney-chapman/tools-public`, then browse and install the plugin you want.
 
 ### Use with Claude Code
 
@@ -41,6 +40,8 @@ In Claude Code, add the marketplace and install the plugin you want. For example
 ### Download a plugin ZIP
 
 The latest [plugin release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) has one ZIP per plugin. Each ZIP contains the Codex and Claude Code manifests, the skill files, and the repository license.
+
+If your ChatGPT web account has plugin ZIP upload access, download the ZIP for the plugin you want and upload it there. Availability depends on your plan and permissions.
 
 ### Procurement
 

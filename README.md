@@ -4,7 +4,7 @@ Codex plugins for specialized professional workflows. This repository is the cur
 
 [My Portfolio](https://github.com/courtney-chapman/portfolio-public) shows the projects and demonstrations behind related tools. [Visual portfolio](https://courtneypetersonchapman.notion.site/) presents the same work in Notion.
 
-Review each plugin and its supporting references before using it for a real matter.
+**Project status:** These tools are independent demonstrations provided as-is, not managed services. They are not guaranteed to reflect subsequent regulatory changes. Users are responsible for verifying applicable requirements, source currency and outputs before operational use.
 
 ## Get a plugin
 

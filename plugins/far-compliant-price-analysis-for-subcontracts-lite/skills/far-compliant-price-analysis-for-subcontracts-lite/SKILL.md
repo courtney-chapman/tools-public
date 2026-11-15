@@ -49,6 +49,11 @@ negotiation documentation (c)(11), discounts (c)(12), contract type (c)(13),
 and modification rationale (c)(15). Flag a missing separate record or
 handoff; do not fabricate those records inside the price analysis.
 
+If asked whether the entire award file is complete, flag any separately
+applicable certified-data cost analysis, technical evaluation, negotiation
+record, consent, subcontract-type rationale, or file documentation. Do not add
+those records as routine sections of this BID SUMMARY.
+
 Ask for missing facts only when they prevent a useful analysis. If enough facts
 exist to draft part of the document, write that part and identify the specific
 gap. Do not request administrative fields, labor hours, or historical files by

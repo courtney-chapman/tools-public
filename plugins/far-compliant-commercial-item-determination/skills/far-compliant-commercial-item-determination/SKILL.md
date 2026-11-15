@@ -60,18 +60,20 @@ or product family.
 
 ### Commercial service
 
-Analyze human-performed services independently. Address whether the services
-are offered and sold competitively in substantial quantities in the commercial
-marketplace based on established catalog or market prices for specific tasks
-performed or outcomes to be achieved and under standard commercial terms and
-conditions, consistent with the current FAR definition.
+Analyze human-performed services independently under both FAR 2.101 routes.
+For services supporting a commercial product, check whether the source provides
+similar services contemporaneously to the general public under similar terms.
+For other services, check competitive sales in substantial commercial-market
+quantities, established catalog or market prices for specific tasks or outcomes,
+and standard commercial terms.
 
 ### COTS
 
 COTS is narrower than commercial product status. Evaluate each applicable
 element explicitly:
 
-1. the item satisfies the relevant commercial product predicate in FAR 2.101;
+1. the item satisfies paragraph (1) of the commercial product definition in
+   FAR 2.101;
 2. it is sold in substantial quantities in the commercial marketplace;
 3. it is offered to the Government under a contract or subcontract at any tier
    without modification;

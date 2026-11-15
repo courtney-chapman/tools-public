@@ -79,18 +79,11 @@ considered during market research:
 
 1. If the user identifies suppliers actually considered, list them and explain
    why each did not satisfy the requirement using the supplied facts.
-2. If no actual alternatives are supplied and the purchase is in a recognizable
-   commercial product or service category, research and suggest plausible
-   current alternatives as candidate entries for the PM's draft. For each,
-   provide a concise, requirement-specific disqualification rationale using the
-   known continuity, compatibility, authorization, schedule, technical,
-   transition, training, integration, warranty, or operational facts. Insert
-   `[INSERT]` for the PM to supply the missing comparison result, cost, time, or
-   supporting detail. Do not frame these entries as work Procurement still must
-   perform and do not say the proposed supplier is merely preferred.
-3. Use the no-alternatives fallback only when reliable research does not reveal
-   meaningful potential alternatives or naming suppliers would be misleading
-   for the requirement. In that case state: “Other suppliers were not
+2. If no actual alternatives are supplied, do not present research-identified
+   candidates as suppliers the PM considered or disqualified. If the user asks
+   for possible alternatives, provide them separately as unverified research
+   suggestions for the PM to evaluate, not as entries in the four-part draft.
+3. When no actual alternatives are supplied, state: “Other suppliers were not
    identified in the provided materials. Requester should insert any market
    research performed and suppliers reviewed: [INSERT].”
 
@@ -105,11 +98,13 @@ warranty, and customer-approved configuration.
 ### 3. Justification Option
 
 Use the sole-source or noncompetitive category the PM is preparing and select
-the strongest supporting subcategory from the user's form. Do not reclassify a
-requested **Sole Source** justification as **Single Source**, tell the PM the
-action is unsupported, or recommend competition in place of drafting. Instead,
-write the strongest fact-based sole-source rationale and use targeted
-`[INSERT]` fields for evidence the PM must add. If the user has not identified
+the strongest supporting subcategory from the user's form. Preserve a requested
+**Sole Source** label in the draft rather than silently changing it to **Single
+Source**. If the facts materially conflict with that label, identify the
+specific conflict and insert a concise `[INSERT: Procurement to confirm
+classification]` in this section. Write the strongest fact-based rationale
+supported by the record and use targeted `[INSERT]` fields for evidence the PM
+must add. If the user has not identified
 the requested category, select the best-fit category below:
 
 - Sole Source;
@@ -183,11 +178,14 @@ procurement history. Never estimate or fabricate them.
   document the completed market-research basis for why competition is not
   practicable; do not substitute a procurement-strategy recommendation for the
   requested justification.
-- A source justification may be required when competition is not practicable
-  and value exceeds the applicable Micro-Purchase Threshold. Thresholds,
-  commercial-item treatment, exceptions, and internal approval requirements
-  can change; verify the current governing prime contract, flowdowns, company
-  policy, and FAR text rather than assuming them.
+- When the applicable prime contract includes DFARS 252.244-7001 Basic or
+  DFARS 252.244-7998 Basic under an applicable deviation, paragraph (c)(9)
+  requires a management-level justification
+  and adequate cost or price analysis, as applicable, for any sole- or
+  single-source award; it sets no general micro-purchase cutoff. Check the
+  actual clause version, Alternate I, and company policy before asserting
+  those requirements. The PM's four-part draft is not itself management
+  approval or a cost or price analysis.
 - Do not assert that the justification does or does not apply to a particular
   subcontract, commercial purchase, protégé award, or threshold without
   checking the controlling facts and current policy.

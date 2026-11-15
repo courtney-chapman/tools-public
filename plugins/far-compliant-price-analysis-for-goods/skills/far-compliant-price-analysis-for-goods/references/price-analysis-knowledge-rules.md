@@ -229,6 +229,11 @@ Do not call a procurement competitive merely because public pricing exists. Publ
 
 Use Attempted Competition when the buyer attempted competition, performed market research, reviewed available sources, or otherwise attempted to validate pricing, but full competition was not achieved.
 
+This is a company documentation label, not a finding of adequate price
+competition. State whether suppliers were actually solicited or whether the
+record contains only market-price research; public prices alone do not prove
+that a solicitation attempt occurred.
+
 This classification is appropriate when the user states it or the facts support it, including:
 
 - Only one vendor responded.
@@ -611,6 +616,10 @@ Common references:
 - FAR Part 13 / FAR 13.106-3 for simplified acquisition fair and reasonable pricing.
 - FAR Part 12 for commercial item acquisitions.
 - FAR Part 10 for market research.
+- FAR Parts 10, 12, and 13 govern agency acquisitions; do not cite an agency
+  procedure as directly governing a prime contractor's purchase unless the
+  applicable prime contract, clause or flowdown, customer direction, or company
+  policy makes it applicable.
 - DFARS 252.244-7001(c)(8), (10), and (11) for price analysis, negotiations, and subcontractor evaluation under contractor purchasing system requirements.
 - DFARS 252.244-7001(c)(12) for documenting economically feasible discounts.
 
@@ -618,7 +627,7 @@ Do not cite FAR Part 6.3 as binding on subcontract procurements. If used, state 
 
 Do not cite FAR 15.404-1(b)(2)(i), comparison of proposed prices received in response to the solicitation, when the comparison source is only public website pricing and did not submit a quote.
 
-Use FAR 15.404-1(b)(2)(vi), comparison with competitive published price lists, published market prices, or similar indices, when comparing to published list, catalog, website, or marketplace pricing.
+Use FAR 15.404-1(b)(2)(iv), comparison with competitive published price lists, published market prices, or similar indices, when comparing to published list, catalog, website, or marketplace pricing.
 
 ---
 
@@ -728,7 +737,7 @@ Wrong:
 This is supported by FAR 15.404-1(b)(2)(i), comparison of proposed prices received.
 
 Correct:
-This is supported by comparison to published commercial pricing. If citing FAR, use FAR 15.404-1(b)(2)(vi) when applicable.
+This is supported by comparison to published commercial pricing. If citing FAR, use FAR 15.404-1(b)(2)(iv) when applicable.
 
 Reason:
 Public website pricing is not a proposed price received in response to the solicitation.

@@ -6,6 +6,7 @@ This directory contains repository-level maintenance guidance.
 
 - `plugins/` contains packaged plugin manifests and skills.
 - `apps/dd1149-generator/` contains a standalone browser app, outside the plugin catalog.
+- `apps/government-property-record-template-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the repository marketplace catalog.
 - `support/` contains repository maintenance guidance.
 
@@ -27,3 +28,9 @@ case material, credentials, and personal information out of this repository.
 Build the DD1149 standalone download with
 `python3 support/scripts/package_dd1149.py`. The deterministic ZIP is written to
 `.build/app-zips/dd1149-generator.zip` for attachment to a GitHub Release.
+
+Build the Government Property Record Template Generator download with
+`python3 support/scripts/package_government_property_records.py`. The deterministic,
+12-file ZIP is written to `.build/app-zips/government-property-record-template-generator.zip`
+for attachment to a GitHub Release. The allowlist excludes private development
+records and test files.

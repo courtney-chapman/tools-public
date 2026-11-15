@@ -10,8 +10,6 @@
 
 <img src="docs/readme/readme_open_app.png" alt="Open a browser app: download the ZIP from Releases, unzip it, and open index.html in a desktop browser. No install, no account, works offline." width="100%">
 
-These offline browser apps are separate from the Codex plugins.
-
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
 | <img src="docs/readme/icons/dd1149-generator.png" width="56" alt=""> | **DD Form 1149 Generator**<br>Create DD Form 1149-style shipping documents and continuation sheets offline.<br>[Download](https://github.com/courtney-chapman/tools-public/releases/tag/dd1149-generator-v1.0.1) · [Guide](apps/dd1149-generator/README.md) |

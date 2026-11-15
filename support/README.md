@@ -7,6 +7,7 @@ This directory contains repository-level maintenance guidance.
 - `plugins/` contains packaged plugin manifests and skills.
 - `apps/dd1149-generator/` contains a standalone browser app, outside the plugin catalog.
 - `apps/government-property-record-template-generator/` contains a standalone offline browser app, outside the plugin catalog.
+- `apps/physical-inventory-count-sheet-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the repository marketplace catalog.
 - `support/` contains repository maintenance guidance.
 
@@ -34,3 +35,8 @@ Build the Government Property Record Template Generator download with
 12-file ZIP is written to `.build/app-zips/government-property-record-template-generator.zip`
 for attachment to a GitHub Release. The allowlist excludes private development
 records and test files.
+
+Build the Physical Inventory Count Sheet Generator download with
+`python3 support/scripts/package_physical_inventory.py`. The deterministic,
+10-file ZIP is written to `.build/app-zips/physical-inventory-count-sheet-generator.zip`
+for attachment to a GitHub Release.

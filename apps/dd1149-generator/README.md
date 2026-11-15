@@ -2,6 +2,8 @@
 
 An independent, unofficial browser tool for preparing a DD Form 1149-style requisition and invoice/shipping document. It is not a Department of Defense product, an official form, or a substitute for your contract's required process.
 
+Built by Courtney · [More tools on GitHub](https://github.com/courtney-chapman)
+
 ## Start
 
 1. Download `dd1149-generator.zip` from this repository's [Releases](https://github.com/courtney-chapman/tools-public/releases).

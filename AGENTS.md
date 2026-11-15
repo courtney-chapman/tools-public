@@ -10,4 +10,6 @@ Before opening or merging a pull request, check each commit's author,
 committer, and full message. Inspect the proposed squash message for unwanted
 co-author credit. Stop before publication if attribution is wrong or uncertain.
 After merging, verify the published commit's author, committer, and message on
-GitHub.
+GitHub. A GitHub-created squash commit may list GitHub as its committer; check
+that against the merge method, and still check the author and full message for
+false attribution.

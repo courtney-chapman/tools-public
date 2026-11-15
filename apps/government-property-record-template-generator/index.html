@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Government Property Record Template Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="review.js" defer></script>
+  <script src="navigation.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="eyebrow">Standalone demonstration · works offline</p>
+      <h1>Government Property Record Template Generator</h1>
+      <p>Choose a starting point, review the fields, and download two related CSV templates: a property snapshot and a transaction history.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="notice" aria-labelledby="notice-title">
+      <h2 id="notice-title">Check your contract first</h2>
+      <p>These templates do not determine which clauses apply or make a record compliant. Check your contract, any deviations or additional terms, and Property Administrator approvals. FAR 52.245-1 is the baseline here; select the DFARS option only when DFARS 252.245-7005 applies to your contract.</p>
+    </section>
+
+    <nav id="page-nav" class="page-nav" aria-label="Tool steps">
+      <a href="#step-1" data-step-link="1"><span>1</span><strong>Choose</strong><small>Template and clauses</small></a>
+      <a href="#step-2" data-step-link="2"><span>2</span><strong>Customize</strong><small>Columns and order</small></a>
+      <a href="#step-3" data-step-link="3"><span>3</span><strong>Download</strong><small>CSV and dictionary</small></a>
+      <a href="#step-4" data-step-link="4"><span>4</span><strong>Check CSV</strong><small>Local review</small></a>
+    </nav>
+
+    <section id="step-1" class="card step-panel" data-step="1" aria-labelledby="setup-title">
+      <div class="section-heading"><span class="step">1</span><div><h2 id="setup-title">Choose a starting point</h2><p>Equipment and material are convenience views, not separate FAR-required formats.</p></div></div>
+      <div class="controls">
+        <label for="template">Template type
+          <select id="template">
+            <option value="general">General Government Property Record</option>
+            <option value="equipment">Equipment Record</option>
+            <option value="material">Material Record</option>
+          </select>
+        </label>
+        <label for="regime">Regulatory source set
+          <select id="regime">
+            <option value="far">FAR 52.245-1 baseline</option>
+            <option value="dfars">FAR baseline + applicable DFARS 252.245-7005</option>
+          </select>
+        </label>
+      </div>
+      <p id="template-note" class="helper"></p>
+      <a class="next-link" href="#step-2">Next: Customize columns →</a>
+    </section>
+
+    <section id="step-2" class="card step-panel" data-step="2" aria-labelledby="fields-title" hidden>
+      <div class="section-heading"><span class="step">2</span><div><h2 id="fields-title">Review and arrange fields</h2><p>Selections affect both downloads and the printable dictionary. Use the arrows to reorder columns within each file.</p></div></div>
+      <div class="legend"><span class="badge regulatory">Regulatory requirement</span><span class="badge conditional">Conditional requirement</span><span class="badge audit">Audit guidance</span><span class="badge optional">Optional administrative field</span></div>
+      <div id="warnings" class="warnings" role="status" aria-live="polite"></div>
+      <div class="toolbar"><button id="restore" type="button" class="secondary">Restore defaults</button></div>
+      <div class="field-groups">
+        <details class="field-details"><summary id="snapshot-fields-title">Property snapshot columns</summary><div id="snapshot-fields" class="field-list"></div></details>
+        <details class="field-details"><summary id="transaction-fields-title">Transaction history columns</summary><div id="transaction-fields" class="field-list"></div></details>
+      </div>
+      <a class="next-link" href="#step-3">Next: Preview and download →</a>
+    </section>
+
+    <section id="step-3" class="card step-panel" data-step="3" aria-labelledby="preview-title" hidden>
+      <div class="section-heading"><span class="step">3</span><div><h2 id="preview-title">Preview and download</h2><p>Each file is independent. Synthetic examples use the same Record ID to show how rows relate; the app never updates one file from the other.</p></div></div>
+      <div class="preview-block"><h3>Property snapshot</h3><p id="snapshot-count" class="helper"></p><div id="snapshot-preview" class="table-scroll"></div><div class="actions"><button id="snapshot-blank" type="button">Download blank snapshot CSV</button><button id="snapshot-example" type="button" class="secondary">Download example snapshot CSV</button></div></div>
+      <div class="preview-block"><h3>Transaction history</h3><p id="transaction-count" class="helper"></p><div id="transaction-preview" class="table-scroll"></div><div class="actions"><button id="transaction-blank" type="button">Download blank history CSV</button><button id="transaction-example" type="button" class="secondary">Download example history CSV</button></div></div>
+    </section>
+
+    <section id="step-4" class="card step-panel" data-step="4" aria-labelledby="review-title" hidden>
+      <div class="section-heading"><span class="step">4</span><div><h2 id="review-title">Review your CSV files</h2><p>Choose files on this device to find missing template columns, selected blank values, and date or number formatting issues. Files stay in this browser session.</p></div></div>
+      <p class="notice-inline"><strong>Record check only:</strong> Results are issues to review, not a compliant/noncompliant decision. This check cannot establish contract applicability, record accuracy, supporting documentation, or a complete auditable history.</p>
+      <div class="controls">
+        <label for="snapshot-upload">Property snapshot CSV
+          <input id="snapshot-upload" type="file" accept=".csv,text/csv">
+        </label>
+        <label for="transaction-upload">Transaction history CSV (optional)
+          <input id="transaction-upload" type="file" accept=".csv,text/csv">
+        </label>
+      </div>
+      <p class="helper">Use the selected FAR/DFARS source set above. The check expects this tool's column names. Conditional item and contract requirements need your own review. Files are never uploaded or saved by the tool.</p>
+      <div class="actions"><button id="review-files" type="button">Check selected CSV files</button><button id="clear-review" type="button" class="secondary">Clear files and results</button></div>
+      <div id="review-results" class="review-results" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="dictionary-section" class="card step-panel" data-step="3" aria-labelledby="dictionary-title" hidden>
+      <h2 id="dictionary-title">Field dictionary</h2>
+      <p>The <strong>property snapshot</strong> describes the current item and balance. The <strong>transaction history</strong> demonstrates individual events and posting references. The shared <strong>Record ID</strong> connects the examples. These CSVs are not a transaction system and do not replace source documents, procedures, or complete contract-specific records.</p>
+      <button id="print-dictionary" type="button" class="secondary">Print field dictionary</button>
+      <details id="dictionary-details" class="extra-details"><summary>View selected field dictionary</summary><div id="dictionary"></div></details>
+      <a class="next-link" href="#step-4">Next: Check your CSV →</a>
+    </section>
+
+    <section class="card step-panel" data-step="4" aria-labelledby="guidance-title" hidden>
+      <details class="extra-details"><summary id="guidance-title">Entry guidance</summary>
+      <ul class="guidance">
+        <li><strong>Dates:</strong> Use one consistent format; the examples use YYYY-MM-DD. Keep transaction date separate from an optional posting entry date.</li>
+        <li><strong>Quantities:</strong> Use numbers in the stated unit of measure. Explain adjustments in your supporting records; the downloaded files do not calculate balances.</li>
+        <li><strong>Monetary values:</strong> Enter unit acquisition cost as a number without a currency symbol. Apply the clause definition and contract terms when determining the amount.</li>
+        <li><strong>Identifiers:</strong> Preserve leading zeros and exact punctuation in contract, NSN, CAGE, serial, and UII values. Format spreadsheet columns as text when importing.</li>
+        <li><strong>Units of measure:</strong> Use a consistent code or term such as EA or FT, and define it in your own procedures.</li>
+      </ul>
+      </details>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><p class="credit">Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p class="revision">Revision 1</p></div></footer>
+</body>
+</html>

@@ -1,0 +1,3 @@
+"Record ID","Transaction Posting Reference","Transaction Date","Transaction Type","Quantity Received or Fabricated","Quantity Issued"
+"GP-0001","REC-001","2026-01-15","Receipt","2",""
+"GP-0001","ISS-001","2026-02-02","Issue","","1"

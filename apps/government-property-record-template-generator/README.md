@@ -20,7 +20,7 @@ The check accepts up to 2 MB and 10,000 data rows per file. It displays up to 80
 
 ## Source scope
 
-The tool shows **Revision 1**. Its public references, versions, and verification date are documented in [docs/sources.md](docs/sources.md), with limitations in [docs/limitations.md](docs/limitations.md). These documents are included in the offline package. The tool does not check for later changes. Verify contract clauses, deviations, additional requirements, and Property Administrator approvals before using a generated template for actual records.
+The tool shows **Revision 2**. Its public references, versions, and verification date are documented in [docs/sources.md](docs/sources.md), with limitations in [docs/limitations.md](docs/limitations.md). These documents are included in the offline package. The tool does not check for later changes. Verify contract clauses, deviations, additional requirements, and Property Administrator approvals before using a generated template for actual records.
 
 ## Technical note
 

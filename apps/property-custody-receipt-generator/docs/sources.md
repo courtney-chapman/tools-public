@@ -1,4 +1,4 @@
-# Revision 1: public sources
+# Revision 2: public sources
 
 Checked 2026-11-15. The application performs no live source lookup.
 

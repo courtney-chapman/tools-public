@@ -19,7 +19,7 @@ The condition choices are descriptive demonstration labels, not Government suppl
 
 ## Sources and limits
 
-The app shows **Revision 1**. [Public sources and versions](docs/sources.md) were checked on 2026-11-15; the app does not check for later changes. [Limitations](docs/limitations.md) explains what the receipt cannot establish. The source is plain HTML, CSS, and JavaScript with no runtime dependencies.
+The app shows **Revision 2**. [Public sources and versions](docs/sources.md) were checked on 2026-11-15; the app does not check for later changes. [Limitations](docs/limitations.md) explains what the receipt cannot establish. The source is plain HTML, CSS, and JavaScript with no runtime dependencies.
 
 This standalone demonstration generates property custody documentation. It does not establish authorization to transfer Government Property, change contractual accountability, or relieve a contractor of stewardship. Users are responsible for following applicable contracts, procedures, and approval requirements. The application is provided as-is without a guarantee of ongoing updates or support.
 

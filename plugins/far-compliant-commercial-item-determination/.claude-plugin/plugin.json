@@ -1,0 +1,11 @@
+{
+  "name": "far-compliant-commercial-item-determination",
+  "version": "0.1.1",
+  "description": "Prepare evidence-based buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under FAR 2.101.",
+  "author": {
+    "name": "courtney-chapman"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-commercial-item-determination",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

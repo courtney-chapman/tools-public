@@ -1,0 +1,11 @@
+{
+  "name": "software-saas-negotiation-strategy",
+  "version": "0.1.1",
+  "description": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",
+  "author": {
+    "name": "courtney-chapman"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/software-saas-negotiation-strategy",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

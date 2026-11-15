@@ -1,0 +1,59 @@
+{
+  "name": "tools-public",
+  "owner": {
+    "name": "courtney-chapman"
+  },
+  "metadata": {
+    "description": "Claude Code plugins for federal procurement and government property work."
+  },
+  "plugins": [
+    {
+      "name": "procurement-market-research",
+      "source": "./plugins/procurement-market-research",
+      "description": "Federal procurement market research for COTS items and services.",
+      "category": "productivity"
+    },
+    {
+      "name": "government-property-ltdd-relief-letter-generator",
+      "source": "./plugins/government-property-ltdd-relief-letter-generator",
+      "description": "Generate or validate fact-based, audit-defensive Government Property LTDD relief packages under FAR 52.245-1(f)(1)(vii)(B).",
+      "category": "productivity"
+    },
+    {
+      "name": "software-saas-negotiation-strategy",
+      "source": "./plugins/software-saas-negotiation-strategy",
+      "description": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",
+      "category": "productivity"
+    },
+    {
+      "name": "far-compliant-commercial-item-determination",
+      "source": "./plugins/far-compliant-commercial-item-determination",
+      "description": "Prepare evidence-based buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under FAR 2.101.",
+      "category": "productivity"
+    },
+    {
+      "name": "far-compliant-non-competitive-source-justification",
+      "source": "./plugins/far-compliant-non-competitive-source-justification",
+      "description": "Create practical, evidence-aware noncompetitive source justifications for federal prime-contractor subcontract procurement files.",
+      "category": "productivity"
+    },
+    {
+      "name": "far-compliant-price-analysis-for-goods",
+      "source": "./plugins/far-compliant-price-analysis-for-goods",
+      "description": "Draft procurement-file-ready price analysis justifications for government-funded FFP goods, COTS, commercial products, software, materials, and routine buys.",
+      "category": "productivity"
+    },
+    {
+      "name": "far-compliant-price-analysis-for-subcontracts-lite",
+      "source": "./plugins/far-compliant-price-analysis-for-subcontracts-lite",
+      "description": "Draft BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications, with supported price comparisons, conditional cost-element review, and a final findings table.",
+      "category": "productivity"
+    },
+    {
+      "name": "indirect-and-commercial-price-analysis-for-services-lite",
+      "source": "./plugins/indirect-and-commercial-price-analysis-for-services-lite",
+      "description": "Draft concise, evidence-based price analyses for a company's Commercial and Indirect purchases without assuming federal acquisition requirements.",
+      "category": "productivity"
+    }
+  ]
+}

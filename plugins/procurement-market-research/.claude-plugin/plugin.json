@@ -1,0 +1,11 @@
+{
+  "name": "procurement-market-research",
+  "version": "0.1.1",
+  "description": "Federal procurement market research for COTS items and services.",
+  "author": {
+    "name": "courtney-chapman"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/procurement-market-research",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

@@ -31,6 +31,17 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 Each ZIP contains one plugin and the repository license. The plugin folders below remain the source for future releases.
 
+### Use with Claude Code
+
+In Claude Code, add the marketplace and install the plugin you want. For example:
+
+```text
+/plugin marketplace add courtney-chapman/tools-public
+/plugin install procurement-market-research@tools-public
+```
+
+The existing plugin ZIPs remain available in [Releases](https://github.com/courtney-chapman/tools-public/releases). A future release can include the Claude Code manifests in those downloads.
+
 ### Procurement
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |

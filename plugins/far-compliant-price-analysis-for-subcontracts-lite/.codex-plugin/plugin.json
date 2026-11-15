@@ -1,18 +1,18 @@
 {
   "name": "far-compliant-price-analysis-for-subcontracts-lite",
-  "version": "0.1.0+codex.20260923004847",
-  "description": "Procurement-file-ready subcontract bid summaries and price analyses",
+  "version": "0.2.0",
+  "description": "Price analyses for new subcontract awards, options, and modifications",
   "author": {
     "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "FAR-Compliant Price Analysis for Subcontracts (Lite)",
-    "shortDescription": "Draft subcontract bid summaries and price analyses.",
-    "longDescription": "Draft procurement-file-ready BID SUMMARY & PRICE ANALYSIS write-ups for subcontract awards, option periods, and modifications.",
+    "shortDescription": "Analyze proposed subcontract prices.",
+    "longDescription": "Draft purchasing-file price analyses for new government-prime subcontract awards, option exercises, and modifications using the evidence available for each action.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Draft a subcontract bid summary and price analysis from these facts."
+    "defaultPrompt": "Draft a subcontract price analysis for this new award, option, or modification using the proposals and price evidence I provide."
   }
 }

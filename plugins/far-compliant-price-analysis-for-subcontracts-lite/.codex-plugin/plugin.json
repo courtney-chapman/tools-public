@@ -1,7 +1,7 @@
 {
   "name": "far-compliant-price-analysis-for-subcontracts-lite",
-  "version": "0.2.0",
-  "description": "Element-by-element bid summaries and price analyses for subcontract actions",
+  "version": "0.2.1",
+  "description": "Evidence-based bid summaries and price analyses for subcontract actions",
   "author": {
     "name": "courtney-chapman"
   },
@@ -9,10 +9,10 @@
   "interface": {
     "displayName": "FAR-Compliant Price Analysis for Subcontracts (Lite)",
     "shortDescription": "Draft subcontract bid and price analyses.",
-    "longDescription": "Draft BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications, including element-level findings and a final status table.",
+    "longDescription": "Draft BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications, with supported price comparisons, conditional cost-element review, and a final findings table.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Draft a BID SUMMARY & PRICE ANALYSIS for this new award, option, or modification. Analyze each proposed element and include the final findings table."
+    "defaultPrompt": "Draft a BID SUMMARY & PRICE ANALYSIS for this new award, option, or modification. Choose supported price-analysis methods, examine individual elements when warranted, and include the final findings table."
   }
 }

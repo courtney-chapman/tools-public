@@ -22,14 +22,12 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 ## Plugins
 
-### Get a plugin
+### Use with Codex
 
 <img src="docs/readme/readme_get_plugin.png" alt="Get a Codex plugin: add the courtney-chapman/tools-public marketplace, install a plugin from the catalog in Codex, then describe the task and review the draft. ZIPs are also in Releases." width="100%">
 
 - **Codex desktop or CLI:** Add this repository as a marketplace with `codex plugin marketplace add courtney-chapman/tools-public`, then browse and install the plugin you want.
 - **ChatGPT web with ZIP upload access:** Download one plugin ZIP from [Releases](https://github.com/courtney-chapman/tools-public/releases), then use the plugin upload option in your account. Upload availability depends on your plan and permissions.
-
-Each ZIP contains one plugin and the repository license. The plugin folders below remain the source for future releases.
 
 ### Use with Claude Code
 
@@ -40,25 +38,27 @@ In Claude Code, add the marketplace and install the plugin you want. For example
 /plugin install procurement-market-research@tools-public
 ```
 
-The existing plugin ZIPs remain available in [Releases](https://github.com/courtney-chapman/tools-public/releases). A future release can include the Claude Code manifests in those downloads.
+### Download a plugin ZIP
+
+The latest [plugin release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) has one ZIP per plugin. Each ZIP contains the Codex and Claude Code manifests, the skill files, and the repository license.
 
 ### Procurement
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
-| <img src="docs/readme/icons/procurement-market-research.png" width="56" alt=""> | **Procurement Market Research**<br>Find suppliers, public pricing, and evidence for federal prime-contractor market research.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/procurement-market-research) |
-| <img src="docs/readme/icons/far-compliant-commercial-item-determination.png" width="56" alt=""> | **FAR-Compliant Commercial Item Determination**<br>Assess commercial product, service, and COTS status under FAR 2.101.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-commercial-item-determination) |
-| <img src="docs/readme/icons/far-compliant-non-competitive-source-justification.png" width="56" alt=""> | **FAR-Compliant Non-Competitive Source Justification**<br>Draft sole-source and noncompetitive justifications after market research, including alternate-supplier rationale.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-non-competitive-source-justification) |
-| <img src="docs/readme/icons/far-compliant-price-analysis-for-goods.png" width="56" alt=""> | **FAR-Compliant Price Analysis for Goods**<br>Draft price analyses for government-funded goods using competition and market evidence.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-goods) |
-| <img src="docs/readme/icons/far-compliant-price-analysis-for-subcontracts-lite.png" width="56" alt=""> | **FAR-Compliant Price Analysis for Subcontracts (Lite)**<br>Draft subcontract bid summaries and price analyses for awards, options, and modifications.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-subcontracts-lite) |
-| <img src="docs/readme/icons/indirect-and-commercial-price-analysis-for-services-lite.png" width="56" alt=""> | **Commercial and Indirect Price Analysis (Lite)**<br>Draft price analyses for commercial and indirect purchases using company policy and price evidence.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/indirect-and-commercial-price-analysis-for-services-lite) |
-| <img src="docs/readme/icons/software-saas-negotiation-strategy.png" width="56" alt=""> | **Software/SaaS Negotiation Strategy**<br>Build discovery questions and negotiation plans for SaaS buys under the Simplified Acquisition Threshold.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/software-saas-negotiation-strategy) |
+| <img src="docs/readme/icons/procurement-market-research.png" width="56" alt=""> | **Procurement Market Research**<br>Find suppliers, public pricing, and evidence for federal prime-contractor market research.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/procurement-market-research) |
+| <img src="docs/readme/icons/far-compliant-commercial-item-determination.png" width="56" alt=""> | **FAR-Compliant Commercial Item Determination**<br>Assess commercial product, service, and COTS status under FAR 2.101.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-commercial-item-determination) |
+| <img src="docs/readme/icons/far-compliant-non-competitive-source-justification.png" width="56" alt=""> | **FAR-Compliant Non-Competitive Source Justification**<br>Draft sole-source and noncompetitive justifications after market research, including alternate-supplier rationale.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-non-competitive-source-justification) |
+| <img src="docs/readme/icons/far-compliant-price-analysis-for-goods.png" width="56" alt=""> | **FAR-Compliant Price Analysis for Goods**<br>Draft price analyses for government-funded goods using competition and market evidence.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-goods) |
+| <img src="docs/readme/icons/far-compliant-price-analysis-for-subcontracts-lite.png" width="56" alt=""> | **FAR-Compliant Price Analysis for Subcontracts (Lite)**<br>Draft subcontract bid summaries and price analyses for awards, options, and modifications.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-subcontracts-lite) |
+| <img src="docs/readme/icons/indirect-and-commercial-price-analysis-for-services-lite.png" width="56" alt=""> | **Commercial and Indirect Price Analysis (Lite)**<br>Draft price analyses for commercial and indirect purchases using company policy and price evidence.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/indirect-and-commercial-price-analysis-for-services-lite) |
+| <img src="docs/readme/icons/software-saas-negotiation-strategy.png" width="56" alt=""> | **Software/SaaS Negotiation Strategy**<br>Build discovery questions and negotiation plans for SaaS buys under the Simplified Acquisition Threshold.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/software-saas-negotiation-strategy) |
 
 ### Government property
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
-| <img src="docs/readme/icons/government-property-ltdd-relief-letter-generator.png" width="56" alt=""> | **Government Property LTDD Relief Letter Generator**<br>Draft and review LTDD relief packages, separating verified facts from assumptions and evidence gaps.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-ltdd-relief-letter-generator) |
+| <img src="docs/readme/icons/government-property-ltdd-relief-letter-generator.png" width="56" alt=""> | **Government Property LTDD Relief Letter Generator**<br>Draft and review LTDD relief packages, separating verified facts from assumptions and evidence gaps.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-ltdd-relief-letter-generator) |
 
 ## Licensing and security
 

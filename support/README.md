@@ -10,7 +10,8 @@ This directory contains repository-level maintenance guidance.
 - `apps/physical-inventory-count-sheet-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/property-custody-receipt-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/government-property-disposition-preparation-generator/` contains a standalone offline browser app, outside the plugin catalog.
-- `.agents/plugins/marketplace.json` is the repository marketplace catalog.
+- `.agents/plugins/marketplace.json` is the Codex marketplace catalog.
+- `.claude-plugin/marketplace.json` is the Claude Code marketplace catalog.
 - `docs/` contains README graphics and release images.
 - `support/` contains repository maintenance guidance.
 
@@ -24,7 +25,8 @@ python3 support/scripts/validate_repository.py
 
 Build the individual plugin ZIPs from tracked source files with
 `python3 support/scripts/package_plugins.py`. Attach the generated files in
-the ignored `.build/plugin-zips/` directory to one GitHub Release.
+the ignored `.build/plugin-zips/` directory to one GitHub Release. Each ZIP
+contains both the Codex and Claude Code manifests.
 
 Review plugin instructions and references before distribution. Nothing committed
 here may depend on private content, secrets, or paid APIs. New examples should

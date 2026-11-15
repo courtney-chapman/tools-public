@@ -10,6 +10,7 @@ This directory contains repository-level maintenance guidance.
 - `apps/physical-inventory-count-sheet-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/property-custody-receipt-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the repository marketplace catalog.
+- `docs/` contains README graphics and release images.
 - `support/` contains repository maintenance guidance.
 
 The root [README](../README.md) is the capability catalog.
@@ -24,8 +25,11 @@ Build the individual plugin ZIPs from tracked source files with
 `python3 support/scripts/package_plugins.py`. Attach the generated files in
 the ignored `.build/plugin-zips/` directory to one GitHub Release.
 
-Review plugin instructions and references before distribution. Keep private
-case material, credentials, and personal information out of this repository.
+Review plugin instructions and references before distribution. Nothing committed
+here may depend on private content, secrets, or paid APIs. New examples should
+be synthetic or sanitized. Credentials, secrets, private case material, and
+personal information must never be committed. Private review evidence does not
+belong in this repository.
 
 Build the DD1149 standalone download with
 `python3 support/scripts/package_dd1149.py`. The deterministic ZIP is written to

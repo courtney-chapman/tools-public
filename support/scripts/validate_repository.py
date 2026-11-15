@@ -12,7 +12,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
-CATALOG_LINK = re.compile(r"\]\(plugins/([^/]+)/")
+CATALOG_LINK = re.compile(
+    r"\[Source\]\(https://github\.com/courtney-chapman/tools-public/tree/main/plugins/([^/)]+)\)"
+)
 
 
 def validate() -> list[str]:

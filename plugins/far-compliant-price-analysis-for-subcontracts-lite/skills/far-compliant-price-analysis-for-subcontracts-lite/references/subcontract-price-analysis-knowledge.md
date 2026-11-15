@@ -1,12 +1,12 @@
-# Subcontract Bid Summary & Price Analysis Knowledge File
+# Subcontract Bid Summary & Price Analysis Reference
 
 ## Purpose
 
-This knowledge file governs how the Custom GPT drafts BID SUMMARY & PRICE ANALYSIS write-ups for subcontract awards, option periods, and modifications, with emphasis on historical subcontract files when applicable.
+This reference supplies detailed section logic and calculations for BID SUMMARY & PRICE ANALYSIS write-ups for subcontract awards, option periods, and modifications.
 
-The GPT should follow the supplied price analysis template language and section logic as closely as possible. The output should be clean, concise, procurement-file-ready, and focused on fair and reasonable price analysis.
+Follow a user-supplied price analysis template when one is provided. Keep the output concise, procurement-file-ready, and focused on price reasonableness.
 
-This GPT is not a general procurement policy GPT.
+This reference does not turn the skill into a general procurement policy assistant.
 
 ---
 
@@ -15,10 +15,10 @@ This GPT is not a general procurement policy GPT.
 Use this priority order:
 
 1. User-provided facts for the specific subcontract action
-2. This knowledge file
-3. Uploaded company templates and procurement manual
-4. FAR/DFARS references when applicable
-5. General procurement reasoning
+2. Applicable company policy and template supplied by the user
+3. The primary SKILL.md instructions
+4. This reference's detailed analysis and drafting guidance
+5. Applicable FAR/DFARS provisions, verified before citation
 
 Preserve the user's stated procurement logic unless facts clearly conflict.
 
@@ -26,14 +26,13 @@ Preserve the user's stated procurement logic unless facts clearly conflict.
 
 # 2. Core Behavior Rules
 
-The GPT must:
+The skill must:
 
 - Act as a senior buyer/subcontract administrator.
 - Draft final-form BID SUMMARY & PRICE ANALYSIS language.
 - Use the supplied template's wording and section structure.
-- Default Type of Solicitation to Sole Source.
-- Default Type of Commodity to Services.
-- Assume proposal backup is provided unless stated otherwise.
+- Use the supplied solicitation and commodity types; do not infer either.
+- Treat proposal backup as available only when the user provides or confirms it.
 - Select price analysis technique(s) supported by the facts. Use multiple techniques when the file supports it. Do not default to historical as the only method.
 - Check math.
 - Demonstrate consistency with calculations, not only narrative statements.
@@ -43,7 +42,7 @@ The GPT must:
 - For escalation: calculate period-to-period changes and compare them with a relevant index or user-supplied authorized benchmark. If none is available, identify the evidence gap rather than assuming an internal default.
 - For fee/profit and indirect rates: calculate a rate build-up only from disclosed or user-authorized inputs. If only fully burdened rates are available, analyze those rates with supported price evidence and identify undisclosed components as Not Analyzed when they cannot be evaluated separately.
 
-The GPT must not:
+The skill must not:
 
 - Invent facts, values, rates, labor categories, periods, fee, escalation, negotiations, or support.
 - Ask for administrative fields by default.
@@ -61,8 +60,8 @@ The GPT must not:
 
 Supplier Name: [insert supplier]
 Total Value Analyzed: [insert total value]
-Type of Solicitation: Sole Source
-Type of Commodity: Services
+Type of Solicitation: [include when supplied]
+Type of Commodity: [include when supplied]
 
 ## 1. BACKGROUND
 
@@ -78,15 +77,8 @@ The proposal details are as follows:
 
 The Supplier's price proposal includes the following elements which are addressed and analyzed through this Price Analysis:
 
-- Labor Categories: [Yes/No/N/A]
-- Labor Hours: [Yes/No/N/A or omit if not provided]
-- Labor Rates: [Yes/No/N/A]
-- Profit/Fee: [Yes/No/N/A]
-- Escalation Rate(s): [Yes/No/N/A]
-- Facilities Capital Cost of Money: [Yes/No/N/A]
-- Materials: [Yes/No/N/A]
-- ODCs: [Yes/No/N/A]
-- Travel: [Yes/No/N/A]
+List only the proposed or analyzed pricing elements. Omit elements absent from
+the record instead of filling a Yes/No/N/A checklist.
 
 Information was gathered to assist in determining the fair and reasonableness of the Supplier's price proposal. The analysis reviewed the proposed pricing elements provided by the Supplier, including [insert applicable elements].
 
@@ -94,7 +86,7 @@ The Program Manager reviewed and evaluated the proposed requirements, labor cate
 
 Do not include Labor Hours unless the user provides labor-hour data or asks for labor-hour analysis.
 
-Proposal backup is assumed to be provided unless the user states otherwise.
+Refer to proposal backup only when the user provides or confirms it.
 
 ---
 
@@ -150,7 +142,7 @@ Labor hours by category and period were not separately provided; therefore, the 
 
 ## 4. INDIRECT RATES
 
-When the Supplier's proposal does not separately disclose indirect rates but provides fully burdened labor rates, do NOT mark Indirect Rates as Not Analyzed. Instead, apply the back-calculation in Section 5 (Profit/Fee and Indirect Rates — Back-Calculation) to estimate the implied indirect cost structure embedded in the burdened rates. The Section 5 back-calculation covers both indirect rates and profit/fee in one analysis. Use the standard language from Section 5 for the Indirect Rates narrative.
+When only fully burdened labor rates are disclosed, analyze those rates with supported price evidence. Do not infer a separate indirect rate or fee. Mark those components Not Analyzed if they cannot be evaluated separately.
 
 If indirect rates are separately disclosed:
 The Procurement Professional reviewed the proposed indirect rates as part of the Supplier's total proposed pricing.
@@ -227,8 +219,7 @@ Use when materials are proposed.
 Standard language:
 The Supplier proposed [insert amount] in materials. The materials were reviewed as part of the Supplier's total proposed pricing.
 
-If backup is provided:
-Based on the proposal backup provided, the proposed materials are considered fair and reasonable.
+If backup and a sufficient comparison are provided, explain the comparison before concluding that the proposed materials are fair and reasonable.
 
 ### 8.2 Subcontracts
 
@@ -241,8 +232,7 @@ The Supplier proposed [insert amount] in subcontract costs. The subcontract cost
 
 Use when travel is proposed.
 
-Standard language:
-The Supplier proposed [insert amount] in travel costs for [insert description of trips, e.g., X trips to Y location]. Travel costs will be reimbursed at cost with only General and Administrative (G&A) expenses allowable. The Program Manager has evaluated the proposed travel locations and number of trips and determined they are consistent with the requirements of the Statement of Work. Based on the proposal backup provided and the Program Manager's evaluation of the travel requirements, the proposed travel costs are considered fair and reasonable.
+State the proposed travel amount and any supplied trip details. Describe reimbursement terms, a Program Manager evaluation, and proposal backup only when the user provides them. Explain the price comparison or estimate that supports any fair-and-reasonable conclusion.
 
 If a travel analysis or independent estimate is provided:
 The Procurement Professional completed a travel analysis to independently verify what the proposed travel should cost. Based on this analysis, the expected total travel cost is [insert amount]. Since the Procurement Professional's estimate is [lower than / consistent with] the proposed costs, the Supplier's proposed travel costs are deemed [fair and reasonable / excessive].
@@ -306,11 +296,11 @@ Use when pricing can be evaluated through measurable relationships, such as:
 
 This is often applicable for T&M, Labor Hour, FPLOE, and CPFF when hours, rates, period values, or normalized monthly pricing are provided.
 
-## Independent Estimate — FAR 15.404-1(b)(2)(v)
+## Independent Estimate
 
-Use when the file includes an IGCE, program estimate, buyer estimate, should-cost estimate, or other independent pricing estimate.
+Use when the file includes an IGCE, program estimate, buyer estimate, should-cost estimate, or other independent pricing estimate. Cite FAR 15.404-1(b)(2)(v) only for an independent Government cost estimate, not a prime contractor's internal estimate.
 
-## Published/Market Pricing — FAR 15.404-1(b)(2)(vi)
+## Published Pricing — FAR 15.404-1(b)(2)(iv)
 
 Use when comparing proposed pricing to:
 - salary survey data;
@@ -332,7 +322,7 @@ Use multiple techniques when supported by the facts.
 Example: A sole-source CPFF subcontract with prior option pricing, labor rates by year, labor hours, comparable market rates, and fee calculations may use:
 - Historical price analysis under FAR 15.404-1(b)(2)(ii);
 - Parametric estimate under FAR 15.404-1(b)(2)(iii);
-- Published/market pricing or market research under FAR 15.404-1(b)(2)(vi), as applicable.
+- Published pricing under FAR 15.404-1(b)(2)(iv), or market research under paragraph (vi), as applicable.
 
 ---
 
@@ -349,7 +339,7 @@ Before drafting the conclusion, reconcile all totals:
 - Estimated Cost + Fixed Fee = Total CPFF Value
 - Labor + Travel + ODCs + Materials = Estimated Cost or subtotal, as applicable
 
-If the provided numbers conflict, state the discrepancy and use the corrected calculated value unless the user explains the difference.
+If the provided numbers conflict, state the discrepancy and show the calculated value separately. Do not silently replace the supplier's stated amount. Seek clarification if the discrepancy affects the conclusion.
 
 ## Total Value
 
@@ -521,48 +511,43 @@ FAR 15.404-1(b)(2)(iii) supports the use of parametric estimating methods or rou
 
 ## FAR 15.404-1(b)(2)(v)
 
-Use when the file includes an IGCE, program estimate, buyer estimate, or should-cost estimate.
+Use only when the file includes an independent Government cost estimate and the provision applies. For a prime contractor's own estimate, describe the comparison without calling that estimate a Government cost estimate.
 
 Language:
-FAR 15.404-1(b)(2)(v) supports comparison with independent Government cost estimates or other independent estimates prepared by the buyer.
+FAR 15.404-1(b)(2)(v) addresses comparison with independent Government cost estimates.
 
-## FAR 15.404-1(b)(2)(vi)
+## FAR 15.404-1(b)(2)(iv)
 
-Use when comparing to published market prices, salary survey data, published rate data, catalog pricing, or market indices.
+Use when comparing to published price lists, market prices, indexes, or discount and rebate arrangements.
 
 Language:
-FAR 15.404-1(b)(2)(vi) supports comparison to published price lists, market rates, salary survey data, or other market-based pricing data.
+FAR 15.404-1(b)(2)(iv) addresses published price lists, market prices, indexes, and discount or rebate arrangements. Use paragraph (vi) for prices obtained through market research for the same or similar items.
 
 ## FAR 52.244-5
 
-Use when explaining competition context.
+Use when explaining competition context only if this clause applies to the prime contract.
 
 Language:
 FAR 52.244-5 requires the contractor to select subcontractors on a competitive basis to the maximum practicable extent consistent with the objectives and requirements of the prime contract.
 
 For sole-source actions:
-Although the action is Sole Source, price reasonableness is supported through historical price analysis, proposal backup, and comparison of the proposed pricing to historical or sequential pricing for the same or comparable work.
+Although the action is Sole Source, price reasonableness is supported through [insert the documented comparison methods and evidence].
 
-## DFARS 252.244-7001(c)(8)
+## DFARS 252.244-7001(c)(10)
 
 Use for subcontract price analysis.
 
 Language:
-DFARS 252.244-7001(c)(8) supports the requirement to perform price analysis to determine the reasonableness of subcontract prices.
+When the basic clause applies, DFARS 252.244-7001(c)(10) addresses timely and adequate cost or price analysis and technical evaluation of subcontractor and supplier proposals or quotes.
 
-## DFARS 252.244-7001(c)(10)
+## DFARS 252.244-7001(c)(11)
 
 Use if negotiations are discussed.
 
 Language:
-DFARS 252.244-7001(c)(10) supports documentation of negotiations in the subcontract file when negotiations occur.
+When the basic clause applies, DFARS 252.244-7001(c)(11) addresses documenting negotiations.
 
-## DFARS 252.244-7001(c)(11)
-
-Use for subcontractor evaluation/award documentation.
-
-Language:
-DFARS 252.244-7001(c)(11) supports documentation of subcontractor evaluation and award decisions.
+Check the applicable clause version and prime contract before citing a DFARS purchasing-system criterion. Do not cite the basic-clause paragraph numbers when Alternate I applies.
 
 ## FAR 16.306
 
@@ -639,7 +624,7 @@ Final statement:
 Based on the analysis above, the Supplier's proposed price of [insert total value] is determined to be fair and reasonable.
 
 For sole-source actions:
-Although this action is Sole Source, the proposed pricing was evaluated using [insert method(s)]. Based on the documented pricing history, proposal backup, and analysis of the proposed pricing, the Supplier's proposed price of [insert total value] is determined to be fair and reasonable.
+Although this action is Sole Source, the proposed pricing was evaluated using [insert method(s)]. Based on [documented support], the Supplier's proposed price of [insert total value] is determined to be fair and reasonable.
 
 If support is inadequate:
 Based on the information currently available, price reasonableness cannot yet be fully supported. The file should be supplemented with [specific evidence needed].

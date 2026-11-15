@@ -71,17 +71,19 @@ the buyer's supplied rules and evidence for competition, market pricing, and bes
 
 ### FAR-Compliant Price Analysis for Subcontracts (Lite)
 
-Drafts BID SUMMARY & PRICE ANALYSIS write-ups for subcontract awards, option
-periods, and modifications, including supported labor-rate, indirect-rate, fee,
-escalation, historical, and contract-type analyses.
+Drafts BID SUMMARY & PRICE ANALYSIS write-ups for government-prime subcontract
+awards, option periods, and modifications. Reconciles proposed totals and
+analyzes supported labor rates, indirect rates, fee, escalation, and historical
+comparisons without inventing undisclosed cost elements.
 
 - [Plugin instructions](plugins/far-compliant-price-analysis-for-subcontracts-lite/skills/far-compliant-price-analysis-for-subcontracts-lite/SKILL.md)
 
-### Indirect and Commercial Price Analysis for Services (Lite)
+### Commercial and Indirect Price Analysis (Lite)
 
-Drafts Commercial and Indirect price analyses for services, SaaS, software,
-consulting, equipment, and routine supplier buys. Applies documentation
-thresholds only when the buyer supplies the applicable rules.
+Drafts concise price analyses for a company's Commercial and Indirect purchases,
+including services, SaaS, software, consulting, equipment, and routine supplier
+buys. Uses the buyer's policy and price evidence; no federal acquisition
+requirements are assumed.
 
 - [Plugin instructions](plugins/indirect-and-commercial-price-analysis-for-services-lite/skills/indirect-and-commercial-price-analysis-for-services-lite/SKILL.md)
 

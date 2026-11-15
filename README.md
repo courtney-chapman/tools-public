@@ -21,6 +21,8 @@
 
 ### Get a plugin
 
+<img src="docs/readme/readme_get_plugin.png" alt="Get a Codex plugin: add the courtney-chapman/tools-public marketplace, install a plugin from the catalog in Codex, then describe the task and review the draft. ZIPs are also in Releases." width="100%">
+
 - **Codex desktop or CLI:** Add this repository as a marketplace with `codex plugin marketplace add courtney-chapman/tools-public`, then browse and install the plugin you want.
 - **ChatGPT web with ZIP upload access:** Download one plugin ZIP from [Releases](https://github.com/courtney-chapman/tools-public/releases), then use the plugin upload option in your account. Upload availability depends on your plan and permissions.
 

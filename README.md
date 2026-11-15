@@ -1,4 +1,4 @@
-<img src="docs/readme/readme_header.png" alt="Tools and Plugins: offline browser apps and Codex plugins for government property and procurement work." width="100%">
+<img src="docs/readme/readme_header.png" alt="Tools and Plugins: offline browser apps and AI plugins for government property and procurement work." width="100%">
 
 [My Portfolio](https://github.com/courtney-chapman/portfolio-public) shows the projects and demonstrations behind related tools. [Visual portfolio](https://courtneypetersonchapman.notion.site/) presents the same work in Notion.
 

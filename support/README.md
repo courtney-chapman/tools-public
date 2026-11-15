@@ -9,6 +9,7 @@ This directory contains repository-level maintenance guidance.
 - `apps/government-property-record-template-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/physical-inventory-count-sheet-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/property-custody-receipt-generator/` contains a standalone offline browser app, outside the plugin catalog.
+- `apps/government-property-disposition-preparation-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the repository marketplace catalog.
 - `docs/` contains README graphics and release images.
 - `support/` contains repository maintenance guidance.
@@ -50,6 +51,11 @@ Build the Government Property Custody Receipt Generator download with
 `python3 support/scripts/package_property_custody_receipt.py`. The deterministic,
 7-file ZIP is written to `.build/app-zips/property-custody-receipt-generator.zip`
 for attachment to a GitHub Release.
+
+Build the Government Property Disposition Preparation Checklist Generator download with
+`python3 support/scripts/package_disposition_preparation.py`. The deterministic,
+10-file ZIP is written to `.build/app-zips/government-property-disposition-preparation-generator.zip`
+for attachment to a GitHub Release. The release image is stored separately from the app ZIP.
 
 ## Release presentation
 

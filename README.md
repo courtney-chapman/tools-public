@@ -71,10 +71,9 @@ the buyer's supplied rules and evidence for competition, market pricing, and bes
 
 ### FAR-Compliant Price Analysis for Subcontracts (Lite)
 
-Drafts price analyses for new government-prime subcontract awards, option
-exercises, and modifications. Uses the proposals and other evidence available
-for the action; prior subcontract pricing is optional. Adapts the write-up
-to the file instead of forcing a fixed template.
+Drafts BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards,
+option exercises, and modifications. Analyzes proposed elements, reconciles
+pricing, and ends with an element findings table. Prior pricing is optional.
 
 - [Plugin instructions](plugins/far-compliant-price-analysis-for-subcontracts-lite/skills/far-compliant-price-analysis-for-subcontracts-lite/SKILL.md)
 

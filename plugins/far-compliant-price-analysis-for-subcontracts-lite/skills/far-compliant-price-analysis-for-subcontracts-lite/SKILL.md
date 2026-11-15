@@ -1,12 +1,13 @@
 ---
 name: far-compliant-price-analysis-for-subcontracts-lite
-description: Draft or review price analyses for a government prime contractor's new subcontract awards, option exercises, and modifications. Use the actual solicitation, proposal, contract type, company policy, and available price evidence; historical pricing is optional, not a prerequisite.
+description: Draft a BID SUMMARY & PRICE ANALYSIS for new government-prime or higher-tier subcontract awards, option periods, and modifications. Analyze proposed price elements, reconcile the math, and finish with an element findings table. Prior pricing is optional.
 ---
 
-# Subcontract Price Analysis
+# Subcontract Bid Summary & Price Analysis
 
-Help a government-prime subcontract buyer prepare a clear, supportable price
-analysis for a **new award, option exercise, or modification**. Draft from the
+Help a government-prime or higher-tier subcontract buyer prepare a clear,
+supportable **BID SUMMARY & PRICE ANALYSIS** for a **new award, option exercise,
+or modification**. Draft from the
 current transaction record. A new subcontract can be analyzed without an older
 subcontract file. Use prior pricing only when a valid comparison is available.
 
@@ -22,10 +23,20 @@ amount, pricing structure, periods, and award basis. Use the stated contract
 type and competition status. Do not assume the action is sole source, for
 services, or a continuation of prior work.
 
+Check the applicable prime or higher-tier contract, clause version, and supplied
+company rules before asserting a requirement. Determine whether certified cost
+or pricing data and a separate cost analysis are required; do not treat this
+price-analysis write-up as a substitute. If an applicable purchasing-system
+clause or policy calls for a technical evaluation, use the actual evaluation
+or identify it as needed. Do not invent a Program Manager's finding. When this
+analysis supports a higher-tier price proposal, make the results suitable for
+inclusion in that proposal.
+
 Ask for missing facts only when they prevent a useful analysis. If enough facts
 exist to draft part of the document, write that part and identify the specific
-gap. Do not request administrative fields, labor hours, a technical evaluation,
-or historical files by default.
+gap. Do not request administrative fields, labor hours, or historical files by
+default. Request a technical evaluation when an applicable clause or policy
+requires one or when a technical finding is needed to support the analysis.
 
 Choose the price support that actually exists:
 
@@ -41,7 +52,12 @@ Choose the price support that actually exists:
   independent Government cost estimate.
 - **Published or market pricing:** compare like-for-like rates or units and
   identify the source and date when supplied. Treat a survey, catalog, or
-  public price as comparison evidence, not as a supplier's submitted quote.
+  public price as comparison evidence, not as a supplier's submitted quote. A
+  catalog or schedule listing alone does not establish that a transaction
+  occurred at that price or that the proposal is reasonable.
+- **Parametric or unit comparison:** use supported hours, seats, deliverables,
+  or other comparable units to expose meaningful price differences; confirm
+  that the underlying scope is comparable.
 - **Proposal details:** reconcile the supplier's stated totals and, when
   disclosed, assess the relevant labor, indirect, fee, travel, material, and
   lower-tier amounts. A cost breakdown or arithmetic check alone does not
@@ -51,8 +67,8 @@ Choose the price support that actually exists:
 
 Use more than one method when the record supports it. Explain why each
 comparator is useful and what material differences limit the comparison. If
-there is only one proposal and no meaningful independent support, state the
-evidence needed to reach a conclusion.
+there is only one proposal and no meaningful independent support, identify
+the additional evidence or cost analysis needed to reach a conclusion.
 
 ## Check the numbers that matter
 
@@ -78,6 +94,11 @@ Show calculations that help the buyer understand the proposed amount:
 - Evaluate indirect rates and fee separately only when their values and bases
   are disclosed. A fully burdened rate can be compared as a total rate; it
   cannot reveal an undisclosed indirect rate or fee.
+- For materials, lower-tier subcontracts, travel, and other direct costs,
+  assess each proposed amount against the available quotes, estimates,
+  quantities, history, or other support. A lower-tier amount may need its own
+  supporting cost or price analysis. State travel reimbursement terms or a
+  technical review only when the record establishes them.
 
 Useful formulas, where inputs are available:
 
@@ -90,34 +111,80 @@ Useful formulas, where inputs are available:
 Round percentages to two decimals. Explain material differences and unresolved
 math before making a final finding.
 
+Apply the contract-type lens: for **CPFF**, reconcile estimated cost, fixed
+fee, fee base, and total; for **T&M/LH**, assess burdened rates, ceilings, and
+separately proposed materials or other costs; for **FPLOE**, verify hours ×
+rate against fixed period prices when those inputs exist; for **FFP**, assess
+total price, line items, quantities, deliverables, and periods. For options
+and modifications, explain material changes from the relevant baseline. For
+new awards, use current offers, estimates, market data, or other valid support
+even if no prior subcontract exists.
+
 ## Write the analysis
 
-Default heading: **SUBCONTRACT PRICE ANALYSIS**. If the user or company format
-calls for **BID SUMMARY & PRICE ANALYSIS**, use that heading instead.
+Use this default structure unless the user supplies a required company format.
+Omit element sections that do not apply and keep the numbering in sequence.
+Use tables for multiple prices, periods, rates, or a supplied rate build-up.
 
-Use a small number of sections that fit the record:
+**BID SUMMARY & PRICE ANALYSIS**
 
-1. **Action summary:** what is being bought, action type, proposed supplier,
-   contract type, amount, period, and selection basis.
-2. **Evidence and comparison:** the proposals or other price support used,
-   why the comparison is relevant, calculations, and material differences.
-   Use a table only when it makes multiple prices, periods, or rates easier to
-   review.
-3. **Price conclusion:** state whether the supported overall price is fair and
-   reasonable. If it is not yet supportable, give the exact missing evidence
-   or unresolved discrepancy. State findings on separate cost elements only
-   when those elements were actually evaluated.
+Supplier Name: [supplied name or concise placeholder]
+Total Value Analyzed: [proposed value]
+Type of Solicitation: [actual competition status]
+Type of Commodity: [actual goods/services/mixed description]
+
+1. **BACKGROUND:** action, requirement, supplier, contract type, proposed
+   value, periods, selection basis, and supported price-analysis methods.
+   Include a pricing summary table when line items or periods warrant it.
+2. **RELEVANT INFORMATION / FACT FINDING:** evidence sources and limits,
+   proposed elements, applicable requirements, and any actual technical
+   evaluation. Identify the source and type of data and rationale for a
+   noncompetitive price decision.
+3. **LABOR:** analyze labor categories, hours if supplied, rates, and period
+   comparisons. Show rate and escalation tables when rates vary by category
+   or period; normalize unequal periods within this discussion.
+4. **INDIRECT RATES:** analyze disclosed rates and allocation bases. If only
+   fully burdened rates exist, analyze those totals without claiming a
+   separate indirect-rate finding.
+5. **PROFIT / FEE:** calculate disclosed fee against its stated cost base
+   and assess with an applicable supported comparison.
+6. **ESCALATION RATES:** show period-to-period changes and comparison basis.
+7. **FACILITIES CAPITAL COST OF MONEY:** analyze when proposed.
+8. **OTHER DIRECT COSTS:** separately address proposed materials, lower-tier
+   subcontracts, travel, and other direct costs.
+9. **CONCLUSION:** give an overall fair-and-reasonable finding only when
+   supported, or identify the exact unresolved basis. End with the element
+   findings table below.
+10. **MISSING INFORMATION, IF ANY:** list only gaps material to the finding;
+    use “None identified based on the information provided” when none.
+
+For each proposed or separately disclosed element, state the amount, comparison
+basis, calculation, material variance, and finding in its applicable section.
+Where a supplier provides a rate build-up, show base rate, supplied load and
+fee, calculated burdened rate, proposed rate, and variance in a table. Do not
+turn arithmetic reconciliation alone into a fair-and-reasonable finding.
+
+The conclusion **must** contain this table. Include a row for each proposed
+element or element separately discussed. Mark one status per row, matching
+the narrative. Mark Fair and Reasonable or Excessive only if that element was
+actually analyzed. Mark Not Analyzed when a proposed element could not be
+evaluated separately and explain why. A reasonable fully burdened labor rate
+does not establish that an undisclosed indirect rate or fee is reasonable.
+
+| Price Proposal Element | Fair and Reasonable | Excessive | Not Analyzed |
+|---|:---:|:---:|:---:|
+| [Proposed element] | [X or blank] | [X or blank] | [X or blank] |
 
 Keep the prose direct. For example: “The proposed price is $X. Compared with
 [supported basis], it is $Y (Z%) [higher/lower]. [Relevant difference] explains
 [all/part] of the variance. Based on [evidence], the proposed price is [finding].”
 Adapt the wording to the facts; this is a pattern, not mandatory text.
 
-Do not add a fixed element-status matrix, “Not Analyzed” rows for elements that
-were not proposed, stock “the Procurement Professional reviewed and evaluated”
-phrases, or statements about a Program Manager's review, travel reimbursement,
-proposal backup, or negotiations unless the record supports them. Do not frame
-a new analysis as a reconstruction, audit response, or backfill unless asked.
+Do not add rows for elements that were not proposed, stock “the Procurement
+Professional reviewed and evaluated” phrases, or statements about a Program
+Manager's review, travel reimbursement, proposal backup, or negotiations
+unless the record supports them. Do not frame a new analysis as a
+reconstruction, audit response, or backfill unless asked.
 
 ## FAR and evidence boundaries
 

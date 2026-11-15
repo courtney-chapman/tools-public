@@ -48,6 +48,11 @@
       </section>
       <section id="step-4" class="panel step-panel" data-step="4" hidden><div class="section-title"><span>4</span><div><h2>Preview and print</h2><p>Review the receipt, then use your browser to print or save as PDF.</p></div></div>
         <div class="actions"><button type="button" id="print">Print or save as PDF</button><span class="helper">Signature and date lines are blank until completed outside this app.</span></div>
+        <label class="inspection-toggle"><input id="include-inspection" type="checkbox"> Include optional receiving inspection checklist</label>
+        <div id="inspection-editor" class="inspection-editor" hidden>
+          <p class="helper">Record only observations you actually made. Not Checked does not mean acceptable. This checklist does not constitute Government acceptance or replace required receiving procedures.</p>
+          <div id="inspection-inputs"></div>
+        </div>
         <article id="receipt" aria-label="Receipt preview">
           <div class="receipt-top"><p class="document-kicker">Government Property · Custody documentation</p><h2 id="r-title">Select a document type</h2><div class="receipt-meta"><p><strong>Reference</strong><br><span id="r-ref">—</span></p><p><strong>Transaction date</strong><br><span id="r-date">—</span></p><p id="r-location-wrap"><strong>Location</strong><br><span id="r-location">—</span></p></div></div>
           <p id="r-purpose-wrap" class="receipt-purpose"><strong>Purpose or reason:</strong> <span id="r-purpose"></span></p>
@@ -56,6 +61,14 @@
           <div class="acknowledgment"><h3>Acknowledgment</h3><p id="r-statement"></p><div class="signature-grid"><div><span>Issuing-party signature</span><i></i><span>Date</span><i></i></div><div><span>Receiving-party signature</span><i></i><span>Date</span><i></i></div></div></div>
           <p id="r-remarks-wrap" class="receipt-remarks"><strong>General remarks:</strong> <span id="r-remarks"></span></p>
           <p class="document-limit">This receipt documents an acknowledgment only. It does not authorize a transfer, change contractual accountability, establish Government approval, or relieve stewardship. Follow applicable contracts, procedures, and approval requirements.</p>
+        </article>
+        <article id="inspection-sheet" aria-label="Optional receiving inspection checklist" hidden>
+          <p class="document-kicker">Government Property · Optional preparation checklist</p>
+          <h2>Receiving inspection checklist</h2>
+          <div class="inspection-meta"><p><strong>Receipt reference</strong><br><span id="i-ref">—</span></p><p><strong>Receipt date</strong><br><span id="i-date">—</span></p><p><strong>Receiving party</strong><br><span id="i-receiver">—</span></p></div>
+          <p class="inspection-limit">User-recorded observations only. Not Checked does not confirm acceptability. Follow applicable receiving, discrepancy, inspection, and acceptance procedures separately.</p>
+          <table class="inspection-table"><thead><tr><th>Observation</th><th>Status</th><th>Notes or reference</th></tr></thead><tbody id="inspection-preview"></tbody></table>
+          <p class="document-limit">This optional checklist does not constitute Government acceptance, establish contractual accountability, classify a discrepancy as loss, or decide whether formal reporting is required.</p>
         </article>
       </section>
     </form>

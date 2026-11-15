@@ -5,5 +5,6 @@
 - The app does not create or update an authoritative property record, an approved receipt-and-issue system, custody history, shipment document, or required Government report.
 - Condition choices are informal descriptions. A Damaged selection does not determine loss, reportability, or a Government supply condition code.
 - The app cannot verify identities, ownership, quantities, item descriptions, authorization, signatures, or contract applicability.
+- The optional receiving inspection checklist records user-selected observations only. It is not a Government-mandated form, Government acceptance, a required receiving inspection procedure, a loss determination, or a decision about formal discrepancy reporting.
 - Data stays in browser memory only; closing or reloading loses it. Printing or saving a PDF is the user's choice, and the resulting file is outside the app.
 - Sources and form wording do not update automatically. No ongoing support or regulatory currency is promised.

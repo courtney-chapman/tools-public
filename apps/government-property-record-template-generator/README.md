@@ -6,6 +6,8 @@ A standalone, offline browser demonstration that generates two related CSV templ
 
 Open `index.html` in a current browser. No installation, server, account, API key, or internet connection is needed. Use the four bookmarks across the top: **1 Choose**, **2 Customize**, **3 Download**, and **4 Check CSV**. Only the selected step is shown. Each step has its own URL bookmark (for example, `index.html#step-3`). Open the field groups and field dictionary only when needed. Use **Print field dictionary** for the currently selected fields. Opening public source links is optional and requires internet access.
 
+In step 3, expand **Which property identifier is which?** for a plain-language reference to local asset IDs, manufacturer serial and part numbers, NSNs, UIIs, and manufacturer CAGE codes. It explains the corresponding template columns and conditional use without changing either CSV template.
+
 The two example CSVs share `Record ID` (`GP-0001`). A snapshot row describes the current item and balance; transaction rows illustrate a receipt and issue with posting references. The app does not update balances, reconcile files, store entered data, or manage source documents. Blank CSVs have only headers. Example values and identifiers are synthetic.
 
 Changing the template type or regulatory source set restores that choice's default columns; **Restore defaults** does the same without changing the choices. Audit-guidance fields start unchecked. Removing a regulatory or conditional column displays a warning. An empty file configuration disables its downloads.

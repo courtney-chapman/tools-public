@@ -12,6 +12,14 @@ Built by Courtney · [More tools on GitHub](https://github.com/courtney-chapman)
 
 The source files can also be opened directly from this folder. Keep `index.html`, `styles.css`, and `app.js` together. The app has no external runtime dependencies and does not send entered data to a server. Downloads and PDFs are saved only when you choose to create them. The app does not autosave; save a draft before closing the page if you need to resume.
 
+## Before you prepare a shipment
+
+- Have the origin, destination, delivery contact, governing contract, and applicable shipment reference ready.
+- Identify each property item, its quantity, and unit of measure.
+- Review supporting authorization or instructions, plus packaging, transportation, acknowledgments, and other documents where applicable.
+
+Your contract and procedures determine the actual documentation and approvals. Shipment, a person's custody acknowledgment, and transfer of contractual Government Property accountability are different actions. A DD1149-style shipping document alone does not authorize a contract-to-contract accountability transfer. See [DFARS PGI 245.103-71](https://www.acquisition.gov/dfarspgi/pgi-245.103-71-transferring-government-property-accountability.) and, when applicable, [DFARS 252.245-7005](https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property.).
+
 ## Import and drafts
 
 The CSV template uses these columns, in this order:

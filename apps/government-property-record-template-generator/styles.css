@@ -429,6 +429,29 @@ tbody tr:last-child td {
 .guidance li {
   margin-bottom:9px
 }
+.identifier-reference {
+  margin:0 0 16px
+}
+.identifier-reference>.helper {
+  padding:0 16px
+}
+.identifier-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  list-style:none;
+  padding:0 16px 16px;
+  margin:0
+}
+.identifier-list li {
+  border:1px solid #d9e2e3;
+  border-radius:8px;
+  padding:12px
+}
+.identifier-list p {
+  font-size:.86rem;
+  margin:5px 0 0
+}
 footer {
   background:#173c49;
   color:#e6f0f0;
@@ -464,6 +487,9 @@ footer .revision {
   .controls,.field-groups {
     grid-template-columns:1fr
   }
+  .identifier-list {
+    grid-template-columns:1fr
+  }
   .wrap {
     padding-left:16px;
     padding-right:16px
@@ -476,6 +502,9 @@ footer .revision {
   }
 }
 @media print {
+  .identifier-reference {
+    display:none!important
+  }
   body {
     background:white;
     color:#000

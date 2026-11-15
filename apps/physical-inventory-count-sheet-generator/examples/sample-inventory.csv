@@ -1,0 +1,101 @@
+Record ID,Asset Identifier,Description,Part Number,Serial Number,Location,Quantity on Hand,Unit of Measure,Property Category
+INV-0001,SAMPLE-0001,Training instrument 001,TI-02,DEMO-SN-0001,Sample Room A,1,EA,Equipment
+INV-0002,SAMPLE-0002,Training instrument 002,TI-03,DEMO-SN-0002,Sample Room A,1,EA,Equipment
+INV-0003,SAMPLE-0003,Training instrument 003,TI-04,DEMO-SN-0003,Sample Room A,1,EA,Equipment
+INV-0004,SAMPLE-0004,Training instrument 004,TI-05,DEMO-SN-0004,Sample Room A,1,EA,Equipment
+INV-0005,SAMPLE-0005,Training instrument 005,TI-06,DEMO-SN-0005,Sample Room A,1,EA,Equipment
+INV-0006,SAMPLE-0006,Training instrument 006,TI-07,DEMO-SN-0006,Sample Room A,1,EA,Equipment
+INV-0007,SAMPLE-0007,Training instrument 007,TI-08,DEMO-SN-0007,Sample Room A,1,EA,Equipment
+INV-0008,SAMPLE-0008,Training instrument 008,TI-09,DEMO-SN-0008,Sample Room A,1,EA,Equipment
+INV-0009,SAMPLE-0009,Training instrument 009,TI-10,DEMO-SN-0009,Sample Room A,1,EA,Equipment
+INV-0010,SAMPLE-0010,Training instrument 010,TI-11,DEMO-SN-0010,Sample Room A,1,EA,Equipment
+INV-0011,SAMPLE-0011,Training instrument 011,TI-12,DEMO-SN-0011,Sample Room A,1,EA,Equipment
+INV-0012,SAMPLE-0012,Training instrument 012,TI-01,DEMO-SN-0012,Sample Room A,1,EA,Equipment
+INV-0013,SAMPLE-0013,Training instrument 013,TI-02,DEMO-SN-0013,Sample Room A,1,EA,Equipment
+INV-0014,SAMPLE-0014,Training instrument 014,TI-03,DEMO-SN-0014,Sample Room A,1,EA,Equipment
+INV-0015,SAMPLE-0015,Training instrument 015,TI-04,DEMO-SN-0015,Sample Room A,1,EA,Equipment
+INV-0016,SAMPLE-0016,Training instrument 016,TI-05,DEMO-SN-0016,Sample Room A,1,EA,Equipment
+INV-0017,SAMPLE-0017,Training instrument 017,TI-06,DEMO-SN-0017,Sample Room A,1,EA,Equipment
+INV-0018,SAMPLE-0018,Training instrument 018,TI-07,DEMO-SN-0018,Sample Room A,1,EA,Equipment
+INV-0019,SAMPLE-0019,Training instrument 019,TI-08,DEMO-SN-0019,Sample Room A,1,EA,Equipment
+INV-0020,SAMPLE-0020,Training instrument 020,TI-09,DEMO-SN-0020,Sample Room A,1,EA,Equipment
+INV-0021,SAMPLE-0021,Training instrument 021,TI-10,DEMO-SN-0021,Sample Room A,1,EA,Equipment
+INV-0022,SAMPLE-0022,Training instrument 022,TI-11,DEMO-SN-0022,Sample Room A,1,EA,Equipment
+INV-0023,SAMPLE-0023,Training instrument 023,TI-12,DEMO-SN-0023,Sample Room A,1,EA,Equipment
+INV-0024,SAMPLE-0024,Training instrument 024,TI-01,DEMO-SN-0024,Sample Room A,1,EA,Equipment
+INV-0025,SAMPLE-0025,Training instrument 025,TI-02,DEMO-SN-0025,Sample Room A,1,EA,Equipment
+INV-0026,SAMPLE-0026,Training instrument 026,TI-03,DEMO-SN-0026,Sample Room B,1,EA,Equipment
+INV-0027,SAMPLE-0027,Training instrument 027,TI-04,DEMO-SN-0027,Sample Room B,1,EA,Equipment
+INV-0028,SAMPLE-0028,Training instrument 028,TI-05,DEMO-SN-0028,Sample Room B,1,EA,Equipment
+INV-0029,SAMPLE-0029,Training instrument 029,TI-06,DEMO-SN-0029,Sample Room B,1,EA,Equipment
+INV-0030,SAMPLE-0030,Training instrument 030,TI-07,DEMO-SN-0030,Sample Room B,1,EA,Equipment
+INV-0031,SAMPLE-0031,Training instrument 031,TI-08,DEMO-SN-0031,Sample Room B,1,EA,Equipment
+INV-0032,SAMPLE-0032,Training instrument 032,TI-09,DEMO-SN-0032,Sample Room B,1,EA,Equipment
+INV-0033,SAMPLE-0033,Training instrument 033,TI-10,DEMO-SN-0033,Sample Room B,1,EA,Equipment
+INV-0034,SAMPLE-0034,Training instrument 034,TI-11,DEMO-SN-0034,Sample Room B,1,EA,Equipment
+INV-0035,SAMPLE-0035,Training instrument 035,TI-12,DEMO-SN-0035,Sample Room B,1,EA,Equipment
+INV-0036,SAMPLE-0036,Training instrument 036,TI-01,DEMO-SN-0036,Sample Room B,1,EA,Equipment
+INV-0037,SAMPLE-0037,Training instrument 037,TI-02,DEMO-SN-0037,Sample Room B,1,EA,Equipment
+INV-0038,SAMPLE-0038,Training instrument 038,TI-03,DEMO-SN-0038,Sample Room B,1,EA,Equipment
+INV-0039,SAMPLE-0039,Training instrument 039,TI-04,DEMO-SN-0039,Sample Room B,1,EA,Equipment
+INV-0040,SAMPLE-0040,Training instrument 040,TI-05,DEMO-SN-0040,Sample Room B,1,EA,Equipment
+INV-0041,SAMPLE-0041,Training instrument 041,TI-06,DEMO-SN-0041,Sample Room B,1,EA,Equipment
+INV-0042,SAMPLE-0042,Training instrument 042,TI-07,DEMO-SN-0042,Sample Room B,1,EA,Equipment
+INV-0043,SAMPLE-0043,Training instrument 043,TI-08,DEMO-SN-0043,Sample Room B,1,EA,Equipment
+INV-0044,SAMPLE-0044,Training instrument 044,TI-09,DEMO-SN-0044,Sample Room B,1,EA,Equipment
+INV-0045,SAMPLE-0045,Training instrument 045,TI-10,DEMO-SN-0045,Sample Room B,1,EA,Equipment
+INV-0046,SAMPLE-0046,Training instrument 046,TI-11,DEMO-SN-0046,Sample Room B,1,EA,Equipment
+INV-0047,SAMPLE-0047,Training instrument 047,TI-12,DEMO-SN-0047,Sample Room B,1,EA,Equipment
+INV-0048,SAMPLE-0048,Training instrument 048,TI-01,DEMO-SN-0048,Sample Room B,1,EA,Equipment
+INV-0049,SAMPLE-0049,Training instrument 049,TI-02,DEMO-SN-0049,Sample Room B,1,EA,Equipment
+INV-0050,SAMPLE-0050,Training instrument 050,TI-03,DEMO-SN-0050,Sample Room B,1,EA,Equipment
+INV-0051,SAMPLE-0051,Training instrument 051,TI-04,DEMO-SN-0051,Sample Stockroom,1,EA,Equipment
+INV-0052,SAMPLE-0052,Training instrument 052,TI-05,DEMO-SN-0052,Sample Stockroom,1,EA,Equipment
+INV-0053,SAMPLE-0053,Training instrument 053,TI-06,DEMO-SN-0053,Sample Stockroom,1,EA,Equipment
+INV-0054,SAMPLE-0054,Training instrument 054,TI-07,DEMO-SN-0054,Sample Stockroom,1,EA,Equipment
+INV-0055,SAMPLE-0055,Training instrument 055,TI-08,DEMO-SN-0055,Sample Stockroom,1,EA,Equipment
+INV-0056,SAMPLE-0056,Training instrument 056,TI-09,DEMO-SN-0056,Sample Stockroom,1,EA,Equipment
+INV-0057,SAMPLE-0057,Training instrument 057,TI-10,DEMO-SN-0057,Sample Stockroom,1,EA,Equipment
+INV-0058,SAMPLE-0058,Training instrument 058,TI-11,DEMO-SN-0058,Sample Stockroom,1,EA,Equipment
+INV-0059,SAMPLE-0059,Training instrument 059,TI-12,DEMO-SN-0059,Sample Stockroom,1,EA,Equipment
+INV-0060,SAMPLE-0060,Training instrument 060,TI-01,DEMO-SN-0060,Sample Stockroom,1,EA,Equipment
+INV-0061,,Synthetic material lot 001,MAT-02,,Sample Stockroom,2,EA,Material
+INV-0062,,Synthetic material lot 002,MAT-03,,Sample Stockroom,2.50,KG,Material
+INV-0063,,Synthetic material lot 003,MAT-04,,Sample Stockroom,6,EA,Material
+INV-0064,,Synthetic material lot 004,MAT-05,,Sample Stockroom,5.00,KG,Material
+INV-0065,,Synthetic material lot 005,MAT-06,,Sample Stockroom,10,EA,Material
+INV-0066,,Synthetic material lot 006,MAT-07,,Sample Stockroom,7.50,KG,Material
+INV-0067,,Synthetic material lot 007,MAT-08,,Sample Stockroom,14,EA,Material
+INV-0068,,Synthetic material lot 008,MAT-01,,Sample Stockroom,10.00,KG,Material
+INV-0069,,Synthetic material lot 009,MAT-02,,Sample Stockroom,18,EA,Material
+INV-0070,,Synthetic material lot 010,MAT-03,,Sample Stockroom,12.50,KG,Material
+INV-0071,,Synthetic material lot 011,MAT-04,,Sample Stockroom,22,EA,Material
+INV-0072,,Synthetic material lot 012,MAT-05,,Sample Stockroom,15.00,KG,Material
+INV-0073,,Synthetic material lot 013,MAT-06,,Sample Stockroom,26,EA,Material
+INV-0074,,Synthetic material lot 014,MAT-07,,Sample Stockroom,17.50,KG,Material
+INV-0075,,Synthetic material lot 015,MAT-08,,Sample Stockroom,30,EA,Material
+INV-0076,,Synthetic material lot 016,MAT-01,,Sample Annex,20.00,KG,Material
+INV-0077,,Synthetic material lot 017,MAT-02,,Sample Annex,34,EA,Material
+INV-0078,,Synthetic material lot 018,MAT-03,,Sample Annex,22.50,KG,Material
+INV-0079,,Synthetic material lot 019,MAT-04,,Sample Annex,38,EA,Material
+INV-0080,,Synthetic material lot 020,MAT-05,,Sample Annex,25.00,KG,Material
+INV-0081,,Synthetic material lot 021,MAT-06,,Sample Annex,42,EA,Material
+INV-0082,,Synthetic material lot 022,MAT-07,,Sample Annex,27.50,KG,Material
+INV-0083,,Synthetic material lot 023,MAT-08,,Sample Annex,46,EA,Material
+INV-0084,,Synthetic material lot 024,MAT-01,,Sample Annex,30.00,KG,Material
+INV-0085,,Synthetic material lot 025,MAT-02,,Sample Annex,50,EA,Material
+INV-0086,,Synthetic material lot 026,MAT-03,,Sample Annex,32.50,KG,Material
+INV-0087,,Synthetic material lot 027,MAT-04,,Sample Annex,54,EA,Material
+INV-0088,,Synthetic material lot 028,MAT-05,,Sample Annex,35.00,KG,Material
+INV-0089,,Synthetic material lot 029,MAT-06,,Sample Annex,58,EA,Material
+INV-0090,,Synthetic material lot 030,MAT-07,,Sample Annex,37.50,KG,Material
+INV-0091,,Synthetic material lot 031,MAT-08,,Sample Annex,62,EA,Material
+INV-0092,,Synthetic material lot 032,MAT-01,,Sample Annex,40.00,KG,Material
+INV-0093,,Synthetic material lot 033,MAT-02,,Sample Annex,66,EA,Material
+INV-0094,,Synthetic material lot 034,MAT-03,,Sample Annex,42.50,KG,Material
+INV-0095,,Synthetic material lot 035,MAT-04,,Sample Annex,70,EA,Material
+INV-0096,,Synthetic material lot 036,MAT-05,,Sample Annex,45.00,KG,Material
+INV-0097,,Synthetic material lot 037,MAT-06,,Sample Annex,74,EA,Material
+INV-0098,,Synthetic material lot 038,MAT-07,,Sample Annex,47.50,KG,Material
+INV-0099,,Synthetic material lot 039,MAT-08,,Sample Annex,78,EA,Material
+INV-0100,,Synthetic material lot 040,MAT-01,,Sample Annex,50.00,KG,Material

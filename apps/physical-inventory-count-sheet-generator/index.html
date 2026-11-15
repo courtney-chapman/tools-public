@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physical Inventory Count Sheet Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="eyebrow">Standalone offline demonstration</p>
+      <h1>Physical Inventory Count Sheet Generator</h1>
+      <p>Turn a working property list into printable count sheets, record observations, and review discrepancies.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="notice" role="note">
+      <strong>Check your contract and procedures.</strong> This tool does not decide inventory coverage, compliance, loss, or required reporting. Counts and discrepancies need appropriate review. Work stays in this browser session and is lost if you reload or close the page.
+    </div>
+    <nav class="page-nav" aria-label="Tool steps">
+      <a href="#step-1" data-step="1"><span>1</span><strong>Set up</strong><small>Inventory details</small></a>
+      <a href="#step-2" data-step="2"><span>2</span><strong>Add records</strong><small>CSV or manual</small></a>
+      <a href="#step-3" data-step="3"><span>3</span><strong>Count sheets</strong><small>Choose and print</small></a>
+      <a href="#step-4" data-step="4"><span>4</span><strong>Results</strong><small>Observe and export</small></a>
+    </nav>
+
+    <section class="step-panel card" id="step-1">
+      <div class="section-heading"><span class="number">1</span><div><h2>Set up the inventory</h2><p>Use a fictional reference for a demonstration. No contract number is required.</p></div></div>
+      <div class="form-grid">
+        <label>Inventory title or reference<input id="inventory-title" type="text" maxlength="120" placeholder="Example: East Room Count"></label>
+        <label>Inventory date<input id="inventory-date" type="date"></label>
+        <label>Organization or site<input id="inventory-site" type="text" maxlength="120" placeholder="Example: Sample Site"></label>
+        <label>Area<input id="inventory-area" type="text" maxlength="120" placeholder="Example: East Room"></label>
+        <label>Counter name or identifier<input id="inventory-counter" type="text" maxlength="120" placeholder="Example: Counter A"></label>
+        <label>Optional notes<textarea id="inventory-notes" rows="2" maxlength="1000"></textarea></label>
+      </div>
+      <p class="helper">The inventory date and counter can also be written on the printed sheet for each item.</p>
+      <a class="next-link" href="#step-2">Next: add records →</a>
+    </section>
+
+    <section class="step-panel card" id="step-2" hidden>
+      <div class="section-heading"><span class="number">2</span><div><h2>Add property records</h2><p>Import a CSV with column mapping or enter records manually. Your source file is never changed.</p></div></div>
+      <div class="split">
+        <div class="subcard">
+          <h3>Import CSV</h3>
+          <p><a href="examples/blank-import-template.csv" download>Download blank import template</a> · <a href="examples/sample-inventory.csv" download>Download 100-row synthetic example</a></p>
+          <label>Choose a CSV file<input id="import-file" type="file" accept=".csv,text/csv"></label>
+          <p class="helper">Up to 2 MB and 10,000 rows. Invalid rows are skipped with reasons; review the preview before accepting a partial import.</p>
+          <div id="mapping-area" hidden>
+            <h4>Map columns</h4>
+            <div id="mapping-fields" class="mapping-grid"></div>
+            <h4>Preview</h4>
+            <div class="table-scroll"><table id="import-preview"></table></div>
+            <button id="accept-import" type="button">Use valid rows</button>
+          </div>
+          <div id="import-feedback" class="feedback" role="status" aria-live="polite"></div>
+        </div>
+        <div class="subcard">
+          <h3>Add one record</h3>
+          <form id="manual-form">
+            <div class="form-grid compact">
+              <label>Record ID *<input name="recordId" required maxlength="100"></label>
+              <label>Asset identifier<input name="assetId" maxlength="100"></label>
+              <label>Description *<input name="description" required maxlength="300"></label>
+              <label>Part number<input name="partNumber" maxlength="100"></label>
+              <label>Serial number<input name="serialNumber" maxlength="100"></label>
+              <label>Location<input name="location" maxlength="150"></label>
+              <label>Quantity on hand *<input name="recordedQty" required inputmode="decimal" placeholder="0 or 2.5"></label>
+              <label>Unit of measure *<input name="uom" required maxlength="30" placeholder="EA"></label>
+              <label>Property category<input name="category" maxlength="80"></label>
+            </div>
+            <p class="helper">A unique Record ID identifies the working row. An asset identifier can be blank for quantity-managed material. Enter fractions only when appropriate for the unit of measure.</p>
+            <button type="submit">Add record</button>
+          </form>
+          <div id="manual-feedback" class="feedback" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="subcard">
+        <h3>Working records <span id="record-count">0</span></h3>
+        <p id="import-omissions" class="warning" hidden></p>
+        <div id="records-list" class="records-list"></div>
+      </div>
+      <a class="next-link" href="#step-3">Next: choose count sheets →</a>
+    </section>
+
+    <section class="step-panel card" id="step-3" hidden>
+      <div class="section-heading"><span class="number">3</span><div><h2>Choose and print count sheets</h2><p>Selection is a working scope. It does not establish an approved inventory or sampling method.</p></div></div>
+      <div class="toolbar">
+        <label>Sort records<select id="sort-records"><option value="location">Location</option><option value="assetId">Asset identifier</option><option value="description">Description</option></select></label>
+        <label>Filter location<select id="filter-location"><option value="">All locations</option></select></label>
+        <label>Find record<input id="find-record" type="search" placeholder="ID, description, or part"></label>
+      </div>
+      <div class="actions">
+        <button id="select-all" type="button" class="secondary">Select all shown</button>
+        <button id="select-none" type="button" class="secondary">Clear shown</button>
+        <span id="selection-count" class="count-pill">0 selected</span>
+      </div>
+      <div id="selection-list" class="selection-list"></div>
+      <p id="selection-warning" class="warning" hidden></p>
+      <div class="actions">
+        <button id="print-standard" type="button">Print standard count sheets</button>
+        <button id="print-blind" type="button" class="secondary">Print blind count sheets</button>
+      </div>
+      <p class="helper">Blind sheets omit recorded quantities and variances from the generated print document. Print or save as PDF using your browser.</p>
+      <a class="next-link" href="#step-4">Next: enter results →</a>
+    </section>
+
+    <section class="step-panel card" id="step-4" hidden>
+      <div class="section-heading"><span class="number">4</span><div><h2>Enter observations and review</h2><p>A blank observed quantity means not yet counted. Enter 0 for a counted item with none observed.</p></div></div>
+      <div id="summary-cards" class="stat-grid"></div>
+      <p id="results-warning" class="warning" hidden></p>
+      <label class="search-label">Find selected record<input id="find-result" type="search" placeholder="ID, description, or part"></label>
+      <div id="results-list" class="results-list"></div>
+      <div class="actions page-controls"><button id="results-prev" type="button" class="secondary">Previous</button><span id="results-page-label"></span><button id="results-next" type="button" class="secondary">Next</button></div>
+      <details class="subcard">
+        <summary>Add unexpected property</summary>
+        <p class="helper">This observation does not establish ownership or create an accountable property record. Follow applicable record-establishment procedures for an item not in the records.</p>
+        <form id="unexpected-form">
+          <div class="form-grid compact">
+            <label>Asset identifier<input name="assetId" maxlength="100"></label>
+            <label>Description *<input name="description" required maxlength="300"></label>
+            <label>Serial number<input name="serialNumber" maxlength="100"></label>
+            <label>Observed location<input name="location" maxlength="150"></label>
+            <label>Observed quantity *<input name="observedQty" required inputmode="decimal"></label>
+            <label>Unit of measure *<input name="uom" required maxlength="30"></label>
+            <label>Condition<input name="condition" maxlength="150"></label>
+            <label>Notes<textarea name="notes" rows="2" maxlength="1000"></textarea></label>
+          </div>
+          <button type="submit">Add unexpected property</button>
+        </form>
+        <div id="unexpected-feedback" class="feedback" role="status" aria-live="polite"></div>
+        <div id="unexpected-list"></div>
+      </details>
+      <div class="actions export-actions">
+        <button id="download-results" type="button">Download inventory results CSV</button>
+        <button id="download-issues" type="button" class="secondary">Download discrepancies CSV</button>
+        <button id="print-summary" type="button" class="secondary">Print working summary</button>
+      </div>
+      <p class="helper">Investigate shortages promptly and follow applicable loss and inventory-results reporting procedures. A count difference alone is not a final loss determination. Unexpected items need review under record-establishment procedures. This tool does not update records or submit reports.</p>
+    </section>
+    <div class="reset-row"><button id="reset-all" type="button" class="secondary">Reset all session data</button></div>
+  </main>
+  <footer><div class="wrap footer-row"><p>Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p>Revision 1 · <a href="docs/sources.md">Public sources</a></p></div></footer>
+</body>
+</html>

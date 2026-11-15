@@ -14,9 +14,17 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
+      - name: Check commit attribution
+        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+        env:
+          ATTRIBUTION_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          ATTRIBUTION_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python3 support/scripts/check_commit_attribution.py
       - name: Validate plugin catalog
         run: python3 support/scripts/validate_repository.py
       - name: Validate plugin ZIPs

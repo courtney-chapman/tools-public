@@ -12,7 +12,7 @@
 
 These offline browser apps are separate from the Codex plugins.
 
-| Icon | App, description, and links |
+|  |  |
 | --- | --- |
 | <img src="docs/readme/icons/dd1149-generator.png" width="56" alt=""> | **DD Form 1149 Generator**<br>Create DD Form 1149-style shipping documents and continuation sheets offline.<br>[Download](https://github.com/courtney-chapman/tools-public/releases/tag/dd1149-generator-v1.0.1) · [Guide](apps/dd1149-generator/README.md) |
 | <img src="docs/readme/icons/government-property-record-template-generator.png" width="56" alt=""> | **Government Property Record Template Generator**<br>Create property snapshot and transaction-history CSV templates and review files offline.<br>[Download](https://github.com/courtney-chapman/tools-public/releases/tag/government-property-record-template-generator-v1.0.0) · [Guide](apps/government-property-record-template-generator/README.md) · [Sources](apps/government-property-record-template-generator/docs/sources.md) |
@@ -30,7 +30,7 @@ Each ZIP contains one plugin and the repository license. The plugin folders belo
 
 ### Procurement
 
-| Icon | Plugin, description, and links |
+|  |  |
 | --- | --- |
 | <img src="docs/readme/icons/procurement-market-research.png" width="56" alt=""> | **Procurement Market Research**<br>Find suppliers, public pricing, and evidence for federal prime-contractor market research.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/procurement-market-research) |
 | <img src="docs/readme/icons/far-compliant-commercial-item-determination.png" width="56" alt=""> | **FAR-Compliant Commercial Item Determination**<br>Assess commercial product, service, and COTS status under FAR 2.101.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-commercial-item-determination) |
@@ -42,7 +42,7 @@ Each ZIP contains one plugin and the repository license. The plugin folders belo
 
 ### Government property
 
-| Icon | Plugin, description, and links |
+|  |  |
 | --- | --- |
 | <img src="docs/readme/icons/government-property-ltdd-relief-letter-generator.png" width="56" alt=""> | **Government Property LTDD Relief Letter Generator**<br>Draft and review LTDD relief packages, separating verified facts from assumptions and evidence gaps.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.14.1) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-ltdd-relief-letter-generator) |
 

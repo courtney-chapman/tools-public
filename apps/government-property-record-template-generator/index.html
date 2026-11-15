@@ -88,6 +88,17 @@
     <section id="dictionary-section" class="card step-panel" data-step="3" aria-labelledby="dictionary-title" hidden>
       <h2 id="dictionary-title">Field dictionary</h2>
       <p>The <strong>property snapshot</strong> describes the current item and balance. The <strong>transaction history</strong> demonstrates individual events and posting references. The shared <strong>Record ID</strong> connects the examples. These CSVs are not a transaction system and do not replace source documents, procedures, or complete contract-specific records.</p>
+      <details class="extra-details identifier-reference"><summary>Which property identifier is which?</summary>
+        <p class="helper">Quick reference only. The contract and applicable clauses determine which identifiers are needed. This does not add columns or determine IUID requirements.</p>
+        <ul class="identifier-list">
+          <li><strong>Internal asset identifier</strong><p>An organization-assigned tracking reference, distinct from a manufacturer's serial number or a DoD UII. There is no separate Asset Identifier column here. The optional <em>Record ID</em> links this tool's two example files; it does not establish that a local ID satisfies an individual-item tracking requirement. <a href="https://www.acquisition.gov/far/52.245-1">FAR 52.245-1(f)(1)(iii)(A)(4)</a>.</p></li>
+          <li><strong>Manufacturer serial number</strong><p>Distinguishes a unit within the manufacturer's numbering, but is not automatically a UII. Use the snapshot's <em>Serial Number</em> column when the DFARS source set is selected and a serially managed item has no UII; check the contract for other identification needs. <a href="https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property.">DFARS 252.245-7005(c)(5)</a>.</p></li>
+          <li><strong>Manufacturer part number</strong><p>Identifies an item design or type; multiple units can share one part number. The snapshot has a FAR <em>Part Number</em> column and, in the DFARS source set, a <em>Manufacturer Part Number</em> column. When the applicable DFARS clause allows it because no NSN is available, pair the manufacturer's part number with its CAGE code. <a href="https://www.acquisition.gov/far/52.245-1">FAR 52.245-1(f)(1)(iii)(A)(1)</a>; <a href="https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property.">DFARS 252.245-7005(c)(1)</a>.</p></li>
+          <li><strong>National Stock Number (NSN)</strong><p>Identifies an item of supply in the Federal catalog, not an individual physical unit. The snapshot's <em>National Stock Number</em> column is conditional: FAR calls for it when needed for identification or disposition; the applicable DFARS clause specifies it or an allowed alternative. <a href="https://www.acquisition.gov/far/52.245-1">FAR 52.245-1(f)(1)(iii)(A)(1)</a>; <a href="https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property.">DFARS 252.245-7005(a), (c)(1)</a>.</p></li>
+          <li><strong>Unique Item Identifier (UII)</strong><p>Distinguishes an individual item globally; a serial number or local asset ID is not automatically its UII. The snapshot's <em>Unique Item Identifier or Equivalent</em> column applies when available and necessary for individual-item tracking. Separate DoD marking or registration duties depend on the applicable contract. <a href="https://www.acquisition.gov/far/52.245-1">FAR 52.245-1(f)(1)(iii)(A)(4)</a>; <a href="https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property.">DFARS 252.245-7005(a), (d)</a>.</p></li>
+          <li><strong>Manufacturer CAGE code</strong><p>Identifies the manufacturer entity, not the item. The snapshot's <em>Manufacturer CAGE Code</em> appears in the DFARS source set as part of the conditional manufacturer CAGE plus part-number alternative to an NSN. It is distinct from the <em>Accountable Contract CAGE Code</em>. <a href="https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property.">DFARS 252.245-7005(a), (c)(1)–(2)</a>.</p></li>
+        </ul>
+      </details>
       <button id="print-dictionary" type="button" class="secondary">Print field dictionary</button>
       <details id="dictionary-details" class="extra-details"><summary>View selected field dictionary</summary><div id="dictionary"></div></details>
       <a class="next-link" href="#step-4">Next: Check your CSV →</a>
@@ -105,6 +116,6 @@
       </details>
     </section>
   </main>
-  <footer><div class="wrap footer-row"><p class="credit">Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p class="revision">Revision 1</p></div></footer>
+  <footer><div class="wrap footer-row"><p class="credit">Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p class="revision">Revision 2</p></div></footer>
 </body>
 </html>

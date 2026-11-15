@@ -6,6 +6,8 @@ A standalone, offline browser demonstration that generates two related CSV templ
 
 Open `index.html` in a current browser. No installation, server, account, API key, or internet connection is needed. Use the four bookmarks across the top: **1 Choose**, **2 Customize**, **3 Download**, and **4 Check CSV**. Only the selected step is shown. Each step has its own URL bookmark (for example, `index.html#step-3`). Open the field groups and field dictionary only when needed. Use **Print field dictionary** for the currently selected fields. Opening public source links is optional and requires internet access.
 
+In step 3, expand **Which property identifier is which?** for a plain-language reference to local asset IDs, manufacturer serial and part numbers, NSNs, UIIs, and manufacturer CAGE codes. It explains the corresponding template columns and conditional use without changing either CSV template.
+
 The two example CSVs share `Record ID` (`GP-0001`). A snapshot row describes the current item and balance; transaction rows illustrate a receipt and issue with posting references. The app does not update balances, reconcile files, store entered data, or manage source documents. Blank CSVs have only headers. Example values and identifiers are synthetic.
 
 Changing the template type or regulatory source set restores that choice's default columns; **Restore defaults** does the same without changing the choices. Audit-guidance fields start unchecked. Removing a regulatory or conditional column displays a warning. An empty file configuration disables its downloads.
@@ -18,7 +20,7 @@ The check accepts up to 2 MB and 10,000 data rows per file. It displays up to 80
 
 ## Source scope
 
-The tool shows **Revision 1**. Its public references, versions, and verification date are documented in [docs/sources.md](docs/sources.md), with limitations in [docs/limitations.md](docs/limitations.md). These documents are included in the offline package. The tool does not check for later changes. Verify contract clauses, deviations, additional requirements, and Property Administrator approvals before using a generated template for actual records.
+The tool shows **Revision 2**. Its public references, versions, and verification date are documented in [docs/sources.md](docs/sources.md), with limitations in [docs/limitations.md](docs/limitations.md). These documents are included in the offline package. The tool does not check for later changes. Verify contract clauses, deviations, additional requirements, and Property Administrator approvals before using a generated template for actual records.
 
 ## Technical note
 

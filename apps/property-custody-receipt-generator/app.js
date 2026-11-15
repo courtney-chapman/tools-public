@@ -16,6 +16,29 @@
     custody: "The receiving party, identified here as the custodian, acknowledges possession of the listed property as documented on the receipt date."
   };
   const fields = ["description", "assetId", "partNumber", "serialNumber", "quantity", "unit", "condition", "itemRemarks"];
+  const inspectionGroups = [
+    ["Documentation", [
+      ["shipping-document", "Shipping or delivery document reference recorded"],
+      ["description-compare", "Property description compared with available documentation"],
+      ["quantity-compare", "Quantity received compared with available documentation"]
+    ]],
+    ["Identification", [
+      ["asset-review", "Asset identifier reviewed, when applicable"],
+      ["serial-review", "Serial number reviewed, when applicable"],
+      ["part-review", "Part number reviewed, when applicable"]
+    ]],
+    ["Physical condition", [
+      ["visible-condition", "Visible condition observed"],
+      ["packaging-condition", "Packaging condition noted, when relevant"],
+      ["visible-damage", "Visible damage or discrepancies documented"]
+    ]],
+    ["Follow-up", [
+      ["discrepancy-review", "Discrepancies identified for review"],
+      ["support-reference", "Supporting documents or photographs referenced, if applicable"],
+      ["other-inspection", "Additional inspection or acceptance requirements identified for separate review"]
+    ]]
+  ];
+  const inspectionStatuses = ["Not Checked", "Confirmed", "Discrepancy", "Not Applicable"];
 
   function showStep() {
     const match = /^#step-([1-4])$/.exec(window.location.hash);
@@ -72,6 +95,66 @@
     if (className) cell.className = className;
     return cell;
   }
+  function buildInspectionEditor() {
+    const host = byId("inspection-inputs");
+    for (const [group, items] of inspectionGroups) {
+      const fieldset = document.createElement("fieldset");
+      const legend = document.createElement("legend");
+      legend.textContent = group;
+      fieldset.append(legend);
+      for (const [id, prompt] of items) {
+        const row = document.createElement("div");
+        row.className = "inspection-entry";
+        const question = document.createElement("span");
+        question.textContent = prompt;
+        const status = document.createElement("select");
+        status.dataset.inspectionStatus = id;
+        status.setAttribute("aria-label", `Status: ${prompt}`);
+        for (const label of inspectionStatuses) {
+          const option = document.createElement("option");
+          option.value = label;
+          option.textContent = label;
+          status.append(option);
+        }
+        const note = document.createElement("input");
+        note.type = "text";
+        note.maxLength = 180;
+        note.placeholder = "Note or reference (optional)";
+        note.dataset.inspectionNote = id;
+        note.setAttribute("aria-label", `Notes: ${prompt}`);
+        row.append(question, status, note);
+        fieldset.append(row);
+      }
+      host.append(fieldset);
+    }
+  }
+  function renderInspectionPreview() {
+    const included = byId("include-inspection").checked;
+    byId("inspection-editor").hidden = !included;
+    byId("inspection-sheet").hidden = !included;
+    if (!included) return;
+    text("i-ref", value("reference") || "No reference entered");
+    text("i-date", formatDate(value("date")));
+    text("i-receiver", value("receiver-name"));
+    const tbody = byId("inspection-preview");
+    tbody.replaceChildren();
+    for (const [group, items] of inspectionGroups) {
+      const heading = document.createElement("tr");
+      heading.className = "inspection-group";
+      const title = document.createElement("th");
+      title.colSpan = 3;
+      title.textContent = group;
+      heading.append(title);
+      tbody.append(heading);
+      for (const [id, prompt] of items) {
+        const row = document.createElement("tr");
+        const status = document.querySelector(`[data-inspection-status="${id}"]`).value;
+        const note = document.querySelector(`[data-inspection-note="${id}"]`).value.trim();
+        row.append(td(prompt), td(status), td(note));
+        tbody.append(row);
+      }
+    }
+  }
   function renderPreview() {
     byId("validation").replaceChildren();
     const type = value("type");
@@ -114,6 +197,7 @@
       row.append(property, td(item.quantity), td(item.unit), td(item.condition), td(item.itemRemarks));
       tbody.append(row);
     });
+    renderInspectionPreview();
   }
   function validate() {
     const errors = [];
@@ -187,8 +271,12 @@
     byId("type").focus();
   });
   byId("sample").addEventListener("click", () => {
-    const hasData = [...byId("receipt-form").querySelectorAll("input,textarea,select")].some(input => input.value && input.value !== "Not entered");
+    const hasData = [...byId("receipt-form").querySelectorAll("input,textarea,select")].some(input =>
+      input.type === "checkbox" ? input.checked :
+      input.dataset.inspectionStatus ? input.value !== "Not Checked" :
+      input.value && input.value !== "Not entered");
     if (hasData && !window.confirm("Replace the current receipt information with fictional sample data?")) return;
+    byId("receipt-form").reset();
     const sample = {
       type: "issuance", date: "2026-11-15", reference: "DEMO-RECEIPT-001", location: "Sample Room A",
       purpose: "Temporary use for a fictional project", remarks: "Fictional demonstration only.",
@@ -203,6 +291,7 @@
     renderPreview();
   });
   window.addEventListener("hashchange", showStep);
+  buildInspectionEditor();
   addItem();
   showStep();
 })();

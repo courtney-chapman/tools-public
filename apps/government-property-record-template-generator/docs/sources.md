@@ -1,4 +1,4 @@
-# Revision 1: public sources and version check
+# Revision 2: public sources and version check
 
 Verified **2026-11-15** for this demonstration. These are the public authorities used by the application; the app performs no live lookup.
 

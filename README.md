@@ -46,10 +46,8 @@ These offline browser apps are separate from the Codex plugins.
 | --- | --- |
 | <img src="docs/readme/icons/government-property-ltdd-relief-letter-generator.png" width="56" alt=""> | **Government Property LTDD Relief Letter Generator**<br>Generates and validates audit-defensive Government Property LTDD relief packages while preserving the distinction between verified facts, interview statements, assumptions, and missing evidence.<br>[Instructions](plugins/government-property-ltdd-relief-letter-generator/skills/government-property-ltdd-relief-letter-generator/SKILL.md) |
 
-## Release and licensing
+## Licensing and security
 
 Security concerns should follow the [security policy](SECURITY.md).
 
-Original repository content is licensed under [CC BY-NC 4.0](LICENSE), **except**
-`apps/dd1149-generator/`, `apps/government-property-record-template-generator/`, `apps/physical-inventory-count-sheet-generator/`, and `apps/property-custody-receipt-generator/`, each licensed under its own MIT license ([DD1149](apps/dd1149-generator/LICENSE); [property templates](apps/government-property-record-template-generator/LICENSE); [physical inventory](apps/physical-inventory-count-sheet-generator/LICENSE); [custody receipt](apps/property-custody-receipt-generator/LICENSE)).
-Third-party material remains subject to its own terms.
+Original repository content is licensed under [CC BY-NC 4.0](LICENSE). The standalone browser apps have separate MIT licenses in their [app folders](apps/). Third-party material remains subject to its own terms.

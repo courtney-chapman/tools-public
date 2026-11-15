@@ -39,6 +39,35 @@ def validate() -> list[str]:
             f"entries={sorted(str(name) for name in entry_names)}"
         )
 
+    claude_marketplace_path = ROOT / ".claude-plugin/marketplace.json"
+    try:
+        claude_marketplace = json.loads(claude_marketplace_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"invalid Claude marketplace catalog: {exc}")
+        claude_marketplace = {}
+    claude_entries = claude_marketplace.get("plugins") if isinstance(claude_marketplace, dict) else None
+    if not isinstance(claude_entries, list):
+        errors.append("Claude marketplace plugins must be a list")
+        claude_entries = []
+    claude_names = [
+        entry.get("name") if isinstance(entry, dict) and isinstance(entry.get("name"), str) else None
+        for entry in claude_entries
+    ]
+    codex_names = [entry.get("name") for entry in entries if isinstance(entry, dict)]
+    if claude_names != codex_names:
+        errors.append("Claude marketplace plugins must match Codex marketplace names and order")
+    if len(set(claude_names)) != len(claude_names):
+        errors.append("Claude marketplace plugin names must be unique")
+    for entry in claude_entries:
+        if not isinstance(entry, dict) or not isinstance(entry.get("name"), str):
+            errors.append("Claude marketplace entries must have a plugin name")
+            continue
+        name = entry["name"]
+        if entry.get("source") != f"./plugins/{name}":
+            errors.append(f"invalid Claude marketplace source for {name}")
+        if "version" in entry:
+            errors.append(f"Claude marketplace version must come from plugin.json for {name}")
+
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     catalog_plugins = set(CATALOG_LINK.findall(readme))
     if catalog_plugins != plugin_dirs:
@@ -66,6 +95,7 @@ def validate() -> list[str]:
 
     for name in sorted(plugin_dirs):
         manifest_path = ROOT / "plugins" / name / ".codex-plugin/plugin.json"
+        claude_manifest_path = ROOT / "plugins" / name / ".claude-plugin/plugin.json"
         skill_path = ROOT / "plugins" / name / "skills" / name / "SKILL.md"
         try:
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -76,6 +106,22 @@ def validate() -> list[str]:
             errors.append(f"manifest name differs for {name}: {manifest.get('name')!r}")
         if not skill_path.is_file():
             errors.append(f"missing primary skill for {name}: {skill_path.relative_to(ROOT)}")
+        try:
+            claude_manifest = json.loads(claude_manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"invalid Claude plugin manifest for {name}: {exc}")
+            continue
+        if claude_manifest.get("name") != name:
+            errors.append(f"Claude manifest name differs for {name}: {claude_manifest.get('name')!r}")
+        if claude_manifest.get("version") != manifest.get("version"):
+            errors.append(f"Claude and Codex manifest versions differ for {name}")
+        interface = manifest.get("interface")
+        description = interface.get("longDescription") if isinstance(interface, dict) else None
+        if claude_manifest.get("description") != description:
+            errors.append(f"Claude manifest description differs from Codex for {name}")
+        matching_entries = [entry for entry in claude_entries if isinstance(entry, dict) and entry.get("name") == name]
+        if len(matching_entries) == 1 and matching_entries[0].get("description") != claude_manifest.get("description"):
+            errors.append(f"Claude marketplace description differs from manifest for {name}")
     return errors
 
 

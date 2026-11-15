@@ -1,0 +1,11 @@
+{
+  "name": "indirect-and-commercial-price-analysis-for-services-lite",
+  "version": "0.2.0",
+  "description": "Draft concise, evidence-based price analyses for a company's Commercial and Indirect purchases without assuming federal acquisition requirements.",
+  "author": {
+    "name": "courtney-chapman"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/indirect-and-commercial-price-analysis-for-services-lite",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

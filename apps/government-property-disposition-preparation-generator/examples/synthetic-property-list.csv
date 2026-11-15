@@ -1,0 +1,3 @@
+Record ID,Asset Identifier,Description,Part Number,Serial Number,Quantity,Unit of Measure,Property Location,Property Origin,Property Category,Condition,Unit Acquisition Cost,Accountable Contract,Remarks
+DEMO-001,DEMO-ASSET-01,Portable measurement unit,DEMO-PN-11,DEMO-SN-01,1,EA,Sample Room A,GFP,Equipment,Serviceable,,DEMO-CONTRACT-01,Fictional item
+DEMO-002,,Sample calibration material,DEMO-PN-22,,2.5,KG,Sample Room A,CAP,Material,Not assessed,,DEMO-CONTRACT-01,Fictional material lot

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Government Property Disposition Preparation Checklist Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><div class="wrap">
+    <p class="eyebrow">Offline document tool · Revision 1</p>
+    <h1>Government Property Disposition Preparation Checklist Generator</h1>
+    <p>Organize property and supporting information before seeking the applicable disposition direction.</p>
+  </div></header>
+  <main class="wrap" id="app">
+    <p class="notice">This is a preparation utility. It does not decide disposition authority, issue instructions, or establish compliance. Your entries stay in browser memory and are lost on reload or close.</p>
+    <nav class="page-nav" aria-label="Tool steps">
+      <a href="#step-1" data-step-link="1"><span>1</span><strong>Preparation</strong><small>Context and contract</small></a>
+      <a href="#step-2" data-step-link="2"><span>2</span><strong>Property</strong><small>Enter or import items</small></a>
+      <a href="#step-3" data-step-link="3"><span>3</span><strong>Checklist</strong><small>Documents and questions</small></a>
+      <a href="#step-4" data-step-link="4"><span>4</span><strong>Review &amp; export</strong><small>Preview and download</small></a>
+    </nav>
+    <div class="actions"><button type="button" id="sample" class="secondary">Load fictional sample</button><button type="button" id="reset" class="quiet">Clear all</button></div>
+
+    <section class="panel step-panel" data-step="1" id="step-1">
+      <div class="section-heading"><span>1</span><div><h2>Preparation information</h2><p>Describe why you are gathering information. These entries do not establish an authorized disposition route.</p></div></div>
+      <div class="form-grid">
+        <label>Preparation reference<input id="prep-reference" maxlength="100" placeholder="A working reference, if used"></label>
+        <label>Preparation date<input id="prep-date" type="date"></label>
+        <label>Organization or site<input id="prep-site" maxlength="160"></label>
+        <label>Preparer name or identifier<input id="prep-preparer" maxlength="160"></label>
+        <label>Accountable contract reference<input id="prep-contract" maxlength="160" placeholder="May be left blank for a demonstration"></label>
+        <label>General property location<input id="prep-location" maxlength="160"></label>
+        <label>Reason being considered<select id="prep-reason"><option value="">Select or leave for review</option><option>No longer required for current contract performance</option><option>Contract completion</option><option>Contract termination</option><option>Identified as excess to current needs</option><option>Other</option></select></label>
+        <label>Date determined no longer needed, if known<input id="prep-determination-date" type="date"></label>
+        <label>DoD contract / DFARS 252.245-7005 applicability<select id="prep-dod"><option value="unknown">Unknown or not checked</option><option value="yes">May apply</option><option value="no">Does not apply, per contract review</option></select></label>
+        <label>Special handling or separate schedule category<select id="prep-special"><option value="unknown">Unknown or not checked</option><option value="yes">May apply</option><option value="no">None identified</option></select></label>
+        <label>Property at a subcontractor<select id="prep-subcontractor"><option value="unknown">Unknown or not checked</option><option value="yes">Yes or possibly</option><option value="no">No</option></select></label>
+        <label>Government point of contact, if known<input id="prep-contact" maxlength="160" placeholder="Name, office, or role only"></label>
+      </div>
+      <label>General remarks<textarea id="prep-remarks" rows="2" maxlength="1500"></textarea></label>
+      <p class="helper">Check the actual contract and Government direction. The tool does not calculate reporting deadlines or decide whether a clause applies.</p>
+      <a class="next-link" href="#step-2">Next: add property →</a>
+    </section>
+
+    <section class="panel step-panel" data-step="2" id="step-2" hidden>
+      <div class="section-heading"><span>2</span><div><h2>Property listing</h2><p>Add working items manually or import a CSV. A blank value stays blank; no identifier or ownership is inferred.</p></div></div>
+      <div class="split">
+        <div class="subpanel"><h3>Import CSV</h3>
+          <p><a href="examples/blank-import-template.csv" download>Blank CSV template</a> · <a href="examples/synthetic-property-list.csv" download>Fictional example CSV</a></p>
+          <label>Choose CSV<input id="import-file" type="file" accept=".csv,text/csv"></label>
+          <p class="helper">Up to 2 MB and 10,000 data rows. Map Description, Quantity, and Unit of Measure. Invalid rows are shown and skipped only after you confirm the preview.</p>
+          <div id="import-workspace" hidden><h4>Map source columns</h4><div class="mapping-grid" id="mapping-fields"></div>
+            <button type="button" id="preview-import" class="secondary">Review mapped rows</button>
+            <div id="import-preview" class="feedback" role="status" aria-live="polite"></div>
+            <button type="button" id="accept-import" hidden>Confirm valid rows</button>
+          </div>
+          <div id="import-feedback" class="feedback" role="status" aria-live="polite"></div>
+        </div>
+        <div class="subpanel"><h3>Add a working item</h3><p class="helper">You can save an incomplete item and review its blanks in Step 4. Record ID is an optional working key; duplicate populated IDs are flagged.</p>
+          <button type="button" id="add-item">Add property item</button>
+        </div>
+      </div>
+      <div class="subpanel"><div class="list-heading"><h3>Working property items <span id="item-count">0</span></h3>
+        <div class="toolbar"><label>Sort<select id="sort-items"><option value="entry">Entry order</option><option value="description">Description</option><option value="recordId">Record ID</option><option value="contract">Contract</option><option value="location">Location</option></select></label>
+          <label>Group<select id="group-items"><option value="none">No grouping</option><option value="contract">Accountable contract</option><option value="location">Location</option></select></label></div></div>
+        <div id="item-list"></div>
+      </div>
+      <a class="next-link" href="#step-3">Next: documentation checklist →</a>
+    </section>
+
+    <section class="panel step-panel" data-step="3" id="step-3" hidden>
+      <div class="section-heading"><span>3</span><div><h2>Documentation checklist</h2><p>Statuses reflect your preparation work only. They do not establish regulatory compliance or Government approval.</p></div></div>
+      <div class="form-grid">
+        <label>Property record or source reference<textarea id="doc-record" rows="2" maxlength="1000"></textarea></label>
+        <label>Acquisition or receipt support identified<textarea id="doc-acquisition" rows="2" maxlength="1000"></textarea></label>
+        <label>Available inventory information<textarea id="doc-inventory" rows="2" maxlength="1000"></textarea></label>
+        <label>Contract or modification references<textarea id="doc-contract" rows="2" maxlength="1000"></textarea></label>
+        <label>Prior disposition correspondence, if any<textarea id="doc-correspondence" rows="2" maxlength="1000"></textarea></label>
+        <label>Existing Government instruction reference, if any<textarea id="doc-instructions" rows="2" maxlength="1000"></textarea></label>
+      </div>
+      <label>Unresolved questions<textarea id="doc-questions" rows="3" maxlength="2000" placeholder="List questions for the appropriate official or internal reviewer"></textarea></label>
+      <label class="checkbox-label"><input id="show-audit" type="checkbox"> Show optional public assessment prompts</label>
+      <div id="checklist-sections"></div>
+      <a class="next-link" href="#step-4">Next: review and export →</a>
+    </section>
+
+    <section class="panel step-panel" data-step="4" id="step-4" hidden>
+      <div class="section-heading"><span>4</span><div><h2>Review and export</h2><p>Review preparation exceptions before sharing a working package. They are not findings of noncompliance.</p></div></div>
+      <div id="review-stats" class="stat-grid"></div>
+      <div class="split"><div class="subpanel"><h3>Preparation exceptions</h3><ul id="exceptions-list"></ul></div>
+        <div class="subpanel"><h3>Items requiring review</h3><ul id="review-list"></ul></div></div>
+      <div class="actions"><button type="button" id="export-csv">Download property listing CSV</button>
+        <button type="button" id="preview-checklist" class="secondary">Preview checklist</button>
+        <button type="button" id="preview-summary" class="secondary">Preview summary</button>
+        <button type="button" id="print-output" class="secondary">Print or save as PDF</button></div>
+      <p id="export-feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div id="print-sheet" aria-label="Printable preparation output"></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap"><p>Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p>Revision 1 · <a href="docs/sources.md">Public sources</a></p></div></footer>
+</body>
+</html>

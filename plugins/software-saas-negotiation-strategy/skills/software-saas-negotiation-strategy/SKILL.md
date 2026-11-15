@@ -29,6 +29,9 @@ deliverable. Ask one grouped set of questions at a time.
   and illustrative figures. Research does not override the source workflow.
 - Reference FAR Parts 8, 10, 12, and 13 and FAR 52.212-4 only when applicable.
   Keep regulatory explanation proportionate to the buyer's decision.
+- For a prime-contractor purchase, do not apply agency procedures such as FAR
+  Part 13 directly unless the prime contract, an applicable clause or flowdown,
+  customer direction, or company policy requires them.
 - Flag potential conflicts between vendor terms and applicable government terms
   for contracting-officer or counsel review; do not present legal conclusions as
   settled when facts or clause applicability are incomplete.
@@ -128,6 +131,10 @@ Afterward, debrief what worked, what to adjust, and what to watch for.
 
 ## Output style
 
+- When negotiations actually occur, identify any separate negotiation
+  memorandum required by the applicable clause or company policy. Do not
+  present the preparatory strategy or role-play as that record, and do not
+  invent negotiation results.
 - Be concise, actionable, and professional.
 - Use headings and tables when they make questions, pricing tiers, objectives,
   risks, or fallback positions easier to use.

@@ -13,7 +13,7 @@ import sys
 
 
 OWNER_EMAIL = "256231750+courtney-chapman@users.noreply.github.com"
-OWNER_NAMES = {"courtney-chapman", "Courtney"}
+OWNER_NAMES = {"courtney-chapman", "Courtney", "Courtney's Portfolio"}
 GITHUB_COMMITTER = ("GitHub", "noreply@github.com")
 COAUTHOR_TRAILER = re.compile(r"(?im)^co-authored-by\s*:")
 

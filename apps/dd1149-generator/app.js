@@ -401,9 +401,9 @@ function showNotice(message, isError = false) {
   const notice = document.getElementById("notice");
   notice.textContent = message;
   notice.hidden = false;
-  notice.style.borderColor = isError ? "#d7a2a2" : "";
-  notice.style.background = isError ? "#f9eaea" : "";
-  notice.style.color = isError ? "#7b2424" : "";
+  notice.style.borderColor = isError ? "var(--danger)" : "";
+  notice.style.background = isError ? "var(--danger-soft)" : "";
+  notice.style.color = isError ? "var(--danger)" : "";
   window.clearTimeout(showNotice.timer);
   showNotice.timer = window.setTimeout(() => { notice.hidden = true; }, 5000);
 }

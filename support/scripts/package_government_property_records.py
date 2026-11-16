@@ -19,7 +19,7 @@ FILES = (
     "index.html",
     "navigation.js",
     "review.js",
-    "styles.css",
+    "styles.css", "tokens.css",
     "docs/demo-walkthrough.md",
     "docs/limitations.md",
     "docs/sources.md",

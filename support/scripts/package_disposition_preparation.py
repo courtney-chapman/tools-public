@@ -13,7 +13,7 @@ NAME = "government-property-disposition-preparation-generator"
 APP = ROOT / "apps" / NAME
 OUTPUT = ROOT / ".build/app-zips" / f"{NAME}.zip"
 FILES = (
-    "LICENSE", "README.md", "app.js", "core.js", "index.html", "styles.css",
+    "LICENSE", "README.md", "app.js", "core.js", "index.html", "styles.css", "tokens.css",
     "docs/limitations.md", "docs/sources.md",
     "examples/blank-import-template.csv", "examples/synthetic-property-list.csv",
 )

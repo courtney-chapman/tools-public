@@ -10,7 +10,7 @@ Built by Courtney · [More tools on GitHub](https://github.com/courtney-chapman)
 2. Unzip the package and open `dd1149-generator/index.html` in a desktop browser. No installation, server, account, or network connection is needed to use the app. The official-form links require a connection to open.
 3. Enter the shipment and property details. Use **Print / Save PDF** to save a PDF through the browser's print dialog. Review the resulting PDF before use.
 
-The source files can also be opened directly from this folder. Keep `index.html`, `styles.css`, and `app.js` together. The app has no external runtime dependencies and does not send entered data to a server. Downloads and PDFs are saved only when you choose to create them. The app does not autosave; save a draft before closing the page if you need to resume.
+The source files can also be opened directly from this folder. Keep `index.html`, `tokens.css`, `styles.css`, and `app.js` together. The app has no external runtime dependencies and does not send entered data to a server. Downloads and PDFs are saved only when you choose to create them. The app does not autosave; save a draft before closing the page if you need to resume.
 
 ## Before you prepare a shipment
 
@@ -42,3 +42,5 @@ From the repository root, run `python3 support/scripts/package_dd1149.py`. The s
 ## License
 
 This app is released under the [MIT license](LICENSE), as an explicit exception to the repository's root CC BY-NC license. The government form linked above is not included in this license or package.
+
+The app uses the shared navy and blue color theme and follows your system dark mode setting. Printed documents remain on white paper.

@@ -13,7 +13,7 @@ NAME = "pmsa-evidence-preparation-toolkit"
 APP = ROOT / "apps" / NAME
 OUTPUT = ROOT / ".build/app-zips" / f"{NAME}.zip"
 FILES = (
-    "LICENSE", "README.md", "app.js", "catalog.js", "index.html", "sources.html", "styles.css",
+    "LICENSE", "README.md", "app.js", "catalog.js", "index.html", "sources.html", "styles.css", "tokens.css",
     "docs/evidence-catalog.md", "docs/limitations.md", "docs/regulatory-basis.md", "docs/sources.md",
     "examples/synthetic-session.json",
 )

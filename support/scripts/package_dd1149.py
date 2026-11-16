@@ -11,7 +11,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 ROOT = Path(__file__).resolve().parents[2]
 APP = ROOT / "apps/dd1149-generator"
 OUTPUT = ROOT / ".build/app-zips/dd1149-generator.zip"
-FILES = ("LICENSE", "README.md", "app.js", "index.html", "styles.css")
+FILES = ("LICENSE", "README.md", "app.js", "index.html", "styles.css", "tokens.css")
 STAMP = (1980, 1, 1, 0, 0, 0)
 
 

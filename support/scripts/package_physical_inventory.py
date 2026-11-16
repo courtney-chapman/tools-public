@@ -18,7 +18,7 @@ FILES = (
     "app.js",
     "core.js",
     "index.html",
-    "styles.css",
+    "styles.css", "tokens.css",
     "docs/limitations.md",
     "docs/sources.md",
     "examples/blank-import-template.csv",

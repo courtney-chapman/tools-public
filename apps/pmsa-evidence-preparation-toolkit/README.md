@@ -28,3 +28,5 @@ The app stores working entries in memory for the open browser page. It does not 
 Source files are plain HTML, CSS, and JavaScript with no third-party runtime dependency or build step. Session JSON format 5 adds question, finding, and risk entries to the existing preparation data. Formats 1–4 still import; older sessions have an empty Q & F log. Earlier session files with no CAGE or contract fields still import with those fields blank. Format 1 prompt links are converted to element links, while format 3 document-level sampling notes are preserved under linked elements. Notes from unassigned format 3 references are shown in Review and the printable summary. Import validates the structure, limits size, and rejects unknown relationships. CSV cells that could be interpreted as spreadsheet formulas are prefixed with an apostrophe on export and restored on import. No browser persistent storage is used.
 
 Built by Courtney · [More tools on GitHub](https://github.com/courtney-chapman).
+
+The app uses the shared navy and blue color theme and follows your system dark mode setting. Printed documents remain on white paper.

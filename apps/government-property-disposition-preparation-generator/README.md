@@ -20,3 +20,5 @@ The app shows **Revision 1**. [Public sources and versions](docs/sources.md) wer
 This standalone demonstration helps organize information and supporting documentation for Government Property disposition preparation. It does not determine disposition authority, provide Government disposition instructions, authorize disposal, or establish regulatory compliance. Users must follow applicable contracts, regulations, procedures, and Government direction. The application is provided as-is without guaranteed updates or ongoing support.
 
 Built by Courtney · [More tools on GitHub](https://github.com/courtney-chapman).
+
+The app uses the shared navy and blue color theme and follows your system dark mode setting. Printed documents remain on white paper.

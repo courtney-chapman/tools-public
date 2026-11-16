@@ -24,3 +24,5 @@ The app shows **Revision 2**. [Public sources and versions](docs/sources.md) wer
 This standalone demonstration generates property custody documentation. It does not establish authorization to transfer Government Property, change contractual accountability, or relieve a contractor of stewardship. Users are responsible for following applicable contracts, procedures, and approval requirements. The application is provided as-is without a guarantee of ongoing updates or support.
 
 Built by Courtney · [More tools on GitHub](https://github.com/courtney-chapman).
+
+The app uses the shared navy and blue color theme and follows your system dark mode setting. Printed documents remain on white paper.

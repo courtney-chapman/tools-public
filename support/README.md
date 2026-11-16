@@ -41,28 +41,28 @@ Build the DD1149 standalone download with
 
 Build the Government Property Record Template Generator download with
 `python3 support/scripts/package_government_property_records.py`. The deterministic,
-12-file ZIP is written to `.build/app-zips/government-property-record-template-generator.zip`
+13-file ZIP is written to `.build/app-zips/government-property-record-template-generator.zip`
 for attachment to a GitHub Release. The allowlist excludes private development
 records and test files.
 
 Build the Physical Inventory Count Sheet Generator download with
 `python3 support/scripts/package_physical_inventory.py`. The deterministic,
-10-file ZIP is written to `.build/app-zips/physical-inventory-count-sheet-generator.zip`
+11-file ZIP is written to `.build/app-zips/physical-inventory-count-sheet-generator.zip`
 for attachment to a GitHub Release.
 
 Build the Government Property Custody Receipt Generator download with
 `python3 support/scripts/package_property_custody_receipt.py`. The deterministic,
-7-file ZIP is written to `.build/app-zips/property-custody-receipt-generator.zip`
+8-file ZIP is written to `.build/app-zips/property-custody-receipt-generator.zip`
 for attachment to a GitHub Release.
 
 Build the Government Property Disposition Preparation Checklist Generator download with
 `python3 support/scripts/package_disposition_preparation.py`. The deterministic,
-10-file ZIP is written to `.build/app-zips/government-property-disposition-preparation-generator.zip`
+11-file ZIP is written to `.build/app-zips/government-property-disposition-preparation-generator.zip`
 for attachment to a GitHub Release. The release image is stored separately from the app ZIP.
 
 Build the PMSA Evidence Preparation Toolkit download with
 `python3 support/scripts/package_pmsa_evidence_preparation.py`. The deterministic,
-12-file ZIP is written to `.build/app-zips/pmsa-evidence-preparation-toolkit.zip`
+13-file ZIP is written to `.build/app-zips/pmsa-evidence-preparation-toolkit.zip`
 for attachment to a GitHub Release. The release image is stored separately from the app ZIP.
 
 ## Release presentation

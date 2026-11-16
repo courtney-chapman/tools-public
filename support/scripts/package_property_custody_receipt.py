@@ -13,7 +13,7 @@ NAME = "property-custody-receipt-generator"
 APP = ROOT / "apps" / NAME
 OUTPUT = ROOT / ".build/app-zips" / f"{NAME}.zip"
 FILES = (
-    "LICENSE", "README.md", "app.js", "index.html", "styles.css",
+    "LICENSE", "README.md", "app.js", "index.html", "styles.css", "tokens.css",
     "docs/limitations.md", "docs/sources.md",
 )
 STAMP = (1980, 1, 1, 0, 0, 0)

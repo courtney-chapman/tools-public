@@ -27,7 +27,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 **New here?** Follow the [step-by-step installation guide](docs/install-plugins.md) for ChatGPT, Codex, or Claude Code.
 
-Prefer a printable version? See the [one-page quick start (PDF)](docs/plugin-quick-start.pdf).
+Prefer a printable version? See the [one-page quick start (PDF)](https://raw.githubusercontent.com/courtney-chapman/tools-public/main/docs/plugin-quick-start.pdf).
 
 ### Use with Codex
 

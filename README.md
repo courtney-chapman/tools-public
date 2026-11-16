@@ -31,7 +31,12 @@ Prefer a printable version? See the [one-page quick start (PDF)](docs/plugin-qui
 
 ### Use with Codex
 
-In Codex desktop or CLI, add this repository as a marketplace with `codex plugin marketplace add courtney-chapman/tools-public`, then browse and install the plugin you want.
+In Codex desktop or CLI, add the marketplace and install the plugin you want. For example:
+
+```text
+codex plugin marketplace add courtney-chapman/tools-public
+codex plugin add procurement-market-research@tools-public
+```
 
 ### Use with Claude Code
 

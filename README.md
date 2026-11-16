@@ -12,9 +12,10 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 ### Procurement
 
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
-| --- | --- |
-| &nbsp; | &nbsp; |
+<table width="100%">
+  <thead><tr><th width="80">&nbsp;</th><th>&nbsp;</th></tr></thead>
+  <tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr></tbody>
+</table>
 
 ### Government property
 

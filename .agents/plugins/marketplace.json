@@ -41,6 +41,18 @@
       "category": "Productivity"
     },
     {
+      "name": "government-property-written-direction-request-generator",
+      "source": {
+        "source": "local",
+        "path": "./plugins/government-property-written-direction-request-generator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "software-saas-negotiation-strategy",
       "source": {
         "source": "local",

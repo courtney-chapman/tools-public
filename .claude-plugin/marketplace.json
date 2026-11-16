@@ -26,6 +26,12 @@
       "category": "productivity"
     },
     {
+      "name": "government-property-written-direction-request-generator",
+      "source": "./plugins/government-property-written-direction-request-generator",
+      "description": "Draft or validate concise requests for written Government direction on proposed property actions, conflicting instructions, and unresolved next steps.",
+      "category": "productivity"
+    },
+    {
       "name": "software-saas-negotiation-strategy",
       "source": "./plugins/software-saas-negotiation-strategy",
       "description": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",

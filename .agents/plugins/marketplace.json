@@ -53,6 +53,18 @@
       "category": "Productivity"
     },
     {
+      "name": "government-property-contract-transfer-guide",
+      "source": {
+        "source": "local",
+        "path": "./plugins/government-property-contract-transfer-guide"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "software-saas-negotiation-strategy",
       "source": {
         "source": "local",

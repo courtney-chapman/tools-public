@@ -20,6 +20,12 @@
       "category": "productivity"
     },
     {
+      "name": "government-property-receipt-discrepancy",
+      "source": "./plugins/government-property-receipt-discrepancy",
+      "description": "Generate or validate concise correspondence about undocumented GFP arrivals, shipment differences, and unresolved accountable contracts.",
+      "category": "productivity"
+    },
+    {
       "name": "software-saas-negotiation-strategy",
       "source": "./plugins/software-saas-negotiation-strategy",
       "description": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",

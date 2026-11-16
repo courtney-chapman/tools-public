@@ -29,11 +29,15 @@ jobs:
         run: python3 support/scripts/validate_repository.py
       - name: Validate plugin ZIPs
         run: python3 support/scripts/package_plugins.py
+      - name: Validate DD1149 app package
+        run: python3 support/scripts/package_dd1149.py
       - name: Validate property app package
         run: python3 support/scripts/package_government_property_records.py
       - name: Validate physical inventory app package
         run: python3 support/scripts/package_physical_inventory.py
       - name: Validate custody receipt app package
         run: python3 support/scripts/package_property_custody_receipt.py
+      - name: Validate disposition app package
+        run: python3 support/scripts/package_disposition_preparation.py
       - name: Validate PMSA evidence toolkit package
         run: python3 support/scripts/package_pmsa_evidence_preparation.py

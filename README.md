@@ -1,8 +1,8 @@
 <img src="docs/readme/readme_header.png" alt="Tools and Plugins: offline browser apps and AI plugins for government property and procurement work." width="100%">
 
-**Project status:** These tools are independent demonstrations provided as-is, not managed services. They are not guaranteed to reflect subsequent regulatory changes. Users are responsible for verifying applicable requirements, source currency and outputs before operational use.
-
 **Start here:** [Browser apps](#standalone-browser-apps) · [Plugins](#plugins) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
+
+> **Project status:** These tools are independent demonstrations provided as-is, not managed services. They are not guaranteed to reflect subsequent regulatory changes. Users are responsible for verifying applicable requirements, source currency and outputs before operational use.
 
 ## Standalone browser apps
 

@@ -59,6 +59,11 @@ Build the Government Property Disposition Preparation Checklist Generator downlo
 10-file ZIP is written to `.build/app-zips/government-property-disposition-preparation-generator.zip`
 for attachment to a GitHub Release. The release image is stored separately from the app ZIP.
 
+Build the PMSA Evidence Preparation Toolkit download with
+`python3 support/scripts/package_pmsa_evidence_preparation.py`. The deterministic,
+12-file ZIP is written to `.build/app-zips/pmsa-evidence-preparation-toolkit.zip`
+for attachment to a GitHub Release. The release image is stored separately from the app ZIP.
+
 ## Release presentation
 
 - Use the product name shown on its release card as the release title. Keep the

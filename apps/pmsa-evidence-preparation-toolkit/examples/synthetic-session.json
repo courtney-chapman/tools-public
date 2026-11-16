@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 4,
+  "meta": {
+    "reference": "DEMO-PMSA-042",
+    "date": "2026-11-15",
+    "organization": "Example Harbor Works",
+    "period": "Fictional review period",
+    "cageCodes": "DEMO1\nDEMO2",
+    "contractNumbers": "DEMO-CONTRACT-001\nDEMO-CONTRACT-002",
+    "preparer": "Demo preparer",
+    "notes": "Fictional information for demonstration only."
+  },
+  "elements": {
+    "1": {
+      "selected": true,
+      "na": false,
+      "note": "",
+      "sampling": {
+        "populationRequested": "",
+        "populationPeriod": "",
+        "populationSize": "",
+        "populationSuppliedBy": "",
+        "selectionMethod": "",
+        "selectionCommunicatedOn": "",
+        "sampleSize": "",
+        "samplePerformedBy": "",
+        "samplePerformedDate": "",
+        "sampleHow": "",
+        "sampleLimitations": "",
+        "legacyReferences": []
+      }
+    },
+    "2": {
+      "selected": true,
+      "na": false,
+      "note": "",
+      "sampling": {
+        "populationRequested": "",
+        "populationPeriod": "",
+        "populationSize": "",
+        "populationSuppliedBy": "",
+        "selectionMethod": "",
+        "selectionCommunicatedOn": "",
+        "sampleSize": "",
+        "samplePerformedBy": "",
+        "samplePerformedDate": "",
+        "sampleHow": "",
+        "sampleLimitations": "",
+        "legacyReferences": []
+      }
+    },
+    "4": {
+      "selected": true,
+      "na": false,
+      "note": "",
+      "sampling": {
+        "populationRequested": "Fictional receiving entries",
+        "populationPeriod": "Illustrative review period",
+        "populationSize": "about 120",
+        "populationSuppliedBy": "Demo receiving team",
+        "selectionMethod": "Illustrative selection across dates",
+        "selectionCommunicatedOn": "2026-10-05",
+        "sampleSize": "12",
+        "samplePerformedBy": "Demo reviewer",
+        "samplePerformedDate": "2026-10",
+        "sampleHow": "Selected fictional entries from several dates for demonstration.",
+        "sampleLimitations": "No actual records were reviewed.",
+        "legacyReferences": []
+      }
+    },
+    "7": {
+      "selected": true,
+      "na": false,
+      "note": "",
+      "sampling": {
+        "populationRequested": "",
+        "populationPeriod": "",
+        "populationSize": "",
+        "populationSuppliedBy": "",
+        "selectionMethod": "",
+        "selectionCommunicatedOn": "",
+        "sampleSize": "",
+        "samplePerformedBy": "",
+        "samplePerformedDate": "",
+        "sampleHow": "",
+        "sampleLimitations": "",
+        "legacyReferences": []
+      }
+    },
+    "9": {
+      "selected": true,
+      "na": false,
+      "note": "",
+      "sampling": {
+        "populationRequested": "",
+        "populationPeriod": "",
+        "populationSize": "",
+        "populationSuppliedBy": "",
+        "selectionMethod": "",
+        "selectionCommunicatedOn": "",
+        "sampleSize": "",
+        "samplePerformedBy": "",
+        "samplePerformedDate": "",
+        "sampleHow": "",
+        "sampleLimitations": "",
+        "legacyReferences": []
+      }
+    },
+    "18": {
+      "selected": true,
+      "na": true,
+      "note": "No storage area is included in this fictional preparation scope.",
+      "sampling": {
+        "populationRequested": "",
+        "populationPeriod": "",
+        "populationSize": "",
+        "populationSuppliedBy": "",
+        "selectionMethod": "",
+        "selectionCommunicatedOn": "",
+        "sampleSize": "",
+        "samplePerformedBy": "",
+        "samplePerformedDate": "",
+        "sampleHow": "",
+        "sampleLimitations": "",
+        "legacyReferences": []
+      }
+    },
+    "22": {
+      "selected": true,
+      "na": false,
+      "note": "",
+      "sampling": {
+        "populationRequested": "",
+        "populationPeriod": "",
+        "populationSize": "",
+        "populationSuppliedBy": "",
+        "selectionMethod": "",
+        "selectionCommunicatedOn": "",
+        "sampleSize": "",
+        "samplePerformedBy": "",
+        "samplePerformedDate": "",
+        "sampleHow": "",
+        "sampleLimitations": "",
+        "legacyReferences": []
+      }
+    }
+  },
+  "prompts": {
+    "1-1": {
+      "status": "Available",
+      "note": "Reference listed for review."
+    },
+    "2-1": {
+      "status": "Pending",
+      "note": "Ask for current review procedure."
+    },
+    "4-1": {
+      "status": "Available",
+      "note": ""
+    },
+    "7-1": {
+      "status": "Requested",
+      "note": "Request an example accountable record."
+    },
+    "9-1": {
+      "status": "Available",
+      "note": ""
+    },
+    "22-1": {
+      "status": "Not Applicable",
+      "note": "Closeout is outside this fictional review period."
+    }
+  },
+  "documents": [
+    {
+      "id": "doc-1",
+      "title": "Fictional Property Procedures",
+      "reference": "DEMO-PROC-01",
+      "revision": "Rev A",
+      "owner": "Property team",
+      "location": "Demo folder / procedures",
+      "notes": "Invented example.",
+      "type": "Document",
+      "contents": "",
+      "count": "",
+      "elementIds": [
+        1,
+        2
+      ],
+      "versionNote": "",
+      "providedBy": "Auditee",
+      "versionStatus": "New",
+      "requestedOn": "2026-10-01",
+      "receivedOn": "2026-10-03"
+    },
+    {
+      "id": "doc-2",
+      "title": "Fictional Receiving Records ZIP",
+      "reference": "DEMO-REC-01",
+      "revision": "Rev B",
+      "owner": "Receiving team",
+      "location": "Demo folder / intake.zip",
+      "notes": "Invented example.",
+      "type": "Record set / ZIP",
+      "contents": "Synthetic receiving logs and delivery notes",
+      "count": "about 120",
+      "elementIds": [
+        4
+      ],
+      "versionNote": "Replaces DEMO-REC-00 Rev A",
+      "providedBy": "Auditee",
+      "versionStatus": "Revised version",
+      "requestedOn": "2026-10-02",
+      "receivedOn": "2026-10-08"
+    },
+    {
+      "id": "doc-3",
+      "title": "Fictional Inventory Backup",
+      "reference": "DEMO-INV-01",
+      "revision": "2026",
+      "owner": "Property team",
+      "location": "Demo folder / counts-backup.zip",
+      "notes": "Invented example.",
+      "type": "Backup / archive",
+      "contents": "Synthetic inventory count records",
+      "count": "about 250",
+      "elementIds": [
+        9
+      ],
+      "versionNote": "Replaces DEMO-INV-00",
+      "providedBy": "Auditor",
+      "versionStatus": "Replacement",
+      "requestedOn": "",
+      "receivedOn": "2026-10-09"
+    }
+  ],
+  "unassignedLegacySampling": []
+}

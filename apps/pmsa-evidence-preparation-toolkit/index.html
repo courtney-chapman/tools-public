@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guided PMSA Evidence Preparation Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead"><div class="wrap">
+    <p class="eyebrow">Standalone demonstration · works offline</p>
+    <h1>Guided PMSA Evidence Preparation Toolkit</h1>
+    <p>Gather document references, see what is still outstanding, and prepare an evidence index. This is an organizer, not a PMSA assessment.</p>
+  </div></header>
+  <main class="wrap" id="main">
+    <aside class="notice"><strong>Check your contract and direction.</strong> The 22 DCMA elements organize this guide; they are not 22 separate FAR outcomes. Your selections and evidence statuses do not determine applicability, sufficiency, or compliance.</aside>
+    <nav class="page-nav" aria-label="Tool steps">
+      <a href="#step-1" data-step="1"><span>1</span><strong>Set Up</strong><small>Assessment and scope</small></a>
+      <a href="#step-2" data-step="2"><span>2</span><strong>Gather</strong><small>Prompt statuses</small></a>
+      <a href="#step-3" data-step="3"><span>3</span><strong>Documents</strong><small>Reference list</small></a>
+      <a href="#step-4" data-step="4"><span>4</span><strong>Review</strong><small>Status and requests</small></a>
+      <a href="#step-5" data-step="5"><span>5</span><strong>Export</strong><small>CSV, print, session</small></a>
+    </nav>
+    <div class="session-bar"><p>Working entries stay in this page until you save a session file.</p><button type="button" id="save-session-quick" class="secondary">Save session JSON</button></div>
+    <section class="panel" id="step-1" data-panel="1" aria-labelledby="setup-title">
+      <div class="heading"><span class="number">1</span><div><h2 id="setup-title">Set up your preparation</h2><p>Use a fictional reference if you are exploring the demo. Nothing is sent or saved automatically.</p></div></div>
+      <div class="demo-bar"><button type="button" id="load-demo" class="quiet">Load fictional example</button><span>Replaces the current unsaved entries.</span></div>
+      <div class="form-grid">
+        <label>Assessment reference<input data-meta="reference" maxlength="120" autocomplete="off"></label>
+        <label>Preparation date<input data-meta="date" type="date"></label>
+        <label>Organization or site<input data-meta="organization" maxlength="120" autocomplete="off"></label>
+        <label>Assessment period<input data-meta="period" maxlength="120" autocomplete="off"></label>
+        <label>CAGE codes under review<textarea data-meta="cageCodes" rows="3" maxlength="1000" placeholder="One CAGE code per line"></textarea></label>
+        <label>Contract numbers under review<textarea data-meta="contractNumbers" rows="3" maxlength="2000" placeholder="One contract number per line"></textarea></label>
+        <label>Preparer name or identifier<input data-meta="preparer" maxlength="120" autocomplete="off"></label>
+        <label class="span-two">General preparation notes<textarea data-meta="notes" rows="3" maxlength="2000"></textarea></label>
+      </div>
+      <div class="section-row"><div><h3>Choose elements</h3><p>All 22 elements are included as a starting point. The six groups are for navigation; the published DCMA element names and numbers remain. Open a group to narrow the scope or mark an element outside it. This does not determine contractual applicability.</p><p id="selection-summary" class="helper" role="status"></p></div><div class="actions"><button type="button" id="select-all" class="secondary">Select all 22</button><button type="button" id="select-none" class="quiet">Clear selection</button></div></div>
+      <div id="element-list" class="element-list"></div>
+      <a class="next" href="#step-2">Next: Gather evidence →</a>
+    </section>
+    <section class="panel" id="step-2" data-panel="2" aria-labelledby="gather-title" hidden>
+      <div class="heading"><span class="number">2</span><div><h2 id="gather-title">Review evidence prompts</h2><p>Open an element to record a status and notes for each prompt. Link evidence references to elements in the Documents bookmark.</p></div></div>
+      <p id="gather-count" class="helper" role="status"></p>
+      <details class="csv-disclosure"><summary>Gather CSV options</summary><div class="csv-tools"><div><p class="helper">Download a sheet with one row for each element and prompt. Import updates only the rows in the file; scope choices and document references stay as they are.</p></div><div class="actions"><button type="button" id="download-gather" class="secondary">Download Gather CSV</button><label class="file-button">Import Gather CSV<input id="import-gather" type="file" accept=".csv,text/csv"></label></div></div><p id="gather-csv-message" class="feedback" role="status" aria-live="polite"></p></details>
+      <h3>Evidence prompts</h3><p class="helper">Open a group and an element to review its two prompts. Each prompt has its own status and notes.</p>
+      <div id="prompts" class="gather-groups"></div>
+      <a class="next" href="#step-3">Next: Organize documents →</a>
+    </section>
+    <section class="panel" id="step-3" data-panel="3" aria-labelledby="documents-title" hidden>
+      <div class="heading"><span class="number">3</span><div><h2 id="documents-title">Organize evidence references</h2><p>Add a document, record set, ZIP, or backup once, then link its reference to one or more elements. Files stay outside this tool.</p></div></div>
+      <div class="subpanel"><div class="section-row"><div><h3>Evidence references</h3><p>One reference can describe a document, ZIP of records, or backup. Add it once and link it to one or more elements. Files stay outside this tool.</p></div><button type="button" id="add-document" class="secondary">Add reference</button></div>
+        <details class="csv-disclosure"><summary>Documents CSV options</summary><div class="csv-tools"><div><p class="helper">Download the reference list as an editable sheet. Import replaces the current reference list after validation and confirmation; Gather entries stay as they are.</p></div><div class="actions"><button type="button" id="download-documents-here" class="secondary">Download references CSV</button><label class="file-button">Import references CSV<input id="import-documents" type="file" accept=".csv,text/csv"></label></div></div><p id="documents-csv-message" class="feedback" role="status" aria-live="polite"></p></details>
+        <div class="document-views" role="tablist" aria-label="Evidence reference views"><button type="button" role="tab" id="view-document" data-document-view="document" aria-controls="document-list" aria-selected="true" tabindex="0">By document</button><button type="button" role="tab" id="view-element" data-document-view="element" aria-controls="document-list" aria-selected="false" tabindex="-1">By element</button><button type="button" role="tab" id="view-provider" data-document-view="provider" aria-controls="document-list" aria-selected="false" tabindex="-1">By provided by</button></div>
+        <div class="document-toolbar"><label for="document-search">Find a reference</label><input id="document-search" type="search" placeholder="Search title, type, contents, or element" autocomplete="off"><label for="document-sort">Sort by</label><select id="document-sort"><option value="title">Document title</option><option value="requested-newest">Requested: newest first</option><option value="requested-oldest">Requested: oldest first</option><option value="received-newest">Received: newest first</option><option value="received-oldest">Received: oldest first</option></select><span id="document-count" class="helper" role="status"></span></div>
+        <div id="document-list" class="document-list" role="tabpanel" aria-labelledby="view-document" tabindex="0"></div>
+        <dialog id="document-editor" class="document-editor" aria-labelledby="document-editor-title"><div class="dialog-head"><h3 id="document-editor-title">Add evidence reference</h3><button type="button" id="close-document" class="quiet" aria-label="Close reference editor">×</button></div><p class="helper">Describe a reference and link it to any relevant elements. Files stay outside this tool.</p>
+        <form id="document-form"><input id="document-id" type="hidden"><div class="form-grid">
+          <label>Title <span aria-hidden="true">*</span><input id="doc-title" required maxlength="200"></label>
+          <label>Reference type<select id="doc-type"><option>Document</option><option>Record set / ZIP</option><option>Backup / archive</option><option>Other</option></select></label>
+          <label>Provided by<select id="doc-providedBy"><option value="">Not recorded</option><option>Auditee</option><option>Auditor</option><option>Other</option></select></label>
+          <label>Version status<select id="doc-versionStatus"><option value="">Not recorded</option><option>New</option><option>Revised version</option><option>Replacement</option><option>Superseded</option></select></label>
+          <label class="span-two">Related version or reference (optional)<input id="doc-versionNote" maxlength="160" placeholder="For example: replaces DEMO-REC-01 Rev A"></label>
+          <label>Reference or identifier<input id="doc-reference" maxlength="160"></label>
+          <label>Revision or date<input id="doc-revision" maxlength="100"></label>
+          <label>Requested on (optional)<input id="doc-requestedOn" type="date"></label>
+          <label>Received on (optional)<input id="doc-receivedOn" type="date"></label>
+          <label>Owner or responsible function<input id="doc-owner" maxlength="120"></label>
+          <label>Storage location or reference<input id="doc-location" maxlength="300"></label>
+          <label class="span-two">Contents / coverage<textarea id="doc-contents" rows="2" maxlength="500" placeholder="For example: receiving records for the review period"></textarea></label>
+          <label>Approximate item count (optional)<input id="doc-count" maxlength="40" placeholder="For example: about 200"></label>
+          <label class="span-two">Notes<textarea id="doc-notes" rows="2" maxlength="1000"></textarea></label>
+        </div><div class="element-assignment"><h5>Linked elements</h5><p class="helper">This is an element-level reference. It does not claim that every prompt in the element is satisfied.</p><div class="actions"><label for="doc-element-choice" class="sr-only">Choose element to link</label><select id="doc-element-choice"></select><button type="button" id="add-doc-element" class="secondary">Link element</button></div><div id="doc-element-tags" class="doc-element-tags" aria-live="polite"></div></div><div class="actions dialog-actions"><button type="submit" id="save-document">Add reference</button><button type="button" id="cancel-edit" class="quiet">Cancel</button></div></form></dialog>
+      </div>
+      <a class="next" href="#step-4">Next: Review progress →</a>
+    </section>
+    <section class="panel" id="step-4" data-panel="4" aria-labelledby="review-title" hidden>
+      <div class="heading"><span class="number">4</span><div><h2 id="review-title">Review preparation status</h2><p>These counts reflect your entries only. They are not a compliance score or Government finding.</p></div></div>
+      <div id="counts" class="counts"></div>
+      <p id="review-secondary" class="review-secondary"></p>
+      <div id="review-scope"></div>
+      <section class="status-overview" aria-labelledby="status-overview-title"><h3 id="status-overview-title">Evidence status by element group</h3><p class="helper">Bars summarize the statuses you entered for active prompts. They do not measure compliance or evidence quality.</p><div class="status-legend" aria-label="Status colors"><span><i class="status-available"></i>Available</span><span><i class="status-requested"></i>Requested</span><span><i class="status-pending"></i>Pending</span><span><i class="status-unavailable"></i>Not available</span><span><i class="status-na"></i>Not applicable</span><span><i class="status-unreviewed"></i>Not reviewed</span></div><div id="group-status-bars" class="group-status-bars"></div></section>
+      <div class="review-dashboard-action"><div><strong>Share an overall snapshot</strong><p class="helper">Print a dashboard of your entered counts and all 22 element indicators. Review it before sharing.</p></div><button type="button" id="print-dashboard" class="secondary">Print dashboard / Save as PDF</button></div>
+      <h3>Needs follow-up</h3><p class="helper">Requested, Pending, and Not Available prompts are grouped by element. Open a group to see the details.</p><div id="outstanding"></div>
+      <div id="not-reviewed"></div>
+      <div id="na-list"></div>
+      <div id="legacy-unassigned"></div>
+      <a class="next" href="#step-5">Next: Export your work →</a>
+    </section>
+    <section class="panel" id="step-5" data-panel="5" aria-labelledby="export-title" hidden>
+      <div class="heading"><span class="number">5</span><div><h2 id="export-title">Export and save</h2><p>Downloads contain the references and notes you entered. Review them before sharing.</p></div></div>
+      <div class="export-layout"><section class="subpanel"><h3>Reports</h3><div class="export-action-list"><div class="export-action"><div><strong>Evidence index</strong><p>Prompt statuses and element-level references. A link does not establish prompt support.</p></div><button id="download-index" type="button">Download CSV</button></div><div class="export-action"><div><strong>Reference list</strong><p>One row per document, ZIP, or backup, including unassigned references.</p></div><button id="download-documents" type="button">Download CSV</button></div><div class="export-action"><div><strong>Outstanding list</strong><p>Requested, Pending, Not Available, and Not Reviewed prompts.</p></div><button id="download-outstanding" type="button">Download CSV</button></div><div class="export-action"><div><strong>Dashboard</strong><p>Visual snapshot of all 22 element statuses and the scope under review.</p></div><button id="print-dashboard-export" type="button">Print / Save PDF</button></div><div class="export-action"><div><strong>Preparation summary</strong><p>Detailed notes and follow-up items, formatted for US Letter.</p></div><button id="print-summary" type="button">Print / Save PDF</button></div></div></section><section class="subpanel"><h3>Save and resume</h3><p>Download your working session as JSON to continue later. This file can contain sensitive references.</p><div class="actions"><button id="save-session" type="button">Download session JSON</button><label class="file-button">Open session JSON<input id="open-session" type="file" accept=".json,application/json"></label></div><div class="reset-area"><button id="reset-session" type="button" class="quiet">Reset current session</button></div></section></div>
+      <p id="import-message" class="feedback" role="status" aria-live="polite"></p>
+      <p class="notice small">This application processes information locally. Users are responsible for ensuring that any information entered or exported is handled in an authorized environment. Do not enter classified information or other restricted information into an unauthorized system.</p>
+    </section>
+  </main>
+  <dialog id="sampling-dialog" aria-labelledby="sampling-dialog-title" aria-describedby="sampling-dialog-help"><div class="dialog-head"><h2 id="sampling-dialog-title">Population and sampling notes</h2><button type="button" id="close-sampling" class="quiet" aria-label="Close sampling notes">×</button></div><p id="sampling-dialog-help" class="helper">Describe the population and selection for this element, if known. The tool does not select samples or assess the method.</p>
+    <form id="sampling-form"><input id="sampling-element-id" type="hidden"><div class="dialog-section"><h3>Population</h3><div class="form-grid">
+      <label class="span-two">Population requested or selected from<textarea id="sample-populationRequested" rows="2" maxlength="300"></textarea></label>
+      <label>Population period<input id="sample-populationPeriod" maxlength="120"></label>
+      <label>Population size<input id="sample-populationSize" maxlength="100"></label>
+      <label>Population supplied by<input id="sample-populationSuppliedBy" maxlength="120"></label>
+    </div></div><div class="dialog-section"><h3>Selection</h3><div class="form-grid">
+      <label>Selection method / basis<input id="sample-selectionMethod" maxlength="300"></label>
+      <label>Method communicated on<input id="sample-selectionCommunicatedOn" type="date"></label>
+      <label>Sample size<input id="sample-sampleSize" maxlength="100"></label>
+    </div></div><div class="dialog-section"><h3>How it was performed</h3><div class="form-grid">
+      <label>Sampling performed by<input id="sample-samplePerformedBy" maxlength="120"></label>
+      <label>Sampling performed when<input id="sample-samplePerformedDate" maxlength="100" placeholder="Date or period"></label>
+      <label class="span-two">Steps<textarea id="sample-sampleHow" rows="3" maxlength="1000"></textarea></label>
+      <label class="span-two">Limitations or exceptions noted<textarea id="sample-sampleLimitations" rows="2" maxlength="500"></textarea></label>
+    </div></div><div id="sampling-legacy"></div><div class="actions dialog-actions"><button type="submit">Save notes</button><button type="button" id="cancel-sampling" class="quiet">Cancel</button></div></form>
+  </dialog>
+  <section id="print-report" aria-label="Printable preparation summary"></section>
+  <footer><div class="wrap footer-row"><p>Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p>Revision 1</p></div></footer>
+</body>
+</html>

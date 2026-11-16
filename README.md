@@ -25,6 +25,10 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 <img src="docs/readme/readme_get_plugin.png" alt="Get a plugin: add the courtney-chapman/tools-public marketplace in Codex or Claude Code, install a plugin from the catalog, then describe the task and review the draft. ZIPs are also in Releases." width="100%">
 
+**New here?** Follow the [step-by-step installation guide](docs/install-plugins.md) for ChatGPT, Codex, or Claude Code.
+
+Prefer a printable version? See the [one-page quick start (PDF)](docs/plugin-quick-start.pdf).
+
 ### Use with Codex
 
 In Codex desktop or CLI, add this repository as a marketplace with `codex plugin marketplace add courtney-chapman/tools-public`, then browse and install the plugin you want.

@@ -21,8 +21,9 @@
       <a href="#step-1" data-step="1"><span>1</span><strong>Set Up</strong><small>Assessment and scope</small></a>
       <a href="#step-2" data-step="2"><span>2</span><strong>Gather</strong><small>Prompt statuses</small></a>
       <a href="#step-3" data-step="3"><span>3</span><strong>Documents</strong><small>Reference list</small></a>
-      <a href="#step-4" data-step="4"><span>4</span><strong>Review</strong><small>Status and requests</small></a>
-      <a href="#step-5" data-step="5"><span>5</span><strong>Export</strong><small>CSV, print, session</small></a>
+      <a href="#step-4" data-step="4"><span>4</span><strong>Questions</strong><small>Findings and risks</small></a>
+      <a href="#step-5" data-step="5"><span>5</span><strong>Review</strong><small>Status and requests</small></a>
+      <a href="#step-6" data-step="6"><span>6</span><strong>Export</strong><small>CSV, print, session</small></a>
     </nav>
     <div class="session-bar"><p>Working entries stay in this page until you save a session file.</p><button type="button" id="save-session-quick" class="secondary">Save session JSON</button></div>
     <section class="panel" id="step-1" data-panel="1" aria-labelledby="setup-title">
@@ -75,12 +76,23 @@
           <label class="span-two">Notes<textarea id="doc-notes" rows="2" maxlength="1000"></textarea></label>
         </div><div class="element-assignment"><h5>Linked elements</h5><p class="helper">This is an element-level reference. It does not claim that every prompt in the element is satisfied.</p><div class="actions"><label for="doc-element-choice" class="sr-only">Choose element to link</label><select id="doc-element-choice"></select><button type="button" id="add-doc-element" class="secondary">Link element</button></div><div id="doc-element-tags" class="doc-element-tags" aria-live="polite"></div></div><div class="actions dialog-actions"><button type="submit" id="save-document">Add reference</button><button type="button" id="cancel-edit" class="quiet">Cancel</button></div></form></dialog>
       </div>
-      <a class="next" href="#step-4">Next: Review progress →</a>
+      <a class="next" href="#step-4">Next: Track questions and findings →</a>
     </section>
-    <section class="panel" id="step-4" data-panel="4" aria-labelledby="review-title" hidden>
-      <div class="heading"><span class="number">4</span><div><h2 id="review-title">Review preparation status</h2><p>These counts reflect your entries only. They are not a compliance score or Government finding.</p></div></div>
+    <section class="panel" id="step-4" data-panel="4" aria-labelledby="issues-title" hidden>
+      <div class="heading"><span class="number">4</span><div><h2 id="issues-title">Questions, findings, and risk areas</h2><p>Record what people asked, answered, or reported. Entries and ratings are supplied by you; the tool does not create findings or assess risk.</p></div></div>
+      <div class="section-row"><div><h3>Working log</h3><p class="helper">Questions can move in either direction. Link each item to one element and record who is responding.</p></div><button type="button" id="add-review-item" class="secondary">Add item</button></div>
+      <div class="issue-filters"><label>Show<select id="issue-type-filter"><option value="all">All types</option><option>Question</option><option>Finding</option><option>Risk area</option></select></label><label>Element<select id="issue-element-filter"><option value="all">All elements</option></select></label><label>Raised by<select id="issue-party-filter"><option value="all">Both directions / all</option><option>Auditor</option><option>Auditee</option><option>Other</option><option value="_none">Not recorded</option></select></label><label>Status<select id="issue-status-filter"><option value="all">Open and closed</option><option>Open</option><option>Closed</option></select></label><span id="issue-count" class="helper" role="status"></span></div>
+      <section class="issue-section"><h3>Questions</h3><div id="question-list"></div></section>
+      <section class="issue-section"><h3>Findings</h3><div id="finding-list"></div></section>
+      <section class="issue-section"><h3>Risk areas</h3><div id="risk-list"></div></section>
+      <a class="next" href="#step-5">Next: Review progress →</a>
+    </section>
+    <section class="panel" id="step-5" data-panel="5" aria-labelledby="review-title" hidden>
+      <div class="heading"><span class="number">5</span><div><h2 id="review-title">Review preparation status</h2><p>Evidence and issue indicators reflect your entries only. They are not a compliance score or Government finding.</p></div></div>
       <div id="counts" class="counts"></div>
       <p id="review-secondary" class="review-secondary"></p>
+      <div id="issue-summary" class="issue-summary"></div>
+      <div id="finding-overview"></div>
       <div id="review-scope"></div>
       <section class="status-overview" aria-labelledby="status-overview-title"><h3 id="status-overview-title">Evidence status by element group</h3><p class="helper">Bars summarize the statuses you entered for active prompts. They do not measure compliance or evidence quality.</p><div class="status-legend" aria-label="Status colors"><span><i class="status-available"></i>Available</span><span><i class="status-requested"></i>Requested</span><span><i class="status-pending"></i>Pending</span><span><i class="status-unavailable"></i>Not available</span><span><i class="status-na"></i>Not applicable</span><span><i class="status-unreviewed"></i>Not reviewed</span></div><div id="group-status-bars" class="group-status-bars"></div></section>
       <div class="review-dashboard-action"><div><strong>Share an overall snapshot</strong><p class="helper">Print a dashboard of your entered counts and all 22 element indicators. Review it before sharing.</p></div><button type="button" id="print-dashboard" class="secondary">Print dashboard / Save as PDF</button></div>
@@ -88,15 +100,31 @@
       <div id="not-reviewed"></div>
       <div id="na-list"></div>
       <div id="legacy-unassigned"></div>
-      <a class="next" href="#step-5">Next: Export your work →</a>
+      <a class="next" href="#step-6">Next: Export your work →</a>
     </section>
-    <section class="panel" id="step-5" data-panel="5" aria-labelledby="export-title" hidden>
-      <div class="heading"><span class="number">5</span><div><h2 id="export-title">Export and save</h2><p>Downloads contain the references and notes you entered. Review them before sharing.</p></div></div>
-      <div class="export-layout"><section class="subpanel"><h3>Reports</h3><div class="export-action-list"><div class="export-action"><div><strong>Evidence index</strong><p>Prompt statuses and element-level references. A link does not establish prompt support.</p></div><button id="download-index" type="button">Download CSV</button></div><div class="export-action"><div><strong>Reference list</strong><p>One row per document, ZIP, or backup, including unassigned references.</p></div><button id="download-documents" type="button">Download CSV</button></div><div class="export-action"><div><strong>Outstanding list</strong><p>Requested, Pending, Not Available, and Not Reviewed prompts.</p></div><button id="download-outstanding" type="button">Download CSV</button></div><div class="export-action"><div><strong>Dashboard</strong><p>Visual snapshot of all 22 element statuses and the scope under review.</p></div><button id="print-dashboard-export" type="button">Print / Save PDF</button></div><div class="export-action"><div><strong>Preparation summary</strong><p>Detailed notes and follow-up items, formatted for US Letter.</p></div><button id="print-summary" type="button">Print / Save PDF</button></div></div></section><section class="subpanel"><h3>Save and resume</h3><p>Download your working session as JSON to continue later. This file can contain sensitive references.</p><div class="actions"><button id="save-session" type="button">Download session JSON</button><label class="file-button">Open session JSON<input id="open-session" type="file" accept=".json,application/json"></label></div><div class="reset-area"><button id="reset-session" type="button" class="quiet">Reset current session</button></div></section></div>
+    <section class="panel" id="step-6" data-panel="6" aria-labelledby="export-title" hidden>
+      <div class="heading"><span class="number">6</span><div><h2 id="export-title">Export and save</h2><p>Downloads contain the references and notes you entered. Review them before sharing.</p></div></div>
+      <div class="export-layout"><section class="subpanel"><h3>Reports</h3><div class="export-action-list"><div class="export-action"><div><strong>Evidence index</strong><p>Prompt statuses and element-level references. A link does not establish prompt support.</p></div><button id="download-index" type="button">Download CSV</button></div><div class="export-action"><div><strong>Reference list</strong><p>One row per document, ZIP, or backup, including unassigned references.</p></div><button id="download-documents" type="button">Download CSV</button></div><div class="export-action"><div><strong>Questions, findings, and risks</strong><p>User-entered items, answers, dates, status, and risk ratings.</p></div><button id="download-issues" type="button">Download CSV</button></div><div class="export-action"><div><strong>Outstanding list</strong><p>Requested, Pending, Not Available, and Not Reviewed prompts.</p></div><button id="download-outstanding" type="button">Download CSV</button></div><div class="export-action"><div><strong>Dashboard</strong><p>Printable evidence and finding indicators for all 22 elements.</p></div><button id="print-dashboard-export" type="button">Print / Save PDF</button></div><div class="export-action"><div><strong>Preparation summary</strong><p>Detailed notes and follow-up items, formatted for US Letter.</p></div><button id="print-summary" type="button">Print / Save PDF</button></div></div></section><section class="subpanel"><h3>Save and resume</h3><p>Download your working session as JSON to continue later. This file can contain sensitive references.</p><div class="actions"><button id="save-session" type="button">Download session JSON</button><label class="file-button">Open session JSON<input id="open-session" type="file" accept=".json,application/json"></label></div><div class="reset-area"><button id="reset-session" type="button" class="quiet">Reset current session</button></div></section></div>
       <p id="import-message" class="feedback" role="status" aria-live="polite"></p>
       <p class="notice small">This application processes information locally. Users are responsible for ensuring that any information entered or exported is handled in an authorized environment. Do not enter classified information or other restricted information into an unauthorized system.</p>
     </section>
   </main>
+  <dialog id="review-item-editor" class="document-editor" aria-labelledby="review-item-editor-title"><div class="dialog-head"><h2 id="review-item-editor-title">Add question, finding, or risk area</h2><button type="button" id="close-review-item" class="quiet" aria-label="Close item editor">×</button></div><p class="helper">Record only information appropriate for this working session. A finding or risk rating is user-entered, not determined by the tool.</p><form id="review-item-form"><input id="review-item-id" type="hidden"><div class="form-grid">
+    <label>Type<select id="item-type"><option>Question</option><option>Finding</option><option>Risk area</option></select></label>
+    <label>Element<select id="item-element"></select></label>
+    <label class="span-two">Short title <span aria-hidden="true">*</span><input id="item-title" required maxlength="160"></label>
+    <label>Raised by<select id="item-raisedBy"><option value="">Not recorded</option><option>Auditor</option><option>Auditee</option><option>Other</option></select></label>
+    <label>Raised on<input id="item-raisedOn" type="date"></label>
+    <label>Status<select id="item-status"><option>Open</option><option>Closed</option></select></label>
+    <label>Closed on<input id="item-closedOn" type="date"></label>
+    <label class="span-two">Question or issue<textarea id="item-detail" rows="3" maxlength="1500"></textarea></label>
+    <label>Who is responding<input id="item-responder" maxlength="120" placeholder="Person or function"></label>
+    <label>Answered / responded on<input id="item-respondedOn" type="date"></label>
+    <label class="span-two">Answer or response<textarea id="item-response" rows="3" maxlength="1500"></textarea></label>
+    <label data-item-only="Finding">Finding stage<select id="item-findingStage"><option value="">Not recorded</option><option>Potential</option><option>Reported</option></select></label>
+    <label data-item-only="Finding,Risk area">Risk rating<select id="item-risk"><option value="">Not rated</option><option>Low</option><option>Moderate</option><option>High</option></select></label>
+    <label class="span-two" data-item-only="Finding,Risk area">Risk basis or next action<textarea id="item-riskNote" rows="2" maxlength="1000"></textarea></label>
+  </div><div class="actions dialog-actions"><button type="submit" id="save-review-item">Add item</button><button type="button" id="cancel-review-item" class="quiet">Cancel</button></div></form></dialog>
   <dialog id="sampling-dialog" aria-labelledby="sampling-dialog-title" aria-describedby="sampling-dialog-help"><div class="dialog-head"><h2 id="sampling-dialog-title">Population and sampling notes</h2><button type="button" id="close-sampling" class="quiet" aria-label="Close sampling notes">×</button></div><p id="sampling-dialog-help" class="helper">Describe the population and selection for this element, if known. The tool does not select samples or assess the method.</p>
     <form id="sampling-form"><input id="sampling-element-id" type="hidden"><div class="dialog-section"><h3>Population</h3><div class="form-grid">
       <label class="span-two">Population requested or selected from<textarea id="sample-populationRequested" rows="2" maxlength="300"></textarea></label>
@@ -115,6 +143,6 @@
     </div></div><div id="sampling-legacy"></div><div class="actions dialog-actions"><button type="submit">Save notes</button><button type="button" id="cancel-sampling" class="quiet">Cancel</button></div></form>
   </dialog>
   <section id="print-report" aria-label="Printable preparation summary"></section>
-  <footer><div class="wrap footer-row"><p>Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p>Revision 1</p></div></footer>
+  <footer><div class="wrap footer-row"><p>Built by Courtney · <a href="https://github.com/courtney-chapman" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></p><p>Revision 2</p></div></footer>
 </body>
 </html>

@@ -9,6 +9,11 @@
   const DOC_TYPES = ['Document', 'Record set / ZIP', 'Backup / archive', 'Other'];
   const PROVIDED_BY = ['', 'Auditee', 'Auditor', 'Other'];
   const VERSION_STATUSES = ['', 'New', 'Revised version', 'Replacement', 'Superseded'];
+  const REVIEW_TYPES = ['Question', 'Finding', 'Risk area'];
+  const REVIEW_PARTIES = ['', 'Auditor', 'Auditee', 'Other'];
+  const REVIEW_STAGES = ['', 'Potential', 'Reported'];
+  const REVIEW_RISKS = ['', 'Low', 'Moderate', 'High'];
+  const REVIEW_LIMITS = { title: 160, detail: 1500, responder: 120, response: 1500, riskNote: 1000, raisedOn: 10, respondedOn: 10, closedOn: 10 };
   const GATHER_HEADER = ['Row Type', 'Element Number', 'Prompt ID', 'Status', 'Prompt Notes', 'Population Requested', 'Population Period', 'Population Size', 'Population Supplied By', 'Selection Method', 'Method Communicated On', 'Sample Size', 'Sample Performed By', 'Sample Performed When', 'How Sampling Was Performed', 'Sampling Limitations'];
   const GATHER_SAMPLE_KEYS = Object.keys(SAMPLE_LIMITS);
   const catalogById = new Map(CATALOG.map(item => [item.id, item]));
@@ -29,10 +34,11 @@
   const blank = (selectAll = true) => ({
     meta: { reference: '', date: '', organization: '', period: '', cageCodes: '', contractNumbers: '', preparer: '', notes: '' },
     elements: Object.fromEntries(names.map(([n]) => [n, { selected: selectAll, na: false, note: '', sampling: blankSampling() }])),
-    prompts: {}, documents: [], unassignedLegacySampling: []
+    prompts: {}, documents: [], reviewItems: [], unassignedLegacySampling: []
   });
   let state = blank();
   let nextDocumentId = 1;
+  let nextReviewItemId = 1;
   let elementGroupsRendered = false;
   let gatherRendered = false;
   let editingElementIds = [];
@@ -46,14 +52,14 @@
   function selectedItems(includeNA = true) { return CATALOG.filter(item => state.elements[item.element].selected && (includeNA || !state.elements[item.element].na)); }
   function labelFor(item) { return `${item.element}. ${item.name} — ${item.category}`; }
   function legacySampleDescription(entry) { return [['Population', entry.samplePopulation], ['Method', entry.sampleMethod], ['Sample size', entry.sampleSize], ['Performed by', entry.samplePerformedBy], ['When', entry.samplePerformedDate], ['How', entry.sampleHow], ['Limitations', entry.sampleLimitations]].filter(([, value]) => value).map(([label, value]) => `${label}: ${value}`).join(' · '); }
-  function hasWorkingEntries() { return Object.values(state.meta).some(Boolean) || state.documents.length > 0 || Object.values(state.prompts).some(p => p.status !== 'Not Reviewed' || p.note) || Object.values(state.elements).some(e => !e.selected || e.na || e.note || Object.keys(SAMPLE_LIMITS).some(key => e.sampling[key]) || e.sampling.legacyReferences.length); }
+  function hasWorkingEntries() { return Object.values(state.meta).some(Boolean) || state.documents.length > 0 || state.reviewItems.length > 0 || Object.values(state.prompts).some(p => p.status !== 'Not Reviewed' || p.note) || Object.values(state.elements).some(e => !e.selected || e.na || e.note || Object.keys(SAMPLE_LIMITS).some(key => e.sampling[key]) || e.sampling.legacyReferences.length); }
   function sourceLabel(value) { return value.replaceAll('[F]', 'FAR 52.245-1').replaceAll('[D5]', 'DFARS 252.245-7005').replaceAll('[J]', 'DCMA Job Aid Rev. 4'); }
   function badgeClass(value) { return value === 'Conditional requirement' ? 'conditional' : value === 'DCMA assessment guidance' ? 'guidance' : value === 'Optional preparation practice' ? 'optional' : ''; }
   function announce(message, isError = false) { const el = $('#import-message'); el.textContent = message; el.classList.toggle('error', isError); }
   function csvMessage(selector, message, isError = false) { const el = $(selector); el.textContent = message; el.classList.toggle('error', isError); }
 
   function showStep() {
-    const match = /^#step-([1-5])$/.exec(location.hash);
+    const match = /^#step-([1-6])$/.exec(location.hash);
     const step = match ? Number(match[1]) : 1;
     document.querySelectorAll('[data-panel]').forEach(panel => { panel.hidden = Number(panel.dataset.panel) !== step; });
     document.querySelectorAll('.page-nav a').forEach(link => {
@@ -62,8 +68,9 @@
     });
     if (step === 2) renderPrompts();
     if (step === 3) renderDocuments();
-    if (step === 4) renderReview();
-    if (step === 5) announce('');
+    if (step === 4) renderReviewItems();
+    if (step === 5) renderReview();
+    if (step === 6) announce('');
   }
   function renderMeta() { document.querySelectorAll('[data-meta]').forEach(input => { input.value = state.meta[input.dataset.meta]; }); }
   function renderElements() {
@@ -150,6 +157,59 @@
     $('#doc-element-tags').innerHTML = editingElementIds.length ? editingElementIds.map(n => `<span class="doc-element-tag">${n}. ${escapeHtml(names.find(([id]) => id === n)[1])} <button type="button" class="quiet" data-remove-doc-element="${n}" aria-label="Remove element ${n}">×</button></span>`).join('') : '<span class="helper">No elements linked yet.</span>';
   }
   function clearDocForm() { if ($('#document-editor').open) $('#document-editor').close(); $('#document-form').reset(); $('#document-id').value = ''; $('#doc-type').value = 'Document'; $('#doc-providedBy').value = ''; $('#doc-versionStatus').value = ''; editingElementIds = []; renderDocElements(); $('#save-document').textContent = 'Add reference'; $('#document-editor-title').textContent = 'Add evidence reference'; }
+  function reviewItemCounts(items = state.reviewItems) {
+    return {
+      openQuestions: items.filter(item => item.type === 'Question' && item.status === 'Open').length,
+      answeredQuestions: items.filter(item => item.type === 'Question' && item.response.trim()).length,
+      auditorQuestions: items.filter(item => item.type === 'Question' && item.raisedBy === 'Auditor').length,
+      auditeeQuestions: items.filter(item => item.type === 'Question' && item.raisedBy === 'Auditee').length,
+      openFindings: items.filter(item => item.type === 'Finding' && item.status === 'Open').length,
+      openRisks: items.filter(item => item.type === 'Risk area' && item.status === 'Open').length
+    };
+  }
+  function findingIndicator(n) {
+    const items = state.reviewItems.filter(item => item.element === n && item.type !== 'Question');
+    const open = items.filter(item => item.status === 'Open');
+    if (!items.length) return { color: 'gray', label: 'No finding or risk entries' };
+    if (open.some(item => (item.type === 'Finding' && item.findingStage === 'Reported') || item.risk === 'High')) return { color: 'red', label: 'Open reported finding or high risk' };
+    if (open.length) return { color: 'yellow', label: `${open.length} open finding/risk item${open.length === 1 ? '' : 's'}` };
+    return { color: 'green', label: 'Recorded findings/risks closed' };
+  }
+  function renderReviewItems() {
+    const type = $('#issue-type-filter').value || 'all';
+    const element = $('#issue-element-filter').value || 'all';
+    const party = $('#issue-party-filter').value || 'all';
+    const status = $('#issue-status-filter').value || 'all';
+    const visible = state.reviewItems.filter(item => (type === 'all' || item.type === type) && (element === 'all' || item.element === Number(element)) && (party === 'all' || item.raisedBy === (party === '_none' ? '' : party)) && (status === 'all' || item.status === status)).sort((a, b) => b.raisedOn.localeCompare(a.raisedOn) || a.id.localeCompare(b.id));
+    const counts = reviewItemCounts();
+    $('#issue-count').textContent = `${visible.length} of ${state.reviewItems.length} shown · ${counts.auditorQuestions} from auditor · ${counts.auditeeQuestions} from auditee · ${counts.openQuestions} open questions · ${counts.answeredQuestions} answered · ${counts.openFindings} open findings · ${counts.openRisks} open risk areas`;
+    const actions = item => `<div class="table-actions"><button type="button" class="quiet icon-action" data-edit-review-item="${escapeHtml(item.id)}" aria-label="Edit ${escapeHtml(item.title)}" title="Edit ${escapeHtml(item.title)}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h4l11-11-4-4L4 16v4Zm10-14 4 4M4 20h16"/></svg></button><button type="button" class="quiet icon-action" data-delete-review-item="${escapeHtml(item.id)}" aria-label="Remove ${escapeHtml(item.title)}" title="Remove ${escapeHtml(item.title)}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M9 7V4h6v3m3 0-1 13H7L6 7m4 4v6m4-6v6"/></svg></button></div>`;
+    const card = item => `<article class="issue-card"><div class="issue-head"><div><strong>${escapeHtml(item.title)}</strong><small>${item.element}. ${escapeHtml(names.find(([n]) => n === item.element)?.[1] || '')} · ${escapeHtml(item.type)}</small></div><span class="issue-status ${item.status === 'Closed' ? 'is-closed' : ''}">${escapeHtml(item.status)}</span></div><div class="issue-meta"><span>Raised by: ${escapeHtml(item.raisedBy || 'Not recorded')}</span><span>Raised: ${escapeHtml(item.raisedOn || '—')}</span><span>Responding: ${escapeHtml(item.responder || 'Not recorded')}</span><span>Responded: ${escapeHtml(item.respondedOn || '—')}</span>${item.type === 'Question' ? `<span>${item.response.trim() ? 'Answer recorded' : 'No answer recorded'}</span>` : `<span>Risk: ${escapeHtml(item.risk || 'Not rated')}</span>`}</div><details><summary>Details and response</summary><p><strong>${item.type === 'Question' ? 'Question' : 'Issue'}:</strong> ${escapeHtml(item.detail || 'No detail entered')}</p><p><strong>Response:</strong> ${escapeHtml(item.response || 'Not recorded')}</p>${item.type === 'Finding' ? `<p><strong>Finding stage:</strong> ${escapeHtml(item.findingStage || 'Not recorded')}</p>` : ''}${item.type !== 'Question' ? `<p><strong>Risk basis / next action:</strong> ${escapeHtml(item.riskNote || 'Not recorded')}</p>` : ''}<p><strong>Closed:</strong> ${escapeHtml(item.closedOn || '—')}</p></details>${actions(item)}</article>`;
+    for (const [kind, selector] of [['Question', '#question-list'], ['Finding', '#finding-list'], ['Risk area', '#risk-list']]) {
+      const matching = visible.filter(item => item.type === kind);
+      $(selector).innerHTML = matching.length ? `<div class="issue-cards">${matching.map(card).join('')}</div>` : `<p class="empty">No ${kind.toLowerCase()} entries match these filters.</p>`;
+    }
+  }
+  function toggleReviewItemFields() {
+    const type = $('#item-type').value;
+    document.querySelectorAll('[data-item-only]').forEach(label => { label.hidden = !label.dataset.itemOnly.split(',').includes(type); });
+  }
+  function clearReviewItemForm() {
+    if ($('#review-item-editor').open) $('#review-item-editor').close();
+    $('#review-item-form').reset(); $('#review-item-id').value = ''; $('#item-type').value = 'Question'; $('#item-status').value = 'Open'; $('#item-element').value = '1';
+    $('#save-review-item').textContent = 'Add item'; $('#review-item-editor-title').textContent = 'Add question, finding, or risk area'; toggleReviewItemFields();
+  }
+  function cleanReviewItem(raw) {
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw) || typeof raw.id !== 'string' || !/^item-[0-9]{1,12}$/.test(raw.id)) throw new Error('Invalid review item ID.');
+    if (!REVIEW_TYPES.includes(raw.type) || !Number.isInteger(raw.element) || raw.element < 1 || raw.element > 22 || !['Open', 'Closed'].includes(raw.status)) throw new Error('Invalid review item type, element, or status.');
+    if (!REVIEW_PARTIES.includes(raw.raisedBy) || !REVIEW_STAGES.includes(raw.findingStage) || !REVIEW_RISKS.includes(raw.risk)) throw new Error('Invalid review item source, stage, or risk.');
+    const clean = { id: raw.id, type: raw.type, element: raw.element, raisedBy: raw.raisedBy, status: raw.status, findingStage: raw.type === 'Finding' ? raw.findingStage : '', risk: raw.type === 'Question' ? '' : raw.risk };
+    for (const [key, limit] of Object.entries(REVIEW_LIMITS)) clean[key] = requireText(raw[key] ?? '', limit, `review item ${key}`);
+    if (!clean.title.trim()) throw new Error('A review item title is required.');
+    for (const key of ['raisedOn', 'respondedOn', 'closedOn']) requireDate(clean[key], `review item ${key}`);
+    if (raw.type === 'Question') clean.riskNote = '';
+    return clean;
+  }
   function renderReview() {
     const all = selectedItems();
     const active = selectedItems(false);
@@ -169,6 +229,9 @@
     const primary = [values[0], values[1], [statuses.Requested + statuses.Pending + statuses['Not Available'], 'Needs follow-up'], values[2]];
     $('#counts').innerHTML = primary.map(([count, label]) => `<div class="count"><strong>${count}</strong><span>${label}</span></div>`).join('');
     $('#review-secondary').textContent = `${statuses.Available} available · ${values[6][0]} not applicable · ${state.documents.length} document references`;
+    const issueCounts = reviewItemCounts();
+    $('#issue-summary').innerHTML = `<div class="issue-summary-head"><h3>Questions, findings, and risks</h3><a href="#step-4">Open working log →</a></div><div class="issue-summary-counts"><span><strong>${issueCounts.openQuestions}</strong> open questions</span><span><strong>${issueCounts.answeredQuestions}</strong> questions answered</span><span><strong>${issueCounts.openFindings}</strong> open findings</span><span><strong>${issueCounts.openRisks}</strong> open risk areas</span></div><p class="helper">These are user-entered items. Finding colors on the print dashboard summarize their recorded stage and status; they do not assess compliance.</p>`;
+    $('#finding-overview').innerHTML = `<details class="finding-overview"><summary>Finding and risk indicators by element <span>22 elements</span></summary><p class="helper">Red: open reported finding or high risk. Yellow: another open finding or risk area. Green: recorded items closed. Gray: no finding or risk entries. These are user-entered summaries.</p><div class="finding-overview-grid">${names.map(([n, name]) => { const indicator = findingIndicator(n); return `<div><strong>${n}. ${escapeHtml(name)}</strong><span class="finding-chip finding-${indicator.color}">${escapeHtml(indicator.label)}</span></div>`; }).join('')}</div></details>`;
     const cageCount = scopeLines(state.meta.cageCodes).length;
     const contractCount = scopeLines(state.meta.contractNumbers).length;
     $('#review-scope').innerHTML = `<details class="review-scope"><summary><strong>Scope under review</strong><span>${cageCount} CAGE code${cageCount === 1 ? '' : 's'} · ${contractCount} contract number${contractCount === 1 ? '' : 's'}</span></summary><div class="review-scope-lists"><div><h4>CAGE codes</h4>${scopeList(state.meta.cageCodes)}</div><div><h4>Contract numbers</h4>${scopeList(state.meta.contractNumbers)}</div></div></details>`;
@@ -303,10 +366,13 @@
     });
     return rows;
   }
+  function reviewItemRows() {
+    return [['Assessment Reference', 'Item ID', 'Type', 'Element Number', 'Element Name', 'Title', 'Raised By', 'Raised On', 'Status', 'Closed On', 'Question or Issue', 'Responding Party', 'Responded On', 'Answer or Response', 'Finding Stage', 'Risk Rating', 'Risk Basis or Next Action'], ...state.reviewItems.map(item => [state.meta.reference, item.id, item.type, item.element, names.find(([n]) => n === item.element)?.[1] || '', item.title, item.raisedBy, item.raisedOn, item.status, item.closedOn, item.detail, item.responder, item.respondedOn, item.response, item.findingStage, item.risk, item.riskNote])];
+  }
   function sessionForExport() {
     const elements = Object.fromEntries(Object.entries(state.elements).filter(([, e]) => e.selected || e.na || e.note || Object.keys(SAMPLE_LIMITS).some(key => e.sampling[key]) || e.sampling.legacyReferences.length));
     const prompts = Object.fromEntries(Object.entries(state.prompts).filter(([, p]) => p.status !== 'Not Reviewed' || p.note));
-    return { schemaVersion: 4, meta: state.meta, elements, prompts, documents: state.documents, unassignedLegacySampling: state.unassignedLegacySampling };
+    return { schemaVersion: 5, meta: state.meta, elements, prompts, documents: state.documents, reviewItems: state.reviewItems, unassignedLegacySampling: state.unassignedLegacySampling };
   }
   function requireText(value, limit, label) { if (typeof value !== 'string' || value.length > limit) throw new Error(`Invalid ${label}.`); return value; }
   function requireDate(value, label) { if (value && !/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error(`Invalid ${label}.`); return value; }
@@ -317,7 +383,7 @@
     return clean;
   }
   function importSession(raw) {
-    if (!raw || typeof raw !== 'object' || Array.isArray(raw) || ![1, 2, 3, 4].includes(raw.schemaVersion)) throw new Error('Unsupported session format.');
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw) || ![1, 2, 3, 4, 5].includes(raw.schemaVersion)) throw new Error('Unsupported session format.');
     if (!raw.meta || !raw.elements || !raw.prompts || !Array.isArray(raw.documents)) throw new Error('Session sections are missing.');
     const next = blank(false);
     for (const [key, limit] of Object.entries(META_LIMITS)) next.meta[key] = requireText(raw.meta[key] ?? '', limit, key);
@@ -326,7 +392,7 @@
     for (const [key, e] of Object.entries(raw.elements)) {
       if (!/^(?:[1-9]|1\d|2[0-2])$/.test(key) || !e || typeof e !== 'object' || Array.isArray(e) || typeof e.selected !== 'boolean' || typeof e.na !== 'boolean') throw new Error('Invalid element selection.');
       const sampling = blankSampling();
-      if (raw.schemaVersion === 4) {
+      if (raw.schemaVersion >= 4) {
         if (!e.sampling || typeof e.sampling !== 'object' || Array.isArray(e.sampling)) throw new Error('Invalid element sampling.');
         for (const [field, limit] of Object.entries(SAMPLE_LIMITS)) sampling[field] = requireText(e.sampling[field] ?? '', limit, `element sampling ${field}`);
         requireDate(sampling.selectionCommunicatedOn, 'method communication date');
@@ -368,9 +434,14 @@
       next.prompts[id] = { status: p.status, note: requireText(p.note ?? '', 1000, 'prompt note') };
     }
     next.documents.forEach(doc => doc.elementIds.sort((a, b) => a - b));
-    if (raw.schemaVersion === 4) {
+    if (raw.schemaVersion >= 4) {
       if (!Array.isArray(raw.unassignedLegacySampling) || raw.unassignedLegacySampling.length > 1000) throw new Error('Invalid unassigned sampling notes.');
       next.unassignedLegacySampling = raw.unassignedLegacySampling.map(cleanLegacyEntry);
+    }
+    if (raw.schemaVersion === 5) {
+      if (!Array.isArray(raw.reviewItems) || raw.reviewItems.length > 1000) throw new Error('Invalid review item list.');
+      const itemIds = new Set();
+      next.reviewItems = raw.reviewItems.map(item => { const clean = cleanReviewItem(item); if (itemIds.has(clean.id)) throw new Error('Duplicate review item ID.'); itemIds.add(clean.id); return clean; });
     }
     return next;
   }
@@ -395,8 +466,9 @@
     const followup = review.statuses.Requested + review.statuses.Pending + review.statuses['Not Available'];
     const cards = [[review.values[0][0], 'Selected elements'], [review.active.length - review.statuses['Not Reviewed'], 'Prompts with status'], [followup, 'Need follow-up'], [review.statuses['Not Reviewed'], 'Not reviewed']].map(([count, label]) => `<div class="dashboard-count"><strong>${count}</strong><span>${label}</span></div>`).join('');
     const legend = [['green', 'Available'], ['yellow', 'Open or mixed'], ['red', 'Not available'], ['gray', 'Not reviewed'], ['slate', 'N/A or outside scope'], ['muted', 'Not selected']].map(([key, label]) => `<span><i class="indicator-${key}"></i>${label}</span>`).join('');
-    const elements = names.map(([n, name]) => { const indicator = elementIndicator(n); return `<div class="dashboard-element indicator-${indicator.color}"><div class="dashboard-element-head"><strong>${n}. ${escapeHtml(name)}</strong><span>${indicator.label}</span></div><small>${escapeHtml(indicator.detail)}</small></div>`; }).join('');
-    $('#print-report').innerHTML = `<div class="print-dashboard"><p class="dashboard-kicker">Government property · Preparation snapshot</p><h1>PMSA Evidence Status Dashboard</h1><p class="dashboard-intro">User-entered status across all 22 elements. Colors summarize evidence-prompt entries, not compliance or evidence quality.</p>${details ? `<div class="dashboard-meta">${details}</div>` : ''}<div class="dashboard-scope"><div><strong>CAGE codes under review</strong>${scopeList(meta.cageCodes)}</div><div><strong>Contract numbers under review</strong>${scopeList(meta.contractNumbers)}</div></div><div class="dashboard-counts">${cards}</div><div class="dashboard-subcounts">${review.statuses.Available} available · ${review.values[6][0]} not applicable · ${state.documents.length} document references</div><h2>Evidence status by element</h2><div class="dashboard-legend">${legend}</div><div class="dashboard-element-grid">${elements}</div><p class="dashboard-footnote">Green: all applicable prompts marked Available. Yellow: requested, pending, or mixed entries. Red: at least one prompt marked Not Available. Gray: not reviewed. Colors describe user entries only; they are not compliance findings. Revision 1 · Generated locally.</p></div>`;
+    const issueCounts = reviewItemCounts();
+    const elements = names.map(([n, name]) => { const indicator = elementIndicator(n); const finding = findingIndicator(n); const openQuestions = state.reviewItems.filter(item => item.element === n && item.type === 'Question' && item.status === 'Open').length; return `<div class="dashboard-element indicator-${indicator.color}"><div class="dashboard-element-head"><strong>${n}. ${escapeHtml(name)}</strong><span>${indicator.label}</span></div><small>${escapeHtml(indicator.detail)}</small><div class="dashboard-finding finding-${finding.color}"><strong>Findings / risks:</strong> ${escapeHtml(finding.label)}${openQuestions ? ` · ${openQuestions} open question${openQuestions === 1 ? '' : 's'}` : ''}</div></div>`; }).join('');
+    $('#print-report').innerHTML = `<div class="print-dashboard"><p class="dashboard-kicker">Government property · Preparation snapshot</p><h1>PMSA Evidence Status Dashboard</h1><p class="dashboard-intro">User-entered status across all 22 elements. Evidence colors summarize prompt entries; finding colors summarize recorded findings and risk areas. Neither determines compliance.</p>${details ? `<div class="dashboard-meta">${details}</div>` : ''}<div class="dashboard-scope"><div><strong>CAGE codes under review</strong>${scopeList(meta.cageCodes)}</div><div><strong>Contract numbers under review</strong>${scopeList(meta.contractNumbers)}</div></div><div class="dashboard-counts">${cards}</div><div class="dashboard-subcounts">${review.statuses.Available} available · ${review.values[6][0]} not applicable · ${state.documents.length} document references · ${issueCounts.openQuestions} open questions · ${issueCounts.answeredQuestions} answered · ${issueCounts.openFindings} open findings · ${issueCounts.openRisks} open risk areas</div><h2>Evidence status and recorded findings by element</h2><div class="dashboard-legend">${legend}</div><div class="dashboard-element-grid">${elements}</div><p class="dashboard-footnote">Finding/risk red: open reported finding or user-rated high risk. Yellow: another open finding or risk area. Green: recorded items closed. Gray: no finding or risk entries. Evidence and finding indicators are separate user-entered summaries, not compliance determinations. Revision 2 · Generated locally.</p></div>`;
     window.print();
   }
   function printReport() {
@@ -411,7 +483,8 @@
     const sampleLabels = { populationRequested: 'Population', populationPeriod: 'Period', populationSize: 'Population size', populationSuppliedBy: 'Supplied by', selectionMethod: 'Selection method', selectionCommunicatedOn: 'Method communicated on', sampleSize: 'Sample size', samplePerformedBy: 'Performed by', samplePerformedDate: 'Performed when', sampleHow: 'How performed', sampleLimitations: 'Limitations' };
     const sampling = names.map(([n, name]) => { const s = state.elements[n].sampling; const entries = Object.entries(sampleLabels).filter(([key]) => s[key]).map(([key, label]) => `<li><strong>${label}:</strong> ${escapeHtml(s[key])}</li>`).join(''); const legacy = s.legacyReferences.map(entry => `<li><strong>Imported from ${escapeHtml(entry.title)}:</strong> ${escapeHtml(legacySampleDescription(entry))}</li>`).join(''); return entries || legacy ? `<div class="print-block"><h3>${n}. ${escapeHtml(name)}</h3><ul>${entries}${legacy}</ul></div>` : ''; }).join('');
     const unassigned = state.unassignedLegacySampling.length ? `<div class="print-block"><h3>Imported notes not assigned to an element</h3><ul>${state.unassignedLegacySampling.map(entry => `<li><strong>${escapeHtml(entry.title)}:</strong> ${escapeHtml(legacySampleDescription(entry))}</li>`).join('')}</ul></div>` : '';
-    $('#print-report').innerHTML = `<h1>Evidence preparation summary</h1><p class="print-note">Revision 1 · Locally generated preparation notes · Not an official PMSA report</p><table>${row('Assessment reference', meta.reference)}${row('Preparation date', meta.date)}${row('Organization or site', meta.organization)}${row('Assessment period', meta.period)}${row('CAGE codes under review', scopeLines(meta.cageCodes).join(', ') || 'Not entered')}${row('Contract numbers under review', scopeLines(meta.contractNumbers).join(', ') || 'Not entered')}${row('Preparer', meta.preparer)}</table><h2>Selected elements</h2><p>${escapeHtml(elements || 'None selected')}</p><h2>Preparation counts</h2><table>${counts}</table><h2>Needs follow-up</h2>${groups || '<p>None recorded.</p>'}<p>${review.notReviewed.length} prompt${review.notReviewed.length === 1 ? '' : 's'} not reviewed yet. See the outstanding CSV for the full list.</p><h2>Not applicable items</h2><ul>${naItems.map(s => `<li>${escapeHtml(s)}</li>`).join('') || '<li>None recorded.</li>'}</ul><h2>Population and sampling notes by element</h2>${sampling || '<p>None entered.</p>'}${unassigned}<h2>General notes</h2><p>${escapeHtml(meta.notes || 'None entered.')}</p><h2>Limits</h2><p class="print-note">These are user-entered statuses and references, not compliance findings or evidence-sufficiency determinations. Population and sampling notes describe what the user entered; the tool does not select samples or verify a method. Determine applicability from the actual contract, incorporated clause versions, deviations, and Government direction. The 22 DCMA elements are organizational guidance, not 22 separate FAR outcomes.</p>`;
+    const reviewItems = state.reviewItems.map(item => `<div class="print-block"><h3>${escapeHtml(item.type)} · ${item.element}. ${escapeHtml(item.title)} · ${escapeHtml(item.status)}</h3><p>Raised by ${escapeHtml(item.raisedBy || 'not recorded')} ${escapeHtml(item.raisedOn || '')}; responding: ${escapeHtml(item.responder || 'not recorded')}; responded: ${escapeHtml(item.respondedOn || 'not recorded')}; closed: ${escapeHtml(item.closedOn || 'not recorded')}${item.type !== 'Question' ? `; risk: ${escapeHtml(item.risk || 'not rated')}` : ''}.</p><p><strong>Question / issue:</strong> ${escapeHtml(item.detail || 'Not recorded')}</p><p><strong>Answer / response:</strong> ${escapeHtml(item.response || 'Not recorded')}</p>${item.type === 'Finding' ? `<p><strong>Stage:</strong> ${escapeHtml(item.findingStage || 'Not recorded')}</p>` : ''}${item.riskNote ? `<p><strong>Risk basis / next action:</strong> ${escapeHtml(item.riskNote)}</p>` : ''}</div>`).join('');
+    $('#print-report').innerHTML = `<h1>Evidence preparation summary</h1><p class="print-note">Revision 2 · Locally generated preparation notes · Not an official PMSA report</p><table>${row('Assessment reference', meta.reference)}${row('Preparation date', meta.date)}${row('Organization or site', meta.organization)}${row('Assessment period', meta.period)}${row('CAGE codes under review', scopeLines(meta.cageCodes).join(', ') || 'Not entered')}${row('Contract numbers under review', scopeLines(meta.contractNumbers).join(', ') || 'Not entered')}${row('Preparer', meta.preparer)}</table><h2>Selected elements</h2><p>${escapeHtml(elements || 'None selected')}</p><h2>Preparation counts</h2><table>${counts}</table><h2>Needs follow-up</h2>${groups || '<p>None recorded.</p>'}<p>${review.notReviewed.length} prompt${review.notReviewed.length === 1 ? '' : 's'} not reviewed yet. See the outstanding CSV for the full list.</p><h2>Questions, findings, and risk areas</h2>${reviewItems || '<p>None recorded.</p>'}<h2>Not applicable items</h2><ul>${naItems.map(s => `<li>${escapeHtml(s)}</li>`).join('') || '<li>None recorded.</li>'}</ul><h2>Population and sampling notes by element</h2>${sampling || '<p>None entered.</p>'}${unassigned}<h2>General notes</h2><p>${escapeHtml(meta.notes || 'None entered.')}</p><h2>Limits</h2><p class="print-note">These are user-entered statuses, references, questions, findings, and risk ratings; the tool does not establish a Government finding, compliance, or evidence sufficiency. Population and sampling notes describe what the user entered; the tool does not select samples or verify a method. Determine applicability from the actual contract, incorporated clause versions, deviations, and Government direction. The 22 DCMA elements are organizational guidance, not 22 separate FAR outcomes.</p>`;
     window.print();
   }
   function loadDemo() {
@@ -433,9 +506,16 @@
       '9-1': { status: 'Available', note: '' },
       '22-1': { status: 'Not Applicable', note: 'Closeout is outside this fictional review period.' }
     };
+    state.reviewItems = [
+      { id: 'item-1', type: 'Question', element: 4, title: 'Which receiving log covers the selected period?', raisedBy: 'Auditor', raisedOn: '2026-10-06', status: 'Closed', closedOn: '2026-10-09', detail: 'Identify the fictional receiving log for the selected dates.', responder: 'Demo receiving team', respondedOn: '2026-10-08', response: 'The fictional receiving records ZIP is the working reference.', findingStage: '', risk: '', riskNote: '' },
+      { id: 'item-2', type: 'Question', element: 7, title: 'Which record layout should be used?', raisedBy: 'Auditee', raisedOn: '2026-10-10', status: 'Open', closedOn: '', detail: 'Clarify the requested format for the fictional record example.', responder: 'Demo reviewer', respondedOn: '', response: '', findingStage: '', risk: '', riskNote: '' },
+      { id: 'item-3', type: 'Finding', element: 9, title: 'Fictional inventory record gap', raisedBy: 'Auditor', raisedOn: '2026-10-11', status: 'Open', closedOn: '', detail: 'Illustrative finding reported for demonstration only.', responder: 'Demo property team', respondedOn: '', response: '', findingStage: 'Reported', risk: 'High', riskNote: 'User-entered example rating; no actual records reviewed.' },
+      { id: 'item-4', type: 'Risk area', element: 2, title: 'Review schedule may slip', raisedBy: 'Auditee', raisedOn: '2026-10-12', status: 'Open', closedOn: '', detail: 'Illustrative preparation concern.', responder: 'Demo property team', respondedOn: '', response: '', findingStage: '', risk: 'Moderate', riskNote: 'Track the fictional procedure response date.' }
+    ];
     nextDocumentId = 4;
+    nextReviewItemId = 5;
     $('#document-search').value = '';
-    renderMeta(); renderElements(); renderPrompts(); renderDocuments(); renderReview(); clearDocForm(); announce('Fictional example loaded.');
+    renderMeta(); renderElements(); renderPrompts(); renderDocuments(); renderReviewItems(); renderReview(); clearDocForm(); clearReviewItemForm(); announce('Fictional example loaded.');
   }
 
   document.addEventListener('input', event => {
@@ -451,6 +531,8 @@
     if (t.dataset.elementScope) { state.elements[t.dataset.elementScope].na = t.value === 'na'; renderElements(); renderPrompts(); }
     if (t.dataset.promptStatus) { promptState(t.dataset.promptStatus).status = t.value; const section = t.closest?.('[data-gather-element]'); const summary = section?.querySelector('summary small'); if (summary) { const n = Number(section.dataset.gatherElement); const reviewed = CATALOG.filter(item => item.element === n && promptState(item.id).status !== 'Not Reviewed').length; summary.textContent = `${reviewed} of 2 reviewed`; } }
     if (t.id === 'document-sort') renderDocuments();
+    if (['issue-type-filter', 'issue-element-filter', 'issue-party-filter', 'issue-status-filter'].includes(t.id)) renderReviewItems();
+    if (t.id === 'item-type') toggleReviewItemFields();
     if ((t.id === 'import-gather' || t.id === 'import-documents') && t.files?.[0]) {
       const file = t.files[0]; const gather = t.id === 'import-gather'; const message = gather ? '#gather-csv-message' : '#documents-csv-message';
       if (file.size > 12 * 1024 * 1024) { csvMessage(message, 'CSV exceeds the 12 MB limit.', true); t.value = ''; return; }
@@ -469,7 +551,7 @@
     if (t.id === 'open-session' && t.files?.[0]) {
       const file = t.files[0];
       if (file.size > 12 * 1024 * 1024) { announce('Session file exceeds the 12 MB limit.', true); t.value = ''; return; }
-      file.text().then(text => { const parsed = JSON.parse(text); const imported = importSession(parsed); if (hasWorkingEntries() && !window.confirm('Open this session and replace the current unsaved entries?')) return announce('Session import cancelled.'); state = imported; nextDocumentId = Math.max(0, ...state.documents.map(doc => Number(doc.id.slice(4)))) + 1; $('#document-search').value = ''; renderMeta(); renderElements(); renderPrompts(); renderDocuments(); renderReview(); clearDocForm(); announce('Session loaded successfully.'); }).catch(error => announce(`Session not loaded: ${error.message}`, true)).finally(() => { t.value = ''; });
+      file.text().then(text => { const parsed = JSON.parse(text); const imported = importSession(parsed); if (hasWorkingEntries() && !window.confirm('Open this session and replace the current unsaved entries?')) return announce('Session import cancelled.'); state = imported; nextDocumentId = Math.max(0, ...state.documents.map(doc => Number(doc.id.slice(4)))) + 1; nextReviewItemId = Math.max(0, ...state.reviewItems.map(item => Number(item.id.slice(5)))) + 1; $('#document-search').value = ''; renderMeta(); renderElements(); renderPrompts(); renderDocuments(); renderReviewItems(); renderReview(); clearDocForm(); clearReviewItemForm(); announce('Session loaded successfully.'); }).catch(error => announce(`Session not loaded: ${error.message}`, true)).finally(() => { t.value = ''; });
     }
   });
   $('#select-all').addEventListener('click', () => { names.forEach(([n]) => { state.elements[n].selected = true; }); renderElements(); renderPrompts(); });
@@ -543,10 +625,29 @@
     if (remove) { const id = remove.dataset.deleteDoc; const doc = state.documents.find(item => item.id === id); if (!doc || !window.confirm(`Remove the reference “${doc.title}”?`)) return; state.documents = state.documents.filter(item => item.id !== id); if ($('#document-id').value === id) clearDocForm(); renderDocuments(); }
   });
   $('#close-document').addEventListener('click', clearDocForm);
+  $('#add-review-item').addEventListener('click', () => { clearReviewItemForm(); $('#review-item-editor').showModal(); $('#item-title').focus(); });
+  $('#review-item-form').addEventListener('submit', event => {
+    event.preventDefault();
+    const currentId = $('#review-item-id').value;
+    const raw = { id: currentId || `item-${nextReviewItemId}`, type: $('#item-type').value, element: Number($('#item-element').value), raisedBy: $('#item-raisedBy').value, status: $('#item-status').value, findingStage: $('#item-findingStage').value, risk: $('#item-risk').value };
+    for (const key of Object.keys(REVIEW_LIMITS)) raw[key] = $(`#item-${key}`).value.trim();
+    const item = cleanReviewItem(raw);
+    if (currentId) { const index = state.reviewItems.findIndex(entry => entry.id === currentId); if (index < 0) return; state.reviewItems[index] = item; }
+    else { state.reviewItems.push(item); nextReviewItemId++; }
+    clearReviewItemForm(); renderReviewItems(); renderReview();
+  });
+  $('#close-review-item').addEventListener('click', clearReviewItemForm);
+  $('#cancel-review-item').addEventListener('click', clearReviewItemForm);
+  for (const selector of ['#question-list', '#finding-list', '#risk-list']) $(selector).addEventListener('click', event => {
+    const edit = event.target.closest('[data-edit-review-item]'); const remove = event.target.closest('[data-delete-review-item]');
+    if (edit) { const item = state.reviewItems.find(entry => entry.id === edit.dataset.editReviewItem); if (!item) return; clearReviewItemForm(); $('#review-item-editor-title').textContent = 'Edit question, finding, or risk area'; $('#review-item-id').value = item.id; for (const key of ['type', 'element', 'raisedBy', 'status', 'findingStage', 'risk', ...Object.keys(REVIEW_LIMITS)]) $(`#item-${key}`).value = item[key]; toggleReviewItemFields(); $('#save-review-item').textContent = 'Save changes'; $('#review-item-editor').showModal(); $('#item-title').focus(); }
+    if (remove) { const item = state.reviewItems.find(entry => entry.id === remove.dataset.deleteReviewItem); if (!item || !window.confirm(`Remove “${item.title}” from the working log?`)) return; state.reviewItems = state.reviewItems.filter(entry => entry.id !== item.id); renderReviewItems(); renderReview(); }
+  });
   $('#download-index').addEventListener('click', () => download('pmsa-evidence-index.csv', csv(evidenceRows()), 'text/csv;charset=utf-8'));
   $('#download-gather').addEventListener('click', () => download('pmsa-gather-entries.csv', csv(gatherRows()), 'text/csv;charset=utf-8'));
   $('#download-documents').addEventListener('click', () => download('pmsa-evidence-references.csv', csv(documentRows()), 'text/csv;charset=utf-8'));
   $('#download-documents-here').addEventListener('click', () => download('pmsa-evidence-references.csv', csv(documentRows()), 'text/csv;charset=utf-8'));
+  $('#download-issues').addEventListener('click', () => download('pmsa-questions-findings-risks.csv', csv(reviewItemRows()), 'text/csv;charset=utf-8'));
   $('#download-outstanding').addEventListener('click', () => download('pmsa-outstanding-evidence.csv', csv(outstandingRows()), 'text/csv;charset=utf-8'));
   const saveSession = () => download('pmsa-working-session.json', JSON.stringify(sessionForExport(), null, 2) + '\n', 'application/json;charset=utf-8');
   $('#save-session').addEventListener('click', saveSession);
@@ -554,11 +655,14 @@
   $('#print-summary').addEventListener('click', printReport);
   $('#print-dashboard').addEventListener('click', printDashboard);
   $('#print-dashboard-export').addEventListener('click', printDashboard);
-  $('#reset-session').addEventListener('click', () => { if (!window.confirm('Reset the current session? Unsaved entries will be lost.')) return; state = blank(); nextDocumentId = 1; $('#document-search').value = ''; renderMeta(); renderElements(); renderPrompts(); renderDocuments(); renderReview(); clearDocForm(); announce('Session reset.'); });
+  $('#reset-session').addEventListener('click', () => { if (!window.confirm('Reset the current session? Unsaved entries will be lost.')) return; state = blank(); nextDocumentId = 1; nextReviewItemId = 1; $('#document-search').value = ''; renderMeta(); renderElements(); renderPrompts(); renderDocuments(); renderReviewItems(); renderReview(); clearDocForm(); clearReviewItemForm(); announce('Session reset.'); });
   $('#load-demo').addEventListener('click', () => { if (hasWorkingEntries() && !window.confirm('Load the fictional example and replace the current unsaved entries?')) return; loadDemo(); });
   window.addEventListener('hashchange', showStep);
   $('#doc-element-choice').innerHTML = '<option value="">Choose an element</option>' + names.map(([n, name]) => `<option value="${n}">${n}. ${escapeHtml(name)}</option>`).join('');
+  const elementOptions = names.map(([n, name]) => `<option value="${n}">${n}. ${escapeHtml(name)}</option>`).join('');
+  $('#item-element').innerHTML = elementOptions;
+  $('#issue-element-filter').innerHTML = '<option value="all">All elements</option>' + elementOptions;
   renderDocElements();
-  renderMeta(); renderElements(); showStep();
-  window.PMSATest = { getState: () => structuredClone(state), importSession, evidenceRows, documentRows, gatherRows, parseGatherCsv, parseDocumentsCsv, parseCsv, outstandingRows, csv, sessionForExport };
+  clearReviewItemForm(); renderMeta(); renderElements(); showStep();
+  window.PMSATest = { getState: () => structuredClone(state), importSession, evidenceRows, documentRows, reviewItemRows, findingIndicator, gatherRows, parseGatherCsv, parseDocumentsCsv, parseCsv, outstandingRows, csv, sessionForExport };
 })();

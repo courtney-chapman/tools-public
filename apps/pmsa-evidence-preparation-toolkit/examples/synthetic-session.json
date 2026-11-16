@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "meta": {
     "reference": "DEMO-PMSA-042",
     "date": "2026-11-15",
@@ -233,6 +233,12 @@
       "requestedOn": "",
       "receivedOn": "2026-10-09"
     }
+  ],
+  "reviewItems": [
+    { "id": "item-1", "type": "Question", "element": 4, "title": "Which receiving log covers the selected period?", "raisedBy": "Auditor", "raisedOn": "2026-10-06", "status": "Closed", "closedOn": "2026-10-09", "detail": "Identify the fictional receiving log for the selected dates.", "responder": "Demo receiving team", "respondedOn": "2026-10-08", "response": "The fictional receiving records ZIP is the working reference.", "findingStage": "", "risk": "", "riskNote": "" },
+    { "id": "item-2", "type": "Question", "element": 7, "title": "Which record layout should be used?", "raisedBy": "Auditee", "raisedOn": "2026-10-10", "status": "Open", "closedOn": "", "detail": "Clarify the requested format for the fictional record example.", "responder": "Demo reviewer", "respondedOn": "", "response": "", "findingStage": "", "risk": "", "riskNote": "" },
+    { "id": "item-3", "type": "Finding", "element": 9, "title": "Fictional inventory record gap", "raisedBy": "Auditor", "raisedOn": "2026-10-11", "status": "Open", "closedOn": "", "detail": "Illustrative finding reported for demonstration only.", "responder": "Demo property team", "respondedOn": "", "response": "", "findingStage": "Reported", "risk": "High", "riskNote": "User-entered example rating; no actual records reviewed." },
+    { "id": "item-4", "type": "Risk area", "element": 2, "title": "Review schedule may slip", "raisedBy": "Auditee", "raisedOn": "2026-10-12", "status": "Open", "closedOn": "", "detail": "Illustrative preparation concern.", "responder": "Demo property team", "respondedOn": "", "response": "", "findingStage": "", "risk": "Moderate", "riskNote": "Track the fictional procedure response date." }
   ],
   "unassignedLegacySampling": []
 }

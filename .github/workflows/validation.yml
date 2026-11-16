@@ -41,3 +41,5 @@ jobs:
         run: python3 support/scripts/package_disposition_preparation.py
       - name: Validate PMSA evidence toolkit package
         run: python3 support/scripts/package_pmsa_evidence_preparation.py
+      - name: Validate source justification app package
+        run: python3 support/scripts/package_noncompetitive_source_justification.py

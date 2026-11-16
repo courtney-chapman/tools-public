@@ -35,3 +35,5 @@ jobs:
         run: python3 support/scripts/package_physical_inventory.py
       - name: Validate custody receipt app package
         run: python3 support/scripts/package_property_custody_receipt.py
+      - name: Validate PMSA evidence toolkit package
+        run: python3 support/scripts/package_pmsa_evidence_preparation.py

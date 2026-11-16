@@ -65,6 +65,12 @@ Build the PMSA Evidence Preparation Toolkit download with
 13-file ZIP is written to `.build/app-zips/pmsa-evidence-preparation-toolkit.zip`
 for attachment to a GitHub Release. The release image is stored separately from the app ZIP.
 
+Build the Noncompetitive Source Justification download with
+`python3 support/scripts/package_noncompetitive_source_justification.py`. The deterministic,
+three-file ZIP is written to `.build/app-zips/noncompetitive-source-justification.zip`.
+Only `index.html` is needed at runtime; the guide and license travel with the download.
+The release image is stored separately from the app ZIP.
+
 ## Release presentation
 
 - Use the product name shown on its release card as the release title. Keep the

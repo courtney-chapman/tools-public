@@ -1,7 +1,5 @@
 <img src="docs/readme/readme_header.png" alt="Tools and Plugins: offline browser apps and AI plugins for government property and procurement work." width="100%">
 
-[My Portfolio](https://github.com/courtney-chapman/portfolio-public) shows the projects and demonstrations behind related tools. [Visual portfolio](https://courtneypetersonchapman.notion.site/) presents the same work in Notion.
-
 **Project status:** These tools are independent demonstrations provided as-is, not managed services. They are not guaranteed to reflect subsequent regulatory changes. Users are responsible for verifying applicable requirements, source currency and outputs before operational use.
 
 **Start here:** [Browser apps](#standalone-browser-apps) · [Plugins](#plugins) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
@@ -12,6 +10,8 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 <img src="docs/readme/readme_open_app.png" alt="Open a browser app: download the ZIP from Releases, unzip it, and open index.html in a desktop browser. No install, no account, works offline." width="100%">
 
+### Government property
+
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
 | <img src="docs/readme/icons/dd1149-generator.png" width="56" alt=""> | **DD Form 1149 Generator**<br>Create DD Form 1149-style shipping documents and continuation sheets offline, with shipment preparation guidance.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/dd1149-generator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/dd1149-generator-v1.0.2) · [Guide](apps/dd1149-generator/README.md) |
@@ -20,6 +20,10 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 | <img src="docs/readme/icons/property-custody-receipt-generator.png" width="56" alt=""> | **Government Property Custody Receipt Generator**<br>Create printable property issuance, return, and custody acknowledgment receipts with an optional inspection checklist.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/property-custody-receipt-generator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/property-custody-receipt-generator-v1.1.0) · [Guide](apps/property-custody-receipt-generator/README.md) |
 | <img src="docs/readme/icons/government-property-disposition-preparation-generator.png" width="56" alt=""> | **Government Property Disposition Preparation Checklist Generator**<br>Organize a working property listing, checklist, and summary before disposition review.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/government-property-disposition-preparation-generator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/government-property-disposition-preparation-generator-v1.0.0) · [Guide](apps/government-property-disposition-preparation-generator/README.md) |
 | <img src="docs/readme/icons/pmsa-evidence-preparation-toolkit.png" width="56" alt=""> | **PMSA Evidence Preparation Toolkit**<br>Organize evidence references, review all 22 property elements, and print an overall status dashboard offline.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/pmsa-evidence-preparation-toolkit/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/pmsa-evidence-preparation-toolkit-v1.1.0) · [Guide](apps/pmsa-evidence-preparation-toolkit/README.md) |
+
+### Procurement
+
+Procurement browser apps are coming soon.
 
 ## Plugins
 
@@ -79,3 +83,7 @@ If your ChatGPT web account has plugin ZIP upload access, download the ZIP for t
 Security concerns should follow the [security policy](SECURITY.md).
 
 Original repository content is licensed under [CC BY-NC 4.0](LICENSE). The standalone browser apps have separate MIT licenses in their [app folders](apps/). Third-party material remains subject to its own terms.
+
+## Portfolio
+
+[My Portfolio](https://github.com/courtney-chapman/portfolio-public) shows the projects and demonstrations behind related tools. [Visual portfolio](https://courtneypetersonchapman.notion.site/) presents the same work in Notion.

@@ -1,0 +1,17 @@
+# Public authority for the correspondence workflow
+
+Check the actual contract and incorporated clause versions before applying these provisions. This list is a research aid, not an automated applicability determination.
+
+| Source | Narrow relevance |
+| --- | --- |
+| [FAR 52.245-1, Government Property (Sep. 2021)](https://www.acquisition.gov/far/52.245-1) | Paragraph (a) defines GFP, shipment discrepancies, and loss; (b)(2) addresses stewardship from receipt; (d)(1) and (d)(3) address Government furnishing and CO changes; (f)(1)(ii) covers receipt and (ii)(A) a written GFP discrepancy statement; (f)(1)(iii) records; (f)(1)(v) subcontractor control; (f)(1)(vi) reports; (g) Government review; (l) written communications. |
+| [FAR 45.106](https://www.acquisition.gov/far/45.106) | A transfer of accountability between existing contracts is documented by modifications to both contracts. This is a conditional transfer rule, not a rule for every arrival. |
+| [FAR 1.602-1](https://www.acquisition.gov/far/1.602-1) and [43.102](https://www.acquisition.gov/far/43.102) | Contracting officers bind the Government within delegated authority; only authorized COs execute modifications. A reported verbal statement does not establish a particular speaker's authority. |
+| [DFARS 252.245-7005, Management and Reporting of Government Property (Jan. 2024)](https://www.acquisition.gov/dfars/252.245-7005-management-and-reporting-government-property.) | When incorporated, (b)(1)(i) requires GFP Module receipt reporting; (b)(3) sets seven business days for status updates unless the contract provides otherwise; (b)(5) addresses subcontractor-held property; (c) adds record data. The module creates electronic equivalents of shipping forms for shipments under (b)(1)(iii). |
+| [DFARS PGI 245.103-71 and -72](https://www.acquisition.gov/dfarspgi/pgi-245.1-general) | Government-side DoD procedures for contract-accountability transfers and GFP attachments. A DD Form 1149 alone is not a contract-accountability transfer. |
+| [DCMA Government Contract Property Job Aid, Rev. 4 (Mar. 2025), Elements 4–5](https://www.dcma.mil/Portals/31/Documents/HQ/Contract%20Property%20Job%20Aid%20Rev4%20March%2028%202025.pdf?ver=MBOAef5kaoBwrQFEYeKx3g%3D%3D) | Public assessment guidance. Element 5 discusses incomplete shipping data, samples contractor statements to the PA, and states FAR 52.245-1 does not require contractors to prepare SF 361 or SF 364. Its example documents are not a mandatory set. |
+| [DoD GFP process training (Jan. 2024)](https://dodprocurementtoolbox.com/uploads/GFP_Process_Training_Jan_2024_5cf8f59ce1.pdf) | Public implementation guidance describes a unilateral GFP Module receipt when no Government electronic shipment notice exists. The training predates some later rule changes; the incorporated clause controls. |
+
+The current [DFARS 252.245-7002 entry](https://www.acquisition.gov/dfars/252.245-7002-reserved.) is reserved. An older contract may contain earlier property clauses, so do not silently apply current 252.245-7005 to it.
+
+**Interpretive boundary:** FAR's shipment-discrepancy definition compares documented shipment with receipt. DCMA guidance also examines incomplete shipping information. Neither source unambiguously makes total absence of shipping documents, with no observed difference, a proven FAR 52.245-1(f)(1)(ii)(A) trigger. Use a neutral written documentation request and flag applicability for human review.

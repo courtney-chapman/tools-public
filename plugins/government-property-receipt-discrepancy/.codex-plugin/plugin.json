@@ -1,0 +1,20 @@
+{
+  "name": "government-property-receipt-discrepancy",
+  "version": "0.1.0",
+  "description": "Draft and validate evidence-based GFP receipt documentation requests and shipment discrepancy notices.",
+  "author": { "name": "courtney-chapman" },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GFP Receipt Discrepancy Correspondence",
+    "shortDescription": "Draft and review GFP receipt notices.",
+    "longDescription": "Generate or validate concise correspondence about undocumented GFP arrivals, shipment differences, and unresolved accountable contracts.",
+    "developerName": "courtney-chapman",
+    "category": "Productivity",
+    "capabilities": ["Web Search"],
+    "defaultPrompt": [
+      "Draft a GFP receipt documentation request",
+      "Draft a GFP shipment discrepancy notice",
+      "Validate my GFP receipt letter"
+    ]
+  }
+}

@@ -31,3 +31,5 @@ Source files are plain HTML, CSS, and JavaScript with no third-party runtime dep
 Demonstration only. No promise of ongoing updates or support.
 
 Built by Courtney · [More tools on GitHub](https://github.com/courtney-chapman).
+
+The app uses the shared navy and blue color theme and follows your system dark mode setting. Printed documents remain on white paper.

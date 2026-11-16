@@ -32,6 +32,12 @@
       "category": "productivity"
     },
     {
+      "name": "government-property-contract-transfer-guide",
+      "source": "./plugins/government-property-contract-transfer-guide",
+      "description": "Explain Government property contract transfer scenarios, prepare documentation questions, and review plans without deciding authorization.",
+      "category": "productivity"
+    },
+    {
       "name": "software-saas-negotiation-strategy",
       "source": "./plugins/software-saas-negotiation-strategy",
       "description": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",

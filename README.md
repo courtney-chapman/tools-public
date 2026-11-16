@@ -40,7 +40,7 @@ In Claude Code, add the marketplace and install the plugin you want. For example
 
 ### Download a plugin ZIP
 
-The latest [plugin release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.3) has one ZIP per plugin. Each ZIP contains the Codex and Claude Code manifests, the skill files, and the repository license.
+The latest [plugin release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.4) has one ZIP per plugin. Each ZIP contains the Codex and Claude Code manifests, the skill files, and the repository license.
 
 If your ChatGPT web account has plugin ZIP upload access, download the ZIP for the plugin you want and upload it there. Availability depends on your plan and permissions.
 
@@ -63,6 +63,7 @@ If your ChatGPT web account has plugin ZIP upload access, download the ZIP for t
 | <img src="docs/readme/icons/government-property-ltdd-relief-letter-generator.png" width="56" alt=""> | **Government Property LTDD Relief Letter Generator**<br>Draft and review LTDD relief packages, separating verified facts from assumptions and evidence gaps.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.3) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-ltdd-relief-letter-generator) |
 | <img src="docs/readme/icons/government-property-receipt-discrepancy.png" width="56" alt=""> | **GFP Receipt Discrepancy Correspondence**<br>Draft and review GFP receipt documentation requests, shipment discrepancy notices, and accountable-contract clarification requests.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.3) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-receipt-discrepancy) |
 | <img src="docs/readme/icons/government-property-written-direction-request-generator.png" width="56" alt=""> | **Government Property Written Direction Request**<br>Draft and review requests for written Government direction on proposed property actions, conflicting instructions, and unresolved next steps.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.3) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-written-direction-request-generator) |
+| <img src="docs/readme/icons/government-property-contract-transfer-guide.png" width="56" alt=""> | **Government Property Contract Transfer Guide**<br>Explain GFP transfers, CAP delivery, cross-contract use, and physical movement; prepare or review a proposed transaction.<br>[Release](https://github.com/courtney-chapman/tools-public/releases/tag/v2026.11.15.4) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-contract-transfer-guide) |
 
 ## Licensing and security
 

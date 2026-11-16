@@ -1,0 +1,24 @@
+{
+  "name": "government-property-contract-transfer-guide",
+  "version": "0.1.0",
+  "description": "Explain Government property contract transfer scenarios, prepare documentation questions, and review plans without deciding authorization.",
+  "author": {
+    "name": "courtney-chapman"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Government Property Contract Transfer Guide",
+    "shortDescription": "Explain property transfer scenarios",
+    "longDescription": "Explain Government property contract transfer scenarios, prepare documentation questions, and review plans without deciding authorization.",
+    "developerName": "courtney-chapman",
+    "category": "Productivity",
+    "capabilities": [
+      "Web Search"
+    ],
+    "defaultPrompt": [
+      "Explain this Government property contract transfer scenario",
+      "Prepare a Government property transfer checklist",
+      "Review my Government property transfer plan"
+    ]
+  }
+}

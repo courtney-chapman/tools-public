@@ -10,6 +10,7 @@ This directory contains repository-level maintenance guidance.
 - `apps/physical-inventory-count-sheet-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/property-custody-receipt-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/government-property-disposition-preparation-generator/` contains a standalone offline browser app, outside the plugin catalog.
+- `apps/pmsa-evidence-preparation-toolkit/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the Codex marketplace catalog.
 - `.claude-plugin/marketplace.json` is the Claude Code marketplace catalog.
 - `docs/` contains README graphics and release images.

@@ -45,3 +45,5 @@ jobs:
         run: python3 support/scripts/package_noncompetitive_source_justification.py
       - name: Validate subcontracting plan app package
         run: python3 support/scripts/package_individual_subcontracting_plan.py
+      - name: Validate subcontract negotiation memo package
+        run: python3 support/scripts/package_subcontract_negotiation_memo.py

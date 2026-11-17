@@ -6,11 +6,11 @@ An offline browser app for prime-contractor buyers to document a supplier propos
 
 Open `index.html` in a current browser. The app has five bookmarkable steps:
 
-1. **Before:** Identify the purchase, record the supplier proposal, evaluate it, set an objective, and record a working certified cost or pricing data assessment.
+1. **Before:** Identify the purchase, record the supplier proposal, evaluate it, set an objective, and record whether certified cost or pricing data are required and why. A waiver needs its approval reference.
 2. **During:** Record dates, participants, offers, counteroffers, material issues, and changes to scope or terms.
 3. **After:** Record an agreed amount when reached, compare proposed, objective, and negotiated amounts, explain price reasonableness, and identify supporting records. When applicable, record certified-data updates and supplier certification status.
 4. **Check:** Review missing information, supporting evidence, and items for Procurement review. These checks use entered data and do not verify facts.
-5. **Memo:** Review the purchase-file document, copy it, or print/save a PDF. Incomplete drafts show `[INSERT]` prompts. Selecting Completed does not approve a purchase or execute a supplier certificate.
+5. **Memo:** Review the purchase-file document, copy it, or print/save a PDF. Incomplete drafts show `[INSERT]` prompts. A completed title appears only when the Check step has no missing information or evidence gaps. It does not approve a purchase or execute a supplier certificate.
 
 **Get AI Help** copies an optional prompt for the user to decide whether to share. **Export JSON** saves a working record; **Import JSON** validates it and asks before replacing populated data. **Clear all** asks before erasing current entries. To avoid a local file path or timestamp in the PDF, disable browser **Headers and footers** in the print dialog.
 
@@ -24,4 +24,4 @@ The memorandum contains six core sections and a seventh certified-data section w
 
 Entries stay in browser memory while the page is open. Refreshing or closing it discards unsaved work. Nothing is sent or saved automatically. Exported JSON, copied text, and PDFs may contain procurement information; handle them in an authorized environment. The offline ZIP contains this guide, the MIT license, and the self-contained `index.html`.
 
-Built by [Courtney](https://github.com/courtney-chapman/tools-public). Revision 1.
+Built by [Courtney](https://github.com/courtney-chapman/tools-public). Revision 2. JSON schema version 1.1.

@@ -12,6 +12,7 @@ This directory contains repository-level maintenance guidance.
 - `apps/government-property-disposition-preparation-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/pmsa-evidence-preparation-toolkit/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/commercial-item-determination/` contains a standalone offline browser app, outside the plugin catalog.
+- `apps/individual-subcontracting-plan-builder/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the Codex marketplace catalog.
 - `.claude-plugin/marketplace.json` is the Claude Code marketplace catalog.
 - `docs/` contains README graphics and release images.
@@ -82,6 +83,12 @@ Build the Subcontract Negotiation Memorandum download with
 `python3 support/scripts/package_subcontract_negotiation_memo.py`. The deterministic,
 three-file ZIP is written to `.build/app-zips/subcontract-negotiation-memo.zip`.
 Only `index.html` is needed at runtime; the guide and license travel with the download.
+
+Build the Individual Subcontracting Plan Builder download with
+`python3 support/scripts/package_individual_subcontracting_plan.py`. The deterministic,
+three-file ZIP is written to `.build/app-zips/individual-subcontracting-plan-builder.zip`.
+Only `index.html` is needed at runtime; the guide and license travel with the download.
+The release image is stored separately from the app ZIP.
 
 ## Release presentation
 

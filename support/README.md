@@ -11,6 +11,7 @@ This directory contains repository-level maintenance guidance.
 - `apps/property-custody-receipt-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/government-property-disposition-preparation-generator/` contains a standalone offline browser app, outside the plugin catalog.
 - `apps/pmsa-evidence-preparation-toolkit/` contains a standalone offline browser app, outside the plugin catalog.
+- `apps/commercial-item-determination/` contains a standalone offline browser app, outside the plugin catalog.
 - `.agents/plugins/marketplace.json` is the Codex marketplace catalog.
 - `.claude-plugin/marketplace.json` is the Claude Code marketplace catalog.
 - `docs/` contains README graphics and release images.
@@ -68,6 +69,12 @@ for attachment to a GitHub Release. The release image is stored separately from 
 Build the Noncompetitive Source Justification download with
 `python3 support/scripts/package_noncompetitive_source_justification.py`. The deterministic,
 three-file ZIP is written to `.build/app-zips/noncompetitive-source-justification.zip`.
+Only `index.html` is needed at runtime; the guide and license travel with the download.
+The release image is stored separately from the app ZIP.
+
+Build the Commercial Product, Service, and COTS Determination download with
+`python3 support/scripts/package_commercial_item_determination.py`. The deterministic,
+three-file ZIP is written to `.build/app-zips/commercial-item-determination.zip`.
 Only `index.html` is needed at runtime; the guide and license travel with the download.
 The release image is stored separately from the app ZIP.
 

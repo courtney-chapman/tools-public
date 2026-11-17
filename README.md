@@ -14,7 +14,10 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 <table width="100%">
   <thead><tr><th width="80">&nbsp;</th><th>&nbsp;</th></tr></thead>
-  <tbody><tr><td><img src="docs/readme/icons/noncompetitive-source-justification.png" width="56" alt=""></td><td><strong>Noncompetitive Source Justification</strong><br>Prepare a factual four-section justification for Procurement review in an offline browser app.<br><a href="https://courtney-chapman.github.io/tools-public/apps/noncompetitive-source-justification/">Try online</a> · <a href="https://github.com/courtney-chapman/tools-public/releases/tag/noncompetitive-source-justification-v1.0.0">Download</a> · <a href="apps/noncompetitive-source-justification/README.md">Guide</a></td></tr></tbody>
+  <tbody>
+    <tr><td><img src="docs/readme/icons/noncompetitive-source-justification.png" width="56" alt=""></td><td><strong>Noncompetitive Source Justification</strong><br>Prepare a factual four-section justification for Procurement review in an offline browser app.<br><a href="https://courtney-chapman.github.io/tools-public/apps/noncompetitive-source-justification/">Try online</a> · <a href="https://github.com/courtney-chapman/tools-public/releases/tag/noncompetitive-source-justification-v1.0.0">Download</a> · <a href="apps/noncompetitive-source-justification/README.md">Guide</a></td></tr>
+    <tr><td><img src="docs/readme/icons/commercial-product-service-cots-determination.png" width="56" alt=""></td><td><strong>Commercial Product, Service, and COTS Determination</strong><br>Organize sources, answer the applicable commercial definition and COTS questions, and prepare a buyer determination offline.<br><a href="https://courtney-chapman.github.io/tools-public/apps/commercial-item-determination/">Try online</a> · <a href="https://github.com/courtney-chapman/tools-public/releases/tag/commercial-item-determination-v1.0.0">Download</a> · <a href="apps/commercial-item-determination/README.md">Guide</a></td></tr>
+  </tbody>
 </table>
 
 ### Government property

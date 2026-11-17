@@ -78,6 +78,11 @@ three-file ZIP is written to `.build/app-zips/commercial-item-determination.zip`
 Only `index.html` is needed at runtime; the guide and license travel with the download.
 The release image is stored separately from the app ZIP.
 
+Build the Subcontract Negotiation Memorandum download with
+`python3 support/scripts/package_subcontract_negotiation_memo.py`. The deterministic,
+three-file ZIP is written to `.build/app-zips/subcontract-negotiation-memo.zip`.
+Only `index.html` is needed at runtime; the guide and license travel with the download.
+
 ## Release presentation
 
 - Use the product name shown on its release card as the release title. Keep the

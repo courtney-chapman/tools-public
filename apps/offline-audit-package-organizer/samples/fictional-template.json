@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "fictional-template",
+  "name": "Fictional audit sample",
+  "folders": [
+    {
+      "id": "planning",
+      "name": "Planning",
+      "types": [
+        {
+          "id": "request",
+          "name": "Request",
+          "stem": "Request",
+          "required": true
+        },
+        {
+          "id": "approval",
+          "name": "Approval",
+          "stem": "Approval",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "types": [
+        {
+          "id": "summary",
+          "name": "Research summary",
+          "stem": "Research Summary",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

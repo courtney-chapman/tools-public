@@ -47,3 +47,5 @@ jobs:
         run: python3 support/scripts/package_individual_subcontracting_plan.py
       - name: Validate subcontract negotiation memo package
         run: python3 support/scripts/package_subcontract_negotiation_memo.py
+      - name: Validate audit organizer app package
+        run: python3 support/scripts/package_offline_audit_organizer.py

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'self' file:; img-src 'self' data: blob:; font-src 'self' file:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Offline Audit Package Organizer</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/jszip.min.js"></script>
+  <script defer src="vendor/pdf-lib.min.js"></script>
+  <script defer src="vendor/fontkit.umd.min.js"></script>
+  <script defer src="vendor/font-data.js"></script>
+  <script defer src="core.js"></script>
+  <script defer src="zip.js"></script>
+  <script defer src="pdf.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="wrap"><strong>Offline Audit Package Organizer</strong><span class="badge">Local files · illustrative template</span></div></header>
+  <div class="wrap layout">
+    <nav class="steps" aria-label="Workflow steps" id="steps"></nav>
+    <main id="main" tabindex="-1"></main>
+  </div>
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+  <dialog id="editor"><form method="dialog" id="editor-form"><h2 id="editor-title"></h2><div id="editor-fields"></div><p id="editor-error" class="error" role="alert"></p><div class="actions"><button value="cancel" type="button" id="editor-cancel">Cancel</button><button class="primary" type="submit">Save</button></div></form></dialog>
+  <footer class="wrap footer"><span>Built by Courtney · Revision 13</span><span>Files stay in this browser session. Save a session ZIP to resume later.</span></footer>
+</body>
+</html>

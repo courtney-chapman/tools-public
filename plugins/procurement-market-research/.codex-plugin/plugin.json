@@ -1,22 +1,22 @@
 {
   "name": "procurement-market-research",
-  "version": "0.1.1",
-  "description": "Procurement Market Research plugin",
+  "version": "0.1.2",
+  "description": "Research suppliers, public pricing, and procurement evidence for federal buyers and prime contractors.",
   "author": {
     "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Procurement Market Research",
-    "shortDescription": "Use Procurement Market Research in Codex.",
-    "longDescription": "Federal procurement market research for COTS items and services.",
+    "shortDescription": "Supplier and pricing research",
+    "longDescription": "Research suppliers, public pricing, and procurement evidence for federal buyers and prime contractors.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": [],
+    "capabilities": ["Web Search"],
     "defaultPrompt": [
-      "Find US-based vendors for this product.",
-      "Search for resellers with federal procurement experience.",
-      "Analyze vendors for this item, including GSA options."
+      "Research suppliers and public pricing for this item and quantity.",
+      "Compare product, reseller, and GSA options for this purchase.",
+      "Find public service providers and pricing evidence for this requirement."
     ]
   }
 }

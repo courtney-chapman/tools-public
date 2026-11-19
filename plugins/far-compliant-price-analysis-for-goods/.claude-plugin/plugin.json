@@ -1,7 +1,7 @@
 {
   "name": "far-compliant-price-analysis-for-goods",
-  "version": "0.1.1",
-  "description": "Draft procurement-file-ready price analysis justifications for government-funded FFP goods, COTS, commercial products, software, materials, and routine buys.",
+  "version": "0.1.2",
+  "description": "Research public price evidence and draft procurement-file-ready price analysis for government-funded FFP goods and routine commercial buys.",
   "author": {
     "name": "courtney-chapman"
   },

@@ -1,7 +1,7 @@
 {
   "name": "procurement-market-research",
-  "version": "0.1.1",
-  "description": "Federal procurement market research for COTS items and services.",
+  "version": "0.1.2",
+  "description": "Research suppliers, public pricing, and procurement evidence for federal buyers and prime contractors.",
   "author": {
     "name": "courtney-chapman"
   },

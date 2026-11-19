@@ -10,6 +10,22 @@ market research and commercial product, commercial service, and COTS analyses.
 The buyer remains responsible for validating the record used for the
 determination.
 
+## Route the determination
+
+1. Identify the exact item, version, tier, service, or mixed bundle being
+   acquired. Analyze material product and service lines separately.
+2. Research identifiable public offerings and terms, then separate verified
+   facts, supplier claims, buyer facts, and missing transaction-specific facts.
+3. Apply the relevant commercial-product or commercial-service pathway. Apply
+   every COTS element only to a potentially qualifying product; a service-only
+   line is COTS **Not Applicable**.
+4. Choose the supported classification status before drafting. If the user
+   requests only guidance or only the formal determination, produce that
+   output; otherwise produce both, with validation needs in the buyer summary.
+5. Read the output reference below and use the formal file language only for
+   conclusions the evidence supports. Do not turn missing COTS sales evidence
+   into an affirmative COTS determination.
+
 Before drafting either output, read
 [references/output-guidance.md](references/output-guidance.md). It defines the
 audience, tone, sections, and separation between the short buyer dashboard and
@@ -18,8 +34,19 @@ offer to provide that reference in the response.
 
 ## Evidence intake and research
 
-Use the evidence supplied by the user. When information is incomplete, request
-or identify the material missing evidence, including as applicable:
+Use the evidence supplied by the user and conduct public research when the
+product, service, or provider is identifiable. Search current official
+manufacturer/provider pages, product documentation, catalogs, public pricing,
+standard terms, and relevant reseller listings. For a service, look for evidence
+of similar offerings to nongovernmental customers and commercial terms. Search
+for credible public sales evidence when COTS quantities matter. Open the sources
+and record their URLs and access dates. Do not treat a product page, customer
+logo, or public price as proof of substantial quantities sold. Public pricing
+supports market context; it does not by itself establish price reasonableness.
+
+Research first rather than asking the buyer to supply public facts the assistant
+can find. When information remains incomplete, request or identify only the
+material buyer- or supplier-specific evidence, including as applicable:
 
 - item name, provider or manufacturer, part number, SKU, version, tier,
   subscription plan, and intended Government use;
@@ -30,15 +57,23 @@ or identify the material missing evidence, including as applicable:
 - Government-specific configuration, customization, integration, support,
   training, implementation, managed services, or other labor.
 
-Buyer-provided evidence controls the determination. Web research is limited to
-an explicit research request, review of a supplied URL, or genuinely necessary
-verification of current FAR language. Do not automatically supplement, reshape,
-or cure the buyer's evidentiary record with external information.
+Buyer-provided facts about the contemplated purchase control its description.
+Public research can supplement the market evidence but cannot establish the
+exact quoted SKU, terms, configuration, commercial sales volume, modification
+status, or intended use when those facts are not documented. Distinguish
+independently verified facts, supplier claims, and buyer-provided facts. If the
+user expressly asks for a closed-record review, use only the supplied record
+apart from regulatory verification.
 
-When research is used, distinguish retrieved information from the evidence
-provided by the buyer. Prefer current official FAR text from Acquisition.gov and
-first-party manufacturer/provider materials, use reliable reseller or catalog
-evidence when relevant, and cite the pages actually reviewed. Do not invent
+For regulatory statements, check the official codified FAR and DFARS text and
+any relevant Revolutionary FAR Overhaul (RFO) or agency deviation version.
+Identify which version applies to the procurement from the contract and other
+provided applicability facts; do not assume that the RFO text or a DoD deviation
+governs every contractor purchase. If that cannot be established, identify the
+version uncertainty without applying an agency-only duty directly to a prime
+contractor. Cite the official text actually used. Prefer first-party
+manufacturer/provider materials, use reliable reseller or catalog evidence
+when relevant, and cite the pages actually reviewed. Do not invent
 facts, URLs, certifications, prices, identifiers, sales history, or evidence.
 
 Generic marketing claims, brand recognition, customer-logo pages, and vague
@@ -48,21 +83,27 @@ status, but may make supplier evidence more important.
 
 ## Classification framework
 
-Apply the current definitions in FAR 2.101 rather than relying on memory.
+Apply the controlling FAR 2.101 definitions, checking the codified text and the
+RFO Part 2 text adopted by any applicable deviation rather than relying on
+memory. Preserve material wording differences when explaining the result.
 
 ### Commercial product
 
-Analyze whether the product is of a type customarily used by the general public
-or nongovernmental entities for nongovernmental purposes and whether the record
-supports the applicable commercial-marketplace elements. Address the exact
-version, tier, SKU, or configuration being acquired rather than only the vendor
-or product family.
+Identify which applicable commercial-product pathway in FAR 2.101 the evidence
+supports. Consider the ordinary public-use and public-offer pathway, evolved
+products, qualifying modifications, customary combinations, affiliate transfers,
+and the nondevelopmental-item pathway when their facts are present. Do not force
+every product into paragraph (1); COTS separately requires paragraph (1).
+Address the exact version, tier, SKU, or configuration being acquired rather
+than only the vendor or product family.
 
 ### Commercial service
 
-Analyze human-performed services independently under both FAR 2.101 routes.
+Analyze human-performed services independently under the applicable FAR 2.101
+routes, including an affiliate transfer when relevant.
 For services supporting a commercial product, check whether the source provides
-similar services contemporaneously to the general public under similar terms.
+similar services to the general public at the time required by the controlling
+definition and under similar terms.
 For other services, check competitive sales in substantial commercial-market
 quantities, established catalog or market prices for specific tasks or outcomes,
 and standard commercial terms.
@@ -75,8 +116,8 @@ element explicitly:
 1. the item satisfies paragraph (1) of the commercial product definition in
    FAR 2.101;
 2. it is sold in substantial quantities in the commercial marketplace;
-3. it is offered to the Government under a contract or subcontract at any tier
-   without modification;
+3. it is offered to the Government without modification, applying the exact
+   contract/subcontract wording in the controlling definition;
 4. it is offered in the same form in which it is sold commercially; and
 5. it is not bulk cargo.
 
@@ -111,6 +152,10 @@ Use these status terms in the buyer dashboard:
 - **Not Applicable:** The classification does not apply to the reviewed item or
   line item.
 
+For a service-only line, show COTS as **Not Applicable**, not as a failed COTS
+product. A mixed acquisition needs separate status for its product and service
+components.
+
 Be conservative during evidence triage. For a requested formal determination,
 write affirmatively from the validated record and use the conclusion that the
 record supports; do not introduce unnecessary hedging.
@@ -129,7 +174,8 @@ reference:
 Keep the audiences separate. The formal determination must not address the
 buyer, coach the preparer, request approval, or contain a separate limitations,
 recommendations, or evidence-gap section unless the user expressly requests
-one. Put validation needs in the Buyer Guidance Summary.
+one. Put validation needs in the Buyer Guidance Summary. A File Risk section
+remains part of that summary, but a Low/Moderate/High rating is optional.
 
 ## Formal determination requirements
 
@@ -138,7 +184,8 @@ or mixed acquisition and analyze:
 
 - use by the public or nongovernmental entities for nongovernmental purposes;
 - public or commercial offering and standard availability;
-- pricing, terms, catalog, reseller, sales, and certification evidence;
+- pricing, terms, catalog, reseller, sales, and certification evidence, while
+  keeping commerciality distinct from a separate price-reasonableness analysis;
 - the applicable commercial product or commercial service definition;
 - software/SaaS tier, standard terms, automated functionality, and separately
   performed services when applicable;

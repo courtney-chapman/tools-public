@@ -1,6 +1,6 @@
 {
   "name": "indirect-and-commercial-price-analysis-for-services-lite",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Company Commercial and Indirect purchasing price analysis",
   "author": {
     "name": "courtney-chapman"
@@ -13,6 +13,6 @@
     "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Draft a Commercial or Indirect purchasing price analysis from these facts and my company policy."
+    "defaultPrompt": "Draft a Commercial or Indirect price analysis for this purchase. I will provide the supplier, proposed price, requirement, and any comparison evidence I have."
   }
 }

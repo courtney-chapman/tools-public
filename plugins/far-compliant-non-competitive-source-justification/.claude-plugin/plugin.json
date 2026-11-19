@@ -1,7 +1,7 @@
 {
   "name": "far-compliant-non-competitive-source-justification",
-  "version": "0.1.1",
-  "description": "Create practical, evidence-aware noncompetitive source justifications for federal prime-contractor subcontract procurement files.",
+  "version": "0.1.2",
+  "description": "Research suppliers, alternatives, and public pricing, then create evidence-based noncompetitive source justifications for federal prime-contractor subcontract files.",
   "author": {
     "name": "courtney-chapman"
   },

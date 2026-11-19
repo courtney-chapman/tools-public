@@ -1,6 +1,6 @@
 {
   "name": "far-compliant-price-analysis-for-subcontracts-lite",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Evidence-based bid summaries and price analyses for subcontract actions",
   "author": {
     "name": "courtney-chapman"
@@ -13,6 +13,6 @@
     "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Draft a BID SUMMARY & PRICE ANALYSIS for this new award, option, or modification. Choose supported price-analysis methods, examine individual elements when warranted, and include the final findings table."
+    "defaultPrompt": "Draft a BID SUMMARY & PRICE ANALYSIS for this new award, option, or modification. For service or labor-priced work, first ask me for any missing escalation, fee, and labor-load details. Analyze any proposed materials, travel, lower-tier subcontracts, and other direct costs using available price evidence. Include the final findings table."
   }
 }

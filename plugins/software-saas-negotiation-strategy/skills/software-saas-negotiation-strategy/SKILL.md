@@ -20,21 +20,34 @@ deliverable. Ask one grouped set of questions at a time.
 - Do not apply it to hardware, on-premise software, acquisitions requiring FAR
   Part 15 negotiation, or certified cost or pricing data analysis.
 - User-provided program and vendor facts and the captured negotiation workflow
-  control the analysis. Web research is available when the user requests it or
-  when the answer affirmatively depends on an unresolved current external fact.
-  Do not make external regulatory, legal, pricing, or vendor verification a
-  default prerequisite to discovery, questions, strategy, or role-play.
-- When web research is actually needed, prefer authoritative sources and
-  distinguish retrieved facts from user-provided facts, assumptions, targets,
+  control the analysis. For a strategy about an identifiable product or vendor,
+  research current public vendor pricing, license tiers, standard terms, renewal
+  information, and credible competing or GSA offerings when relevant. Use the
+  findings to sharpen negotiation levers; do not postpone a useful strategy if
+  a public price or term is unavailable. For intake, internal discovery, and
+  vendor-question requests, research only when the user requests it or a
+  specific answer depends on a current external fact. Honor a request to use
+  only the supplied record apart from regulatory verification.
+- Prefer official vendor and government sources for research. Cite the pages
+  actually reviewed with access dates, and distinguish public list prices and
+  advertised terms from the buyer's quote or proposed agreement. Distinguish
+  retrieved facts from user-provided facts, assumptions, negotiating targets,
   and illustrative figures. Research does not override the source workflow.
 - Reference FAR Parts 8, 10, 12, and 13 and FAR 52.212-4 only when applicable.
   Keep regulatory explanation proportionate to the buyer's decision.
+- Check the codified FAR and any applicable Revolutionary FAR Overhaul (RFO) or
+  agency deviation before citing a rule. Under the RFO text, Part 12 contains
+  the simplified procedures for commercial acquisitions while Part 13 covers
+  noncommercial acquisitions; do not automatically apply Part 13 to SaaS or
+  assume an RFO deviation governs every purchase.
 - For a prime-contractor purchase, do not apply agency procedures such as FAR
   Part 13 directly unless the prime contract, an applicable clause or flowdown,
   customer direction, or company policy requires them.
 - Flag potential conflicts between vendor terms and applicable government terms
-  for contracting-officer or counsel review; do not present legal conclusions as
-  settled when facts or clause applicability are incomplete.
+  for contracting-officer or counsel review. Do not assume FAR 52.212-4 is a term
+  of a prime contractor's SaaS purchase merely because it appears in an agency
+  contract. Do not present legal conclusions as settled when facts or clause
+  applicability are incomplete.
 - Treat discount percentages, renewal caps, and price tiers as proposed
   negotiating targets unless supported by market evidence. Never present an
   illustrative target as a customary or verified market rate.
@@ -101,8 +114,9 @@ from proposed positions and structure the result around:
 3. volume and future-expansion pricing;
 4. term, licensing, support, data, and exit protections;
 5. renewal protections and price-adjustment methodology;
-6. federal considerations, including fair-and-reasonable pricing support under
-   applicable FAR Part 13 procedures and documented sole-source rationale;
+6. federal considerations, including price reasonableness support under the
+   applicable agency procedures or contractor requirements and a documented
+   sole-source rationale when relevant;
 7. risks with corresponding mitigations;
 8. preferred, acceptable, and minimum fallback positions; and
 9. walk-away or re-evaluation conditions.

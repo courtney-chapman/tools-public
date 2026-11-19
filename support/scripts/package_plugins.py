@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Build reproducible, single-plugin ZIPs from tracked marketplace files."""
+"""Build reproducible, single-plugin ZIPs from marketplace source files."""
 
 from __future__ import annotations
 
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
@@ -43,7 +44,16 @@ def main() -> None:
         manifest_path = f"{name}/.codex-plugin/plugin.json"
         claude_manifest_path = f"{name}/.claude-plugin/plugin.json"
         skill_path = f"{name}/skills/{name}/SKILL.md"
-        files = sorted(path for path in tracked if path.startswith(f"plugins/{name}/"))
+        references = plugin_root / "skills" / name / "references"
+        reference_files = (
+            {str(path.relative_to(ROOT)) for path in references.rglob("*.md")}
+            if references.exists()
+            else set()
+        )
+        files = sorted(
+            {path for path in tracked if path.startswith(f"plugins/{name}/")}
+            | reference_files
+        )
         if not files or any(path == f"plugins/{name}/LICENSE" for path in files):
             raise ValueError(f"missing plugin files or conflicting license: {name}")
 
@@ -73,6 +83,17 @@ def main() -> None:
                 raise ValueError(f"plugin manifest version mismatch: {name}")
             if any(not path.startswith(f"{name}/") for path in names):
                 raise ValueError(f"multiple plugin roots: {destination}")
+            skill_text = archive.read(skill_path).decode("utf-8")
+            referenced_files = set(
+                re.findall(r"references/[A-Za-z0-9._/-]+", skill_text)
+            )
+            missing_references = sorted(
+                path for path in referenced_files if f"{name}/skills/{name}/{path}" not in names
+            )
+            if missing_references:
+                raise ValueError(
+                    f"missing referenced files in {destination}: {missing_references}"
+                )
 
         digest = hashlib.sha256(destination.read_bytes()).hexdigest()
         print(f"{destination.name}  sha256:{digest}")

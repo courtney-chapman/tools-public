@@ -10,7 +10,7 @@
     {
       "name": "procurement-market-research",
       "source": "./plugins/procurement-market-research",
-      "description": "Federal procurement market research for COTS items and services.",
+      "description": "Research suppliers, public pricing, and procurement evidence for federal buyers and prime contractors.",
       "category": "productivity"
     },
     {
@@ -40,25 +40,25 @@
     {
       "name": "software-saas-negotiation-strategy",
       "source": "./plugins/software-saas-negotiation-strategy",
-      "description": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",
+      "description": "Prepare evidence-based SaaS negotiation questions, strategies, and practice for acquisitions under the SAT.",
       "category": "productivity"
     },
     {
       "name": "far-compliant-commercial-item-determination",
       "source": "./plugins/far-compliant-commercial-item-determination",
-      "description": "Prepare evidence-based buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under FAR 2.101.",
+      "description": "Research public evidence and prepare buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under applicable FAR definitions.",
       "category": "productivity"
     },
     {
       "name": "far-compliant-non-competitive-source-justification",
       "source": "./plugins/far-compliant-non-competitive-source-justification",
-      "description": "Create practical, evidence-aware noncompetitive source justifications for federal prime-contractor subcontract procurement files.",
+      "description": "Research suppliers, alternatives, and public pricing, then create evidence-based noncompetitive source justifications for federal prime-contractor subcontract files.",
       "category": "productivity"
     },
     {
       "name": "far-compliant-price-analysis-for-goods",
       "source": "./plugins/far-compliant-price-analysis-for-goods",
-      "description": "Draft procurement-file-ready price analysis justifications for government-funded FFP goods, COTS, commercial products, software, materials, and routine buys.",
+      "description": "Research public price evidence and draft procurement-file-ready price analysis for government-funded FFP goods and routine commercial buys.",
       "category": "productivity"
     },
     {

@@ -19,7 +19,7 @@ The application handles file bytes for ZIP import, integrity checks, session pre
 - ZIP64, encrypted, multi-volume, non-UTF-8 names, invalid paths, and unsupported compression methods are rejected.
 - All unassigned files go into `Unassigned Files`; none is silently dropped. Missing required types, files needing a document type, and unassigned files require a confirmation at export. Incomplete files remain in their selected folders.
 - Names are checked case insensitively for destination collisions. Original extensions must remain unchanged.
-- PDF text uses a bundled Noto Sans font. If a filename includes a character that this font cannot render, PDF creation stops with a clear error; export can proceed with the PDF option off.
+- The PDF uses a built-in font. Characters it cannot draw appear as `[U+XXXX]` codes in the checklist; filenames in the ZIP stay unchanged.
 - Browser memory and download behavior vary. These limits reduce risk but do not guarantee that a device can process every archive within them.
 
 ## Fictional demonstration
@@ -36,6 +36,6 @@ Session ZIPs contain `session.json` and `files/<opaque-id>` for every imported f
 
 The download ZIP includes this guide, the MIT license for the app’s original code, bundled third-party notices, and the files needed to run offline. Files and saved session ZIPs stay on your device unless you choose to share them. The optional online page is a static copy of the app; imported files are processed in the browser and are not uploaded by the app.
 
-Third-party scripts and font data are bundled locally under `vendor/`. See `vendor/NOTICE.md` for versions, sources, hashes, and separate license terms.
+Third-party scripts are bundled locally under `vendor/`. See `vendor/NOTICE.md` for versions, sources, hashes, and separate license terms.
 
 Built by Courtney · Revision 13

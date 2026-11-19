@@ -11,8 +11,8 @@ APP = ROOT / "apps" / NAME
 OUTPUT = ROOT / ".build/app-zips" / f"{NAME}.zip"
 FILES = (
     "index.html", "tokens.css", "style.css", "core.js", "zip.js", "pdf.js", "app.js", "README.md", "LICENSE",
-    "vendor/jszip.min.js", "vendor/pdf-lib.min.js", "vendor/fontkit.umd.min.js", "vendor/font-data.js",
-    "vendor/NOTICE.md", "vendor/JSZIP-LICENSE.txt", "vendor/PDF-LIB-LICENSE.txt", "vendor/OFL.txt",
+    "vendor/jszip.min.js", "vendor/pdf-lib.min.js",
+    "vendor/NOTICE.md", "vendor/JSZIP-LICENSE.txt", "vendor/PDF-LIB-LICENSE.txt",
     "samples/fictional-template.json", "samples/fictional-records.zip",
 )
 STAMP = (1980, 1, 1, 0, 0, 0)

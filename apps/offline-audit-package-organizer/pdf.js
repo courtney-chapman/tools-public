@@ -1,27 +1,28 @@
 (function (root) {
   'use strict';
   const C = root.AuditCore;
-  function fontBytes() {
-    const binary = atob(root.AuditFontBase64), bytes = new Uint8Array(binary.length);
-    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    return bytes;
-  }
   async function checklist(state) {
     const plan = C.packagePlan(state);
     if (plan.issues.length) throw Error(plan.issues[0]);
     const pdf = await root.PDFLib.PDFDocument.create();
-    pdf.registerFontkit(root.fontkit);
-    const font = await pdf.embedFont(fontBytes(), {subset: true});
-    const regular = root.fontkit.create(fontBytes());
-    const content = [plan.template.name, plan.parent, ...plan.entries.map(e => e.path)];
-    for (const value of content) for (const char of value) if (!regular.hasGlyphForCodePoint(char.codePointAt(0))) throw Error('The PDF font cannot print character ' + char + '. The ZIP can still be exported without its PDF checklist.');
+    const font = await pdf.embedFont(root.PDFLib.StandardFonts.Helvetica);
+    const glyphs = new Map();
+    const pdfText = value => Array.from(String(value), ch => {
+      if (!glyphs.has(ch)) {
+        let printable = ch;
+        try { font.encodeText(ch); }
+        catch (_) { printable = '[U+' + ch.codePointAt(0).toString(16).toUpperCase() + ']'; }
+        glyphs.set(ch, printable);
+      }
+      return glyphs.get(ch);
+    }).join('');
     const black = root.PDFLib.rgb(0.05, 0.07, 0.1), gray = root.PDFLib.rgb(0.3, 0.34, 0.39), line = root.PDFLib.rgb(0.75, 0.78, 0.82);
     const W = 612, H = 792, margin = 48, width = W - margin * 2;
     let page, y, pageNo = 0;
     const newPage = () => { page = pdf.addPage([W, H]); y = H - 48; pageNo++; page.drawText('Audit Package Index & Completeness Checklist', {x: margin, y, size: 16, font, color: black}); y -= 28; page.drawLine({start: {x: margin, y}, end: {x: W - margin, y}, thickness: 0.7, color: line}); y -= 20; };
     const ensure = height => { if (!page || y - height < 62) newPage(); };
     const lines = (text, size, maxWidth) => {
-      const words = String(text).split(/\s+/u), out = []; let current = '';
+      const words = pdfText(text).split(/\s+/u), out = []; let current = '';
       for (const word of words) {
         const candidate = current ? current + ' ' + word : word;
         if (font.widthOfTextAtSize(candidate, size) <= maxWidth) { current = candidate; continue; }

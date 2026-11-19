@@ -92,6 +92,7 @@ The release image is stored separately from the app ZIP.
 Build the Offline Audit Package Organizer download with
 `python3 support/scripts/package_offline_audit_organizer.py`. The deterministic
 ZIP contains the offline app, fictional samples, guide, MIT license, and third-party notices.
+Check its PDF and ZIP handling with `node support/scripts/test_offline_audit_organizer.cjs`.
 
 ## Release presentation
 

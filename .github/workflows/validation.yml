@@ -49,3 +49,5 @@ jobs:
         run: python3 support/scripts/package_subcontract_negotiation_memo.py
       - name: Validate audit organizer app package
         run: python3 support/scripts/package_offline_audit_organizer.py
+      - name: Test audit organizer PDF and ZIP
+        run: node support/scripts/test_offline_audit_organizer.cjs

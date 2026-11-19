@@ -89,6 +89,10 @@ Build the Individual Subcontracting Plan Builder download with
 three-file ZIP is written to `.build/app-zips/individual-subcontracting-plan-builder.zip`.
 Only `index.html` is needed at runtime; the guide and license travel with the download.
 The release image is stored separately from the app ZIP.
+Build the Offline Audit Package Organizer download with
+`python3 support/scripts/package_offline_audit_organizer.py`. The deterministic
+ZIP contains the offline app, fictional samples, guide, MIT license, and third-party notices.
+Check its PDF and ZIP handling with `node support/scripts/test_offline_audit_organizer.cjs`.
 
 ## Release presentation
 

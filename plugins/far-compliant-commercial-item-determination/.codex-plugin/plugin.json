@@ -1,23 +1,22 @@
 {
   "name": "far-compliant-commercial-item-determination",
-  "version": "0.1.1",
-  "description": "Evidence-based FAR commercial product, commercial service, and COTS determinations",
+  "version": "0.1.2",
+  "description": "Research and determine commercial product, commercial service, and COTS status using applicable FAR definitions.",
   "author": {
     "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "FAR-Compliant Commercial Item Determination",
-    "shortDescription": "Evaluate commerciality and COTS status under FAR 2.101.",
-    "longDescription": "Prepare evidence-based buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under FAR 2.101.",
+    "shortDescription": "Commerciality and COTS review",
+    "longDescription": "Research public evidence and prepare buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under applicable FAR definitions.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": [],
+    "capabilities": ["Web Search"],
     "defaultPrompt": [
-      "Does this item qualify as a COTS product?",
-      "Evaluate this item as a commercial product or service.",
-      "Is this a COTS item under FAR standards?",
-      "Can you analyze this product URL for COTS criteria?"
+      "Research this item and assess its commercial product, commercial service, and COTS status.",
+      "Evaluate this SaaS subscription and any bundled services under the applicable FAR definitions.",
+      "Analyze this product URL and prepare buyer guidance and a file-ready determination."
     ]
   }
 }

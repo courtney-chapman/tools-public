@@ -1,7 +1,7 @@
 {
   "name": "software-saas-negotiation-strategy",
-  "version": "0.1.1",
-  "description": "Develop internal discovery questions, vendor questions, negotiation strategies, and optional practice for federal SaaS acquisitions under the Simplified Acquisition Threshold.",
+  "version": "0.1.2",
+  "description": "Prepare evidence-based SaaS negotiation questions, strategies, and practice for acquisitions under the SAT.",
   "author": {
     "name": "courtney-chapman"
   },

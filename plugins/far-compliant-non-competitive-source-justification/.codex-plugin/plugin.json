@@ -1,24 +1,24 @@
 {
   "name": "far-compliant-non-competitive-source-justification",
-  "version": "0.1.1",
-  "description": "Draft and review noncompetitive source justifications for federal prime-contractor subcontract procurements.",
+  "version": "0.1.2",
+  "description": "Research suppliers and pricing, then draft or review noncompetitive source justifications for federal prime-contractor subcontracts.",
   "author": {
     "name": "courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "FAR-Compliant Non-Competitive Source Justification",
-    "shortDescription": "Draft and review subcontract source justifications.",
-    "longDescription": "Create practical, evidence-aware noncompetitive source justifications for federal prime-contractor subcontract procurement files.",
+    "shortDescription": "Source research and drafting",
+    "longDescription": "Research suppliers, alternatives, and public pricing, then create evidence-based noncompetitive source justifications for federal prime-contractor subcontract files.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [
       "Web Search"
     ],
     "defaultPrompt": [
-      "Who is the supplier?",
-      "What is being purchased?",
-      "Can you review this justification for FAR compliance?"
+      "Research suppliers and public pricing, then draft a sole-source justification for this purchase.",
+      "Identify credible alternatives and draft my four-part noncompetitive justification.",
+      "Research the claims and improve this source justification."
     ]
   }
 }

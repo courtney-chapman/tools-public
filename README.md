@@ -1,4 +1,4 @@
-<img src="docs/readme/readme_header.png" alt="Tools and Plugins: offline browser apps and AI plugins for government property and procurement work." width="100%">
+<img src="docs/readme/readme_header.png" alt="Tools and Plugins: audit-ready by design. Compliance-ready solutions for government prime contractors and subcontractors." width="100%">
 
 **Start here:** [Browser apps](#standalone-browser-apps) · [Plugins](#plugins) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
 

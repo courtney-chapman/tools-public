@@ -1,6 +1,6 @@
 {
   "name": "far-compliant-commercial-item-determination",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Research and determine commercial product, commercial service, and COTS status using applicable FAR definitions.",
   "author": {
     "name": "courtney-chapman",

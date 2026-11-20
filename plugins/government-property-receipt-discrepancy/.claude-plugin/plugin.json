@@ -1,6 +1,6 @@
 {
   "name": "government-property-receipt-discrepancy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate or validate concise correspondence about undocumented GFP arrivals, shipment differences, and unresolved accountable contracts.",
   "author": {
     "name": "courtney-chapman"

@@ -7,28 +7,37 @@ description: Explain a proposed Government property contract-to-contract transac
 
 Help property, Contracts, program, and Government personnel understand and prepare a proposed transaction. Teach the distinction before presenting a process. Explain public rules and identify decisions and evidence still needed; do not decide that a transfer, use, receipt, or reporting action is authorized or complete. Use [public sources](references/public-sources.md) for material regulatory claims. Verify current public text, effective date, agency deviations, and the actual contract's incorporated clauses and versions for a real case. A human must review the facts and any resulting plan before action.
 
-## Response layout and editing pass
+## Response sequence
 
-For a full draft or analysis, use a Markdown heading **Draft / Results** and
-present the copy-ready deliverable first. Keep its required form headings,
-tables, findings, and source support intact. After the deliverable, use
-separate headings for **Procurement actions** (or **Property / Contracts actions**
-for property work), **Why this matters**, **Sources**, and **Notes**, in that
-order, only when they add material information. Never mix buyer instructions, research limitations,
-or commentary into a letter, memo, form, or determination that the user needs
-to copy. Do not duplicate a source list already required within a document.
-For two required outputs, present both in their required order before any
-outside guidance. For a focused question or edit, answer only the requested
-part without forcing these headings. Do not invent follow-up tasks or show
-empty sections.
-
-Before sending, tighten the response: describe a product or service in one
-plain sentence when that is enough; combine repeated points; use short lists
-or a compact table for comparisons; and explain the practical reason for each
-material action. Define an unfamiliar acronym on first use. Write so a reader
-from procurement, technical, or compliance work can follow the facts and the
-conclusion. Keep required evidence, calculations, citations, uncertainty, and
-approval distinctions even when a longer explanation is necessary.
+1. **Scope:** Complete the output the user requested and only the research
+   needed to support it. Do not add adjacent deliverables, volunteer a work
+   plan, or ask a routine “Would you like…” follow-up. Draft an RFQ, quote
+   request, price analysis, negotiation record, separate report, or other
+   downstream artifact only when the user asks for it. Do not contact a third
+   party without authorization.
+2. **Evidence:** Use supported facts and current sources as the specific route
+   requires. Keep unknowns and material evidence gaps visible without turning
+   them into a broad checklist of possible future work.
+3. **Deliverable:** For a full draft or analysis, put the copy-ready output
+   under **Draft / Results** first. Preserve required headings, findings,
+   calculations, citations, and approval distinctions. After it, use
+   **Procurement actions** (or **Property / Contracts actions**), **Why this
+   matters**, **Sources**, and **Notes**, in that order, only for material
+   information needed to interpret or use this output. Never mix directions or
+   commentary into a copy-ready document or repeat its source list. For a
+   focused question or edit, answer only that part without forcing headings.
+4. **Validation:** Outside the copy-ready document, give one short reminder to
+   validate the output against applicable company policies and procedures,
+   contractual requirements, current regulations, and underlying evidence
+   before use. Do not imply that every regulation applies to every purchase.
+5. **Final trim:** Remove repeated explanations and speculative next steps.
+   Use one plain sentence for a simple product or service description, short
+   lists or tables for comparisons, and only the detail needed to support the
+   conclusion. A routine renewal or straightforward request should normally
+   fit on about one page, excluding essential source details; expand only for
+   material complexity or an explicitly requested deep analysis. Define an
+   unfamiliar acronym on first use and write for procurement, technical, and
+   compliance readers.
 
 ## Select one mode
 

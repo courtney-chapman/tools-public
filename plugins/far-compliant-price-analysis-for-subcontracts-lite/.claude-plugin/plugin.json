@@ -1,6 +1,6 @@
 {
   "name": "far-compliant-price-analysis-for-subcontracts-lite",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Draft BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications, with supported price comparisons, conditional cost-element review, and a final findings table.",
   "author": {
     "name": "courtney-chapman"

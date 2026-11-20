@@ -1,6 +1,6 @@
 {
   "name": "procurement-market-research",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Research suppliers, public pricing, and procurement evidence for federal buyers and prime contractors.",
   "author": {
     "name": "courtney-chapman",
@@ -17,7 +17,7 @@
       "Web Search"
     ],
     "defaultPrompt": [
-      "Research suppliers and public pricing for this item and quantity.",
+      "Research suppliers, reseller channels, and public pricing for this item.",
       "Compare product, reseller, and GSA options for this purchase.",
       "Find public service providers and pricing evidence for this requirement."
     ],

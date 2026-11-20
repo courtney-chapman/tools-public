@@ -12,12 +12,13 @@ Prioritize US-based suppliers when they can meet the requirement.
 
 ## Response sequence
 
-1. **Scope:** Complete the output the user requested and only the research
-   needed to support it. Do not add adjacent deliverables, volunteer a work
-   plan, or ask a routine “Would you like…” follow-up. Draft an RFQ, quote
-   request, price analysis, negotiation record, separate report, or other
-   downstream artifact only when the user asks for it. Do not contact a third
-   party without authorization.
+1. **Scope:** A market-research request includes public supplier and vendor
+   lookup. Search and report useful findings up front; do not wait for a
+   separate request for vendor details. Complete the requested research
+   without adding adjacent deliverables, a work plan, or a routine “Would you
+   like…” follow-up. Draft an RFQ, quote request, price analysis, negotiation
+   record, or other downstream artifact only when the user asks for it. Do not
+   contact a third party without authorization.
 2. **Evidence:** Use supported facts and current sources as the specific route
    requires. Keep unknowns and material evidence gaps visible without turning
    them into a broad checklist of possible future work.
@@ -37,10 +38,10 @@ Prioritize US-based suppliers when they can meet the requirement.
    Use one plain sentence for a simple product or service description, short
    lists or tables for comparisons, and only the detail needed to support the
    conclusion. A routine renewal or straightforward request should normally
-   fit on about one page, excluding essential source details; expand only for
-   material complexity or an explicitly requested deep analysis. Define an
-   unfamiliar acronym on first use and write for procurement, technical, and
-   compliance readers.
+   fit on about one page, excluding essential source details; expand for the
+   vendor options and evidence a market scan needs. Concision must not remove
+   the actual supplier lookup. Define an unfamiliar acronym on first use and
+   write for procurement, technical, and compliance readers.
 
 ## Route the request
 
@@ -50,9 +51,9 @@ requirements are preserved in those files.
 
 | Step | Route |
 |---|---|
-| 1. Identify the buyer and requirement | Determine federal-agency or prime-contractor context and the product or service, quantity or service unit, delivery and timing facts. Read `references/market-workflow.md`. If description or quantity is missing, ask one grouped question; otherwise research with unknown optional facts labeled. |
-| 2. Research the market | For a market scan, read and apply `references/market-workflow.md`: open current supplier and reseller pages, compare actual configurations and terms, and produce the item and pricing table. Research first instead of telling the buyer to find public information. |
-| 3. Add vendor details only on request | Read the vendor-detail and missing-data rules in `references/market-workflow.md`. Verify identifiers, size status, award history, and public contact data; do not invent CPARS access or ratings. |
+| 1. Identify the buyer and requirement | Read `references/market-workflow.md`. If a named item, provider, or service category is identifiable, begin public research even without quantity, budget, delivery location, or procurement context; label the resulting comparison limits. Ask one grouped question only when the description is too vague to find credible sources. |
+| 2. Research suppliers and options | For a market scan, open current OEM, supplier, reseller, and relevant contract-vehicle pages. Identify credible sellers and alternatives, compare the actual offering and public pricing or terms, and produce a substantive table with source links and dates. Do the lookup instead of telling the buyer to do it. |
+| 3. Include useful vendor facts up front | Read the vendor and missing-data rules in `references/market-workflow.md`. Include each source's role, offering, public website or contact route, and verified channel or contract-vehicle facts when relevant. Add identifiers, size status, or award history when material and verifiable, or when requested; never invent CPARS access or ratings. |
 | 4. Add classifications when relevant | Read `references/classifications.md` when a NAICS, PSC, or UNSPSC code is requested, a code is supplied for validation, or the acquisition strategy makes a code material. Do not add classification tables merely because an item was described. Verify codes, titles, and size standards in current authoritative sources. |
 | 5. Apply regulatory and evidence limits | Read `references/regulatory-and-evidence.md` for every market research answer. When citing FAR/DFARS or advising a prime-contractor buyer, use the current official rule and actual contract context. Keep unsupported facts unknown. |
 

@@ -1,20 +1,31 @@
 {
   "name": "government-property-receipt-discrepancy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Draft and validate evidence-based GFP receipt documentation requests and shipment discrepancy notices.",
-  "author": { "name": "courtney-chapman" },
+  "author": {
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
+  },
   "skills": "./skills/",
   "interface": {
-    "displayName": "GFP Receipt Discrepancy Correspondence",
-    "shortDescription": "Draft and review GFP receipt notices.",
+    "displayName": "GFP Receipt Discrepancy",
+    "shortDescription": "GFP receipt notices",
     "longDescription": "Generate or validate concise correspondence about undocumented GFP arrivals, shipment differences, and unresolved accountable contracts.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": ["Web Search"],
+    "capabilities": [
+      "Web Search"
+    ],
     "defaultPrompt": [
       "Draft a GFP receipt documentation request",
       "Draft a GFP shipment discrepancy notice",
       "Validate my GFP receipt letter"
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-receipt-discrepancy",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

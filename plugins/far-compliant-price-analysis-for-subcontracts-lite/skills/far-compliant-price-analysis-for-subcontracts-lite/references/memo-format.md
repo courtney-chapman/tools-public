@@ -49,8 +49,10 @@ Type of Commodity: [actual goods/services/mixed description]
 9. **CONCLUSION:** give an overall fair-and-reasonable finding only when
    supported, or identify the exact unresolved basis. End with the element
    findings table below.
-10. **MISSING INFORMATION, IF ANY:** list only gaps material to the finding;
-    use “None identified based on the information provided” when none.
+
+After the memo, put only the gaps material to a decision under the separate
+**Procurement actions** heading. Do not create a numbered missing-information
+section in the copy-ready memo or add a "none identified" filler statement.
 
 For each element separately analyzed, state its amount, comparison basis,
 calculation when useful, material variance, and supported finding. For an

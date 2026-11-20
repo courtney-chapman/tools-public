@@ -7,6 +7,29 @@ description: Explain a proposed Government property contract-to-contract transac
 
 Help property, Contracts, program, and Government personnel understand and prepare a proposed transaction. Teach the distinction before presenting a process. Explain public rules and identify decisions and evidence still needed; do not decide that a transfer, use, receipt, or reporting action is authorized or complete. Use [public sources](references/public-sources.md) for material regulatory claims. Verify current public text, effective date, agency deviations, and the actual contract's incorporated clauses and versions for a real case. A human must review the facts and any resulting plan before action.
 
+## Response layout and editing pass
+
+For a full draft or analysis, use a Markdown heading **Draft / Results** and
+present the copy-ready deliverable first. Keep its required form headings,
+tables, findings, and source support intact. After the deliverable, use
+separate headings for **Procurement actions** (or **Property / Contracts actions**
+for property work), **Why this matters**, **Sources**, and **Notes**, in that
+order, only when they add material information. Never mix buyer instructions, research limitations,
+or commentary into a letter, memo, form, or determination that the user needs
+to copy. Do not duplicate a source list already required within a document.
+For two required outputs, present both in their required order before any
+outside guidance. For a focused question or edit, answer only the requested
+part without forcing these headings. Do not invent follow-up tasks or show
+empty sections.
+
+Before sending, tighten the response: describe a product or service in one
+plain sentence when that is enough; combine repeated points; use short lists
+or a compact table for comparisons; and explain the practical reason for each
+material action. Define an unfamiliar acronym on first use. Write so a reader
+from procurement, technical, or compliance work can follow the facts and the
+conclusion. Keep required evidence, calculations, citations, uncertainty, and
+approval distinctions even when a longer explanation is necessary.
+
 ## Select one mode
 
 - **Explain:** The user describes a situation or asks how a transaction works. Return the Explain structure below. Keep it concise; do not start with a full checklist when one distinction answers the question.
@@ -50,31 +73,28 @@ Route a request for a written decision letter to **Government Property Written D
 
 ## Explain output
 
-Use these headings, omitting empty detail within a heading:
-
-A. **Scenario Identified** — the supported classification and proposed action, or the specific uncertainty.
-B. **Key Distinction** — the most important difference between property type, movement, use, and accountability.
-C. **Publicly Documented Process** — high-level, conditional explanation; distinguish Government action from user preparation.
-D. **Documentation and Government Actions** — only the applicable documents, evidence, reporting, and decision questions.
-E. **Unresolved Questions** — a small, prioritized set of material unknowns.
-F. **Public Sources** — direct authoritative links supporting material claims.
+Under **Draft / Results**, give the **Scenario Identified**, **Key Distinction**,
+and **Publicly Documented Process** in short subsections. Put applicable
+documents, Government decisions, and a small set of material unresolved
+questions under **Property / Contracts actions**. Put direct authoritative
+links supporting material claims under **Sources**. Omit empty detail and do
+not put public links in the Results or actions text. Do not cite a local skill
+or reference file as a public source. When current
+source verification was unavailable, say so briefly under **Notes**.
 
 Never label the transaction approved, completed, compliant, or noncompliant.
 
 ## Prepare output
 
-Use a table: `Preparation Item | Why It Matters | Status | Source or Note`. Allowed statuses: **Confirmed**, **Pending**, **Unknown**, **Not Applicable**. A user's unsupported assertion is not Confirmed. Include only relevant property identification, classification, contracts, award, proposed use or movement, written direction, CAP delivery/acceptance, GFP attachment, shipment/receipt, and reporting questions. In `Source or Note`, label each row **Requirement if applicable**, **Contract/Government decision**, **Supporting evidence**, or **Optional preparation** and cite public authority when claiming a requirement. Do not calculate a score or turn every category into a universal checklist.
+Under **Draft / Results**, use a table: `Preparation Item | Why It Matters | Status | Source or Note`. Allowed statuses: **Confirmed**, **Pending**, **Unknown**, **Not Applicable**. A user's unsupported assertion is not Confirmed. Include only relevant property identification, classification, contracts, award, proposed use or movement, written direction, CAP delivery/acceptance, GFP attachment, shipment/receipt, and reporting questions. In `Source or Note`, label each row **Requirement if applicable**, **Contract/Government decision**, **Supporting evidence**, or **Optional preparation** and cite public authority when claiming a requirement. Do not calculate a score or turn every category into a universal checklist. Put any specific decisions requested of the responsible team under **Property / Contracts actions** rather than in the table narrative.
 
 ## Review output
 
-Use:
-
-A. **Scenario and Scope**
-B. **Supported Statements**
-C. **Unsupported Assumptions** — cite the draft language and explain the gap.
-D. **Material Documentation Questions**
-E. **Regulatory or Procedural Distinctions**
-F. **Recommended Clarifications** — precise edits or questions, without executing the transaction.
-G. **Public Sources**
+Use **Draft / Results** for **Scenario and Scope**, **Supported Statements**,
+and **Unsupported Assumptions**; quote the exact draft language behind a gap.
+Use **Property / Contracts actions** for material documentation questions and
+precise recommended clarifications. Put short regulatory or procedural
+distinctions under **Why this matters**, and direct authoritative links under
+**Sources**. Do not execute the transaction.
 
 Check especially for CAP mislabeled GFP; possession or shipment presented as accountability transfer; DD Form 1149 presented as authorization; pre-screening presented as delivery/acceptance; missing losing or gaining contract; an unawarded follow-on treated as active; oral direction presented as written approval; and GFP Module reporting presented as a contract modification. Identify what is established and what remains open. Do not issue an authorization, compliance score, audit finding, or final legal conclusion.

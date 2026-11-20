@@ -1,9 +1,10 @@
 {
   "name": "procurement-market-research",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Research suppliers, public pricing, and procurement evidence for federal buyers and prime contractors.",
   "author": {
-    "name": "courtney-chapman"
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
@@ -12,11 +13,19 @@
     "longDescription": "Research suppliers, public pricing, and procurement evidence for federal buyers and prime contractors.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": ["Web Search"],
+    "capabilities": [
+      "Web Search"
+    ],
     "defaultPrompt": [
       "Research suppliers and public pricing for this item and quantity.",
       "Compare product, reseller, and GSA options for this purchase.",
       "Find public service providers and pricing evidence for this requirement."
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/procurement-market-research",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

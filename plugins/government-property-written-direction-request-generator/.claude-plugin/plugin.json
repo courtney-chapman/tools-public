@@ -1,6 +1,8 @@
 {
   "name": "government-property-written-direction-request-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Draft or validate concise requests for written Government direction on proposed property actions, conflicting instructions, and unresolved next steps.",
-  "author": { "name": "courtney-chapman" }
+  "author": {
+    "name": "courtney-chapman"
+  }
 }

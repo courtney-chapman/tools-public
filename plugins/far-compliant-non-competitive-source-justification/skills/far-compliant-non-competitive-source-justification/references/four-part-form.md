@@ -4,7 +4,11 @@
 
 Unless the user supplies a different form, asks only for analysis, or requests
 a separate market research report, use exactly these four sections and no extra
-sections. Write a useful, procurement-file-ready draft rather than a checklist.
+sections within **Draft / Results**. Put material Procurement actions,
+compliance explanation, sources not already cited in the form, or commentary
+after the four-part draft under separate headings; never weave them into the
+PM's narrative. Write a
+useful, procurement-file-ready draft rather than a checklist.
 Use `[INSERT]` only for buyer-specific evidence that research cannot provide.
 
 ### 1. Supplier Name / Description

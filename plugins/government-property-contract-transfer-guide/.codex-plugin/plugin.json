@@ -1,14 +1,15 @@
 {
   "name": "government-property-contract-transfer-guide",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Explain Government property contract transfer scenarios, prepare documentation questions, and review plans without deciding authorization.",
   "author": {
-    "name": "courtney-chapman"
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Government Property Contract Transfer Guide",
-    "shortDescription": "Explain property transfer scenarios",
+    "displayName": "Gov Property Transfer Guide",
+    "shortDescription": "Property transfer guidance",
     "longDescription": "Explain Government property contract transfer scenarios, prepare documentation questions, and review plans without deciding authorization.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
@@ -19,6 +20,12 @@
       "Explain this Government property contract transfer scenario",
       "Prepare a Government property transfer checklist",
       "Review my Government property transfer plan"
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-contract-transfer-guide",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

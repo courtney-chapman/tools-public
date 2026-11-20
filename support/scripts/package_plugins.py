@@ -81,6 +81,12 @@ def main() -> None:
                 raise ValueError(f"plugin manifest mismatch: {name}")
             if codex_manifest["version"] != claude_manifest["version"]:
                 raise ValueError(f"plugin manifest version mismatch: {name}")
+            for field in ("logo", "composerIcon"):
+                icon = codex_manifest.get("interface", {}).get(field)
+                if not isinstance(icon, str) or not icon.startswith("./"):
+                    raise ValueError(f"invalid {field} path for {name}")
+                if f"{name}/{icon[2:]}" not in names:
+                    raise ValueError(f"missing packaged {field} for {name}")
             if any(not path.startswith(f"{name}/") for path in names):
                 raise ValueError(f"multiple plugin roots: {destination}")
             skill_text = archive.read(skill_path).decode("utf-8")

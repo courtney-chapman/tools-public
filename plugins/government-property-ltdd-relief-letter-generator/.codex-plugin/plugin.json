@@ -1,13 +1,14 @@
 {
   "name": "government-property-ltdd-relief-letter-generator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate and validate audit-defensive Government Property LTDD relief letters.",
   "author": {
-    "name": "courtney-chapman"
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Government Property LTDD Relief Letter Generator",
+    "displayName": "Gov Property LTDD Relief",
     "shortDescription": "LTDD letters and validation",
     "longDescription": "Generate or validate fact-based, audit-defensive Government Property LTDD relief packages under FAR 52.245-1(f)(1)(vii)(B).",
     "developerName": "courtney-chapman",
@@ -19,6 +20,12 @@
       "Generate an LTDD relief letter",
       "Validate an existing LTDD draft",
       "Check my LTDD letter for audit risk"
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-ltdd-relief-letter-generator",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

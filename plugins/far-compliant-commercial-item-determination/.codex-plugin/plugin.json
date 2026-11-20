@@ -1,22 +1,31 @@
 {
   "name": "far-compliant-commercial-item-determination",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Research and determine commercial product, commercial service, and COTS status using applicable FAR definitions.",
   "author": {
-    "name": "courtney-chapman"
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "FAR-Compliant Commercial Item Determination",
+    "displayName": "FAR Commercial Item Review",
     "shortDescription": "Commerciality and COTS review",
     "longDescription": "Research public evidence and prepare buyer guidance and procurement-file-ready commercial product, commercial service, and COTS determinations under applicable FAR definitions.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": ["Web Search"],
+    "capabilities": [
+      "Web Search"
+    ],
     "defaultPrompt": [
       "Research this item and assess its commercial product, commercial service, and COTS status.",
       "Evaluate this SaaS subscription and any bundled services under the applicable FAR definitions.",
       "Analyze this product URL and prepare buyer guidance and a file-ready determination."
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-commercial-item-determination",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

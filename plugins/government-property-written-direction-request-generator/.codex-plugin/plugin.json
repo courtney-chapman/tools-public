@@ -1,20 +1,31 @@
 {
   "name": "government-property-written-direction-request-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Draft or validate concise requests for written Government direction on proposed property actions, conflicting instructions, and unresolved next steps.",
-  "author": { "name": "courtney-chapman" },
+  "author": {
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
+  },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Government Property Written Direction Request",
+    "displayName": "Gov Property Direction Request",
     "shortDescription": "Draft direction requests",
     "longDescription": "Draft or validate concise requests for written Government direction on proposed property actions, conflicting instructions, and unresolved next steps.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": ["Web Search"],
+    "capabilities": [
+      "Web Search"
+    ],
     "defaultPrompt": [
       "Draft a Government property request for written direction",
       "Validate my Government property direction request",
       "Help clarify conflicting Government property instructions"
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-written-direction-request-generator",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

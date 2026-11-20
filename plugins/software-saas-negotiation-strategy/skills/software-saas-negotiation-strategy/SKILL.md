@@ -107,9 +107,12 @@ only; do not send it without authorization.
   of a prime contractor's SaaS purchase merely because it appears in an agency
   contract. Do not present legal conclusions as settled when facts or clause
   applicability are incomplete.
-- Treat discount percentages, renewal caps, and price tiers as proposed
-  negotiating targets unless supported by market evidence. Never present an
-  illustrative target as a customary or verified market rate.
+- Do not invent discount percentages, price ceilings, escalation caps,
+  notice periods, or volume commitments to make a strategy sound concrete.
+  Use a numeric target only when the user supplies it or a cited quote or
+  comparable supports it; label a proposed target as such. With no quote,
+  ask for itemized rates and tier schedules, then set numeric objectives from
+  the returned evidence. Never present an illustrative target as customary.
 
 ## Choose the needed mode
 
@@ -117,9 +120,11 @@ only; do not send it without authorization.
 
 When asked for questions Procurement should ask the internal team, write the
 actual questions in Procurement's voice, addressed to the program, technical,
-finance, or security owner as appropriate. Deliver a concise, prioritized list
-rather than explaining the discovery process or asking the user to supply the
-answers first. Use supplied facts instead of re-asking them. Cover only the
+finance, or security owner as appropriate. Deliver eight to ten prioritized,
+standalone questions in about 300 words or less for a straightforward case;
+use one question per bullet and no nested subquestions. Do not explain the
+discovery process or ask the user to supply the answers first. Use supplied
+facts instead of re-asking them. Cover only the
 issues that would change the licensing, price, negotiation position, or risk:
 
 - Day 1 capability, hosting model, integrations, security, and service level;
@@ -138,6 +143,8 @@ year. Do not treat a forecast as a guaranteed order. End
 with two or three concrete negotiation levers supported by the answers needed.
 Missing product, quantity, term, or value may be asked **of the internal team**
 inside this deliverable; they are not prerequisites to drafting the questions.
+Keep the negotiation levers to two concise, supported points unless the user
+asks for a strategy.
 
 ### Requirements intake
 
@@ -186,12 +193,14 @@ the desired outcome. Do not invent vendor terms or answers.
 
 ### Negotiation strategy
 
-Build the strategy from established program and vendor facts. Deliver an
-actionable negotiation playbook: for each material issue, state the opening ask,
-why it is supportable, the desired result, a fallback or trade, and a short
-phrase the buyer can use with the vendor. Do not merely explain how a
-negotiation would work or invent vendor terms. Separate evidence from proposed
-positions and cover the relevant topics:
+Build the strategy from established program and vendor facts. Deliver a
+compact buyer playbook with three or four high-value issues, normally about
+350 words or less. For each issue, give a specific opening ask, a practical
+fallback, and one short sentence the buyer can say to the vendor. Do not
+explain negotiation theory, invent vendor terms, or add a second long action
+list that repeats the table. When no quote or benchmark exists, leave numeric
+price targets unset and explain the evidence needed to set them in one line.
+Separate evidence from proposed positions and cover only relevant topics:
 
 1. primary objectives and their priority;
 2. price and total-value opportunities;

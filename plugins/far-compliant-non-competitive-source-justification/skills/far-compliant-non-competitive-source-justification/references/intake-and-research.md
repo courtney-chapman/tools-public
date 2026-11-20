@@ -49,12 +49,9 @@ conflict and use the supportable facts to draft; do not choose a version silentl
 3. Search for public pricing for the proposed supplier and relevant alternatives.
    Label each amount as a public list price, catalog price, contract price, or
    user-supplied quote. A public price is a benchmark, not a supplier quote or a
-   complete price analysis. If no price is public, state the specific search
-   result and draft a short quote request using known requirements, with
-   `[INSERT]` for missing configuration fields. Put it in the relevant form
-   section or provide it separately when the user asks for an RFQ. Do not merely
-   tell the user to obtain a quote. Do not contact a supplier without the user's
-   authorization.
+   complete price analysis. If no price is public, state that briefly and do
+   not imply a quote or price finding exists. Draft a quote request or RFQ only
+   when the user asks for one. Do not contact a supplier without authorization.
 4. Use the research in the four-part draft below. Section 2 should name credible
    alternative suppliers, compare their evidenced fit or gaps, and summarize
    relevant public pricing. Keep source links and access dates beside the facts
@@ -67,11 +64,11 @@ conflict and use the supportable facts to draft; do not choose a version silentl
    supportable rationale and identify the precise unresolved fact in the relevant
    section. Say clearly when available evidence points to viable competition.
    For material evidence that public research cannot establish, put a targeted
-   `[INSERT]` in the relevant section and give a usable RFQ or validation question
-   there when it would help close the gap. Distinguish research performed in this
-   response from the PM's own market survey and source-selection decision. If
-   the user asks for a separate market research report, provide one in addition
-   to the four-part draft.
+   `[INSERT]` in the relevant section; use one focused validation question only
+   if the missing fact prevents a useful draft. Distinguish research performed
+   in this response from the PM's own market survey and source-selection decision.
+   If the user asks for a separate market research report, provide that report;
+   include the four-part draft only if requested too.
 
 If live search is unavailable, use supplied materials and general knowledge
 only for clearly labeled leads. State that current public research was not

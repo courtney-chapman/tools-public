@@ -4,11 +4,14 @@
 
 Unless the user supplies a different form, asks only for analysis, or requests
 a separate market research report, use exactly these four sections and no extra
-sections within **Draft / Results**. Put material Procurement actions,
+sections within **Draft / Results**. Put only decision-critical validation,
 compliance explanation, sources not already cited in the form, or commentary
 after the four-part draft under separate headings; never weave them into the
-PM's narrative. Write a
-useful, procurement-file-ready draft rather than a checklist.
+PM's narrative. Write a useful, procurement-file-ready draft rather than a
+checklist. For a straightforward renewal, keep each section to the few
+sentences needed to establish the supplier, actual alternatives, supported
+rationale, and unique qualifications. Do not repeat the same continuity facts
+in sections 3 and 4 or turn public research into long supplier profiles.
 Use `[INSERT]` only for buyer-specific evidence that research cannot provide.
 
 ### 1. Supplier Name / Description

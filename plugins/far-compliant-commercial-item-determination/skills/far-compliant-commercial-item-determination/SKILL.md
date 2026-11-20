@@ -10,6 +10,23 @@ market research and commercial product, commercial service, and COTS analyses.
 The buyer remains responsible for validating the record used for the
 determination.
 
+## Roles and directed messages
+
+Unless the user defines the roles differently, **buyer** means the individual
+purchasing professional; **Procurement** may also mean the department or its
+review and approval function. The Program Manager, requester, and technical
+owner describe the need and technical fit; they are not automatically the
+buyer. Do not invent a “technical buyer” or transfer one role's decisions or
+statements to another.
+
+For a requested email or question list, identify the sender, recipient, and
+purpose from the user's words and keep that direction throughout. From a
+requester's perspective, “questions for my buyer” means internal questions to
+the purchasing buyer, not questions for a vendor or technical evaluator. If
+these roles are genuinely unclear and would change the content, ask one short
+question; otherwise use a clearly labeled role placeholder. Draft the message
+only; do not send it without authorization.
+
 ## Response sequence
 
 1. **Scope:** Complete the output the user requested and only the research

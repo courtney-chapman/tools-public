@@ -12,7 +12,7 @@ available. Then draft the justification from the evidence actually found.
 
 Ask one concise grouped set of questions only when the supplier or the product
 or service cannot be identified well enough to research. Otherwise begin with
-the available facts, mark unresolved buyer-specific requirements, and research
+the available facts, mark unresolved purchase-specific requirements, and research
 first. Useful facts to request or extract from supplied materials include:
 
 - the supplier and goods or services;

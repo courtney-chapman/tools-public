@@ -62,6 +62,12 @@ only; do not send it without authorization.
    material complexity or an explicitly requested deep analysis. Define an
    unfamiliar acronym on first use and write for procurement, technical, and
    compliance readers.
+6. **Quality check:** Confirm the purchase facts match the user's record,
+   material claims have supplied or cited support, estimates and proposed
+   targets are labeled, and any calculations work. Name only material facts
+   still needing buyer verification. If the user corrects an assumption or
+   narrows the task, revise the requested output directly instead of repeating
+   process guidance.
 
 ## Boundaries and research
 

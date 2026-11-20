@@ -62,6 +62,12 @@ only; do not send it without authorization.
    vendor options and evidence a market scan needs. Concision must not remove
    the actual supplier lookup. Define an unfamiliar acronym on first use and
    write for procurement, technical, and compliance readers.
+6. **Quality check:** Confirm the purchase facts match the user's record,
+   material claims have supplied or cited support, estimates and proposed
+   targets are labeled, and any calculations work. Name only material facts
+   still needing buyer verification. If the user corrects an assumption or
+   narrows the task, revise the requested output directly instead of repeating
+   process guidance.
 
 ## Route the request
 

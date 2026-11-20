@@ -7,10 +7,10 @@ Prefer a printable version? See the [one-page quick start (PDF)](https://raw.git
 ## ChatGPT (web)
 
 1. Open [Releases](https://github.com/courtney-chapman/tools-public/releases), choose the latest plugin release, and download that plugin's ZIP.
-2. If your workspace has plugin upload access, open **Admin console → Plugins → Add → Upload plugin** and select the ZIP. An eligible workspace owner or administrator must do this.
-3. In ChatGPT, open **Plugins**, install the uploaded plugin if prompted, then start a chat. Describe your task or mention the plugin with `@`.
+2. In ChatGPT, open **Plugins → Add**, drag in the ZIP (or select it), and click **Install**. The plugin appears under **Personal plugins**.
+3. Start a chat. Describe your task or mention the plugin with `@`.
 
-If **Upload plugin** is unavailable, ask your workspace administrator to make the plugin available. [ChatGPT upload guidance](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt)
+In a managed workspace, upload options can depend on your permissions. If personal ZIP upload is unavailable, ask your administrator about **Admin console → Plugins → Add → Upload plugin**. [ChatGPT upload guidance](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt)
 
 ## Codex (desktop or CLI)
 

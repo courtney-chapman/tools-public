@@ -68,7 +68,11 @@ only; do not send it without authorization.
 ## Route the determination
 
 1. Identify the exact item, version, tier, service, or mixed bundle being
-   acquired. Analyze material product and service lines separately.
+   acquired. If the user requests a product-specific assessment but provides
+   no identifiable product, provider, service, or link, ask one short question
+   for that identity before researching or drafting. Never choose an example
+   product and present it as the user's purchase. Analyze material product and
+   service lines separately.
 2. Research identifiable public offerings and terms, then separate verified
    facts, supplier claims, buyer facts, and missing transaction-specific facts.
 3. Apply the relevant commercial-product or commercial-service pathway. Apply

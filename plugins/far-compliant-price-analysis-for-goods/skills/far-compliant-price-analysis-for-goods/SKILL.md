@@ -44,7 +44,10 @@ only; do not send it without authorization.
 4. **Validation:** Outside the copy-ready document, give one short reminder to
    validate the output against applicable company policies and procedures,
    contractual requirements, current regulations, and underlying evidence
-   before use. Do not imply that every regulation applies to every purchase.
+   before use. For every full price-analysis draft, put this single sentence
+   under **Notes** after the draft; keep it out of the file-ready text and do
+   not add other generic caveats. Do not imply that every regulation applies
+   to every purchase.
 5. **Final trim:** Remove repeated explanations and speculative next steps.
    Use one plain sentence for a simple product or service description, short
    lists or tables for comparisons, and only the detail needed to support the

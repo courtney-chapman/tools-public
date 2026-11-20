@@ -119,6 +119,41 @@ def validate() -> list[str]:
         description = interface.get("longDescription") if isinstance(interface, dict) else None
         if claude_manifest.get("description") != description:
             errors.append(f"Claude manifest description differs from Codex for {name}")
+        if not isinstance(interface, dict):
+            errors.append(f"missing Codex interface for {name}")
+        else:
+            if len(interface.get("displayName", "")) > 30:
+                errors.append(f"Codex display name exceeds 30 characters for {name}")
+            if len(interface.get("shortDescription", "")) > 30:
+                errors.append(f"Codex short description exceeds 30 characters for {name}")
+            prompts = interface.get("defaultPrompt", [])
+            if isinstance(prompts, str):
+                prompts = [prompts]
+            if not isinstance(prompts, list) or len(prompts) > 3 or any(
+                not isinstance(prompt, str) or len(prompt) > 128 for prompt in prompts
+            ):
+                errors.append(f"invalid Codex starter prompts for {name}")
+            if interface.get("websiteURL") != "https://github.com/courtney-chapman":
+                errors.append(f"missing requested website URL for {name}")
+            for field in ("logo", "composerIcon"):
+                icon_path = interface.get(field)
+                if icon_path != "./assets/icon.png":
+                    errors.append(f"invalid {field} path for {name}")
+                    continue
+                icon = ROOT / "plugins" / name / icon_path
+                data = icon.read_bytes() if icon.is_file() else b""
+                if not data.startswith(b"\x89PNG\r\n\x1a\n") or len(data) < 24:
+                    errors.append(f"missing PNG {field} for {name}")
+                elif int.from_bytes(data[16:20], "big") != 240 or int.from_bytes(data[20:24], "big") != 240:
+                    errors.append(f"invalid {field} dimensions for {name}")
+        if manifest.get("author", {}).get("url") != "https://github.com/courtney-chapman":
+            errors.append(f"missing author URL for {name}")
+        if manifest.get("homepage") != f"https://github.com/courtney-chapman/tools-public/tree/main/plugins/{name}":
+            errors.append(f"invalid homepage for {name}")
+        if manifest.get("repository") != "https://github.com/courtney-chapman/tools-public":
+            errors.append(f"invalid repository URL for {name}")
+        if manifest.get("license") != "CC-BY-NC-4.0":
+            errors.append(f"invalid license identifier for {name}")
         matching_entries = [entry for entry in claude_entries if isinstance(entry, dict) and entry.get("name") == name]
         if len(matching_entries) == 1 and matching_entries[0].get("description") != claude_manifest.get("description"):
             errors.append(f"Claude marketplace description differs from manifest for {name}")

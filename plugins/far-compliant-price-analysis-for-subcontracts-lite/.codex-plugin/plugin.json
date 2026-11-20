@@ -1,18 +1,25 @@
 {
   "name": "far-compliant-price-analysis-for-subcontracts-lite",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Evidence-based bid summaries and price analyses for subcontract actions",
   "author": {
-    "name": "courtney-chapman"
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "FAR-Compliant Price Analysis for Subcontracts (Lite)",
-    "shortDescription": "Draft subcontract bid and price analyses.",
+    "displayName": "FAR Subcontract Price Analysis",
+    "shortDescription": "Subcontract price review",
     "longDescription": "Draft BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications, with supported price comparisons, conditional cost-element review, and a final findings table.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Draft a BID SUMMARY & PRICE ANALYSIS for this new award, option, or modification. For service or labor-priced work, first ask me for any missing escalation, fee, and labor-load details. Analyze any proposed materials, travel, lower-tier subcontracts, and other direct costs using available price evidence. Include the final findings table."
-  }
+    "defaultPrompt": "Analyze this subcontract price and draft a bid summary.",
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-subcontracts-lite",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

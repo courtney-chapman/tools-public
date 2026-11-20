@@ -34,9 +34,19 @@ Search current public supplier and reseller sources before drafting. Open the pa
 - Compliance notes (BAA/TAA — flag only when relevant based on product type, country of origin, or contract requirements)
 - Delivery and logistics options
 
+If current public research is unavailable or the item is too vague for a
+meaningful search, summarize supplied candidate and price facts in a compact
+table instead of producing a full public-research table filled with repeated
+"not verified" cells. State once that those facts are user-provided and name
+the few checks that would change the purchase decision. Do not imply that a
+market scan was completed.
+
 For each public price, state the currency, unit, configuration, quantity or tier, seller, date checked, and material exclusions or conditions shown by the source. Distinguish list price, GSA price, historical award price, and a current quote. Do not present a public listing as a quote for the buyer's exact requirement or as a completed price reasonableness determination. If a price or delivery claim is not publicly verifiable, write `not found` or `not verified` in the relevant cell and cite the verification point. Do not turn an unsuccessful search into a claim that a supplier, schedule contract, or capability does not exist.
 
-After delivering the primary table, ask the user: "Would you like vendor-specific details for any of these sources?" Do not include the full vendor-detail table unless requested.
+After delivering the primary table, ask under **Procurement actions**:
+"Would you like vendor-specific details for any of these sources?" Do not
+include the full vendor-detail table unless requested. Omit this question when
+the user has not yet supplied enough detail to identify any actual source.
 
 Vendor Output — Vendor Detail Table (On Request Only)
 

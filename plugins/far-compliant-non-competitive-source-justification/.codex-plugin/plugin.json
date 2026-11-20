@@ -1,13 +1,14 @@
 {
   "name": "far-compliant-non-competitive-source-justification",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Research suppliers and pricing, then draft or review noncompetitive source justifications for federal prime-contractor subcontracts.",
   "author": {
-    "name": "courtney-chapman"
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "FAR-Compliant Non-Competitive Source Justification",
+    "displayName": "FAR Source Justification",
     "shortDescription": "Source research and drafting",
     "longDescription": "Research suppliers, alternatives, and public pricing, then create evidence-based noncompetitive source justifications for federal prime-contractor subcontract files.",
     "developerName": "courtney-chapman",
@@ -19,6 +20,12 @@
       "Research suppliers and public pricing, then draft a sole-source justification for this purchase.",
       "Identify credible alternatives and draft my four-part noncompetitive justification.",
       "Research the claims and improve this source justification."
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-non-competitive-source-justification",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
 }

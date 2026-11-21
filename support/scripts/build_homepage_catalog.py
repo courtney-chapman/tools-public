@@ -52,20 +52,15 @@ def main() -> None:
         if kind == "app":
             slug = re.search(r"/apps/([^/]+)/", links["Try online"]).group(1)
             thumb_slug = THUMBNAIL_SLUG_ALIASES.get(slug, slug)
-            guide = links["Guide"]
-            if not guide.startswith("https://"):
-                guide = "https://github.com/courtney-chapman/tools-public/blob/main/" + guide
             item = {
                 "domain": domain, "kind": kind, "title": html.unescape(title),
                 "description": html.unescape(description),
                 "image": "assets/thumbs/thumb_" + thumb_slug + ".png",
                 "primary_url": links["Try online"], "primary_label": "Try online",
                 "secondary_url": links["Download"], "secondary_label": "Download ZIP",
-                "tertiary_url": guide, "tertiary_label": "Guide",
             }
         else:
-            slug = re.search(r"/plugins/([^/)]+)", links["Source"]).group(1)
-            release_tag = re.search(r"/releases/download/([^/]+)/", links["Download ZIP"]).group(1)
+            release_tag, slug = re.search(r"/releases/download/([^/]+)/([^/]+)\.zip$", links["Download ZIP"]).groups()
             release_url = links.get("Release", "https://github.com/courtney-chapman/tools-public/releases/tag/" + release_tag)
             assert release_url.endswith("/" + release_tag), (slug, release_url)
             item = {
@@ -75,7 +70,6 @@ def main() -> None:
                 "primary_url": links["Download ZIP"], "primary_label": "Download ZIP",
                 "secondary_url": release_url,
                 "secondary_label": "Release details",
-                "tertiary_url": links["Source"], "tertiary_label": "Source",
             }
         items.append(item)
     assert items, "No catalog entries found in the README"

@@ -30,6 +30,6 @@ Price reasonableness review stays Required in this purchasing workflow. FAR 15.4
 - [FAR 15.404-3, Subcontract pricing considerations](https://www.acquisition.gov/far/15.404-3)
 - [DFARS 252.244-7001, Contractor Purchasing System Administration](https://www.acquisition.gov/dfars/252.244-7001-contractor-purchasing-system-administration.)
 
-The contract's incorporated text may differ from the online text. The download includes this guide, an MIT license, and the browser app with local `tokens.css`.
+The contract's incorporated text may differ from the online text. The download includes this guide, a PolyForm Noncommercial license, and the browser app with local `tokens.css`.
 
 Built by Courtney · Revision 17

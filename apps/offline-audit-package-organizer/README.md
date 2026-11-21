@@ -34,7 +34,7 @@ Session ZIPs contain `session.json` and `files/<opaque-id>` for every imported f
 
 ## Distribution
 
-The download ZIP includes this guide, the MIT license for the app’s original code, bundled third-party notices, and the files needed to run offline. Files and saved session ZIPs stay on your device unless you choose to share them. The optional online page is a static copy of the app; imported files are processed in the browser and are not uploaded by the app.
+The download ZIP includes this guide, the PolyForm Noncommercial license for the app’s original code, bundled third-party notices, and the files needed to run offline. Files and saved session ZIPs stay on your device unless you choose to share them. The optional online page is a static copy of the app; imported files are processed in the browser and are not uploaded by the app.
 
 Third-party scripts are bundled locally under `vendor/`. See `vendor/NOTICE.md` for versions, sources, hashes, and separate license terms.
 

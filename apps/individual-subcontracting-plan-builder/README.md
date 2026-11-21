@@ -20,6 +20,6 @@ The app does not establish the truth of entered estimates, the adequacy of goal 
 
 ## Data and privacy
 
-Entries stay in browser memory until you download JSON, CSV, or a PDF. The app makes no automatic network requests. Downloaded files can contain procurement information; handle them in an authorized environment. The offline ZIP contains only `index.html`, this guide, and the MIT license.
+Entries stay in browser memory until you download JSON, CSV, or a PDF. The app makes no automatic network requests. Downloaded files can contain procurement information; handle them in an authorized environment. The offline ZIP contains only `index.html`, this guide, and the PolyForm Noncommercial license.
 
 Built by [Courtney](https://github.com/courtney-chapman/tools-public).

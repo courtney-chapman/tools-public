@@ -91,37 +91,37 @@ four-file ZIP is written to `.build/app-zips/individual-subcontracting-plan-buil
 The release image is stored separately from the app ZIP.
 Build the Offline Audit Package Organizer download with
 `python3 support/scripts/package_offline_audit_organizer.py`. The deterministic
-ZIP contains the offline app, fictional samples, guide, MIT license, and third-party notices.
+ZIP contains the offline app, fictional samples, guide, PolyForm Noncommercial license, and third-party notices.
 Check its PDF and ZIP handling with `node support/scripts/test_offline_audit_organizer.cjs`.
 
 Build the Consent-to-Subcontract Package Builder download with
 `python3 support/scripts/package_consent_to_subcontract.py`. The deterministic,
-four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and PolyForm Noncommercial license.
 Check its logic and output structure with `node support/scripts/test_consent_to_subcontract.cjs`.
 
 Build the Procurement File Readiness Checklist download with
 `python3 support/scripts/package_cpsr_procurement_file_checklist.py`. The deterministic,
-four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and PolyForm Noncommercial license.
 Check its logic with `node support/scripts/test_cpsr_procurement_file_checklist.cjs`.
 Build the Make-or-Buy Decision Worksheet download with
 `python3 support/scripts/package_make_or_buy.py`. The deterministic,
-four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and PolyForm Noncommercial license.
 Check its logic and output structure with `node support/scripts/test_make_or_buy.cjs`.
 Build the Supplier Performance Evaluation download with
 `python3 support/scripts/package_supplier_performance_evaluation.py`. The deterministic
-four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and PolyForm Noncommercial license.
 Check its logic with `node support/scripts/test_supplier_performance_evaluation.cjs`.
 
 Build the Subcontract Closeout Checklist download with
 `python3 support/scripts/package_subcontract_closeout.py`. The deterministic,
-four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and PolyForm Noncommercial license.
 Check its logic and output structure with `node support/scripts/test_subcontract_closeout.cjs`.
 
 ## Release presentation
 
 Build the Weighted Guidelines Calculator download with
 `python3 support/scripts/package_weighted_guidelines.py`. The deterministic,
-six-file ZIP contains the offline app, public guide, and MIT license.
+six-file ZIP contains the offline app, public guide, and PolyForm Noncommercial license.
 The release image is stored separately from the app ZIP.
 
 - Use the product name shown on its release card as the release title. Keep the

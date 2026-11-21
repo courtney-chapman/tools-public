@@ -121,7 +121,7 @@ Tools for cost and pricing are coming soon.
 
 Security concerns should follow the [security policy](SECURITY.md).
 
-Original repository content is licensed under [CC BY-NC 4.0](LICENSE). The standalone browser apps have separate MIT licenses in their [app folders](apps/). Third-party material remains subject to its own terms.
+The AI plugins and other original content are licensed under [CC BY-NC 4.0](LICENSE). New versions of the standalone browser apps use the [PolyForm Noncommercial License 1.0.0](apps/make-or-buy-decision/LICENSE). Previously published MIT versions remain under their original terms. Third-party material remains subject to its own terms.
 
 ## Portfolio
 

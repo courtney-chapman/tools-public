@@ -41,6 +41,6 @@ From the repository root, run `python3 support/scripts/package_dd1149.py`. The s
 
 ## License
 
-This app is released under the [MIT license](LICENSE), as an explicit exception to the repository's root CC BY-NC license. The government form linked above is not included in this license or package.
+This app is released under the [PolyForm Noncommercial license](LICENSE), as an explicit exception to the repository's root CC BY-NC license. The government form linked above is not included in this license or package.
 
 The app uses the shared navy and blue color theme and follows your system dark mode setting. Printed documents remain on white paper.

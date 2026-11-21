@@ -30,6 +30,6 @@ Readiness labels describe structural gaps in the working package. They are not G
 - [FAR 15.404-3, Subcontract pricing considerations](https://www.acquisition.gov/far/15.404-3)
 - [DFARS 252.244-7001, Contractor Purchasing System Administration](https://www.acquisition.gov/dfars/252.244-7001-contractor-purchasing-system-administration.)
 
-Current online text may differ from the contract's incorporated version. The download includes this guide, the MIT license, and the `index.html` browser app with local `tokens.css`.
+Current online text may differ from the contract's incorporated version. The download includes this guide, the PolyForm Noncommercial license, and the `index.html` browser app with local `tokens.css`.
 
 Built by Courtney · Revision 9

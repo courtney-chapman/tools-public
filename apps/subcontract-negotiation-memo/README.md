@@ -22,6 +22,6 @@ The memorandum contains six core sections and a seventh certified-data section w
 
 ## Data and privacy
 
-Entries stay in browser memory while the page is open. Refreshing or closing it discards unsaved work. Nothing is sent or saved automatically. Exported JSON, copied text, and PDFs may contain procurement information; handle them in an authorized environment. The offline ZIP contains this guide, the MIT license, and the `index.html` with local `tokens.css`.
+Entries stay in browser memory while the page is open. Refreshing or closing it discards unsaved work. Nothing is sent or saved automatically. Exported JSON, copied text, and PDFs may contain procurement information; handle them in an authorized environment. The offline ZIP contains this guide, the PolyForm Noncommercial license, and the `index.html` with local `tokens.css`.
 
 Built by [Courtney](https://github.com/courtney-chapman/tools-public). Revision 2. JSON schema version 1.1.

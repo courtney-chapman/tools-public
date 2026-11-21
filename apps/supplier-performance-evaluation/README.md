@@ -27,6 +27,6 @@ This is an internal documentation aid. Confirm the actual contract terms, eviden
 - [FAR 46.105, contractor quality responsibilities](https://www.acquisition.gov/far/46.105)
 - [FAR Subpart 42.15, Government contractor-performance information](https://www.acquisition.gov/far/subpart-42.15)
 
-Current online text may differ from the contract's incorporated version. The download includes this guide, the MIT license, and the `index.html` with local `tokens.css` app. The online page is static; the app itself sends no entries to a server.
+Current online text may differ from the contract's incorporated version. The download includes this guide, the PolyForm Noncommercial license, and the `index.html` with local `tokens.css` app. The online page is static; the app itself sends no entries to a server.
 
 Built by Courtney · Revision 9

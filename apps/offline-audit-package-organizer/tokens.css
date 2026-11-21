@@ -116,3 +116,13 @@ body { background: var(--bg); color: var(--text); font: var(--fs-base)/var(--lh)
 a { color: var(--primary); }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 ::selection { background: var(--primary-soft); color: var(--text); }
+
+/* Keep navigation and controls comfortable when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

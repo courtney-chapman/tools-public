@@ -408,3 +408,26 @@ textarea {
 header .eyebrow,.masthead .eyebrow,.topbar .eyebrow{color:var(--on-header)}
 .site-footer{color:var(--on-header)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* Shared app credit and destination. */
+.app-brand-footer {
+  background: var(--header, #0E2841);
+  color: var(--on-header, #FFFFFF);
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 12px 0;
+  font: 400 14px/1.5 "Source Sans 3", system-ui, sans-serif;
+}
+.app-brand-footer__inner {
+  width: min(1200px, calc(100% - 32px));
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+.app-brand-footer a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.app-brand-footer a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+@media print { .app-brand-footer { display: none !important; } }

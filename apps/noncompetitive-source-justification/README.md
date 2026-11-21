@@ -20,4 +20,4 @@ JSON exports use schema version 1.2. The app also imports versions 1.0 and 1.1, 
 
 The selected justification option is a requester description, not a regulatory exception. The app does not inspect evidence, determine a source's actual capability, perform price or cost analysis, establish clause applicability, or approve a purchase. Procurement must verify facts, the governing contract and company procedures, the sourcing classification, and approvals. No FAR or DFARS clause text is embedded in the generated justification.
 
-The browser runtime is the self-contained `index.html`; the download also includes this guide and the MIT license. Built by Courtney.
+The browser runtime is `index.html` with its local `tokens.css`; the download also includes this guide and the MIT license. Built by Courtney.

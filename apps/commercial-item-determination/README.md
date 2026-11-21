@@ -24,6 +24,6 @@ The app does not inspect attached screenshots, verify sales quantities or source
 
 Entries and screenshots remain in memory while the page is open. Nothing is saved or sent automatically. Exported JSON and PDFs may contain procurement information; handle them in an authorized environment. The optional AI handoff copies text for the user to decide whether to share; it omits screenshot image bytes.
 
-JSON exports use schema version 1.1 and imports also accept version 1.0. Import validates the structure and asks before replacing a populated form. Online source URLs require a screenshot for Final. Up to three PNG, JPEG, or WebP screenshots under 3 MB each may be attached per source; they are included in JSON and in the printed appendix. The offline ZIP includes this guide, the MIT license, and the self-contained `index.html`.
+JSON exports use schema version 1.1 and imports also accept version 1.0. Import validates the structure and asks before replacing a populated form. Online source URLs require a screenshot for Final. Up to three PNG, JPEG, or WebP screenshots under 3 MB each may be attached per source; they are included in JSON and in the printed appendix. The offline ZIP includes this guide, the MIT license, and the `index.html` with local `tokens.css`.
 
 Built by [Courtney](https://github.com/courtney-chapman/tools-public).

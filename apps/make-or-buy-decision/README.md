@@ -33,6 +33,6 @@ The worksheet is a working record for Program and Procurement. Its status pills 
 - [FAR 52.219-9, Small Business Subcontracting Plan](https://www.acquisition.gov/far/52.219-9)
 - [DFARS 252.244-7001, Contractor Purchasing System Administration](https://www.acquisition.gov/dfars/252.244-7001-contractor-purchasing-system-administration.)
 
-Current online text may differ from the contract's incorporated version. The download includes this guide, the MIT license, and the self-contained `index.html` browser app.
+Current online text may differ from the contract's incorporated version. The download includes this guide, the MIT license, and the `index.html` browser app with local `tokens.css`.
 
 Built by Courtney · Revision 6

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 NAME = "cpsr-procurement-file-checklist"
 APP = ROOT / "apps" / NAME
 OUTPUT = ROOT / ".build/app-zips" / f"{NAME}.zip"
-FILES = ("index.html", "README.md", "LICENSE")
+FILES = ("index.html", "tokens.css", "README.md", "LICENSE")
 STAMP = (1980, 1, 1, 0, 0, 0)
 
 

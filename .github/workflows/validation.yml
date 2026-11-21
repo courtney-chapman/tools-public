@@ -73,3 +73,5 @@ jobs:
         run: node support/scripts/test_subcontract_closeout.cjs
       - name: Validate Weighted Guidelines Calculator package
         run: python3 support/scripts/package_weighted_guidelines.py
+      - name: Test Weighted Guidelines Calculator bundle
+        run: node support/scripts/test_weighted_guidelines.cjs

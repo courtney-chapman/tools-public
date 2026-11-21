@@ -109,7 +109,7 @@ Try the app online, or download its ZIP from Releases to use it offline. The onl
 
 |  |  |
 | --- | --- |
-| <img src="docs/readme/icons/weighted-guidelines-calculator.png" width="56" alt=""> | **Weighted Guidelines Calculator**<br>Build and review a working DoD profit objective from documented, user-selected factors in an offline browser app.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/weighted-guidelines-calculator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/weighted-guidelines-calculator-v1.0.0) · [Guide](apps/weighted-guidelines-calculator/README.md) |
+| <img src="docs/readme/icons/weighted-guidelines-calculator.png" width="56" alt=""> | **Weighted Guidelines Calculator**<br>Build and review a working DoD profit objective from documented, user-selected factors in an offline browser app.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/weighted-guidelines-calculator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/weighted-guidelines-calculator-v1.0.1) · [Guide](apps/weighted-guidelines-calculator/README.md) |
 
 ## Finance
 

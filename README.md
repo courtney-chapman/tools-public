@@ -6,9 +6,9 @@
 
 ## Standalone browser apps
 
-Try an app online, or download its ZIP from Releases to use it offline. The online versions are hosted with GitHub Pages.
-
 <img src="docs/readme/readme_open_app.png" alt="Open a browser app: download the ZIP from Releases, unzip it, and open index.html in a desktop browser. No install, no account, works offline." width="100%">
+
+Try an app online, or download its ZIP from Releases to use it offline. The online versions are hosted with GitHub Pages.
 
 ### Procurement
 

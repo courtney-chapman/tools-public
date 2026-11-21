@@ -1,0 +1,11 @@
+title: "Courtney Chapman · Tools and Plugins"
+description: "Compliance-ready solutions for government prime contractors and subcontractors. Offline browser apps and AI plugins."
+author: Courtney Chapman
+image: /docs/readme/social_preview.png
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /docs/readme/social_preview.png
+twitter:
+  card: summary_large_image

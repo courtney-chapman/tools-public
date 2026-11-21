@@ -1,5 +1,7 @@
 <img src="docs/readme/readme_header.png" alt="Tools and Plugins: audit-ready by design. Compliance-ready solutions for government prime contractors and subcontractors." width="100%">
 
+**Browse the solutions website:** [courtney-chapman.github.io/tools-public](https://courtney-chapman.github.io/tools-public/)
+
 **Start here:** [Procurement](#procurement) · [Government property](#government-property) · [Contracts](#contracts) · [Finance](#finance) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
 
 > **Provided as-is:** These browser apps and AI plugins help with research, records, and drafts. They may become outdated as rules or guidance change. Verify your contract requirements, current sources, and each output.

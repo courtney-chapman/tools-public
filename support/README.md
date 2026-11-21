@@ -20,6 +20,15 @@ This directory contains repository-level maintenance guidance.
 
 The root [README](../README.md) is the capability catalog.
 
+The root `index.html` is the GitHub Pages homepage. Its cards come from
+`catalog.js`, generated from the README. When adding or changing a public
+app or plugin, update the README entry and its thumbnail in `assets/thumbs/`,
+then run `python3 support/scripts/build_homepage_catalog.py`. Use
+`python3 support/scripts/build_homepage_catalog.py --check` to confirm the
+catalog is current. The repository validation workflow runs that check too.
+Keep collection graphics in `assets/collections/` and the page's social
+preview metadata in `index.html` current when the site design changes.
+
 Validate the plugin catalog and repository structure locally with:
 
 ```bash

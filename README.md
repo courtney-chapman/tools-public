@@ -4,7 +4,7 @@
 
 > **Provided as-is:** These browser apps and AI plugins help with research, records, and drafts. They may become outdated as rules or guidance change. Verify your contract requirements, current sources, and each output.
 
-## Procurement
+## [Procurement](#procurement)
 
 <img src="docs/readme/banner_procurement.png" alt="Procurement: plan, source, price, award, close out." width="100%">
 
@@ -15,7 +15,7 @@
 *Document procurement choices and prepare records for review in your browser.*
 
 <details markdown="1">
-<summary>See free browser tools</summary>
+<summary>See free browser tools (10)</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
@@ -49,7 +49,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 *Use your AI assistant for focused procurement research, analysis, and drafting.*
 
 <details markdown="1">
-<summary>See plugins for AI chatbots</summary>
+<summary>See plugins for AI chatbots (7)</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_plugins_dark.png">
@@ -70,7 +70,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 </details>
 
-## Government property
+## [Government property](#government-property)
 
 <img src="docs/readme/banner_property.png" alt="Government property: acquire, record, use, inventory, dispose." width="100%">
 
@@ -79,7 +79,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 *Prepare the forms and records that support government property work in your browser.*
 
 <details markdown="1">
-<summary>See free browser tools</summary>
+<summary>See free browser tools (6)</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
@@ -104,7 +104,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 *Use your AI assistant to navigate government property questions and prepare supporting documentation.*
 
 <details markdown="1">
-<summary>See plugins for AI chatbots</summary>
+<summary>See plugins for AI chatbots (4)</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_plugins_dark.png">
@@ -122,7 +122,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 </details>
 
-## Contracts
+## [Contracts](#contracts)
 
 <img src="docs/readme/banner_contracts.png" alt="Contracts: propose, award, administer, modify, close out." width="100%">
 
@@ -131,7 +131,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 *Prepare contract analysis and records for review in your browser.*
 
 <details markdown="1">
-<summary>See free browser tools</summary>
+<summary>See free browser tools (1)</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
@@ -146,7 +146,7 @@ Try the app online, or download its ZIP from Releases to use it offline. The onl
 
 </details>
 
-## Finance
+## [Finance](#finance)
 
 <img src="docs/readme/banner_finance.png" alt="Finance: estimate, price, bill, reconcile, close." width="100%">
 

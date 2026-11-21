@@ -1,6 +1,6 @@
 # Procurement File Readiness Checklist
 
-Organize an internal procurement file review in a standalone browser app. Record purchasing facts, contract and procedure answers, documentation status, and file references. The app does not open supporting files or decide CPSR compliance, Government consent, purchasing-system approval, supplier responsibility, commerciality, or price reasonableness.
+Organize an internal procurement file review in a standalone browser app. Record purchasing facts, contract and procedure answers, reviewer findings and optional file identifiers. The app does not open supporting files or decide CPSR compliance, Government consent, purchasing-system approval, supplier responsibility, commerciality, or price reasonableness.
 
 ## Use
 
@@ -8,15 +8,20 @@ Open `index.html` in a current browser. The app needs no account, installation, 
 
 1. **Details:** Enter the procurement identifiers and facts you know.
 2. **Controls:** Answer questions using the actual prime contract and applicable procedures. Leave uncertain answers as Unknown.
-3. **Checklist:** Work through Contract & regulatory, Company procedures, and Agency-specific parts. Mark each item and record a file name or ID. Search, page, collapse groups, or use **Needs attention** to find gaps. Download the CSV templates to load company or agency requirements in bulk; each custom part accepts up to 100 items.
+3. **Checklist:** Work through Contract & regulatory, Company procedures, and Agency-specific parts. Examine each actual record and select Not reviewed, Meets requirement, Needs correction, Missing, or Not Applicable. Add a finding where useful; a file name or ID is optional in row details. Search, page, collapse groups, or use **Needs attention** to find gaps. Download the CSV templates to load company or agency requirements in bulk; each custom part accepts up to 100 items.
 4. **Report:** Review open items, optionally record a separate internal reviewer pass, then copy, print, or save a report. **Print compact** includes the open-item lists; **Print detailed** adds the full record.
 
-Use **Save draft JSON** in the top navigation at any step. To resume, use **Import JSON** on Report. The full session format is schema 1.3; valid 1.0–1.2 sessions are upgraded on import. Entries stay in the current tab's memory and are not saved or transmitted automatically. Closing or refreshing without a JSON export loses unsaved work. The app reads only CSV or JSON files you select. Protect exported files and printed reports according to your organization's requirements. Confirm authorization before sharing a copied AI prompt with an external service.
+Use **Save draft JSON** in the top navigation at any step. To resume, use **Import JSON** on Report. The full session format is schema 1.6; valid 1.0–1.5 sessions are upgraded on import. Older Available rows become Not reviewed because presence alone is not an adequacy finding; their file identifiers are preserved. Older Price analysis rows become Price reasonableness review, with applicability recalculated. Older drafts also gain three award-stage checks without moving company or agency rows. Entries stay in the current tab's memory and are not saved or transmitted automatically. Closing or refreshing without a JSON export loses unsaved work. The app reads only CSV or JSON files you select. Protect exported files and printed reports according to your organization's requirements. Confirm authorization before sharing a copied AI prompt with an external service.
 
-The status colors and progress bar describe recorded documentation only. “Available” with a reference does not verify the document. User-loaded company or agency requirements are not validated as governing authority. Check the incorporated clause, deviations, agency provisions, company procedure, and current rules for the specific purchase before operational use.
+Price reasonableness review stays Required in this purchasing workflow. FAR 15.404-3(b)(1) calls for appropriate cost or price analysis of proposed subcontract prices; this does not always mean a separate price-analysis document. A No answer to Price analysis method used does not make the overall pricing review N/A, and No for both price and cost methods raises a question. The Award documentation group also checks DPAS rated-order handling, FFATA first-tier reporting handoff, and award-time exclusions/debarment. These depend on the actual order, incorporated clauses, thresholds, tiers, and exceptions. FFATA submission is generally due after award; the row captures the award data and handoff, then later submission when due. The progress count rises when the reviewer marks an applicable record Meets requirement; a file identifier does not affect it. The app does not inspect records or decide compliance. A Missing or Needs correction result is a gap; Not reviewed and unresolved applicability remain open review questions. The Applies badge is calculated from Details and Controls. Status colors accompany words: neutral for Not reviewed, amber for open questions, red for Missing or Needs correction, and green for a reviewer-selected Meets requirement. User-loaded company or agency requirements are not validated as governing authority. Check the incorporated clause, deviations, agency provisions, company procedure, and current rules for the specific purchase before operational use.
 
 ## Public references
 
+- [FAR 52.204-10, First-tier subcontract reporting](https://www.acquisition.gov/far/52.204-10)
+- [FAR 52.209-6, Exclusions and debarment](https://www.acquisition.gov/far/52.209-6)
+- [FAR 9.405-2, Restrictions on subcontracting](https://www.acquisition.gov/far/9.405-2)
+- [FAR 52.211-15, DPAS rated orders](https://www.acquisition.gov/far/52.211-15)
+- [15 CFR 700.12, 700.15, and 700.17, DPAS](https://www.ecfr.gov/current/title-15/part-700)
 - [FAR 52.244-2, Subcontracts](https://www.acquisition.gov/far/52.244-2)
 - [FAR 44.303, Extent of review](https://www.acquisition.gov/far/44.303)
 - [FAR 15.404-3, Subcontract pricing considerations](https://www.acquisition.gov/far/15.404-3)
@@ -24,4 +29,4 @@ The status colors and progress bar describe recorded documentation only. “Avai
 
 The contract's incorporated text may differ from the online text. The download includes this guide, an MIT license, and the self-contained browser app.
 
-Built by Courtney · Revision 9
+Built by Courtney · Revision 14

@@ -51,3 +51,7 @@ jobs:
         run: python3 support/scripts/package_offline_audit_organizer.py
       - name: Test audit organizer PDF and ZIP
         run: node support/scripts/test_offline_audit_organizer.cjs
+      - name: Validate consent-to-subcontract app package
+        run: python3 support/scripts/package_consent_to_subcontract.py
+      - name: Test consent-to-subcontract app
+        run: node support/scripts/test_consent_to_subcontract.cjs

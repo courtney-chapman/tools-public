@@ -94,6 +94,11 @@ Build the Offline Audit Package Organizer download with
 ZIP contains the offline app, fictional samples, guide, MIT license, and third-party notices.
 Check its PDF and ZIP handling with `node support/scripts/test_offline_audit_organizer.cjs`.
 
+Build the Consent-to-Subcontract Package Builder download with
+`python3 support/scripts/package_consent_to_subcontract.py`. The deterministic,
+three-file ZIP contains the self-contained app, public guide, and MIT license.
+Check its logic and output structure with `node support/scripts/test_consent_to_subcontract.cjs`.
+
 ## Release presentation
 
 - Use the product name shown on its release card as the release title. Keep the

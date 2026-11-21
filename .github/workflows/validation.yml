@@ -67,3 +67,7 @@ jobs:
         run: python3 support/scripts/package_supplier_performance_evaluation.py
       - name: Test supplier performance app
         run: node support/scripts/test_supplier_performance_evaluation.cjs
+      - name: Validate subcontract closeout app package
+        run: python3 support/scripts/package_subcontract_closeout.py
+      - name: Test subcontract closeout app
+        run: node support/scripts/test_subcontract_closeout.cjs

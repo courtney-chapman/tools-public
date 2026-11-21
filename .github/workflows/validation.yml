@@ -63,3 +63,7 @@ jobs:
         run: python3 support/scripts/package_make_or_buy.py
       - name: Test make-or-buy app
         run: node support/scripts/test_make_or_buy.cjs
+      - name: Validate supplier performance app package
+        run: python3 support/scripts/package_supplier_performance_evaluation.py
+      - name: Test supplier performance app
+        run: node support/scripts/test_supplier_performance_evaluation.cjs

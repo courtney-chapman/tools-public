@@ -1,6 +1,6 @@
 {
   "name": "government-property-ltdd-relief-letter-generator",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Generate or validate fact-based, audit-defensive Government Property LTDD relief packages under FAR 52.245-1(f)(1)(vii)(B).",
   "author": {
     "name": "courtney-chapman"

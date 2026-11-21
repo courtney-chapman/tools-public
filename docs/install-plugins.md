@@ -2,8 +2,6 @@
 
 Choose a plugin in the [catalog](../README.md#plugins), then follow the steps for your platform. In Codex and Claude Code, adding the marketplace makes its plugins available; install each plugin you want to use.
 
-Prefer a printable version? See the [one-page quick start (PDF)](https://raw.githubusercontent.com/courtney-chapman/tools-public/main/docs/plugin-quick-start.pdf).
-
 ## ChatGPT (web)
 
 1. Open [Releases](https://github.com/courtney-chapman/tools-public/releases), choose the latest plugin release, and download that plugin's ZIP.

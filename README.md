@@ -1,4 +1,4 @@
-<img src="docs/readme/readme_header.png" alt="Tools and Plugins: audit-ready by design. Compliance-ready solutions for government prime contractors and subcontractors." width="100%">
+<img src="docs/readme/readme_header.png" alt="Audit-ready by design. Solutions for government contractors: browser apps and AI plugins for procurement, government property, and contracts, built so the record holds up." width="100%">
 
 **Browse the solutions website:** [courtney-chapman.github.io/tools-public](https://courtney-chapman.github.io/tools-public/)
 

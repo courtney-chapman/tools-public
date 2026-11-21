@@ -119,6 +119,11 @@ Check its logic and output structure with `node support/scripts/test_subcontract
 
 ## Release presentation
 
+Build the Weighted Guidelines Calculator download with
+`python3 support/scripts/package_weighted_guidelines.py`. The deterministic,
+six-file ZIP contains the offline app, public guide, and MIT license.
+The release image is stored separately from the app ZIP.
+
 - Use the product name shown on its release card as the release title. Keep the
   version in one descriptive Git tag; do not create an unversioned alias tag.
 - Store reviewed PNG release cards in `docs/release-images/`. Link each release

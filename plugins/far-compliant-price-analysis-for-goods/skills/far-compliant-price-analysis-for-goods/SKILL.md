@@ -93,6 +93,14 @@ verbatim and make their application conditional.
    only for wording, corrections, or an analogous example; do not copy facts
    or values from an example.
 
+Keep the file-ready price analysis limited to supported facts, comparisons,
+calculations, and the price finding. When the evidence is insufficient, state
+that the price-reasonableness finding is pending or unsupported in the draft;
+do not write a buyer instruction such as “defer award” or “obtain more quotes”
+as its conclusion. Put only the specific evidence needed to resolve the
+finding under **Procurement actions**, outside **Draft / Results**. Make an
+award recommendation in the draft only when the record supports one.
+
 If company rules label market-price research without a supplier solicitation
 as **Attempted Competition**, state that it is the company's documentation
 label and that no other supplier was solicited. Do not imply submitted-offer

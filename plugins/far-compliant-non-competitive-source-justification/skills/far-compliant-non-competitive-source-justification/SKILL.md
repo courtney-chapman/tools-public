@@ -81,6 +81,14 @@ into the justification.
 | Email or questions for the buyer | Keep the requester/PM as sender and the purchasing buyer as recipient when that is the user's context. Read only the references needed for factual support; draft the internal message or questions requested, without forcing the four-part form or turning it into a vendor request. |
 | Focused section, rationale, or alternate supplier | Read `references/intake-and-research.md` and the relevant part of `references/four-part-form.md`; answer the requested section without forcing a full form. Check `references/applicability-and-review.md` when a regulatory or sole-source classification claim matters. |
 
+For a requested four-part justification, keep the response on that draft and
+its material evidence limits. Add **Procurement actions** only when one
+specific decision is necessary to understand a blocking classification or
+approval gap. Do not add routine instructions to obtain a quote, conduct a
+separate price analysis, or complete other downstream work merely because
+those activities may later be needed. Preserve those boundaries without
+volunteering their task lists.
+
 ## Evidence and conclusion gates
 
 - Research public facts before asking the PM to collect them. A public list

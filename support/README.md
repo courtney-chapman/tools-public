@@ -107,6 +107,10 @@ Build the Make-or-Buy Decision Worksheet download with
 `python3 support/scripts/package_make_or_buy.py`. The deterministic,
 three-file ZIP contains the self-contained app, public guide, and MIT license.
 Check its logic and output structure with `node support/scripts/test_make_or_buy.cjs`.
+Build the Supplier Performance Evaluation download with
+`python3 support/scripts/package_supplier_performance_evaluation.py`. The deterministic
+three-file ZIP contains the offline app, public guide, and MIT license.
+Check its logic with `node support/scripts/test_supplier_performance_evaluation.cjs`.
 
 ## Release presentation
 

@@ -17,6 +17,8 @@ CATALOG_LINK = re.compile(
     r"\[Source\]\(https://github\.com/courtney-chapman/tools-public/tree/main/plugins/([^/)]+)\)"
 )
 APP_CATALOG_URL = "https://courtney-chapman.github.io/tools-public/"
+APP_FOOTER_NOTE = "Provided as-is · Review outputs before use"
+APP_SHELL_MARKER = "Shared app shell. Keep this block identical in every standalone app."
 
 
 class AppFooterParser(HTMLParser):
@@ -45,6 +47,9 @@ class AppFooterParser(HTMLParser):
 
 def validate() -> list[str]:
     errors: list[str] = []
+    app_shell_styles: set[str] = set()
+    app_header_markup: set[str] = set()
+    app_footer_markup: set[str] = set()
     marketplace_path = ROOT / ".agents/plugins/marketplace.json"
     try:
         marketplace = json.loads(marketplace_path.read_text(encoding="utf-8"))
@@ -130,6 +135,27 @@ def validate() -> list[str]:
         app_style = re.search(r'<style\b|<link\b[^>]*href=["\'](?:styles|style)\.css', markup, re.IGNORECASE)
         if not token_path.is_file() or not token_link or (app_style and token_link.start() > app_style.start()):
             errors.append(f"{label}: local brand tokens must load before app styles")
+        else:
+            token_styles = token_path.read_text(encoding="utf-8")
+            if APP_SHELL_MARKER not in token_styles:
+                errors.append(f"{label}: shared app shell styles are missing")
+            else:
+                app_shell_styles.add(token_styles.split("/* " + APP_SHELL_MARKER, 1)[1])
+        header = re.search(r"<header\b([^>]*)>(.*?)</header>", markup, re.IGNORECASE | re.DOTALL)
+        if not header or not re.search(r'\bapp-brand-header\b', header.group(1)):
+            errors.append(f"{label}: shared app header is missing")
+        elif (
+            len(re.findall(r"<h1\b", header.group(2), re.IGNORECASE)) != 1
+            or "Standalone offline demonstration" not in header.group(2)
+            or "app-brand-header__inner" not in header.group(2)
+        ):
+            errors.append(f"{label}: shared app header needs its title and eyebrow")
+        else:
+            normalized = re.sub(r"<h1>.*?</h1>", "<h1>APP NAME</h1>", header.group(), flags=re.DOTALL)
+            normalized = re.sub(r'<header class="[^"]+">', '<header class="app-brand-header">', normalized)
+            app_header_markup.add(normalized)
+        if not re.search(r'<div class="app-brand-intro"><p>[^<]+</p>', markup):
+            errors.append(f"{label}: task description is missing below the header")
         csp = re.search(r'<meta\b[^>]*http-equiv=["\']Content-Security-Policy["\'][^>]*>', markup, re.IGNORECASE)
         if csp and "style-src" in csp.group() and "'self'" not in csp.group():
             errors.append(f"{label}: content security policy blocks local brand tokens")
@@ -137,10 +163,23 @@ def validate() -> list[str]:
             errors.append(f"{label}: missing light/dark color-scheme metadata")
         if footer.count != 1:
             errors.append(f"{label}: expected one app footer")
+        else:
+            footer_markup = re.search(r"<footer\b[^>]*>.*?</footer>", markup, re.IGNORECASE | re.DOTALL)
+            if footer_markup:
+                app_footer_markup.add(footer_markup.group())
         if "Built by Courtney" not in text or APP_CATALOG_URL not in footer.links:
             errors.append(f"{label}: footer credit or More tools link is missing")
+        if APP_FOOTER_NOTE not in text:
+            errors.append(f"{label}: shared as-is footer note is missing")
         if re.search(r"\bRevision\s+\d+\b", text, re.IGNORECASE):
             errors.append(f"{label}: internal revision is visible in footer")
+
+    if len(app_shell_styles) > 1:
+        errors.append("shared app shell styles differ across standalone apps")
+    if len(app_header_markup) > 1:
+        errors.append("shared app header markup differs beyond the app name")
+    if len(app_footer_markup) > 1:
+        errors.append("shared app footer markup differs across standalone apps")
 
     for name in sorted(plugin_dirs):
         manifest_path = ROOT / "plugins" / name / ".codex-plugin/plugin.json"

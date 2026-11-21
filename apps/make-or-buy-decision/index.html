@@ -45,9 +45,10 @@
 .app-brand-footer a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 @media print { .app-brand-footer { display: none !important; } }
 </style></head><body>
-<header><h1>Make-or-Buy Decision Worksheet</h1><small>Working draft</small></header>
+<header class="app-brand-header"><div class="app-brand-header__inner"><p class="app-brand-header__eyebrow">Standalone offline demonstration</p><h1>Make-or-Buy Decision Worksheet</h1></div></header>
+<div class="app-brand-intro"><p>Compare Make and Buy options and document the decision for review.</p></div>
 <main class="shell"><nav id="tabs" class="tabs" aria-label="Worksheet sections"></nav><div class="utility"><span id="save-state" class="hint">No unsaved changes</span><div class="actions"><button id="import-button">Import JSON</button><button id="export-button">Export JSON</button></div></div><div id="statusbar" aria-live="polite"></div><div id="view"></div><div id="print-area" hidden></div><div id="toast" role="status" aria-live="polite"></div></main>
-<footer class="app-brand-footer"><div class="app-brand-footer__inner"><span>Built by Courtney · <a href="https://courtney-chapman.github.io/tools-public/" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></span><span>Data stays in browser memory unless you export or copy it.</span></div></footer>
+<footer class="app-brand-footer"><div class="app-brand-footer__inner"><span>Built by Courtney · <a href="https://courtney-chapman.github.io/tools-public/" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></span><span>Provided as-is · Review outputs before use</span></div></footer>
 <input id="import-file" type="file" accept="application/json,.json" hidden>
 <script>
 'use strict';

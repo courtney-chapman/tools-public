@@ -10,15 +10,8 @@
   <link rel="stylesheet" href="styles.css?v=20261116-brand">
 </head>
 <body>
-  <header class="topbar app-controls">
-    <div>
-      <p class="eyebrow">Shipping document workspace</p>
-      <h1>DD Form 1149 Generator</h1>
-      <p class="subtitle">Enter shipment details, review the form, then print or save a PDF. Information you enter stays in this browser unless you choose to save a draft or print.</p>
-      <p class="subtitle">Independent, unofficial preparation tool. Confirm the correct form and reporting process for your contract before use.</p>
-    </div>
-    <a class="source-link" href="https://www.esd.whs.mil/Directives/forms/dd1000_1499/DD1149/" target="_blank" rel="noopener noreferrer">View official form <span aria-hidden="true">↗</span></a>
-  </header>
+  <header class="topbar app-controls app-brand-header"><div class="app-brand-header__inner"><p class="app-brand-header__eyebrow">Standalone offline demonstration</p><h1>DD Form 1149 Generator</h1></div></header>
+<div class="app-brand-intro"><p>Prepare and print a DD Form 1149-style shipping document.</p><p class="app-brand-intro__links"><a href="https://www.esd.whs.mil/Directives/forms/dd1000_1499/DD1149/" target="_blank" rel="noopener noreferrer">View official form ↗</a></p></div>
 
   <main class="workspace">
     <section class="editor app-controls" aria-label="DD1149 information editor">
@@ -83,7 +76,7 @@
         <p class="helper">Add one row for each property item. Leave unknown values blank; blank values will not print as zero. Scroll the table to see every field on smaller screens.</p>
         <div class="table-scroll">
           <table class="property-table">
-            <thead><tr><th scope="col">#</th><th scope="col">Description *</th><th scope="col">Qty *</th><th scope="col">UOM *</th><th scope="col">Tag</th><th scope="col">Serial number</th><th scope="col">Unit cost</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+            <thead><tr><th scope="col">#</th><th scope="col">Description *</th><th scope="col">Qty *</th><th scope="col">UOM *</th><th scope="col">Tag</th><th scope="col">Serial number</th><th scope="col">Unit cost</th><th scope="col" aria-label="Actions"></th></tr></thead>
             <tbody id="propertyRows"></tbody>
           </table>
         </div>
@@ -162,7 +155,7 @@
     </section>
   </main>
 
-  <footer class="app-brand-footer"><div class="app-brand-footer__inner"><span>Built by Courtney · <a href="https://courtney-chapman.github.io/tools-public/" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></span></div></footer>
+  <footer class="app-brand-footer"><div class="app-brand-footer__inner"><span>Built by Courtney · <a href="https://courtney-chapman.github.io/tools-public/" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></span><span>Provided as-is · Review outputs before use</span></div></footer>
 
   <template id="propertyRowTemplate">
     <tr class="property-row">

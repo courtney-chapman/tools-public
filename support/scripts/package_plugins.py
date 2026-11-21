@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -25,18 +26,27 @@ def add_file(archive: ZipFile, name: str, data: bytes) -> None:
 
 def main() -> None:
     catalog = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text())
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--plugin", help="package only this marketplace plugin")
+    args = parser.parse_args()
+    entries = catalog["plugins"]
+    if args.plugin and args.plugin not in {entry["name"] for entry in entries}:
+        parser.error(f"unknown marketplace plugin: {args.plugin}")
     tracked = subprocess.check_output(
         ["git", "ls-files", "-z", "--", "plugins"], cwd=ROOT
     ).decode().strip("\0").split("\0")
     license_bytes = (ROOT / "LICENSE").read_bytes()
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    expected_zips = {f'{entry["name"]}.zip' for entry in catalog["plugins"]}
-    stale_zips = {path.name for path in OUTPUT.glob("*.zip")} - expected_zips
-    if stale_zips:
-        raise ValueError(f"remove stale plugin ZIPs before release: {sorted(stale_zips)}")
+    if not args.plugin:
+        expected_zips = {f'{entry["name"]}.zip' for entry in entries}
+        stale_zips = {path.name for path in OUTPUT.glob("*.zip")} - expected_zips
+        if stale_zips:
+            raise ValueError(f"remove stale plugin ZIPs before release: {sorted(stale_zips)}")
 
-    for entry in catalog["plugins"]:
+    for entry in entries:
         name = entry["name"]
+        if args.plugin and name != args.plugin:
+            continue
         source = entry["source"]["path"]
         if source != f"./plugins/{name}":
             raise ValueError(f"unexpected plugin source for {name}: {source}")

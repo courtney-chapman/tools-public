@@ -126,3 +126,13 @@ a { color: var(--primary); }
     --info: #1D5FA6; --info-soft: #E7EFF8;
   }
 }
+
+/* Keep navigation and controls comfortable when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -24,6 +24,6 @@ Confirm the actual subcontract, incorporated clauses, prime-contract terms, appl
 - [FAR 52.232-7, Payments under Time-and-Materials and Labor-Hour Contracts](https://www.acquisition.gov/far/52.232-7)
 - [FAR Subpart 4.7, Contractor Records Retention](https://www.acquisition.gov/far/subpart-4.7)
 
-The contract’s incorporated text may differ from current online text. The download includes this guide, an MIT license, and the self-contained browser app.
+The contract’s incorporated text may differ from current online text. The download includes this guide, an MIT license, and the browser app with local `tokens.css`.
 
 Built by Courtney · Revision 5

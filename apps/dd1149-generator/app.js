@@ -458,22 +458,33 @@ function download(name, content, type) {
 }
 
 function loadDraft(file) {
+  if (file.size > 2_000_000) { showNotice("Draft could not be opened. JSON file exceeds 2 MB.", true); return; }
   const reader = new FileReader();
   reader.onload = () => {
     try {
       const data = JSON.parse(String(reader.result));
-      if (!data || typeof data !== "object" || !Array.isArray(data.property)) throw new Error("The file is not a DD1149 draft.");
+      if (!data || typeof data !== "object" || !Array.isArray(data.property) || data.property.length > 500) throw new Error("The file is not a supported DD1149 draft (500 property items maximum).");
       const fresh = createDefaultState();
       for (const section of ["shipment", "authority", "shipping", "packing", "advanced"]) {
         if (data[section] && typeof data[section] === "object") {
-          for (const key of Object.keys(fresh[section])) if (typeof data[section][key] === "string") fresh[section][key] = data[section][key];
+          for (const key of Object.keys(fresh[section])) if (typeof data[section][key] === "string") {
+            if (data[section][key].length > 20_000) throw new Error(`Draft field ${section}.${key} is too long.`);
+            fresh[section][key] = data[section][key];
+          }
         }
       }
       fresh.property = data.property.map(source => {
         const item = itemBlank();
-        for (const key of csvColumns) if (["string", "number"].includes(typeof source?.[key])) item[key] = String(source[key]);
+        for (const key of csvColumns) if (["string", "number"].includes(typeof source?.[key])) {
+          if (String(source[key]).length > 20_000) throw new Error(`Property field ${key} is too long.`);
+          item[key] = String(source[key]);
+        }
         return item;
       });
+      if (JSON.stringify(state) !== JSON.stringify(createDefaultState()) && !window.confirm("Replace the current DD1149 draft with this file? Unsaved changes will be lost.")) {
+        showNotice("Draft import canceled.");
+        return;
+      }
       state = fresh; syncStateInputs(); renderPropertyRows(); renderPreview();
       showNotice(`Opened draft with ${state.property.length} property ${state.property.length === 1 ? "item" : "items"}.`);
     } catch (error) { showNotice(`Draft could not be opened. ${error.message}`, true); }

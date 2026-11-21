@@ -7,6 +7,7 @@ import json
 import re
 import subprocess
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 
@@ -15,6 +16,31 @@ MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 CATALOG_LINK = re.compile(
     r"\[Source\]\(https://github\.com/courtney-chapman/tools-public/tree/main/plugins/([^/)]+)\)"
 )
+APP_CATALOG_URL = "https://courtney-chapman.github.io/tools-public/"
+
+
+class AppFooterParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.in_footer = False
+        self.text: list[str] = []
+        self.links: list[str | None] = []
+        self.count = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "footer":
+            self.in_footer = True
+            self.count += 1
+        elif tag == "a" and self.in_footer:
+            self.links.append(dict(attrs).get("href"))
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "footer":
+            self.in_footer = False
+
+    def handle_data(self, data: str) -> None:
+        if self.in_footer:
+            self.text.append(data)
 
 
 def validate() -> list[str]:
@@ -92,6 +118,29 @@ def validate() -> list[str]:
                     continue
                 if not (path.parent / target).resolve().exists():
                     errors.append(f"{relative_path}:{number}: broken local link: {raw}")
+
+    for index_path in sorted((ROOT / "apps").glob("*/index.html")):
+        markup = index_path.read_text(encoding="utf-8")
+        footer = AppFooterParser()
+        footer.feed(markup)
+        label = index_path.parent.name
+        text = " ".join(footer.text)
+        token_path = index_path.parent / "tokens.css"
+        token_link = re.search(r'<link\b[^>]*href=["\']tokens\.css["\'][^>]*>', markup, re.IGNORECASE)
+        app_style = re.search(r'<style\b|<link\b[^>]*href=["\'](?:styles|style)\.css', markup, re.IGNORECASE)
+        if not token_path.is_file() or not token_link or (app_style and token_link.start() > app_style.start()):
+            errors.append(f"{label}: local brand tokens must load before app styles")
+        csp = re.search(r'<meta\b[^>]*http-equiv=["\']Content-Security-Policy["\'][^>]*>', markup, re.IGNORECASE)
+        if csp and "style-src" in csp.group() and "'self'" not in csp.group():
+            errors.append(f"{label}: content security policy blocks local brand tokens")
+        if not re.search(r'<meta\b[^>]*name=["\']color-scheme["\'][^>]*content=["\']light dark["\']', markup, re.IGNORECASE):
+            errors.append(f"{label}: missing light/dark color-scheme metadata")
+        if footer.count != 1:
+            errors.append(f"{label}: expected one app footer")
+        if "Built by Courtney" not in text or APP_CATALOG_URL not in footer.links:
+            errors.append(f"{label}: footer credit or More tools link is missing")
+        if re.search(r"\bRevision\s+\d+\b", text, re.IGNORECASE):
+            errors.append(f"{label}: internal revision is visible in footer")
 
     for name in sorted(plugin_dirs):
         manifest_path = ROOT / "plugins" / name / ".codex-plugin/plugin.json"

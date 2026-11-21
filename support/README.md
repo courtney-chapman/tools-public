@@ -69,25 +69,25 @@ for attachment to a GitHub Release. The release image is stored separately from 
 
 Build the Noncompetitive Source Justification download with
 `python3 support/scripts/package_noncompetitive_source_justification.py`. The deterministic,
-three-file ZIP is written to `.build/app-zips/noncompetitive-source-justification.zip`.
-Only `index.html` is needed at runtime; the guide and license travel with the download.
+four-file ZIP is written to `.build/app-zips/noncompetitive-source-justification.zip`.
+`index.html` and `tokens.css` are needed at runtime; the guide and license travel with the download.
 The release image is stored separately from the app ZIP.
 
 Build the Commercial Product, Service, and COTS Determination download with
 `python3 support/scripts/package_commercial_item_determination.py`. The deterministic,
-three-file ZIP is written to `.build/app-zips/commercial-item-determination.zip`.
-Only `index.html` is needed at runtime; the guide and license travel with the download.
+four-file ZIP is written to `.build/app-zips/commercial-item-determination.zip`.
+`index.html` and `tokens.css` are needed at runtime; the guide and license travel with the download.
 The release image is stored separately from the app ZIP.
 
 Build the Subcontract Negotiation Memorandum download with
 `python3 support/scripts/package_subcontract_negotiation_memo.py`. The deterministic,
-three-file ZIP is written to `.build/app-zips/subcontract-negotiation-memo.zip`.
-Only `index.html` is needed at runtime; the guide and license travel with the download.
+four-file ZIP is written to `.build/app-zips/subcontract-negotiation-memo.zip`.
+`index.html` and `tokens.css` are needed at runtime; the guide and license travel with the download.
 
 Build the Individual Subcontracting Plan Builder download with
 `python3 support/scripts/package_individual_subcontracting_plan.py`. The deterministic,
-three-file ZIP is written to `.build/app-zips/individual-subcontracting-plan-builder.zip`.
-Only `index.html` is needed at runtime; the guide and license travel with the download.
+four-file ZIP is written to `.build/app-zips/individual-subcontracting-plan-builder.zip`.
+`index.html` and `tokens.css` are needed at runtime; the guide and license travel with the download.
 The release image is stored separately from the app ZIP.
 Build the Offline Audit Package Organizer download with
 `python3 support/scripts/package_offline_audit_organizer.py`. The deterministic
@@ -96,25 +96,25 @@ Check its PDF and ZIP handling with `node support/scripts/test_offline_audit_org
 
 Build the Consent-to-Subcontract Package Builder download with
 `python3 support/scripts/package_consent_to_subcontract.py`. The deterministic,
-three-file ZIP contains the self-contained app, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
 Check its logic and output structure with `node support/scripts/test_consent_to_subcontract.cjs`.
 
 Build the Procurement File Readiness Checklist download with
 `python3 support/scripts/package_cpsr_procurement_file_checklist.py`. The deterministic,
-three-file ZIP contains the self-contained app, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
 Check its logic with `node support/scripts/test_cpsr_procurement_file_checklist.cjs`.
 Build the Make-or-Buy Decision Worksheet download with
 `python3 support/scripts/package_make_or_buy.py`. The deterministic,
-three-file ZIP contains the self-contained app, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
 Check its logic and output structure with `node support/scripts/test_make_or_buy.cjs`.
 Build the Supplier Performance Evaluation download with
 `python3 support/scripts/package_supplier_performance_evaluation.py`. The deterministic
-three-file ZIP contains the offline app, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
 Check its logic with `node support/scripts/test_supplier_performance_evaluation.cjs`.
 
 Build the Subcontract Closeout Checklist download with
 `python3 support/scripts/package_subcontract_closeout.py`. The deterministic,
-three-file ZIP contains the self-contained app, public guide, and MIT license.
+four-file ZIP contains the app, local theme tokens, public guide, and MIT license.
 Check its logic and output structure with `node support/scripts/test_subcontract_closeout.cjs`.
 
 ## Release presentation

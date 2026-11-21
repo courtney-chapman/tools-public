@@ -26,7 +26,7 @@ The CSV template uses these columns, in this order:
 
 `description,quantity,uom,tag,serial_number,part_number,nsn,unit_cost,condition,container_type,container_number,notes`
 
-Only `description`, `quantity`, and `uom` are required CSV headers. Quoted commas, quotes, and line breaks are supported. Import appends rows to the current form. **Save Draft** downloads a JSON file with the `shipment`, `authority`, `property`, `shipping`, `packing`, and `advanced` sections. **Open Draft** replaces the current form with a saved draft. Keep drafts and generated PDFs secure: they can contain shipment, contract, and property information.
+Only `description`, `quantity`, and `uom` are required CSV headers. Quoted commas, quotes, and line breaks are supported. Import appends rows to the current form. **Save Draft** downloads a JSON file with the `shipment`, `authority`, `property`, `shipping`, `packing`, and `advanced` sections. **Open Draft** accepts a JSON file up to 2 MB and 500 property items, and asks before replacing entered work. Keep drafts and generated PDFs secure: they can contain shipment, contract, and property information.
 
 ## Use limits
 

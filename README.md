@@ -121,11 +121,7 @@ Tools for cost and pricing are coming soon.
 
 Security concerns should follow the [security policy](SECURITY.md).
 
-These tools are available at no charge. Original repository content is licensed under [CC BY-NC 4.0](LICENSE). The standalone browser apps have separate MIT licenses in their [app folders](apps/). Third-party material remains subject to its own terms. Check the applicable license before reusing or distributing a tool.
-
-## Support the work
-
-If these free tools are useful to you, you can [support my work on Patreon](https://www.patreon.com/c/courtney_chapman) with a voluntary monthly contribution. Your support helps cover fixed costs, including software subscriptions and API services, and the time I spend building and maintaining the tools. Support does not change access to the tools or include custom work, priority support, or guaranteed updates.
+Original repository content is licensed under [CC BY-NC 4.0](LICENSE). The standalone browser apps have separate MIT licenses in their [app folders](apps/). Third-party material remains subject to its own terms.
 
 ## Portfolio
 

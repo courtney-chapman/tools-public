@@ -103,6 +103,10 @@ Build the Procurement File Readiness Checklist download with
 `python3 support/scripts/package_cpsr_procurement_file_checklist.py`. The deterministic,
 three-file ZIP contains the self-contained app, public guide, and MIT license.
 Check its logic with `node support/scripts/test_cpsr_procurement_file_checklist.cjs`.
+Build the Make-or-Buy Decision Worksheet download with
+`python3 support/scripts/package_make_or_buy.py`. The deterministic,
+three-file ZIP contains the self-contained app, public guide, and MIT license.
+Check its logic and output structure with `node support/scripts/test_make_or_buy.cjs`.
 
 ## Release presentation
 

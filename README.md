@@ -44,11 +44,6 @@ Prefer a printable version? See the [one-page quick start (PDF)](https://raw.git
 
 ### Procurement
 
-Choose the price-analysis plugin by the record you need: Goods for a standalone
-government-funded fixed-price goods justification, Subcontracts Lite for a
-subcontract award, option, or modification BID SUMMARY, and Commercial/Indirect
-Lite for a company Commercial or Indirect purchase.
-
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
 | <img src="docs/readme/icons/procurement-market-research.png" width="56" alt=""> | **Procurement Market Research**<br>Find suppliers, public pricing, and evidence for federal prime-contractor market research.<br><em>Try: “Research JFrog Pro X.”</em><br>[Download ZIP](https://github.com/courtney-chapman/tools-public/releases/download/v2026.11.20.3/procurement-market-research.zip) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/procurement-market-research) |

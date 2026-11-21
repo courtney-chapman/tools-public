@@ -13,8 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
-CATALOG_LINK = re.compile(
-    r"\[Source\]\(https://github\.com/courtney-chapman/tools-public/tree/main/plugins/([^/)]+)\)"
+PLUGIN_DOWNLOAD_LINK = re.compile(
+    r"\[Download ZIP\]\(https://github\.com/courtney-chapman/tools-public/releases/download/[^/]+/([a-z0-9-]+)\.zip\)"
 )
 APP_CATALOG_URL = "https://courtney-chapman.github.io/tools-public/"
 APP_FOOTER_NOTE = "Provided as-is · Review outputs before use"
@@ -100,7 +100,22 @@ def validate() -> list[str]:
             errors.append(f"Claude marketplace version must come from plugin.json for {name}")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    catalog_plugins = set(CATALOG_LINK.findall(readme))
+    catalog_plugin_names: list[str] = []
+    section = None
+    for line in readme.splitlines():
+        if line.startswith("## "):
+            section = None
+        elif line.startswith("### "):
+            section = line[4:]
+        elif section == "AI plugins" and line.startswith("| <img"):
+            match = PLUGIN_DOWNLOAD_LINK.search(line)
+            if match:
+                catalog_plugin_names.append(match.group(1))
+            else:
+                errors.append("README plugin catalog row is missing a versioned ZIP link")
+    catalog_plugins = set(catalog_plugin_names)
+    if len(catalog_plugins) != len(catalog_plugin_names):
+        errors.append("README plugin catalog has duplicate ZIP entries")
     if catalog_plugins != plugin_dirs:
         errors.append(
             f"README catalog differs from plugin folders: catalog={sorted(catalog_plugins)}, "

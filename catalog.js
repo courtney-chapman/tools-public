@@ -8,9 +8,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/make-or-buy-decision/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/make-or-buy-decision-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/make-or-buy-decision/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -21,9 +19,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/individual-subcontracting-plan-builder/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/individual-subcontracting-plan-builder-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/individual-subcontracting-plan-builder/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -34,9 +30,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/commercial-item-determination/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/commercial-item-determination-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/commercial-item-determination/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -47,9 +41,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/noncompetitive-source-justification/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/noncompetitive-source-justification-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/noncompetitive-source-justification/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -60,9 +52,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/subcontract-negotiation-memo/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/subcontract-negotiation-memo-v1.1.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/subcontract-negotiation-memo/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -73,9 +63,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/consent-to-subcontract/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/consent-to-subcontract-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/consent-to-subcontract/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -86,9 +74,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/supplier-performance-evaluation/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/supplier-performance-evaluation-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/supplier-performance-evaluation/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -99,9 +85,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/subcontract-closeout/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/subcontract-closeout-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/subcontract-closeout/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -112,9 +96,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/cpsr-procurement-file-checklist/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/cpsr-procurement-file-checklist-v1.1.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/cpsr-procurement-file-checklist/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -125,9 +107,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/offline-audit-package-organizer/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/offline-audit-package-organizer-v1.0.3",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/offline-audit-package-organizer/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Procurement",
@@ -138,9 +118,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/procurement-market-research-v0.1.6/procurement-market-research.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/procurement-market-research-v0.1.6",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/procurement-market-research",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Procurement",
@@ -151,9 +129,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/far-compliant-commercial-item-determination-v0.1.5/far-compliant-commercial-item-determination.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/far-compliant-commercial-item-determination-v0.1.5",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-commercial-item-determination",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Procurement",
@@ -164,9 +140,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/far-compliant-non-competitive-source-justification-v0.1.5/far-compliant-non-competitive-source-justification.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/far-compliant-non-competitive-source-justification-v0.1.5",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-non-competitive-source-justification",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Procurement",
@@ -177,9 +151,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/far-compliant-price-analysis-for-goods-v0.1.5/far-compliant-price-analysis-for-goods.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/far-compliant-price-analysis-for-goods-v0.1.5",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-goods",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Procurement",
@@ -190,9 +162,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/indirect-and-commercial-price-analysis-for-services-lite-v0.2.4/indirect-and-commercial-price-analysis-for-services-lite.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/indirect-and-commercial-price-analysis-for-services-lite-v0.2.4",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/indirect-and-commercial-price-analysis-for-services-lite",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Procurement",
@@ -203,9 +173,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/far-compliant-price-analysis-for-subcontracts-lite-v0.2.6/far-compliant-price-analysis-for-subcontracts-lite.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/far-compliant-price-analysis-for-subcontracts-lite-v0.2.6",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-subcontracts-lite",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Procurement",
@@ -216,9 +184,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/software-saas-negotiation-strategy-v0.1.5/software-saas-negotiation-strategy.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/software-saas-negotiation-strategy-v0.1.5",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/software-saas-negotiation-strategy",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Government property",
@@ -229,9 +195,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/dd1149-generator/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/dd1149-generator-v1.0.6",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/dd1149-generator/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Government property",
@@ -242,9 +206,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/government-property-record-template-generator/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-property-record-template-generator-v1.1.4",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/government-property-record-template-generator/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Government property",
@@ -255,9 +217,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/property-custody-receipt-generator/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/property-custody-receipt-generator-v1.1.4",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/property-custody-receipt-generator/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Government property",
@@ -268,9 +228,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/physical-inventory-count-sheet-generator/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/physical-inventory-count-sheet-generator-v1.0.4",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/physical-inventory-count-sheet-generator/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Government property",
@@ -281,9 +239,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/government-property-disposition-preparation-generator/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-property-disposition-preparation-generator-v1.0.4",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/government-property-disposition-preparation-generator/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Government property",
@@ -294,9 +250,7 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/pmsa-evidence-preparation-toolkit/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/pmsa-evidence-preparation-toolkit-v1.1.4",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/pmsa-evidence-preparation-toolkit/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   },
   {
     "domain": "Government property",
@@ -307,9 +261,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/government-property-receipt-discrepancy-v0.1.3/government-property-receipt-discrepancy.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-property-receipt-discrepancy-v0.1.3",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-receipt-discrepancy",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Government property",
@@ -320,9 +272,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/government-property-contract-transfer-guide-v0.1.3/government-property-contract-transfer-guide.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-property-contract-transfer-guide-v0.1.3",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-contract-transfer-guide",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Government property",
@@ -333,9 +283,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/government-property-ltdd-relief-letter-generator-v0.1.4/government-property-ltdd-relief-letter-generator.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-property-ltdd-relief-letter-generator-v0.1.4",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-ltdd-relief-letter-generator",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Government property",
@@ -346,9 +294,7 @@ window.catalogItems = [
     "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/government-property-written-direction-request-generator-v0.1.3/government-property-written-direction-request-generator.zip",
     "primary_label": "Download ZIP",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-property-written-direction-request-generator-v0.1.3",
-    "secondary_label": "Release details",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-written-direction-request-generator",
-    "tertiary_label": "Source"
+    "secondary_label": "Release details"
   },
   {
     "domain": "Contracts",
@@ -359,8 +305,6 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/weighted-guidelines-calculator/",
     "primary_label": "Try online",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/weighted-guidelines-calculator-v1.0.2",
-    "secondary_label": "Download ZIP",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/weighted-guidelines-calculator/README.md",
-    "tertiary_label": "Guide"
+    "secondary_label": "Download ZIP"
   }
 ];

@@ -4,13 +4,13 @@ Choose a plugin in the [catalog](../README.md#plugins), then follow the steps fo
 
 ## ChatGPT (web)
 
-1. Open [Releases](https://github.com/courtney-chapman/tools-public/releases), choose the latest plugin release, and download that plugin's ZIP.
+1. Choose a plugin in the [catalog](../README.md#plugins) and use its **Download ZIP** link to get that plugin's current release.
 2. In ChatGPT, open **Plugins → Add**, drag in the ZIP (or select it), and click **Install**. The plugin appears under **Personal plugins**.
 3. Start a chat. Describe your task or mention the plugin with `@`.
 
 ### Update a personal plugin
 
-1. Download the newer ZIP for the same plugin from the latest plugin release.
+1. Use that plugin's **Download ZIP** link in the [catalog](../README.md#plugins) to get its newer release.
 2. In ChatGPT web, open **Plugins → Personal plugins** and select the installed plugin. Choose **Upload new version**, select the newer ZIP, and complete the prompts. Check the plugin's details afterward to confirm the update.
 
 Personal ZIP-uploaded plugins may not appear in the ChatGPT mobile plugin list yet. Use ChatGPT web to manage them.

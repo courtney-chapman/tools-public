@@ -26,10 +26,14 @@ Validate the plugin catalog and repository structure locally with:
 python3 support/scripts/validate_repository.py
 ```
 
-Build the individual plugin ZIPs from tracked source files with
-`python3 support/scripts/package_plugins.py`. Attach the generated files in
-the ignored `.build/plugin-zips/` directory to one GitHub Release. Each ZIP
-contains both the Codex and Claude Code manifests.
+Build all individual plugin ZIPs from tracked source files with
+`python3 support/scripts/package_plugins.py`, or build one updated plugin with
+`python3 support/scripts/package_plugins.py --plugin <plugin-name>`. Attach
+only that plugin's ZIP from the ignored `.build/plugin-zips/` directory to its
+own GitHub Release. Tag it `<plugin-name>-v<manifest-version>` and update only
+that plugin's catalog download link. The repository and both marketplace
+catalogs remain shared. Each ZIP contains both the Codex and Claude Code
+manifests.
 
 Review plugin instructions and references before distribution. Nothing committed
 here may depend on private content, secrets, or paid APIs. New examples should

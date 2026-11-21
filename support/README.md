@@ -112,6 +112,11 @@ Build the Supplier Performance Evaluation download with
 three-file ZIP contains the offline app, public guide, and MIT license.
 Check its logic with `node support/scripts/test_supplier_performance_evaluation.cjs`.
 
+Build the Subcontract Closeout Checklist download with
+`python3 support/scripts/package_subcontract_closeout.py`. The deterministic,
+three-file ZIP contains the self-contained app, public guide, and MIT license.
+Check its logic and output structure with `node support/scripts/test_subcontract_closeout.cjs`.
+
 ## Release presentation
 
 - Use the product name shown on its release card as the release title. Keep the

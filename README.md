@@ -2,7 +2,7 @@
 
 **Start here:** [Procurement](#procurement) · [Government property](#government-property) · [Contracts](#contracts) · [Finance](#finance) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
 
-> **Provided as-is:** These browser apps and AI plugins help with research, records, and drafts. They may become outdated as rules or guidance change. Check your contract requirements, current sources, and each output before relying on it.
+> **Provided as-is:** These browser apps and AI plugins help with research, records, and drafts. They may become outdated as rules or guidance change. Verify your contract requirements, current sources, and each output.
 
 ## Procurement
 
@@ -11,6 +11,11 @@
 <a id="standalone-browser-apps"></a>
 
 ### Browser apps
+
+*Document procurement choices and prepare records for review in your browser.*
+
+<details markdown="1">
+<summary>See free browser tools</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
@@ -35,9 +40,16 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
   </tbody>
 </table>
 
+</details>
+
 <a id="plugins"></a>
 
 ### AI plugins
+
+*Use your AI assistant for focused procurement research, analysis, and drafting.*
+
+<details markdown="1">
+<summary>See plugins for AI chatbots</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_plugins_dark.png">
@@ -56,11 +68,18 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 | <img src="docs/readme/icons/far-compliant-price-analysis-for-subcontracts-lite.png" width="56" alt=""> | **FAR-Compliant Price Analysis for Subcontracts (Lite)**<br>Draft subcontract bid summaries and price analyses for awards, options, and modifications.<br><em>Try: “Draft a bid summary and price analysis for this subcontract award.”</em><br>[Download ZIP](https://github.com/courtney-chapman/tools-public/releases/download/ai-workflow-toolkit-v2026.11.20.3/far-compliant-price-analysis-for-subcontracts-lite.zip) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/far-compliant-price-analysis-for-subcontracts-lite) |
 | <img src="docs/readme/icons/software-saas-negotiation-strategy.png" width="56" alt=""> | **Software/SaaS Negotiation Strategy**<br>Build discovery questions and negotiation plans for SaaS buys under the Simplified Acquisition Threshold.<br><em>Try: “Help me prepare questions and negotiation points for this SaaS renewal.”</em><br>[Download ZIP](https://github.com/courtney-chapman/tools-public/releases/download/ai-workflow-toolkit-v2026.11.20.3/software-saas-negotiation-strategy.zip) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/software-saas-negotiation-strategy) |
 
+</details>
+
 ## Government property
 
 <img src="docs/readme/banner_property.png" alt="Government property: acquire, record, use, inventory, dispose." width="100%">
 
 ### Browser apps
+
+*Prepare the forms and records that support government property work in your browser.*
+
+<details markdown="1">
+<summary>See free browser tools</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
@@ -78,7 +97,14 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 | <img src="docs/readme/icons/government-property-disposition-preparation-generator.png" width="56" alt=""> | **Government Property Disposition Preparation Checklist Generator**<br>Organize a working property listing, checklist, and summary before disposition review.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/government-property-disposition-preparation-generator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/government-property-disposition-preparation-generator-v1.0.3) · [Guide](apps/government-property-disposition-preparation-generator/README.md) |
 | <img src="docs/readme/icons/pmsa-evidence-preparation-toolkit.png" width="56" alt=""> | **PMSA Evidence Preparation Toolkit**<br>Organize evidence references, review all 22 property elements, and print an overall status dashboard offline.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/pmsa-evidence-preparation-toolkit/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/pmsa-evidence-preparation-toolkit-v1.1.3) · [Guide](apps/pmsa-evidence-preparation-toolkit/README.md) |
 
+</details>
+
 ### AI plugins
+
+*Use your AI assistant to navigate government property questions and prepare supporting documentation.*
+
+<details markdown="1">
+<summary>See plugins for AI chatbots</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_plugins_dark.png">
@@ -94,11 +120,18 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 | <img src="docs/readme/icons/government-property-ltdd-relief-letter-generator.png" width="56" alt=""> | **Government Property LTDD Relief Letter Generator**<br>Draft and review LTDD relief packages, separating verified facts from assumptions and evidence gaps.<br><em>Try: “Review this lost-property report for missing evidence before drafting a relief request.”</em><br>[Download ZIP](https://github.com/courtney-chapman/tools-public/releases/download/ai-workflow-toolkit-v2026.11.20.3/government-property-ltdd-relief-letter-generator.zip) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-ltdd-relief-letter-generator) |
 | <img src="docs/readme/icons/government-property-written-direction-request-generator.png" width="56" alt=""> | **Government Property Written Direction Request**<br>Draft and review requests for written Government direction on proposed property actions, conflicting instructions, and unresolved next steps.<br><em>Try: “Draft a request for written direction about property left after contract closeout.”</em><br>[Download ZIP](https://github.com/courtney-chapman/tools-public/releases/download/ai-workflow-toolkit-v2026.11.20.3/government-property-written-direction-request-generator.zip) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-written-direction-request-generator) |
 
+</details>
+
 ## Contracts
 
 <img src="docs/readme/banner_contracts.png" alt="Contracts: propose, award, administer, modify, close out." width="100%">
 
 ### Browser apps
+
+*Prepare contract analysis and records for review in your browser.*
+
+<details markdown="1">
+<summary>See free browser tools</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
@@ -107,9 +140,11 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 Try the app online, or download its ZIP from Releases to use it offline. The online version is hosted with GitHub Pages.
 
-|  |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
 | <img src="docs/readme/icons/weighted-guidelines-calculator.png" width="56" alt=""> | **Weighted Guidelines Calculator**<br>Build and review a working DoD profit objective from documented, user-selected factors in an offline browser app.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/weighted-guidelines-calculator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/weighted-guidelines-calculator-v1.0.1) · [Guide](apps/weighted-guidelines-calculator/README.md) |
+
+</details>
 
 ## Finance
 
@@ -117,12 +152,18 @@ Try the app online, or download its ZIP from Releases to use it offline. The onl
 
 Tools for cost and pricing are coming soon.
 
-## Licensing and security
+## Support Me
 
-Security concerns should follow the [security policy](SECURITY.md).
+**These tools are free to use.** You can [support my work on Patreon](https://www.patreon.com/cw/courtney_chapman) with a voluntary contribution.
 
-The AI plugins and other original content are licensed under [CC BY-NC 4.0](LICENSE). New versions of the standalone browser apps use the [PolyForm Noncommercial License 1.0.0](apps/make-or-buy-decision/LICENSE). Previously published MIT versions remain under their original terms. Third-party material remains subject to its own terms.
+Your contribution helps cover fixed costs such as software subscriptions and API services, as well as the time I spend building and maintaining the tools.
 
 ## Portfolio
 
 Explore [Courtney’s portfolio](https://courtneypetersonchapman.notion.site/) for related projects and demonstrations.
+
+## Licensing and security
+
+These tools are free for noncommercial use. For commercial use, please contact me.
+
+See the [security policy](https://github.com/courtney-chapman/tools-public/blob/main/SECURITY.md) to report a concern.

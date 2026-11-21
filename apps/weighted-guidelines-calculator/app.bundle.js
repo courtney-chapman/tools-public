@@ -72,6 +72,7 @@ const zero = new Decimal(0n);
 const one = new Decimal(1n);
 const pct = value => Decimal.parse(value, 'Percentage', 3).div(new Decimal(100n));
 
+const D = Decimal;
 
 // Source: js/engine.mjs
 

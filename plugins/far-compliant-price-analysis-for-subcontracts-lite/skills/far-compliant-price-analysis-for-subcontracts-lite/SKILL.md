@@ -12,6 +12,12 @@ company policy, prime or higher-tier contract requirements, and document
 format; do not infer policy values or approvals from an example. This is a
 purchasing-file analysis, not a legal opinion.
 
+Use this workflow when the requested record is a BID SUMMARY for a
+government-prime or higher-tier subcontract action, including a materials-only
+subcontract. Use Goods Price Analysis for a standalone fixed-price goods
+justification and Commercial/Indirect Lite for a company Commercial or
+Indirect purchase outside this subcontract workflow.
+
 ## Roles and directed messages
 
 Unless the user defines the roles differently, **buyer** means the individual
@@ -57,9 +63,10 @@ only; do not send it without authorization.
    lists or tables for comparisons, and only the detail needed to support the
    conclusion. A routine renewal or straightforward request should normally
    fit on about one page, excluding essential source details; expand only for
-   material complexity or an explicitly requested deep analysis. Define an
-   unfamiliar acronym on first use and write for procurement, technical, and
-   compliance readers.
+   material complexity or an explicitly requested deep analysis. Applicable
+   required sections, supported findings, and material evidence take precedence
+   over this length target. Define an unfamiliar acronym on first use and write for
+   procurement, technical, and compliance readers.
 6. **Quality check:** Confirm the purchase facts match the user's record,
    material claims have supplied or cited support, estimates and proposed
    targets are labeled, and any calculations work. Name only material facts

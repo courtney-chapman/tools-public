@@ -1,7 +1,7 @@
 {
   "name": "far-compliant-price-analysis-for-subcontracts-lite",
   "version": "0.2.6",
-  "description": "Evidence-based bid summaries and price analyses for subcontract actions",
+  "description": "Bid summaries and price analyses for government-prime or higher-tier subcontract awards, options, and modifications, including materials-only actions.",
   "author": {
     "name": "courtney-chapman",
     "url": "https://github.com/courtney-chapman"
@@ -10,10 +10,12 @@
   "interface": {
     "displayName": "FAR Subcontract Price Analysis",
     "shortDescription": "Subcontract price review",
-    "longDescription": "Draft BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications, with supported price comparisons, conditional cost-element review, and a final findings table.",
+    "longDescription": "Draft a BID SUMMARY & PRICE ANALYSIS for government-prime or higher-tier subcontract awards, options, and modifications, including materials-only actions.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": [],
+    "capabilities": [
+      "Web Search"
+    ],
     "defaultPrompt": "Analyze this subcontract price and draft a bid summary.",
     "websiteURL": "https://github.com/courtney-chapman",
     "logo": "./assets/icon.png",

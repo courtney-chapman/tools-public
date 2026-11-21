@@ -1,9 +1,15 @@
 ---
 name: far-compliant-price-analysis-for-goods
-description: Draft or review procurement-file-ready price analysis justifications for government-funded FFP purchases of goods, COTS, commercial products, software, materials, and related routine buys. Use for vendor-quote fairness, price-analysis method selection, and best-value tradeoffs; use specialized skills for subcontract or Commercial/Indirect workflows.
+description: Draft or review procurement-file-ready price justifications for standalone government-funded FFP goods purchases, including COTS, software, and materials. Use for quote fairness, price methods, and best-value tradeoffs; use the specialized BID SUMMARY or Commercial/Indirect workflow for those purchasing records.
 ---
 
 # FAR-Compliant Price Analysis for Goods
+
+Use this workflow for a standalone government-funded fixed-price goods
+purchase when the requested record is a goods price justification. If the
+requested record is a BID SUMMARY for a subcontract award, option, or
+modification, use Subcontracts Lite even when the subcontract buys goods.
+Use Commercial/Indirect Lite for a company Commercial or Indirect purchase.
 
 ## Roles and directed messages
 
@@ -53,9 +59,10 @@ only; do not send it without authorization.
    lists or tables for comparisons, and only the detail needed to support the
    conclusion. A routine renewal or straightforward request should normally
    fit on about one page, excluding essential source details; expand only for
-   material complexity or an explicitly requested deep analysis. Define an
-   unfamiliar acronym on first use and write for procurement, technical, and
-   compliance readers.
+   material complexity or an explicitly requested deep analysis. Applicable
+   required sections, supported findings, and material evidence take precedence
+   over this length target. Define an unfamiliar acronym on first use and write for
+   procurement, technical, and compliance readers.
 6. **Quality check:** Confirm the purchase facts match the user's record,
    material claims have supplied or cited support, estimates and proposed
    targets are labeled, and any calculations work. Name only material facts

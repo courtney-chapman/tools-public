@@ -59,9 +59,10 @@ only; do not send it without authorization.
    lists or tables for comparisons, and only the detail needed to support the
    conclusion. A routine renewal or straightforward request should normally
    fit on about one page, excluding essential source details; expand only for
-   material complexity or an explicitly requested deep analysis. Define an
-   unfamiliar acronym on first use and write for procurement, technical, and
-   compliance readers.
+   material complexity or an explicitly requested deep analysis. Applicable
+   required sections, supported findings, and material evidence take precedence
+   over this length target. Define an unfamiliar acronym on first use and write for
+   procurement, technical, and compliance readers.
 6. **Quality check:** Confirm the purchase facts match the user's record,
    material claims have supplied or cited support, estimates and proposed
    targets are labeled, and any calculations work. Name only material facts
@@ -76,6 +77,12 @@ only; do not send it without authorization.
   is unclear, still provide requested internal discovery questions and include
   hosting model as one question; do not assume SaaS terms apply. Route hardware
   to the relevant market-research or goods workflow.
+- The SAT limit is this plugin's intended coverage for a full strategy, not a
+  claim that agency simplified-acquisition rules automatically govern a prime
+  contractor's purchase. If value is unknown, deliver a useful provisional
+  strategy and flag the coverage question once rather than stalling. Focused
+  internal discovery questions remain available when value is unknown or above
+  the SAT.
 - Do not apply this strategy to on-premise software, acquisitions requiring FAR
   Part 15 negotiation, or certified cost or pricing data analysis.
 - User-provided program and vendor facts and the captured negotiation workflow

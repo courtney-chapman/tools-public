@@ -11,6 +11,11 @@ write-up from the facts available, scaled to the value and complexity of the
 purchase. This is a company purchasing workflow, not a federal subcontract
 analysis.
 
+Choose by the transaction and requested record: this workflow covers company
+Commercial or Indirect purchases. Use Subcontracts Lite for a government-prime
+or higher-tier subcontract BID SUMMARY and Goods Price Analysis for a
+standalone government-funded fixed-price goods justification.
+
 ## Roles and directed messages
 
 Unless the user defines the roles differently, **buyer** means the individual
@@ -48,20 +53,21 @@ only; do not send it without authorization.
    commentary into a copy-ready document or repeat its source list. For a
    focused question or edit, answer only that part without forcing headings.
 4. **Validation:** Outside the copy-ready document, give one short reminder to
-   validate the output against applicable company policies and procedures,
-   contractual requirements, current regulations, and underlying evidence
-   before use. For every full price-analysis draft, put this single sentence
-   under **Notes** after the draft; keep it out of the file-ready text and do
-   not add other generic caveats. Do not imply that every regulation applies
-   to every purchase.
+   validate the output against underlying evidence, applicable company policies
+   and procedures, and contractual requirements before use. Mention a law or
+   regulation only when the user identifies it as applicable. For every full
+   price-analysis draft, put this single sentence under **Notes** after the
+   draft; keep it out of the file-ready text and do not add other generic
+   caveats.
 5. **Final trim:** Remove repeated explanations and speculative next steps.
    Use one plain sentence for a simple product or service description, short
    lists or tables for comparisons, and only the detail needed to support the
    conclusion. A routine renewal or straightforward request should normally
    fit on about one page, excluding essential source details; expand only for
-   material complexity or an explicitly requested deep analysis. Define an
-   unfamiliar acronym on first use and write for procurement, technical, and
-   compliance readers.
+   material complexity or an explicitly requested deep analysis. Applicable
+   required sections, supported findings, and material evidence take precedence
+   over this length target. Define an unfamiliar acronym on first use and write for
+   procurement, technical, and compliance readers.
 6. **Quality check:** Confirm the purchase facts match the user's record,
    material claims have supplied or cited support, estimates and proposed
    targets are labeled, and any calculations work. Name only material facts

@@ -1,7 +1,7 @@
 {
   "name": "indirect-and-commercial-price-analysis-for-services-lite",
   "version": "0.2.4",
-  "description": "Company Commercial and Indirect purchasing price analysis",
+  "description": "Price analysis for company Commercial and Indirect purchases outside the government-prime subcontract BID SUMMARY workflow.",
   "author": {
     "name": "courtney-chapman",
     "url": "https://github.com/courtney-chapman"
@@ -10,10 +10,12 @@
   "interface": {
     "displayName": "Commercial/Indirect Price Lite",
     "shortDescription": "Commercial/indirect pricing",
-    "longDescription": "Draft concise, evidence-based price analyses for a company's Commercial and Indirect purchases without assuming federal acquisition requirements.",
+    "longDescription": "Draft concise price analyses for company Commercial and Indirect purchases without assuming federal acquisition requirements or drafting a subcontract BID SUMMARY.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
-    "capabilities": [],
+    "capabilities": [
+      "Web Search"
+    ],
     "defaultPrompt": "Analyze this commercial or indirect purchase price.",
     "websiteURL": "https://github.com/courtney-chapman",
     "logo": "./assets/icon.png",

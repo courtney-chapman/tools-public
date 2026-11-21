@@ -154,7 +154,7 @@ Tools for cost and pricing are coming soon.
 
 ## Support Me
 
-**These tools are free to use.** You can [support my work on Patreon](https://www.patreon.com/cw/courtney_chapman) with a voluntary contribution.
+**These tools are free to use.** You can [support my work on Patreon](https://www.patreon.com/courtney_chapman/posts/support-work-175991238) with a voluntary contribution.
 
 Your contribution helps cover fixed costs such as software subscriptions and API services, as well as the time I spend building and maintaining the tools.
 

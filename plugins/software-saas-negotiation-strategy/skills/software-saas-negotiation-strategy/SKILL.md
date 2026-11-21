@@ -14,6 +14,23 @@ Use facts the user has already supplied. Do not restart completed discovery or
 force the user through every phase when they ask directly for a later
 deliverable. Ask one grouped set of questions at a time.
 
+## Roles and directed messages
+
+Unless the user defines the roles differently, **buyer** means the individual
+purchasing professional; **Procurement** may also mean the department or its
+review and approval function. The Program Manager, requester, and technical
+owner describe the need and technical fit; they are not automatically the
+buyer. Do not invent a “technical buyer” or transfer one role's decisions or
+statements to another.
+
+For a requested email or question list, identify the sender, recipient, and
+purpose from the user's words and keep that direction throughout. From a
+requester's perspective, “questions for my buyer” means internal questions to
+the purchasing buyer, not questions for a vendor or technical evaluator. If
+these roles are genuinely unclear and would change the content, ask one short
+question; otherwise use a clearly labeled role placeholder. Draft the message
+only; do not send it without authorization.
+
 ## Response sequence
 
 1. **Scope:** Complete the output the user requested and only the research
@@ -42,14 +59,31 @@ deliverable. Ask one grouped set of questions at a time.
    lists or tables for comparisons, and only the detail needed to support the
    conclusion. A routine renewal or straightforward request should normally
    fit on about one page, excluding essential source details; expand only for
-   material complexity or an explicitly requested deep analysis. Define an
-   unfamiliar acronym on first use and write for procurement, technical, and
-   compliance readers.
+   material complexity or an explicitly requested deep analysis. Applicable
+   required sections, supported findings, and material evidence take precedence
+   over this length target. Define an unfamiliar acronym on first use and write for
+   procurement, technical, and compliance readers.
+6. **Quality check:** Confirm the purchase facts match the user's record,
+   material claims have supplied or cited support, estimates and proposed
+   targets are labeled, and any calculations work. Name only material facts
+   still needing buyer verification. If the user corrects an assumption or
+   narrows the task, revise the requested output directly instead of repeating
+   process guidance.
 
 ## Boundaries and research
 
-- Limit the workflow to cloud subscription software under the current SAT.
-- Do not apply it to hardware, on-premise software, acquisitions requiring FAR
+- Limit full SaaS strategy and vendor-engagement modes to cloud subscription
+  software under the current SAT. When a subscription is identified but hosting
+  is unclear, still provide requested internal discovery questions and include
+  hosting model as one question; do not assume SaaS terms apply. Route hardware
+  to the relevant market-research or goods workflow.
+- The SAT limit is this plugin's intended coverage for a full strategy, not a
+  claim that agency simplified-acquisition rules automatically govern a prime
+  contractor's purchase. If value is unknown, deliver a useful provisional
+  strategy and flag the coverage question once rather than stalling. Focused
+  internal discovery questions remain available when value is unknown or above
+  the SAT.
+- Do not apply this strategy to on-premise software, acquisitions requiring FAR
   Part 15 negotiation, or certified cost or pricing data analysis.
 - User-provided program and vendor facts and the captured negotiation workflow
   control the analysis. For a strategy about an identifiable product or vendor,
@@ -80,26 +114,44 @@ deliverable. Ask one grouped set of questions at a time.
   of a prime contractor's SaaS purchase merely because it appears in an agency
   contract. Do not present legal conclusions as settled when facts or clause
   applicability are incomplete.
-- Treat discount percentages, renewal caps, and price tiers as proposed
-  negotiating targets unless supported by market evidence. Never present an
-  illustrative target as a customary or verified market rate.
+- Do not invent discount percentages, price ceilings, escalation caps,
+  notice periods, or volume commitments to make a strategy sound concrete.
+  Use a numeric target only when the user supplies it or a cited quote or
+  comparable supports it; label a proposed target as such. With no quote,
+  ask for itemized rates and tier schedules, then set numeric objectives from
+  the returned evidence. Never present an illustrative target as customary.
 
 ## Choose the needed mode
 
 ### Internal discovery
 
-When the buyer needs to prepare before vendor engagement, develop tailored
-questions covering:
+When asked for questions Procurement should ask the internal team, write the
+actual questions in Procurement's voice, addressed to the program, technical,
+finance, or security owner as appropriate. Deliver eight to ten prioritized,
+standalone questions in about 300 words or less for a straightforward case;
+use one question per bullet and no nested subquestions. Do not explain the
+discovery process or ask the user to supply the answers first. Use supplied
+facts instead of re-asking them. Cover only the
+issues that would change the licensing, price, negotiation position, or risk:
 
-- mission need and Day 1 versus future capabilities;
-- user populations, license tiers, utilization, and reassignment;
-- growth timing, confidence, funding, and minimum likely demand;
-- budget ceilings, annual funding, and sensitivity to upfront or lifecycle cost;
-- deployment, training, support, SLA, security, data, and integration needs;
-- flexibility, acquisition alternatives, schedule, lock-in, renewal, and exit.
+- Day 1 capability, hosting model, integrations, security, and service level;
+- named versus concurrent users, license tiers, expected utilization,
+  reassignment, and the minimum committed seat count;
+- growth timing and confidence, including when additional users would be
+  ordered and whether the forecast creates real negotiating leverage;
+- approved annual budget, funding timing, term authority, and total cost
+  including implementation, support, and overages;
+- credible alternatives, incumbent usage, renewal deadlines, data export,
+  and exit needs.
 
-End by identifying potential leverage that still needs validation and the facts
-Procurement should establish before contacting the vendor.
+For example, when future seat demand may grow substantially, ask when that
+growth is expected and what minimum quantity can actually be committed each
+year. Do not treat a forecast as a guaranteed order. End
+with two or three concrete negotiation levers supported by the answers needed.
+Missing product, quantity, term, or value may be asked **of the internal team**
+inside this deliverable; they are not prerequisites to drafting the questions.
+Keep the negotiation levers to two concise, supported points unless the user
+asks for a strategy.
 
 ### Requirements intake
 
@@ -118,8 +170,18 @@ quantity, term, and estimated value are known. If the user requests a specific
 deliverable and supplies enough facts for it, produce that deliverable directly
 and label material assumptions.
 
+### Internal questions for the purchasing buyer
+
+When a requester asks for questions or an email to “my buyer,” draft an internal
+handoff to the purchasing professional. Focus on the procurement decisions or
+information that person can address, such as sourcing route, quote status,
+license and term assumptions, purchasing timeline, and who will contact the
+vendor. Do not recast the recipient as a technical buyer or switch to a
+buyer-to-vendor message.
+
 ### Vendor questions
 
+Use this mode only for questions the purchasing buyer will put to the vendor.
 Generate buyer-ready questions tailored to the requirement. Cover only relevant
 topics from:
 
@@ -138,8 +200,14 @@ the desired outcome. Do not invent vendor terms or answers.
 
 ### Negotiation strategy
 
-Build the strategy from established program and vendor facts. Separate evidence
-from proposed positions and structure the result around:
+Build the strategy from established program and vendor facts. Deliver a
+compact buyer playbook with three or four high-value issues, normally about
+350 words or less. For each issue, give a specific opening ask, a practical
+fallback, and one short sentence the buyer can say to the vendor. Do not
+explain negotiation theory, invent vendor terms, or add a second long action
+list that repeats the table. When no quote or benchmark exists, leave numeric
+price targets unset and explain the evidence needed to set them in one line.
+Separate evidence from proposed positions and cover only relevant topics:
 
 1. primary objectives and their priority;
 2. price and total-value opportunities;

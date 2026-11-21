@@ -12,7 +12,7 @@ checklist. For a straightforward renewal, keep each section to the few
 sentences needed to establish the supplier, actual alternatives, supported
 rationale, and unique qualifications. Do not repeat the same continuity facts
 in sections 3 and 4 or turn public research into long supplier profiles.
-Use `[INSERT]` only for buyer-specific evidence that research cannot provide.
+Use `[INSERT]` only for purchase-specific evidence that research cannot provide.
 
 ### 1. Supplier Name / Description
 

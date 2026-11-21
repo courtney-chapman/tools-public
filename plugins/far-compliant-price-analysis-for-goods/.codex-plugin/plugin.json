@@ -1,7 +1,7 @@
 {
   "name": "far-compliant-price-analysis-for-goods",
-  "version": "0.1.4",
-  "description": "Research public price evidence and draft procurement-file-ready price analysis for government-funded FFP goods and routine commercial buys.",
+  "version": "0.1.5",
+  "description": "Research public prices and draft a standalone government-funded fixed-price goods justification, outside the subcontract BID SUMMARY or Commercial/Indirect workflows.",
   "author": {
     "name": "courtney-chapman",
     "url": "https://github.com/courtney-chapman"
@@ -10,7 +10,7 @@
   "interface": {
     "displayName": "FAR Goods Price Analysis",
     "shortDescription": "Price analysis for goods",
-    "longDescription": "Research public price evidence and draft procurement-file-ready price analysis for government-funded FFP goods and routine commercial buys.",
+    "longDescription": "Research public price evidence and draft a standalone government-funded fixed-price goods justification. Use the subcontract or Commercial/Indirect plugin for those purchasing records.",
     "developerName": "courtney-chapman",
     "category": "Productivity",
     "capabilities": [

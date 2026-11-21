@@ -1,9 +1,32 @@
 ---
 name: far-compliant-price-analysis-for-goods
-description: Draft or review procurement-file-ready price analysis justifications for government-funded FFP purchases of goods, COTS, commercial products, software, materials, and related routine buys. Use for vendor-quote fairness, price-analysis method selection, and best-value tradeoffs; use specialized skills for subcontract or Commercial/Indirect workflows.
+description: Draft or review procurement-file-ready price justifications for standalone government-funded FFP goods purchases, including COTS, software, and materials. Use for quote fairness, price methods, and best-value tradeoffs; use the specialized BID SUMMARY or Commercial/Indirect workflow for those purchasing records.
 ---
 
 # FAR-Compliant Price Analysis for Goods
+
+Use this workflow for a standalone government-funded fixed-price goods
+purchase when the requested record is a goods price justification. If the
+requested record is a BID SUMMARY for a subcontract award, option, or
+modification, use Subcontracts Lite even when the subcontract buys goods.
+Use Commercial/Indirect Lite for a company Commercial or Indirect purchase.
+
+## Roles and directed messages
+
+Unless the user defines the roles differently, **buyer** means the individual
+purchasing professional; **Procurement** may also mean the department or its
+review and approval function. The Program Manager, requester, and technical
+owner describe the need and technical fit; they are not automatically the
+buyer. Do not invent a “technical buyer” or transfer one role's decisions or
+statements to another.
+
+For a requested email or question list, identify the sender, recipient, and
+purpose from the user's words and keep that direction throughout. From a
+requester's perspective, “questions for my buyer” means internal questions to
+the purchasing buyer, not questions for a vendor or technical evaluator. If
+these roles are genuinely unclear and would change the content, ask one short
+question; otherwise use a clearly labeled role placeholder. Draft the message
+only; do not send it without authorization.
 
 ## Response sequence
 
@@ -27,15 +50,25 @@ description: Draft or review procurement-file-ready price analysis justification
 4. **Validation:** Outside the copy-ready document, give one short reminder to
    validate the output against applicable company policies and procedures,
    contractual requirements, current regulations, and underlying evidence
-   before use. Do not imply that every regulation applies to every purchase.
+   before use. For every full price-analysis draft, put this single sentence
+   under **Notes** after the draft; keep it out of the file-ready text and do
+   not add other generic caveats. Do not imply that every regulation applies
+   to every purchase.
 5. **Final trim:** Remove repeated explanations and speculative next steps.
    Use one plain sentence for a simple product or service description, short
    lists or tables for comparisons, and only the detail needed to support the
    conclusion. A routine renewal or straightforward request should normally
    fit on about one page, excluding essential source details; expand only for
-   material complexity or an explicitly requested deep analysis. Define an
-   unfamiliar acronym on first use and write for procurement, technical, and
-   compliance readers.
+   material complexity or an explicitly requested deep analysis. Applicable
+   required sections, supported findings, and material evidence take precedence
+   over this length target. Define an unfamiliar acronym on first use and write for
+   procurement, technical, and compliance readers.
+6. **Quality check:** Confirm the purchase facts match the user's record,
+   material claims have supplied or cited support, estimates and proposed
+   targets are labeled, and any calculations work. Name only material facts
+   still needing buyer verification. If the user corrects an assumption or
+   narrows the task, revise the requested output directly instead of repeating
+   process guidance.
 
 ## Route the analysis
 
@@ -59,6 +92,14 @@ verbatim and make their application conditional.
    Consult [language-and-examples.md](references/language-and-examples.md)
    only for wording, corrections, or an analogous example; do not copy facts
    or values from an example.
+
+Keep the file-ready price analysis limited to supported facts, comparisons,
+calculations, and the price finding. When the evidence is insufficient, state
+that the price-reasonableness finding is pending or unsupported in the draft;
+do not write a buyer instruction such as “defer award” or “obtain more quotes”
+as its conclusion. Put only the specific evidence needed to resolve the
+finding under **Procurement actions**, outside **Draft / Results**. Make an
+award recommendation in the draft only when the record supports one.
 
 If company rules label market-price research without a supplier solicitation
 as **Attempted Competition**, state that it is the company's documentation

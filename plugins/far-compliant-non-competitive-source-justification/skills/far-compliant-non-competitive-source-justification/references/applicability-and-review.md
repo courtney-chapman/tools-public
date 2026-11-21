@@ -4,7 +4,7 @@
 
 - Competition is expected to the maximum extent practicable consistent with
   the prime contract and requirement. Document what public research establishes
-  and what buyer-specific facts are still needed to conclude competition is not
+  and what purchase-specific facts are still needed to conclude competition is not
   practicable.
 - When the applicable prime contract includes DFARS 252.244-7001 Basic,
   paragraph (c)(9) requires management-level justification and adequate cost or

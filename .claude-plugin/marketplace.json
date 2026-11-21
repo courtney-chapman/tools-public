@@ -58,19 +58,19 @@
     {
       "name": "far-compliant-price-analysis-for-goods",
       "source": "./plugins/far-compliant-price-analysis-for-goods",
-      "description": "Research public price evidence and draft procurement-file-ready price analysis for government-funded FFP goods and routine commercial buys.",
+      "description": "Research public price evidence and draft a standalone government-funded fixed-price goods justification. Use the subcontract or Commercial/Indirect plugin for those purchasing records.",
       "category": "productivity"
     },
     {
       "name": "far-compliant-price-analysis-for-subcontracts-lite",
       "source": "./plugins/far-compliant-price-analysis-for-subcontracts-lite",
-      "description": "Draft BID SUMMARY & PRICE ANALYSIS write-ups for new subcontract awards, option exercises, and modifications, with supported price comparisons, conditional cost-element review, and a final findings table.",
+      "description": "Draft a BID SUMMARY & PRICE ANALYSIS for government-prime or higher-tier subcontract awards, options, and modifications, including materials-only actions.",
       "category": "productivity"
     },
     {
       "name": "indirect-and-commercial-price-analysis-for-services-lite",
       "source": "./plugins/indirect-and-commercial-price-analysis-for-services-lite",
-      "description": "Draft concise, evidence-based price analyses for a company's Commercial and Indirect purchases without assuming federal acquisition requirements.",
+      "description": "Draft concise price analyses for company Commercial and Indirect purchases without assuming federal acquisition requirements or drafting a subcontract BID SUMMARY.",
       "category": "productivity"
     }
   ]

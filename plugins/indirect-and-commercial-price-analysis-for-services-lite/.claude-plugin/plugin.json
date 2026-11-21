@@ -1,7 +1,7 @@
 {
   "name": "indirect-and-commercial-price-analysis-for-services-lite",
-  "version": "0.2.3",
-  "description": "Draft concise, evidence-based price analyses for a company's Commercial and Indirect purchases without assuming federal acquisition requirements.",
+  "version": "0.2.4",
+  "description": "Draft concise price analyses for company Commercial and Indirect purchases without assuming federal acquisition requirements or drafting a subcontract BID SUMMARY.",
   "author": {
     "name": "courtney-chapman"
   },

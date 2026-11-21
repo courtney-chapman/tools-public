@@ -55,3 +55,7 @@ jobs:
         run: python3 support/scripts/package_consent_to_subcontract.py
       - name: Test consent-to-subcontract app
         run: node support/scripts/test_consent_to_subcontract.cjs
+      - name: Validate Procurement File Readiness Checklist package
+        run: python3 support/scripts/package_cpsr_procurement_file_checklist.py
+      - name: Test Procurement File Readiness Checklist
+        run: node support/scripts/test_cpsr_procurement_file_checklist.cjs

@@ -99,6 +99,11 @@ Build the Consent-to-Subcontract Package Builder download with
 three-file ZIP contains the self-contained app, public guide, and MIT license.
 Check its logic and output structure with `node support/scripts/test_consent_to_subcontract.cjs`.
 
+Build the Procurement File Readiness Checklist download with
+`python3 support/scripts/package_cpsr_procurement_file_checklist.py`. The deterministic,
+three-file ZIP contains the self-contained app, public guide, and MIT license.
+Check its logic with `node support/scripts/test_cpsr_procurement_file_checklist.cjs`.
+
 ## Release presentation
 
 - Use the product name shown on its release card as the release title. Keep the

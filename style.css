@@ -50,6 +50,7 @@
 @media(max-width:600px){.collection-card,.collection-body{min-height:170px}.collection-body{grid-template-rows:2.7rem minmax(0,1fr) auto;padding:34px 22px 18px}.browse-controls{align-items:flex-start}.results-toolbar{flex-direction:column-reverse;align-items:stretch}.results-toolbar .search-box{width:100%}}
 @media(max-width:760px){.catalog-help-body{position:static;width:100%;margin-top:8px;box-shadow:none}}
 @media(max-width:600px){.format-filter[open]{width:100%}.format-options{position:static;width:100%;margin-top:8px;box-shadow:none}}
+@media(max-width:600px){.browse-controls{min-width:0}.browse-controls .filter-row{width:100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}.browse-controls .filter{flex:none;white-space:nowrap}}
 
 .footer-role{display:block;margin-top:3px;color:#9cb4c7;font-size:.82rem;font-weight:500}
 

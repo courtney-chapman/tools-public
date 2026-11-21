@@ -9,7 +9,7 @@ Open `index.html` in a current browser. The app needs no account, installation, 
 1. **Details:** Enter the procurement identifiers and facts you know.
 2. **Controls:** Answer questions using the actual prime contract and applicable procedures. Leave uncertain answers as Unknown.
 3. **Checklist:** Work through Contract & regulatory, Company procedures, and Agency-specific parts. Examine each actual record and select Not reviewed, Meets requirement, Needs correction, Missing, or Not Applicable. Add a finding where useful; a file name or ID is optional in row details. Search, page, collapse groups, or use **Needs attention** to find gaps. Download the CSV templates to load company or agency requirements in bulk; each custom part accepts up to 100 items.
-4. **Report:** Review open items, optionally record a separate internal reviewer pass, then copy, print, or save a report. **Print compact** includes the open-item lists; **Print detailed** adds the full record.
+4. **Report:** Review open items, optionally record a separate internal reviewer pass, then copy, print, or save a report. **Print compact** shows counts and up to five key findings or questions; **Print detailed** adds the full record. Turn off browser **Headers and footers** when saving a PDF so the local file path is not printed.
 
 Use **Save draft JSON** in the top navigation at any step. To resume, use **Import JSON** on Report. The full session format is schema 1.7; valid 1.0–1.6 sessions are upgraded on import. Older Available rows become Not reviewed because presence alone is not an adequacy finding; their file identifiers are preserved. Older Price analysis rows become Price reasonableness review, with applicability recalculated. Older drafts gain the award-stage checks without moving company or agency rows. Entries stay in the current tab's memory and are not saved or transmitted automatically. Closing or refreshing without a JSON export loses unsaved work. The app reads only CSV or JSON files you select. Protect exported files and printed reports according to your organization's requirements. Confirm authorization before sharing a copied AI prompt with an external service.
 
@@ -32,4 +32,4 @@ Price reasonableness review stays Required in this purchasing workflow. FAR 15.4
 
 The contract's incorporated text may differ from the online text. The download includes this guide, an MIT license, and the self-contained browser app.
 
-Built by Courtney · Revision 16
+Built by Courtney · Revision 17

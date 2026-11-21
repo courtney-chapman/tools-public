@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Weighted Guidelines Profit Calculator</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.bundle.js"></script>
+</head>
+<body>
+  <header class="app-brand-header"><div class="app-brand-header__inner"><p class="app-brand-header__eyebrow">Standalone offline demonstration</p><h1>Weighted Guidelines Calculator</h1></div></header>
+  <div class="app-brand-intro"><p>Build a working DoD profit objective from documented, user-selected factors.</p></div>
+  <div class="app-shell">
+    <nav class="steps" aria-label="Calculation steps">
+      <a href="#context" data-step-link="context"><span>1</span> Start here</a>
+      <a href="#performance" data-step-link="performance"><span>2</span> Doing the work</a>
+      <a href="#contract" data-step-link="contract"><span>3</span> Contract terms</a>
+      <a href="#capital" data-step-link="capital"><span>4</span> Capital & savings</a>
+      <a href="#review" data-step-link="review"><span>5</span> Review</a>
+      <a href="#export" data-step-link="export"><span>6</span> Export</a>
+    </nav>
+    <aside class="role-guide" aria-label="Guidance for your role">
+      <div class="role-controls">
+        <label>My role<select id="role-select"><option value="">Choose your role</option><option value="contracts">Contracts</option><option value="program">Program</option><option value="subcontracts">Subcontracts</option><option value="finance">Finance</option></select></label>
+        <label>Guidance<select id="experience-select"><option value="beginner">Beginner</option><option value="advanced">Advanced</option></select></label>
+      </div>
+      <p id="role-guidance" aria-live="polite"></p>
+    </aside>
+    <main id="main" tabindex="-1">
+      <div id="global-message" class="message" role="status" aria-live="polite" hidden></div>
+      <form id="calculator-form" novalidate>
+        <section id="context" class="step panel" aria-labelledby="context-title">
+          <p class="eyebrow">Step 1 of 6 · Start here</p><h1 id="context-title">Before you calculate</h1>
+          <p class="lede">DoD weighted guidelines combine several factors into a <strong>profit objective</strong>: a proposed profit amount used as a starting point in Government negotiation. This worksheet does not calculate the price a contractor should offer or the price the Government will agree to pay.</p>
+          <details class="help-card"><summary>Who is this for, and what do I need?</summary><div class="guide-grid">
+            <div class="guide-card"><h2>Preparing a proposal?</h2><p>Use the fictional example to learn the method. You can model assumptions, but your proposed price is not the Government's objective cost, and any risk values you enter are only a scenario unless the Government selects them.</p></div>
+            <div class="guide-card"><h2>Evaluating a proposal?</h2><p>First establish the Government's objective cost and confirm this method applies. Then choose and document the weights and risk values using the proposal and other available evidence.</p></div>
+          </div>
+          <div class="callout"><strong>What you need before a real calculation</strong><p>The governing rule for the action, an objective cost base, the contract and payment terms, supported risk selections, and facilities-capital information. If one is unknown, leave it unresolved; do not use the fictional example as a default.</p></div></details>
+          <div class="notice info"><strong>Source framework</strong><p>DoD Class Deviation 2026-O0048, Revision 1 (July 22, 2026). <a href="https://www.acq.osd.mil/dpap/dars/dfars_far_overhaul_class_deviations.html" target="_blank" rel="noopener">Check the DARS revision index</a> before use. The app works offline; this source link is optional.</p></div>
+          <label class="check-row"><input type="checkbox" name="frameworkConfirmed"><span>I verified that this Revision 1 framework applies to this action.</span></label>
+          <div class="choice-matrix">
+            <div class="choice-matrix-head" aria-hidden="true"><span>Topic</span><span>Your answer</span><span>Description</span></div>
+            <label>Negotiated contract action<select name="negotiated"><option value="">Choose</option><option value="yes">Yes</option><option value="no">No</option><option value="unknown">Not sure</option></select><small>Is this action being priced through negotiation rather than sealed bidding?</small></label>
+            <label>Certified cost or pricing data obtained<select name="certifiedData"><option value="">Choose</option><option value="yes">Yes</option><option value="no">No</option><option value="unknown">Not sure</option></select><small>Select Not sure if the acquisition record does not establish that certified data was obtained.</small></label>
+            <label>Contractor category<select name="organization"><option value="for-profit">For-profit</option><option value="nonprofit">Nonprofit other than FFRDC</option><option value="ffrdc">FFRDC</option></select><small>Starts at for-profit. Change it for a nonprofit or FFRDC; an FFRDC uses a different method.</small></label>
+            <label id="sustaining-field" hidden>Sustaining support on a CPFF basis<select name="sustainingSupportAnswer"><option value="">Choose</option><option value="yes">Yes</option><option value="no">No</option><option value="unknown">Not sure</option></select><small>Confirm this with the nonprofit's contract record.</small></label>
+            <label>Profit analysis method for this action<select name="approach"><option value="standard">Weighted guidelines</option><option value="alternate">Alternate approach</option></select><small>Starts at weighted guidelines. Confirm the contracting officer chose this method for the action.</small></label>
+          </div>
+          <div class="field-grid">
+            <label>Government objective cost for this action (DD Form 1547 Block 20) ($)<input name="b20" type="text" inputmode="decimal"><small>The supported cost amount used as the base for several profit factors. Exclude facilities capital cost of money. A contractor's proposed price is not this number.</small></label>
+            <label>Where did the objective cost come from?<textarea name="costBasis" rows="2" placeholder="Describe the cost analysis or supported basis."></textarea><small>Record enough detail to distinguish this amount from a proposed price.</small></label>
+          </div>
+          <details class="help-card"><summary>When should I stop and check the method?</summary><p>If the action is historical, uses a later deviation, lacks a confirmed certified-data trigger, involves an FFRDC or cost-plus-award-fee contract, or calls for an alternate structured approach, get action-specific direction before using this objective. The tool does not decide applicability from the date or dollar amount.</p></details>
+          <div class="step-actions"><button type="button" class="primary" data-next="performance">Continue to doing the work</button><button type="button" class="quiet" id="load-example">Explore with fictional example</button></div>
+        </section>
+
+        <section id="performance" class="step panel" aria-labelledby="performance-title" hidden>
+          <p class="eyebrow">Step 2 of 6 · Performance risk</p><h1 id="performance-title">How difficult is the work to deliver?</h1>
+          <p class="lede">Assess two challenges: meeting the technical requirements and managing the work. Give each a share of the assessment, then select its profit value.</p>
+
+          <details class="factor-card" open>
+            <summary><span class="summary-label"><span class="card-step">Decision 1</span><strong>Divide the work risk between two areas</strong></span><span class="required-badge">Required</span></summary>
+            <p>A <strong>weight</strong> says how much each area counts in this part of the calculation. It is not a profit rate. Together, the two weights must add to 100%.</p>
+            <div class="decision-fields">
+              <label>Share for technical uncertainty (%)<input name="technicalWeight" type="text" inputmode="decimal"><small>Enter the share you selected for the technical side.</small></label>
+              <label>Share for management and cost control (%)<input name="managementWeight" type="text" inputmode="decimal"><small>Enter the remaining share. Together, the two entries must equal 100%.</small></label>
+            </div>
+            <details class="help-card"><summary>What should I consider when dividing the 100%?</summary><ul class="plain-list"><li><strong>Technical:</strong> uncertainty in designing, building, testing, or meeting the required performance.</li><li><strong>Management and cost control:</strong> effort to coordinate the work, keep the schedule, and control spending.</li></ul><p>The contracting officer assigns the relative weights for this particular action. There is no percentage that this calculator recommends.</p></details>
+          </details>
+
+          <details class="factor-card">
+            <summary><span class="summary-label"><span class="card-step">Decision 2</span><strong>Choose the technical risk value</strong></span><span class="required-badge">Required</span></summary>
+            <p>A <strong>value</strong> is the profit percentage selected for this area. The standard range is 3–7%, with 5% as its normal value. Consider the evidence about technical uncertainty; the calculator does not choose the value.</p>
+            <div class="decision-fields">
+              <label>Which technical range applies?<select name="technicalMode"><option value="">Choose a range</option><option value="standard">Standard · 3–7%, normal 5%</option><option value="technology">Technology incentive · 7–11%, normal 9%</option></select><small>Use the technology incentive only when its specific criteria have been confirmed. It is unavailable in the modified nonprofit method.</small></label>
+              <label>Selected technical value (%)<input name="technicalValue" type="text" inputmode="decimal"><small>Enter the selected percentage from that range.</small></label>
+            </div>
+            <div id="technology-fields" class="inset" hidden><label class="check-row"><input type="checkbox" name="technologyEligible"><span>I confirmed the technology incentive criteria apply.</span></label><label>Why does the technology incentive apply?<textarea name="technologyRationale" rows="2"></textarea></label></div>
+          </details>
+
+          <details class="factor-card">
+            <summary><span class="summary-label"><span class="card-step">Decision 3</span><strong>Choose the management and cost-control value</strong></span><span class="required-badge">Required</span></summary>
+            <p>This value reflects the effort and risk in managing the contract and controlling costs. The range is 3–7%, with 5% as normal. Consider the expected coordination, estimating reliability, internal controls, and ability to control cost and schedule.</p>
+            <div class="decision-fields"><label>Selected management and cost-control value (%)<input name="managementValue" type="text" inputmode="decimal"><small>Enter the selected percentage. This is different from the management weight above.</small></label></div>
+            <details class="help-card"><summary>Special case: timely proposal for an undefinitized action</summary><p>When the qualifying-proposal conditions are met, the contracting officer may include the permitted management consideration in the selected value, up to 7%. This checkbox does not add a percentage point automatically.</p><label class="check-row"><input type="checkbox" name="managementSpecial"><span>I incorporated this consideration into the selected management value.</span></label><label>Why does the special consideration apply?<textarea name="managementSpecialRationale" rows="2"></textarea></label></details>
+          </details>
+
+          <label class="decision-rationale">Why did you select values other than the normal values?<textarea name="performanceRationale" rows="2" placeholder="Describe the action-specific evidence."></textarea><small>Required when either selected value differs from its normal value. The calculator does not decide whether the evidence supports the selection.</small></label>
+          <details class="help-card"><summary>See a worked example and the formula</summary><p>Suppose the selected weights are 60% technical and 40% management. If the selected values are 5% and 4%, their contributions are 3.0 and 1.6 percentage points. Together they make a 4.6% performance-risk factor, which is multiplied by the Block 20 cost base. These numbers illustrate the math; they are not recommended selections.</p></details>
+          <p class="source-note">Method: PGI 215.404-971(b). Modified nonprofit rule: PGI 215.404-972.</p>
+          <div class="step-actions"><button type="button" class="primary" data-next="contract">Continue to contract terms</button></div>
+        </section>
+
+        <section id="contract" class="step panel" aria-labelledby="contract-title" hidden>
+          <p class="eyebrow">Step 3 of 6 · Contract type risk</p><h1 id="contract-title">How do the contract terms change risk?</h1>
+          <p class="lede">Choose the actual contract and payment terms. Then separate costs already incurred at the qualifying proposal from costs to finish the work.</p>
+          <details class="factor-card" open>
+            <summary><span class="summary-label"><span class="card-step">Decision 1</span><strong>Identify the deal and payment arrangement</strong></span><span class="required-badge">Required</span></summary>
+            <p>Use the contract type and financing terms for this action. The displayed normal value and range change with that choice; they are a starting framework for judgment, not an automatic selection.</p>
+            <div class="decision-fields"><label>Contract and financing category<select name="contractType" id="contract-type"><option value="">Choose the actual arrangement</option><option value="cpaf">Cost-plus-award-fee · unsupported</option></select><small id="risk-range"></small></label></div>
+          </details>
+          <details class="factor-card">
+            <summary><span class="summary-label"><span class="card-step">Decision 2</span><strong>Separate completed work from remaining work</strong></span><span class="required-badge">Required</span></summary>
+            <p>The two amounts below must add to the Block 20 objective cost entered in Start here. If the action has no qualifying incurred-cost portion, enter an evidenced zero and put the full amount in cost to complete.</p>
+            <div class="decision-fields">
+              <label>Cost incurred when the qualifying proposal was submitted ($)<input name="incurredCost" type="text" inputmode="decimal"><small>Use the supported amount as of that proposal date.</small></label>
+              <label>Government estimated cost to finish the work ($)<input name="costToComplete" type="text" inputmode="decimal"><small>Use the remaining objective cost, excluding facilities capital cost of money.</small></label>
+            </div>
+          </details>
+          <details class="factor-card">
+            <summary><span class="summary-label"><span class="card-step">Decision 3</span><strong>Select the contract risk values</strong></span><span class="required-badge">Required</span></summary>
+            <p>A <strong>risk value</strong> is a profit percentage applied to each cost portion. The contracting officer chooses it from the supported range after considering the actual risk; the calculator does not choose it from the contract type.</p>
+            <div class="decision-fields">
+              <label>Value for cost already incurred (%)<input name="riskIncurred" type="text" inputmode="decimal"><small>Document why this portion has the selected risk.</small></label>
+              <label>Value for work still to complete (%)<input name="riskToComplete" type="text" inputmode="decimal"><small>The values may differ when the risks differ.</small></label>
+            </div>
+            <label>Basis for the cost split and selected risk values<textarea name="contractRiskRationale" rows="2"></textarea><small>When cost has already been incurred, identify the supporting record and proposal date. Explain nonnormal risk values.</small></label>
+            <details class="help-card"><summary>Special case: substantial cost incurred before definitization</summary><p>A documented undefinitized action may support a zero risk value in the circumstances described by the PGI. Do not use this exception merely because some cost was incurred.</p><label class="check-row"><input type="checkbox" name="ucaZeroException"><span>Use the supported substantial incurred-cost zero-risk exception.</span></label><label>Why does this exception apply?<textarea name="ucaRationale" rows="2"></textarea></label></details>
+          </details>
+          <details id="working-capital-fields" class="factor-card" open hidden>
+            <summary><span class="summary-label"><span class="card-step">Progress payments</span><strong>Financing the work</strong></span><span class="required-badge">Required</span></summary>
+            <p>When the contractor finances part of the work before receiving progress payments, the method may add a working-capital amount. Supply the financed share, supported performance length, and Treasury Prompt Payment rate for the applicable period. The app does not look up or choose the rate.</p>
+            <div class="field-grid">
+              <label>Costs-financed base ($)<input name="financedBase" type="text" inputmode="decimal"><small>Usually Block 20; explain any supported reduction.</small></label>
+              <label>Contractor-financed share (%)<input name="financedShare" type="text" inputmode="decimal"><small>Portion the contractor finances after customary progress payments. Verify the applicable share rather than using the example's value.</small></label>
+              <label>Substantive performance months<input name="performanceMonths" type="text" inputmode="numeric"><small>Exclude option periods and minimal-effort time; use supported weighted duration for multiple deliveries.</small></label>
+              <label>Treasury rate (%)<input name="treasuryRate" type="text" inputmode="decimal"><small>Use the official Prompt Payment rate for the applicable period.</small></label>
+              <label>Rate period<input name="treasuryPeriod" type="text"><small>Record the effective period that supports the chosen rate.</small></label>
+            </div>
+            <label class="check-row"><input type="checkbox" name="treasuryVerified"><span>I verified the rate and period against the <a href="https://fiscal.treasury.gov/payments-from-government/prompt-payment/rates" target="_blank" rel="noopener">official Treasury table</a>.</span></label>
+            <label>Reason for reducing costs-financed base below Block 20<textarea name="financingReductionRationale" rows="2"></textarea></label>
+          </details>
+          <details class="help-card"><summary>Why is financing separate from contract risk?</summary><p>Contract type risk reflects the risk from the deal and payment arrangement. Working capital is a separate calculation only for eligible fixed-price contracts with progress payments. The contractor may supply financing and schedule facts; the analyst verifies the bases, source rate, and assigned risk values. Performance-based payments alone do not activate this calculation.</p></details>
+          <p class="source-note">Source: PGI 215.404-971(c); nonprofit sustaining-support modification: PGI 215.404-972(b)(2).</p>
+          <div class="step-actions"><button type="button" class="primary" data-next="capital">Continue to capital & savings</button></div>
+        </section>
+
+        <section id="capital" class="step panel" aria-labelledby="capital-title" hidden>
+          <p class="eyebrow">Step 4 of 6 · Capital and cost efficiency</p><h1 id="capital-title">What investment and savings count?</h1>
+          <p class="lede">Equipment capital and supported cost reductions can affect profit. Use DD Form 1861-derived capital amounts; the app cannot derive them from a proposal total.</p>
+          <details class="factor-card" open>
+          <summary><span class="summary-label"><strong>Facilities capital: land, buildings, and equipment</strong></span><span class="required-badge">Required</span></summary>
+          <div class="field-grid">
+            <label>Capital data status<select name="capitalStatus"><option value="">Choose</option><option value="provided">DD Form 1861-derived amounts provided</option><option value="zero">Evidenced zero qualifying capital</option><option value="unknown">Data unavailable</option></select></label>
+          </div>
+          <p id="zero-capital-note" class="inline-note" hidden>Zero capital is supported for this action. Record the evidence below; no equipment value or capital amounts are needed. If you switch back, your earlier entries will still be here.</p>
+          <p id="unknown-capital-note" class="inline-note" hidden>Capital data is unavailable. The calculator will stop before a final objective; request the DD Form 1861-derived allocation or support for zero capital.</p>
+          <div id="capital-amounts" class="field-grid" hidden>
+            <label>Land capital ($)<input name="landCapital" type="text" inputmode="decimal"><small>Record the allocated amount; it produces no separate profit dollars. Enter 0 only if supported.</small></label>
+            <label>Building capital ($)<input name="buildingCapital" type="text" inputmode="decimal"><small>Record the allocated amount; it produces no separate profit dollars. Enter 0 only if supported.</small></label>
+            <label>Equipment capital ($)<input name="equipmentCapital" type="text" inputmode="decimal"><small>The allocated equipment amount used with the selected equipment value.</small></label>
+            <label>Supported building capital addition ($)<input name="buildingCapitalAdjustment" type="text" inputmode="decimal"><small>Enter 0 when no documented addition applies.</small></label>
+            <label>Supported equipment capital addition ($)<input name="equipmentCapitalAdjustment" type="text" inputmode="decimal"><small>Enter 0 when no documented addition applies.</small></label>
+            <label>Equipment assigned value (%)<input name="equipmentValue" type="text" inputmode="decimal"><small>Normal 17.5%; range 10–25%. Select and document the value.</small></label>
+          </div>
+          <label id="capital-basis-field" hidden>DD Form 1861 basis or zero-capital evidence<textarea name="capitalBasis" rows="2"></textarea><small>Name the supporting record and date. If qualifying capital is zero, explain how that was established.</small></label>
+          <div id="capital-extra" hidden><label>Reason for capital additions<textarea name="capitalAdjustmentRationale" rows="2"></textarea></label>
+          <label>Reason for nonnormal equipment value<textarea name="capitalRationale" rows="2"></textarea></label></div>
+          <details class="help-card"><summary>What should I take from DD Form 1861?</summary><p>Use the action's supported capital-employed allocation among land, buildings, and equipment, with its source and date. This tool does not derive those amounts from CASB-CMF pools or cost-of-money rates. The contractor normally supplies the supporting capital data; the analyst verifies the allocation and selects the equipment factor. Keep formal investment-plan or intracompany-transfer additions separate and documented.</p></details>
+          </details>
+          <details class="factor-card">
+          <summary><span class="summary-label"><strong>Cost efficiency: supported savings</strong></span><span class="required-badge">Required</span></summary>
+          <div class="field-grid"><label>Assessment status<select name="efficiencyStatus"><option value="">Choose</option><option value="assessed">Assessed, including zero</option><option value="not-assessed">Not assessed</option></select><small>“Assessed zero” means the factor was considered and no increase selected.</small></label><label>Selected factor (%)<input name="efficiencyValue" type="text" inputmode="decimal"><small>Discretionary increase of 0–4% of Block 20 for supported cost-reduction efforts benefiting this action.</small></label></div>
+          <label>Demonstrated cost-reduction rationale<textarea name="efficiencyRationale" rows="2"></textarea></label>
+          <details class="help-card"><summary>When is a cost-efficiency increase supported?</summary><p>Consider demonstrated, action-relevant reductions such as better methods, lower costs, or other efficiencies. The factor is a judgment-based increase, not an automatic reward or a score from this form. The contracting officer assesses and selects it; the contractor may provide evidence.</p></details>
+          </details>
+          <details class="help-card"><summary>Who supplies these records?</summary><p>The contractor normally supplies the capital records and evidence of cost reductions. The Government analyst verifies the allocation and decides whether an equipment value or cost-efficiency increase is supported. If capital data is unavailable, the app cannot finish the objective.</p></details>
+          <p class="source-note">Sources: PGI 215.404-971(d)–(e); DD Form 1861.</p>
+          <div class="step-actions"><button type="button" class="primary" data-next="review">Continue to review</button></div>
+        </section>
+
+        <section id="review" class="step panel" aria-labelledby="review-title" hidden>
+          <p class="eyebrow">Step 5 of 6 · Working objective</p><h1 id="review-title">Check the calculation</h1>
+          <p>The total is a starting point for analysis and negotiation, not a contract price. Check the cost base, each selected value, supporting explanation, and source version before using it.</p>
+          <div id="review-errors" class="notice danger" role="alert" tabindex="-1" hidden></div>
+          <div id="results" hidden>
+            <div id="result-status" class="notice success"></div>
+            <div class="table-wrap"><table><caption>Profit factors (DD Form 1547 style)</caption><thead><tr><th scope="col">Block / factor</th><th scope="col">Reported amount</th></tr></thead><tbody id="result-rows"></tbody></table></div>
+            <details class="help-card"><summary>Advanced calculation trace, inputs, and citations</summary><div id="trace"></div></details>
+            <div class="scenario-actions"><label>Scenario name<input id="scenario-name" type="text" placeholder="Scenario A"></label><button type="button" class="secondary" id="save-scenario">Save scenario in this session</button></div>
+            <div id="scenario-area" hidden><h2>Scenario comparison</h2><div class="table-wrap"><table><thead><tr><th>Scenario</th><th>Reported objective</th><th>Dollar difference</th><th>Percent difference</th><th>Changed assumptions</th></tr></thead><tbody id="scenario-rows"></tbody></table></div></div>
+          </div>
+          <div class="step-actions"><button type="button" class="primary" id="calculate-button">Calculate objective</button><button type="button" class="secondary" data-next="export">Preview export</button></div>
+        </section>
+
+        <section id="export" class="step panel" aria-labelledby="export-title" hidden>
+          <p class="eyebrow">Step 6 of 6 · Save a working record</p><h1 id="export-title">Save or print the calculation</h1>
+          <p>The summary preserves inputs, selected values, citations, and limitations. It is an analytical aid, not a completed or approved Government form.</p>
+          <div id="export-unavailable" class="notice warning">Calculate a complete objective in Review before exporting.</div>
+          <div id="export-ready" hidden><div class="step-actions no-print"><button type="button" class="primary" id="print-button">Print / save PDF</button><button type="button" class="secondary" id="json-button">Download JSON</button><button type="button" class="secondary" id="csv-button">Download CSV</button></div></div>
+        </section>
+      </form>
+      <article id="print-summary" class="paper" hidden aria-label="Calculation summary"></article>
+    </main>
+  </div>
+  <footer class="app-brand-footer"><div class="app-brand-footer__inner"><span>Built by Courtney · <a href="https://courtney-chapman.github.io/tools-public/" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></span><span>Provided as-is · Review outputs before use</span></div></footer>
+</body>
+</html>

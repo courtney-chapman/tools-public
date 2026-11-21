@@ -98,7 +98,18 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 <img src="docs/readme/banner_contracts.png" alt="Contracts: propose, award, administer, modify, close out." width="100%">
 
-Tools for contract administration are coming soon.
+### Browser apps
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
+  <img src="docs/readme/howto_apps_light.png" width="100%" alt="How to use browser apps: 1. Download the ZIP from Releases. 2. Unzip it anywhere on your computer. 3. Open index.html in a desktop browser. No install, no account, works offline.">
+</picture>
+
+Try the app online, or download its ZIP from Releases to use it offline. The online version is hosted with GitHub Pages.
+
+|  |  |
+| --- | --- |
+| <img src="docs/readme/icons/weighted-guidelines-calculator.png" width="56" alt=""> | **Weighted Guidelines Calculator**<br>Build and review a working DoD profit objective from documented, user-selected factors in an offline browser app.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/weighted-guidelines-calculator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/weighted-guidelines-calculator-v1.0.0) · [Guide](apps/weighted-guidelines-calculator/README.md) |
 
 ## Finance
 

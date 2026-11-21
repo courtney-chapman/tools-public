@@ -128,8 +128,14 @@ The release image is stored separately from the app ZIP.
   version in one descriptive Git tag; do not create an unversioned alias tag.
 - Store reviewed PNG release cards in `docs/release-images/`. Link each release
   note to the image at its committed revision so older releases keep their image.
-- Order release notes as: image, purpose, download or installation, use limits,
-  then version, source commit, and ZIP SHA-256 where applicable. Keep the ZIP
-  checksum tied to the exact attached file.
+- Order browser-app release notes as: reviewed image, Description of the App,
+  How to use it (Online Preview, Download, Guide), then Current Version. Put
+  the contractor need or requirement in its own paragraph before describing
+  the tool and its benefit. Use the live app URL, direct versioned ZIP asset,
+  and rendered GitHub guide. For plugin and skill releases, adapt the same
+  three sections to their actual install paths and assets.
+- Keep source commit IDs and exact ZIP SHA-256 values in the private release
+  record. Verify them against the published assets, but do not crowd public
+  release notes with internal provenance or a change log.
 - Before publishing, check the image and notes for private material and verify
   the release title, tag, attached files, links, and rendered content.

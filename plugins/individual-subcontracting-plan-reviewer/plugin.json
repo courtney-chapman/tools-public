@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "individual-subcontracting-plan-reviewer",
+  "version": "1.0.0",
+  "description": "Prepare, review, and revise individual small business subcontracting plans and goal calculations for U.S. Government prime contractors.",
+  "author": { "name": "courtney-chapman", "url": "https://github.com/courtney-chapman" },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/individual-subcontracting-plan-reviewer",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0",
+  "extensions": { "com.openai": { "interface": {
+    "displayName": "Subcontracting Plan Reviewer",
+    "shortDescription": "Review individual plans",
+    "longDescription": "Prepare, review, and revise individual small business subcontracting plans and goal calculations for U.S. Government prime contractors.",
+    "developerName": "courtney-chapman", "category": "Productivity", "capabilities": [],
+    "logo": "./assets/icon.png", "composerIcon": "./assets/icon.png",
+    "defaultPrompt": ["Review this individual subcontracting plan for missing elements and unsupported goals.", "Validate these base and option-period subcontracting goals.", "Revise this plan while preserving its commitments and numerical values."],
+    "websiteURL": "https://github.com/courtney-chapman"
+  } } }
+}

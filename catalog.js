@@ -132,6 +132,32 @@ window.catalogItems = [
   {
     "domain": "Procurement",
     "kind": "plugin",
+    "title": "Make-or-Buy Analysis Reviewer",
+    "description": "Review make, buy, and hybrid comparisons, evidence gaps, and conditional formal-program duties; draft a decision memorandum when requested.",
+    "image": "assets/thumbs/thumb_make-or-buy-analysis-reviewer.png",
+    "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/make-or-buy-analysis-reviewer-v1.0.0/make-or-buy-analysis-reviewer.zip",
+    "primary_label": "Download ZIP",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/make-or-buy-analysis-reviewer-v1.0.0",
+    "secondary_label": "Release details",
+    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/make-or-buy-analysis-reviewer",
+    "tertiary_label": "Source"
+  },
+  {
+    "domain": "Procurement",
+    "kind": "plugin",
+    "title": "Individual Subcontracting Plan Reviewer",
+    "description": "Review individual small business subcontracting plans, goal calculations, methodology, and evidence; draft or revise plan language when requested.",
+    "image": "assets/thumbs/thumb_individual-subcontracting-plan-reviewer.png",
+    "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/individual-subcontracting-plan-reviewer-v1.0.0/individual-subcontracting-plan-reviewer.zip",
+    "primary_label": "Download ZIP",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/individual-subcontracting-plan-reviewer-v1.0.0",
+    "secondary_label": "Release details",
+    "tertiary_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/individual-subcontracting-plan-reviewer",
+    "tertiary_label": "Source"
+  },
+  {
+    "domain": "Procurement",
+    "kind": "plugin",
     "title": "Procurement Market Research",
     "description": "Find suppliers, public pricing, and evidence for federal prime-contractor market research.",
     "image": "assets/thumbs/thumb_procurement-market-research.png",

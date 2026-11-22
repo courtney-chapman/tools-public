@@ -1,0 +1,7 @@
+{
+  "name": "make-or-buy-analysis-reviewer",
+  "version": "1.0.0",
+  "description": "Prepare and review evidence-based make, buy, and hybrid analyses for U.S. Government prime contractors.",
+  "author": { "name": "courtney-chapman" },
+  "license": "CC-BY-NC-4.0"
+}

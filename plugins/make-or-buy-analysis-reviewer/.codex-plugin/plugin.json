@@ -1,0 +1,19 @@
+{
+  "name": "make-or-buy-analysis-reviewer",
+  "version": "1.0.0",
+  "description": "Prepare and review evidence-based make, buy, and hybrid analyses for U.S. Government prime contractors.",
+  "author": { "name": "courtney-chapman", "url": "https://github.com/courtney-chapman" },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Make-or-Buy Analysis Reviewer",
+    "shortDescription": "Review make-or-buy analyses",
+    "longDescription": "Prepare and review evidence-based make, buy, and hybrid analyses for U.S. Government prime contractors.",
+    "developerName": "courtney-chapman", "category": "Productivity", "capabilities": [],
+    "logo": "./assets/icon.png", "composerIcon": "./assets/icon.png",
+    "websiteURL": "https://github.com/courtney-chapman",
+    "defaultPrompt": ["Review this make-or-buy analysis for evidence gaps and inconsistent comparisons.", "Compare the make, buy, and hybrid options using these facts.", "Draft a make-or-buy decision memorandum from this worksheet."]
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/make-or-buy-analysis-reviewer",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

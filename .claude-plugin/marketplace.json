@@ -68,6 +68,18 @@
       "category": "productivity"
     },
     {
+      "name": "make-or-buy-analysis-reviewer",
+      "source": "./plugins/make-or-buy-analysis-reviewer",
+      "description": "Prepare and review evidence-based make, buy, and hybrid analyses for U.S. Government prime contractors.",
+      "category": "productivity"
+    },
+    {
+      "name": "individual-subcontracting-plan-reviewer",
+      "source": "./plugins/individual-subcontracting-plan-reviewer",
+      "description": "Prepare, review, and revise individual small business subcontracting plans and goal calculations for U.S. Government prime contractors.",
+      "category": "productivity"
+    },
+    {
       "name": "indirect-and-commercial-price-analysis-for-services-lite",
       "source": "./plugins/indirect-and-commercial-price-analysis-for-services-lite",
       "description": "Draft concise price analyses for company Commercial and Indirect purchases without assuming federal acquisition requirements or drafting a subcontract BID SUMMARY.",

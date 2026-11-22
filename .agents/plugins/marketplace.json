@@ -125,6 +125,18 @@
       "category": "Productivity"
     },
     {
+      "name": "make-or-buy-analysis-reviewer",
+      "source": { "source": "local", "path": "./plugins/make-or-buy-analysis-reviewer" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    },
+    {
+      "name": "individual-subcontracting-plan-reviewer",
+      "source": { "source": "local", "path": "./plugins/individual-subcontracting-plan-reviewer" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    },
+    {
       "name": "indirect-and-commercial-price-analysis-for-services-lite",
       "source": {
         "source": "local",

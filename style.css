@@ -78,6 +78,3 @@
 .demo-content a:hover{text-decoration:underline}
 .support-section{padding-top:56px}
 @media(max-width:760px){.demos-section{padding-top:54px}.demo-grid{grid-template-columns:1fr}.support-section{padding-top:48px}}
-.hero-demo-link{display:inline-flex;align-items:center;padding:10px 4px;color:#bfe6ff;font-size:.9rem;font-weight:800;text-underline-offset:4px}
-.hero-demo-link:hover{color:#fff}
-@media(max-width:430px){.hero-demo-link{width:100%;justify-content:center}}

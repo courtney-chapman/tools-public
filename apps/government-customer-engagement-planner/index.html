@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Government Customer Engagement Planner</title>
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(var(--content-max), calc(100% - 32px)); margin: 0 auto; padding: 24px 0 48px; }
+    h2 { font: 700 var(--fs-2xl)/1.2 var(--font-sans); letter-spacing: -.02em; margin: 0 0 8px; }
+    h3 { font: 700 var(--fs-lg)/1.25 var(--font-sans); margin: 0 0 8px; }
+    p { margin: 0 0 16px; }
+    .muted, .hint { color: var(--text-muted); }
+    .hint { font-size: var(--fs-sm); }
+    .notice { border-left: 4px solid var(--warning); background: var(--warning-soft); padding: 12px 16px; margin-bottom: 24px; }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 24px; }
+    .tabs a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--border-strong); border-radius: var(--radius); text-decoration: none; background: var(--surface); color: var(--text); font-weight: 600; }
+    .tabs a[aria-current="page"] { background: var(--primary-soft); border-color: var(--primary); box-shadow: inset 0 -3px var(--primary); }
+    .tabs a:hover, button:not(:disabled):hover { border-color: var(--primary); }
+    .panel, .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow); }
+    .card { padding: 16px; margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .metric { font: 700 var(--fs-2xl)/1.25 var(--font-sans); margin-top: 4px; }
+    .card { border-top: 3px solid var(--primary); }
+    .getting-started { background: var(--primary-soft); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 20px 24px; margin-bottom: 24px; }
+    .getting-started h3 { margin-bottom: 4px; }
+    .getting-started ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 16px 0 0; padding-left: 20px; }
+    .getting-started li { padding-left: 4px; }
+    .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .section-heading p { margin: 0; }
+    .result-count { color: var(--text-muted); font-size: var(--fs-sm); margin: -4px 0 12px; }
+    .data-tools { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; }
+    .data-tools summary { cursor: pointer; color: var(--primary); font-weight: 700; }
+    .data-tools[open] summary { margin-bottom: 16px; }
+    .toolbar, .actions { display: flex; align-items: end; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .toolbar > label { flex: 1 1 160px; }
+    label { display: block; font-size: var(--fs-sm); font-weight: 600; }
+    input, select, textarea, button { font: inherit; }
+    input, select, textarea { width: 100%; min-height: var(--control-h); margin-top: 4px; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); }
+    textarea { min-height: 80px; resize: vertical; }
+    button { min-height: var(--control-h); padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); cursor: pointer; font-weight: 600; }
+    button.primary { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+    button.danger { color: var(--danger); border-color: var(--danger); }
+    button:disabled { opacity: .55; cursor: not-allowed; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .span-all { grid-column: 1 / -1; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--border); font-size: var(--fs-sm); }
+    th { background: var(--surface-2); font-weight: 700; }
+    tbody tr:hover { background: var(--surface-2); }
+    tr.selected { background: var(--primary-soft); }
+    .status { display: inline-block; border-left: 4px solid var(--info); background: var(--info-soft); color: var(--info); padding: 3px 8px; font-size: var(--fs-sm); font-weight: 700; }
+    .status.warning { border-color: var(--warning); background: var(--warning-soft); color: var(--warning); }
+    .status.success { border-color: var(--success); background: var(--success-soft); color: var(--success); }
+    .status.danger { border-color: var(--danger); background: var(--danger-soft); color: var(--danger); }
+    .entry { padding: 16px 0; border-top: 1px solid var(--border); }
+    .entry:first-child { border-top: 0; }
+    .entry-title { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+    .small { font-size: var(--fs-sm); }
+    .message { min-height: 24px; margin-bottom: 8px; }
+    .message.error { color: var(--danger); }
+    dialog { width: min(680px, calc(100% - 24px)); max-height: calc(100% - 24px); overflow: auto; padding: 24px; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+    dialog::backdrop { background: rgba(4, 16, 28, .72); }
+    dialog form > .grid { margin: 16px 0; }
+    .report-paper { background: #fff; color: #0e2841; border: 1px solid var(--border-strong); border-radius: var(--radius-lg); overflow: hidden; font: var(--fs-base)/1.45 var(--font-sans); box-shadow: var(--shadow); }
+    .report-masthead { display: flex; justify-content: space-between; gap: 24px; padding: 28px 32px; background: #0e2841; color: #fff; }
+    .report-masthead h2 { color: #fff; font-size: var(--fs-2xl); margin: 4px 0 8px; }
+    .report-masthead p { margin: 0; }
+    .report-eyebrow { color: #c7daf0; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; }
+    .report-meta { align-self: flex-end; display: grid; gap: 4px; min-width: 165px; text-align: right; font-size: var(--fs-sm); }
+    .report-body { padding: 28px 32px 32px; }
+    .report-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .report-kpi { display: flex; flex-direction: column; min-height: 112px; padding: 14px 16px; border: 1px solid #d2e1f2; border-top: 3px solid #1d5fa6; border-radius: 8px; background: #f4f6f9; }
+    .report-kpi.success { border-top-color: #1e7b3a; }
+    .report-kpi.warning { border-top-color: #8a5a00; }
+    .report-kpi-label { color: #4b5563; font-size: var(--fs-sm); font-weight: 700; }
+    .report-kpi strong { font-size: 32px; line-height: 1.15; margin: 5px 0; font-variant-numeric: tabular-nums; }
+    .report-kpi-detail, .report-caption { color: #4b5563; font-size: var(--fs-sm); }
+    .report-insights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+    .report-insight { border: 1px solid #d2e1f2; border-radius: 8px; padding: 18px 20px; }
+    .report-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 2px solid #d2e1f2; padding-bottom: 8px; margin-bottom: 10px; }
+    .report-section-head h3 { margin: 0; color: #0e2841; }
+    .report-section-head > span { color: #4b5563; font-size: var(--fs-sm); font-weight: 700; white-space: nowrap; }
+    .report-caption { margin-bottom: 16px; }
+    .report-bar-row { margin-top: 12px; }
+    .report-bar-label { display: flex; justify-content: space-between; gap: 12px; font-size: var(--fs-sm); }
+    .report-bar-label strong { font-variant-numeric: tabular-nums; }
+    .report-bar-track { height: 7px; margin-top: 5px; border-radius: 8px; overflow: hidden; background: #e7eff8; }
+    .report-bar-fill { display: block; height: 100%; border-radius: inherit; background: #1d5fa6; }
+    .report-bar-fill.warning { background: #8a5a00; }
+    .report-bar-fill.danger { background: #b42318; }
+    .report-detail { margin-top: 26px; }
+    .report-table-wrap { overflow-x: auto; }
+    .report-swipe-hint { display: none; }
+    .report-paper table th, .report-paper table td { border-color: #d2e1f2; color: #0e2841; overflow-wrap: anywhere; }
+    .report-paper table th { background: #e7eff8; }
+    .report-paper table tbody tr:nth-child(even) { background: #f4f6f9; }
+    .report-empty { border: 1px dashed #d2e1f2; border-radius: 8px; padding: 16px; color: #4b5563; }
+    .report-footnote { border-top: 1px solid #d2e1f2; color: #4b5563; font-size: var(--fs-sm); margin: 28px 0 0; padding-top: 12px; }
+    .hidden { display: none !important; }
+    @media (max-width: 900px) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 900px) { .report-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .report-insights { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { main { width: min(100% - 24px, var(--content-max)); } .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .grid, .grid.three, .getting-started ol { grid-template-columns: 1fr; } .panel, .getting-started { padding: 16px; } .tabs a { flex: 1 1 100%; } #customer-list table, #customer-list tbody, #customer-list tr, #customer-list td { display: block; width: 100%; } #customer-list thead { display: none; } #customer-list tr { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 8px; } #customer-list td { display: flex; justify-content: space-between; gap: 8px; padding: 8px; border: 0; } #customer-list td::before { content: attr(data-label); font-weight: 700; color: var(--text-muted); } .report-masthead { display: block; padding: 24px 20px; } .report-meta { text-align: left; margin-top: 20px; } .report-body { padding: 20px; } .report-kpi { min-height: 100px; } .report-insight { padding: 16px; } .report-table-wrap { overflow-x: auto; } .report-paper table { min-width: 640px; } .report-swipe-hint { display: block; color: #4b5563; font-size: var(--fs-sm); margin: 0 0 8px; } }
+    @media print { @page { margin: 16mm; } body { zoom: 1 !important; } header.app-brand-header, footer.app-brand-footer, .app-brand-intro, .tabs, .notice, .message, .screen-only, dialog { display: none !important; } main { width: 100%; padding: 0; } #dashboard, #leadership { display: none !important; } #reports { display: block !important; } #report-paper { display: block !important; border: 0; border-radius: 0; box-shadow: none; overflow: visible; print-color-adjust: exact; -webkit-print-color-adjust: exact; } .report-masthead { padding: 18px 20px; } .report-body { padding: 20px; } .report-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } .report-insights { grid-template-columns: repeat(2, minmax(0, 1fr)); } .report-kpi, .report-insight, .report-bar-row { break-inside: avoid; } .report-table-wrap { overflow: visible; } .report-swipe-hint { display: none !important; } .report-paper table { display: table; min-width: 0; } .report-paper tr { break-inside: avoid; } .report-paper h3 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+  <header class="app-brand-header"><div class="app-brand-header__inner"><p class="app-brand-header__eyebrow">Standalone offline demonstration</p><h1>Government Customer Engagement Planner</h1></div></header>
+  <div class="app-brand-intro"><p>Track customer engagement, plan leadership meetings, and prepare a concise management report.</p></div>
+  <main>
+    <p class="notice"><strong>Local planning data.</strong> Entries stay in this browser's IndexedDB and are not sent to a server. Do not enter classified, CUI, or otherwise restricted information. Export a backup before clearing browser data.</p>
+    <nav class="tabs" aria-label="Planner sections">
+      <a href="#dashboard" data-tab="dashboard">1 · Engagement Dashboard</a>
+      <a href="#leadership" data-tab="leadership">2 · Leadership Opportunities</a>
+      <a href="#reports" data-tab="reports">3 · Management Reports</a>
+    </nav>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+    <section id="dashboard" aria-labelledby="dashboard-title">
+      <div class="section-heading"><div><h2 id="dashboard-title">Engagement Dashboard</h2><p class="muted">Keep a separate history of completed activity and planned follow-ups.</p></div></div>
+      <div id="getting-started" class="getting-started hidden"><h3>Start with one customer</h3><p>Add the customer, record an engagement or a planned follow-up, then review the report. You can also use the CSV templates to prepare several records at once.</p><ol><li><strong>Add a customer</strong><br>Enter the agency and your company representative.</li><li><strong>Build the history</strong><br>Log a completed engagement or schedule the next one.</li><li><strong>Review and back up</strong><br>Check the management report and save a JSON backup.</li></ol></div>
+      <div class="cards" id="metrics"></div>
+      <div class="panel">
+        <div class="toolbar"><label>Search customers<input id="search" type="search" placeholder="Agency, program, or contact"></label><label>Agency<input id="filter-agency" type="search" placeholder="Any agency"></label><label>Company representative<input id="filter-rep" type="search" placeholder="Any representative"></label><label>Status<select id="filter-status"><option value="">All statuses</option><option>Planned</option><option>Completed</option><option>Follow-Up Needed</option><option>Needs attention</option></select></label><label>Engagement from<input id="filter-from" type="date"></label><label>Through<input id="filter-to" type="date"></label></div>
+        <div class="actions"><button id="add-customer" class="primary">Add customer</button><button id="add-engagement">Add engagement</button><button id="customer-template">Customer CSV template</button><button id="engagement-template">Engagement CSV template</button></div>
+        <p id="result-count" class="result-count" role="status"></p><div id="customer-list"></div>
+      </div>
+      <div class="panel" id="customer-detail" aria-live="polite"></div>
+    </section>
+    <section id="leadership" class="hidden" aria-labelledby="leadership-title">
+      <h2 id="leadership-title">Leadership Opportunities</h2><p class="muted">Track proposed meetings. Record an actual completed meeting in the customer history when it happens.</p>
+      <div class="panel"><div class="actions"><button id="add-opportunity" class="primary">Add leadership opportunity</button></div><div id="opportunity-list"></div></div>
+    </section>
+    <section id="reports" class="hidden" aria-labelledby="reports-title">
+      <h2 id="reports-title" class="screen-only">Management Reports</h2>
+      <div class="panel screen-only">
+        <p>Choose a period for completed and upcoming engagement counts. Customer attention flags use today's date.</p>
+        <div class="toolbar"><label>From<input id="report-from" type="date"></label><label>Through<input id="report-to" type="date"></label></div>
+        <div class="actions"><button id="print-report" class="primary">Print / Save as PDF</button></div>
+        <details class="data-tools"><summary>Data tools: CSV and backup</summary><div class="actions"><button id="export-customers">Export customers CSV</button><button id="export-engagements">Export engagements CSV</button><button id="export-opportunities">Export opportunities CSV</button><button id="export-json">Back up JSON</button><button id="import-customers">Import customers CSV</button><button id="import-engagements">Import engagements CSV</button><button id="restore-json">Restore JSON</button></div>
+          <div id="import-message" class="message" role="alert" tabindex="-1"></div>
+          <p class="hint">Import customers before engagements; the engagement CSV uses the exported customer key. Restoring JSON replaces all current data after confirmation. Files are read locally.</p></details>
+      </div>
+      <div id="report-paper" class="report-paper"></div>
+    </section>
+  </main>
+  <footer class="app-brand-footer"><div class="app-brand-footer__inner"><span>Built by Courtney · <a href="https://courtney-chapman.github.io/tools-public/" target="_blank" rel="noopener noreferrer">More tools on GitHub</a></span><span>Provided as-is · Review outputs before use</span></div></footer>
+  <dialog id="editor" aria-labelledby="editor-title"><form id="editor-form"><h2 id="editor-title"></h2><p id="editor-help" class="hint"></p><div id="editor-fields" class="grid"></div><div id="editor-error" class="message error" role="alert"></div><div class="actions"><button type="submit" class="primary">Save</button><button type="button" id="cancel-editor">Cancel</button></div></form></dialog>
+  <input id="file-input" type="file" accept=".csv,text/csv,.json,application/json" class="hidden">
+  <script src="model.js"></script><script src="app.js"></script>
+</body>
+</html>

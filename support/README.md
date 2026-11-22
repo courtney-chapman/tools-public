@@ -130,6 +130,12 @@ Build the Subcontract Closeout Checklist download with
 four-file ZIP contains the app, local theme tokens, public guide, and PolyForm Noncommercial license.
 Check its logic and output structure with `node support/scripts/test_subcontract_closeout.cjs`.
 
+Build the Government Customer Engagement Planner download with
+`python3 support/scripts/package_government_customer_engagement_planner.py`. The deterministic,
+six-file ZIP contains the offline app, public guide, and PolyForm Noncommercial license.
+The release image is stored separately. Check its model and import/export logic with
+`node support/scripts/test_government_customer_engagement_planner.cjs`.
+
 ## Release presentation
 
 Build the Weighted Guidelines Calculator download with

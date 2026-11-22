@@ -139,18 +139,19 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 *Prepare contract analysis and records for review in your browser.*
 
 <details markdown="1">
-<summary><strong>See free browser tools (2)</strong></summary>
+<summary><strong>See free browser tools (3)</strong></summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
   <img src="docs/readme/howto_apps_light.png" width="100%" alt="How to use browser apps: 1. Download the ZIP from Releases. 2. Unzip it anywhere on your computer. 3. Open index.html in a desktop browser. No install, no account, works offline.">
 </picture>
 
-Try the app online, or download its ZIP from Releases to use it offline. The online version is hosted with GitHub Pages.
+Try an app online, or download its ZIP from Releases to use it offline. The online versions are hosted with GitHub Pages.
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
 | <img src="docs/readme/icons/weighted-guidelines-calculator.png" width="56" alt=""> | **Weighted Guidelines Calculator**<br>Build and review a working DoD profit objective from documented, user-selected factors in an offline browser app.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/weighted-guidelines-calculator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/weighted-guidelines-calculator-v1.0.2) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/weighted-guidelines-calculator/README.md) |
+| <img src="docs/readme/icons/government-customer-engagement-planner.png" width="56" alt=""> | **Government Customer Engagement Planner**<br>Track customer engagement and leadership opportunities, plan follow-ups, and prepare a management dashboard locally.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/government-customer-engagement-planner/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/government-customer-engagement-planner-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/government-customer-engagement-planner/README.md) |
 | <img src="docs/readme/icons/prime-subcontract-compliance-manager.png" width="56" alt=""> | **CDRLs and Contracts Deliverables**<br>Track contract deadlines, subcontractor inputs, and submission evidence in a local browser workspace.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/prime-subcontract-compliance-manager/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/prime-subcontract-compliance-manager-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/prime-subcontract-compliance-manager/README.md) |
 
 </details>

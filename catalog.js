@@ -392,6 +392,19 @@ window.catalogItems = [
   {
     "domain": "Contracts",
     "kind": "app",
+    "title": "Government Customer Engagement Planner",
+    "description": "Track customer engagement and leadership opportunities, plan follow-ups, and prepare a management dashboard locally.",
+    "image": "assets/thumbs/thumb_government-customer-engagement-planner.png",
+    "primary_url": "https://courtney-chapman.github.io/tools-public/apps/government-customer-engagement-planner/",
+    "primary_label": "Try online",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-customer-engagement-planner-v1.0.0",
+    "secondary_label": "Download ZIP",
+    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/government-customer-engagement-planner/README.md",
+    "tertiary_label": "Guide"
+  },
+  {
+    "domain": "Contracts",
+    "kind": "app",
     "title": "CDRLs and Contracts Deliverables",
     "description": "Track contract deadlines, subcontractor inputs, and submission evidence in a local browser workspace.",
     "image": "assets/thumbs/thumb_prime-subcontract-compliance-manager.png",

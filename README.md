@@ -139,7 +139,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 *Prepare contract analysis and records for review in your browser.*
 
 <details markdown="1">
-<summary><strong>See free browser tools (1)</strong></summary>
+<summary><strong>See free browser tools (2)</strong></summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/howto_apps_dark.png">
@@ -151,6 +151,7 @@ Try the app online, or download its ZIP from Releases to use it offline. The onl
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  |
 | --- | --- |
 | <img src="docs/readme/icons/weighted-guidelines-calculator.png" width="56" alt=""> | **Weighted Guidelines Calculator**<br>Build and review a working DoD profit objective from documented, user-selected factors in an offline browser app.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/weighted-guidelines-calculator/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/weighted-guidelines-calculator-v1.0.2) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/weighted-guidelines-calculator/README.md) |
+| <img src="docs/readme/icons/prime-subcontract-compliance-manager.png" width="56" alt=""> | **CDRLs and Contracts Deliverables**<br>Track contract deadlines, subcontractor inputs, and submission evidence in a local browser workspace.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/prime-subcontract-compliance-manager/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/prime-subcontract-compliance-manager-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/prime-subcontract-compliance-manager/README.md) |
 
 </details>
 

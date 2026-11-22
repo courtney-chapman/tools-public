@@ -1,0 +1,9 @@
+{
+  "name": "individual-subcontracting-plan-reviewer",
+  "version": "1.0.0",
+  "description": "Prepare, review, and revise individual small business subcontracting plans and goal calculations for U.S. Government prime contractors.",
+  "author": { "name": "courtney-chapman" },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/individual-subcontracting-plan-reviewer",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

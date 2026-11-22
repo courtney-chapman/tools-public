@@ -63,7 +63,3 @@
 .collection-body small{grid-column:1;grid-row:2;max-width:none}
 .collection-action{grid-column:2;grid-row:2;align-self:end}
 @media(max-width:600px){.collection-card,.collection-body{min-height:0}.collection-body{min-height:116px;padding:16px 20px 17px}}
-.featured-tool{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:25px;font-size:.93rem}
-.featured-tool>span{color:#a8c2d5;font-weight:700}
-.featured-tool a{color:#9bd9ff;font-weight:800;text-underline-offset:4px}
-.featured-tool a:hover{color:#fff}

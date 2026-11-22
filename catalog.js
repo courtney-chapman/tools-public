@@ -388,5 +388,18 @@ window.catalogItems = [
     "secondary_label": "Download ZIP",
     "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/weighted-guidelines-calculator/README.md",
     "tertiary_label": "Guide"
+  },
+  {
+    "domain": "Contracts",
+    "kind": "app",
+    "title": "CDRLs and Contracts Deliverables",
+    "description": "Track contract deadlines, subcontractor inputs, and submission evidence in a local browser workspace.",
+    "image": "assets/thumbs/thumb_prime-subcontract-compliance-manager.png",
+    "primary_url": "https://courtney-chapman.github.io/tools-public/apps/prime-subcontract-compliance-manager/",
+    "primary_label": "Try online",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/prime-subcontract-compliance-manager-v1.0.0",
+    "secondary_label": "Download ZIP",
+    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/prime-subcontract-compliance-manager/README.md",
+    "tertiary_label": "Guide"
   }
 ];

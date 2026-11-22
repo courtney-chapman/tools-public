@@ -136,6 +136,11 @@ six-file ZIP contains the offline app, public guide, and PolyForm Noncommercial 
 The release image is stored separately. Check its model and import/export logic with
 `node support/scripts/test_government_customer_engagement_planner.cjs`.
 
+Build the Government Shutdown Coordination Tracker download with
+`python3 support/scripts/package_government_shutdown_tracker.py`. The deterministic,
+eight-file ZIP contains the browser app, public guide, and PolyForm Noncommercial license.
+The release image is stored separately.
+
 ## Release presentation
 
 Build the Weighted Guidelines Calculator download with

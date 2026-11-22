@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -15,6 +16,15 @@ THUMBNAIL_SLUG_ALIASES = {
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def versioned_homepage(html_text: str, assets: dict[str, bytes]) -> str:
+    for name, content in assets.items():
+        version = hashlib.sha256(content).hexdigest()[:12]
+        pattern = rf'((?:src|href)="{re.escape(name)}\?v=)[^"]+'
+        html_text, count = re.subn(pattern, lambda match: match.group(1) + version, html_text)
+        assert count == 1, f"Expected one versioned {name} reference in index.html"
+    return html_text
+
+
 def link_map(row: str) -> dict[str, str]:
     links = dict(re.findall(r"\[([^]]+)\]\(([^)]+)\)", row))
     links.update((label, url) for url, label in re.findall(r'<a href="([^"]+)">([^<]+)</a>', row))
@@ -23,7 +33,7 @@ def link_map(row: str) -> dict[str, str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--check", action="store_true", help="Fail if catalog.js is stale")
+    parser.add_argument("--check", action="store_true", help="Fail if catalog.js or homepage asset versions are stale")
     args = parser.parse_args()
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     domain = kind = None
@@ -85,12 +95,21 @@ def main() -> None:
         assert (ROOT / item["image"]).is_file(), item["image"]
     output = ROOT / "catalog.js"
     rendered = "window.catalogItems = " + json.dumps(items, ensure_ascii=False, indent=2) + ";\n"
+    homepage = ROOT / "index.html"
+    homepage_text = homepage.read_text(encoding="utf-8")
+    expected_homepage = versioned_homepage(homepage_text, {
+        "catalog.js": rendered.encode("utf-8"),
+        "app.js": (ROOT / "app.js").read_bytes(),
+        "style.css": (ROOT / "style.css").read_bytes(),
+    })
     if args.check:
         assert output.read_text(encoding="utf-8") == rendered, "catalog.js is stale; run build_homepage_catalog.py"
-        print(f"Catalog is current: {len(items)} items")
+        assert homepage_text == expected_homepage, "Homepage asset versions are stale; run build_homepage_catalog.py"
+        print(f"Catalog and homepage asset versions are current: {len(items)} items")
     else:
         output.write_text(rendered, encoding="utf-8")
-        print(f"Wrote {len(items)} catalog items to {output}")
+        homepage.write_text(expected_homepage, encoding="utf-8")
+        print(f"Wrote {len(items)} catalog items and refreshed homepage asset versions")
 
 
 if __name__ == "__main__":

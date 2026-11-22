@@ -25,7 +25,12 @@ The root `index.html` is the GitHub Pages homepage. Its cards come from
 app or plugin, update the README entry and its thumbnail in `assets/thumbs/`,
 then run `python3 support/scripts/build_homepage_catalog.py`. Use
 `python3 support/scripts/build_homepage_catalog.py --check` to confirm the
-catalog is current. The repository validation workflow runs that check too.
+catalog is current. The builder also updates the versioned `catalog.js`,
+`app.js`, and `style.css` URLs in `index.html` from their content hashes, so
+returning browsers fetch changed homepage assets. The repository validation
+workflow runs the check and fails when an asset version is stale. Run the
+builder after any homepage JavaScript or CSS change, even when the README
+catalog entries stay the same.
 Keep collection graphics in `assets/collections/` and the page's social
 preview metadata in `index.html` current when the site design changes.
 

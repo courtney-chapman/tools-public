@@ -63,3 +63,4 @@
 .collection-body small{grid-column:1;grid-row:2;max-width:none}
 .collection-action{grid-column:2;grid-row:2;align-self:end}
 @media(max-width:600px){.collection-card,.collection-body{min-height:0}.collection-body{min-height:116px;padding:16px 20px 17px}}
+#load-more[hidden]{display:none}

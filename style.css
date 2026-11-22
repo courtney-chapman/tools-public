@@ -64,3 +64,17 @@
 .collection-action{grid-column:2;grid-row:2;align-self:end}
 @media(max-width:600px){.collection-card,.collection-body{min-height:0}.collection-body{min-height:116px;padding:16px 20px 17px}}
 #load-more[hidden]{display:none}
+
+/* Two compact video demos aligned with the catalog. */
+.demos-section{background:#f6f8fb;padding-top:68px;padding-bottom:0}
+.demo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.demo-card{min-width:0;background:#fff;border:1px solid #dce5ec;border-radius:13px;overflow:hidden;box-shadow:0 5px 19px rgba(11,43,69,.045)}
+.demo-media{padding:14px 14px 0}
+.demo-video{display:block;width:100%;aspect-ratio:16/9;background:#fff;border:1px solid #dce5ec;border-radius:8px}
+.demo-content{padding:16px 20px 20px}
+.demo-content h3{font-size:1.15rem;line-height:1.28;letter-spacing:-.02em;margin:0 0 7px}
+.demo-content p{color:#63798c;font-size:.94rem;line-height:1.5;margin:0 0 14px}
+.demo-content a{color:#1764a4;font-size:.88rem;font-weight:800;text-decoration:none}
+.demo-content a:hover{text-decoration:underline}
+.support-section{padding-top:56px}
+@media(max-width:760px){.demos-section{padding-top:54px}.demo-grid{grid-template-columns:1fr}.support-section{padding-top:48px}}

@@ -122,5 +122,29 @@
   const help = document.getElementById('how-it-works');
   document.querySelector('a[href="#how-it-works"]').addEventListener('click', () => { help.open = true; });
   if (location.hash === '#how-it-works') help.open = true;
+
+  const demoVideos = [...document.querySelectorAll('.demo-video')];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const visibleVideos = new Set();
+  function syncDemo(video) {
+    if (visibleVideos.has(video) && !reducedMotion.matches) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) visibleVideos.add(entry.target);
+        else visibleVideos.delete(entry.target);
+        syncDemo(entry.target);
+      });
+    }, { threshold: 0.5 });
+    demoVideos.forEach(video => videoObserver.observe(video));
+  } else {
+    demoVideos.forEach(video => { visibleVideos.add(video); syncDemo(video); });
+  }
+  reducedMotion.addEventListener?.('change', () => demoVideos.forEach(syncDemo));
   render();
 })();

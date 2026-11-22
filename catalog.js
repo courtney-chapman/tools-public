@@ -414,5 +414,18 @@ window.catalogItems = [
     "secondary_label": "Download ZIP",
     "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/prime-subcontract-compliance-manager/README.md",
     "tertiary_label": "Guide"
+  },
+  {
+    "domain": "Contracts",
+    "kind": "app",
+    "title": "Government Shutdown Coordination Tracker",
+    "description": "Track contract status, Government direction, impacts, and department actions before, during, and after a shutdown in a local browser workspace.",
+    "image": "assets/thumbs/thumb_government-shutdown-coordination-tracker.png",
+    "primary_url": "https://courtney-chapman.github.io/tools-public/apps/government-shutdown-coordination-tracker/",
+    "primary_label": "Try online",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-shutdown-coordination-tracker-v1.0.0",
+    "secondary_label": "Download ZIP",
+    "tertiary_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/government-shutdown-coordination-tracker/README.md",
+    "tertiary_label": "Guide"
   }
 ];

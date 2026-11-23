@@ -78,3 +78,4 @@
 .demo-content a:hover{text-decoration:underline}
 .support-section{padding-top:56px}
 @media(max-width:760px){.demos-section{padding-top:54px}.demo-grid{grid-template-columns:1fr}.support-section{padding-top:48px}}
+.sharing-note{margin-top:22px}

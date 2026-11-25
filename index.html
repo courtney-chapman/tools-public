@@ -13,9 +13,10 @@
   <meta property="og:url" content="https://courtney-chapman.github.io/tools-public/">
   <meta property="og:image" content="https://courtney-chapman.github.io/tools-public/docs/readme/social_preview.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=bf8924ed3840">
-  <script src="catalog.js?v=0e6fc684731e" defer></script>
-  <script src="app.js?v=030c5302c441" defer></script>
+  <link rel="stylesheet" href="style.css?v=56ebb465c871">
+  <script src="catalog.js?v=7d862308fee8" defer></script>
+  <script src="app.js?v=a352fc3a17c6" defer></script>
+  <script src="copy-prompt.js?v=51632e577d24" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -28,7 +29,6 @@
       <nav aria-label="Main navigation">
         <a href="#collections">Collections</a>
         <a href="#browse">Browse solutions</a>
-        <a href="#how-it-works">Get started</a>
         <a href="#support">Support</a>
       </nav>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="hero-art" aria-label="Preview images of three browser tools">
           <div class="art-glow"></div>
-          <img class="art-card art-back" src="assets/thumbs/thumb_government-property-record-template-generator.png" alt="Government property record template generator preview">
+          <img class="art-card art-back" src="assets/thumbs/thumb_government-property-record-template-generator.png" alt="Government Property record template generator preview">
           <img class="art-card art-middle" src="assets/thumbs/thumb_weighted-guidelines-calculator.png" alt="Weighted Guidelines Calculator preview">
           <img class="art-card art-front" src="assets/thumbs/thumb_make-or-buy-decision.png" alt="Make-or-Buy Decision Worksheet preview">
         </div>
@@ -70,9 +70,9 @@
             <img class="collection-lifecycle" src="assets/collections/collection_card_procurement.png" alt="Procurement lifecycle: plan, source, price, award, close out.">
             <span class="collection-body"><strong>Procurement</strong><small>Sourcing, pricing, consent, and closeout files that hold up.</small><span class="collection-action" aria-hidden="true">→</span></span>
           </button>
-          <button class="collection-card" type="button" data-domain="Government property" aria-label="Explore government property collection">
-            <img class="collection-lifecycle" src="assets/collections/collection_card_property.png" alt="Government property lifecycle: acquire, record, use, inventory, dispose.">
-            <span class="collection-body"><strong>Government property</strong><small>Acquisition to disposition, ready for a property audit.</small><span class="collection-action" aria-hidden="true">→</span></span>
+          <button class="collection-card" type="button" data-domain="Government Property" aria-label="Explore Government Property collection">
+            <img class="collection-lifecycle" src="assets/collections/collection_card_property.png" alt="Government Property lifecycle: acquire, record, use, inventory, dispose.">
+            <span class="collection-body"><strong>Government Property</strong><small>Acquisition to disposition, ready for a property audit.</small><span class="collection-action" aria-hidden="true">→</span></span>
           </button>
           <button class="collection-card" type="button" data-domain="Contracts" aria-label="Explore contracts collection">
             <img class="collection-lifecycle" src="assets/collections/collection_card_contracts.png" alt="Contracts lifecycle: propose, award, administer, modify, close out.">
@@ -89,36 +89,57 @@
             <p class="section-kicker">Browse solutions</p>
             <h2 id="browse-title">Find a solution for your work</h2>
           </div>
-          <details class="catalog-help" id="how-it-works">
-            <summary>New here? See how to get started <span aria-hidden="true">⌄</span></summary>
-            <div class="catalog-help-body">
-              <p><strong>Browser apps:</strong> Try one online or download a ZIP for offline use. <a href="https://github.com/courtney-chapman/tools-public#standalone-browser-apps">How to use browser apps</a></p>
-              <p><strong>AI plugins:</strong> Install one in ChatGPT, Codex, or Claude Code, then describe your task. <a href="https://github.com/courtney-chapman/tools-public/blob/main/docs/install-plugins.md">Installation guide</a></p>
-            </div>
-          </details>
         </div>
         <div class="browse-controls">
           <div class="filter-row" role="group" aria-label="Filter by collection">
             <button class="filter active" type="button" data-filter-domain="All" aria-pressed="true">All</button>
             <button class="filter" type="button" data-filter-domain="Procurement" aria-pressed="false">Procurement</button>
-            <button class="filter" type="button" data-filter-domain="Government property" aria-pressed="false">Government property</button>
+            <button class="filter" type="button" data-filter-domain="Government Property" aria-pressed="false">Government Property</button>
             <button class="filter" type="button" data-filter-domain="Contracts" aria-pressed="false">Contracts</button>
           </div>
-          <details class="format-filter" id="format-filter">
-            <summary><span id="format-filter-label">More filters</span><span aria-hidden="true">⌄</span></summary>
-            <div class="format-options segmented" role="group" aria-label="Filter by format">
-              <button class="selected" type="button" data-filter-kind="all" aria-pressed="true">All formats</button>
-              <button type="button" data-filter-kind="app" aria-pressed="false">Browser apps</button>
-              <button type="button" data-filter-kind="plugin" aria-pressed="false">AI tools</button>
-            </div>
-          </details>
         </div>
         <div class="results-toolbar">
           <p class="results-line" id="results-line" role="status" aria-live="polite"></p>
           <label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><span class="visually-hidden">Search solutions</span><input id="search" type="search" placeholder="Search solutions and topics" autocomplete="off"></label>
         </div>
-        <div class="tool-grid" id="tool-grid"></div>
-        <div class="browse-end"><button class="button button-outline" id="load-more" type="button">Show more solutions</button></div>
+        <nav class="catalog-jumps" id="catalog-jumps" aria-label="Jump to solution format"></nav>
+        <div class="catalog-sections" id="catalog-sections"></div>
+        <template id="ai-plugin-install-guide">
+          <details class="plugin-install-guide">
+            <summary>Installation directions</summary>
+            <div class="plugin-install-guide-body">
+              <p>ChatGPT web uses the downloaded ZIP when upload is available. Codex and Claude Code install plugins from this repository’s marketplace.</p>
+              <details class="plugin-platform-steps">
+                <summary>ChatGPT web</summary>
+                <ol>
+                  <li>Click <strong>Download</strong> on the plugin you want.</li>
+                  <li>In ChatGPT web, open <strong>Plugins → Add</strong>, upload the ZIP, and complete installation if that option is available to you.</li>
+                  <li>Start a new chat and describe your task. You can also mention the installed plugin with <code>@</code>.</li>
+                </ol>
+                <p>To update it later, download the newer ZIP and choose <strong>Upload new version</strong> in the installed plugin’s details, if available. In a managed workspace, an admin may need to use <strong>Admin console → Plugins → Add → Upload plugin</strong>. <a href="https://help.openai.com/en/articles/20001256-plugins-in-chatgpt">ChatGPT upload guidance</a></p>
+              </details>
+              <details class="plugin-platform-steps">
+                <summary>Codex desktop or CLI</summary>
+                <ol>
+                  <li>Add the marketplace: <code>codex plugin marketplace add courtney-chapman/tools-public</code></li>
+                  <li>Browse in <strong>Plugins</strong> or run <code>codex plugin list --marketplace tools-public</code>.</li>
+                  <li>Install the plugin you want. For example: <code>codex plugin add procurement-market-research@tools-public</code></li>
+                  <li>Start a new chat and describe your task.</li>
+                </ol>
+                <p><a href="https://developers.openai.com/plugins/build/plugins">Codex marketplace guidance</a></p>
+              </details>
+              <details class="plugin-platform-steps">
+                <summary>Claude Code</summary>
+                <ol>
+                  <li>Add the marketplace: <code>/plugin marketplace add courtney-chapman/tools-public</code></li>
+                  <li>Install the plugin you want. For example: <code>/plugin install procurement-market-research@tools-public</code></li>
+                  <li>Start a new session and describe your task.</li>
+                </ol>
+                <p><a href="https://code.claude.com/docs/en/plugins/create-marketplace">Claude Code marketplace guidance</a></p>
+              </details>
+            </div>
+          </details>
+        </template>
       </div>
     </section>
 
@@ -126,7 +147,7 @@
       <div class="wrap">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">AI tool demos</p>
+            <p class="section-kicker">AI plugin demos</p>
             <h2 id="demos-title">See the tools in action</h2>
           </div>
           <p>Short illustrative previews using fictional scenarios.</p>
@@ -142,7 +163,7 @@
             <div class="demo-content">
               <h3>LTDD Relief Letter Generator</h3>
               <p>See how the AI tool separates facts, missing evidence, and relief request language.</p>
-              <a href="https://github.com/courtney-chapman/tools-public/releases/tag/government-property-ltdd-relief-letter-generator-v0.1.4">Explore this AI tool</a>
+              <a href="https://github.com/courtney-chapman/tools-public/releases/download/government-property-ltdd-relief-letter-generator-v0.1.4/government-property-ltdd-relief-letter-generator.zip">Download</a>
             </div>
           </article>
           <article class="demo-card">
@@ -155,7 +176,7 @@
             <div class="demo-content">
               <h3>Software/SaaS Negotiation Strategy</h3>
               <p>Watch the AI tool turn discovery questions into a practical negotiation plan.</p>
-              <a href="https://github.com/courtney-chapman/tools-public/releases/tag/software-saas-negotiation-strategy-v0.1.5">Explore this AI tool</a>
+              <a href="https://github.com/courtney-chapman/tools-public/releases/download/software-saas-negotiation-strategy-v0.1.5/software-saas-negotiation-strategy.zip">Download</a>
             </div>
           </article>
         </div>
@@ -167,17 +188,16 @@
         <div class="support-copy">
           <p class="section-kicker">Support the work</p>
           <h2 id="support-title">Help keep these solutions free.</h2>
-          <p>They are free for noncommercial use. If they help you, consider a voluntary contribution to support their development and maintenance.</p>
-          <p class="support-detail">Contributions help cover software subscriptions and API services.</p>
+          <p>Use these tools for noncommercial work. If one helps you, consider making a voluntary contribution.</p>
+          <p class="support-detail">Your support helps cover software subscriptions and API services.</p>
         </div>
         <a class="button support-button" href="https://www.patreon.com/courtney_chapman/posts/support-work-175991238" target="_blank" rel="noopener">Support on Patreon <span aria-hidden="true">↗</span></a>
       </div>
       <div class="wrap support-panel sharing-note">
         <div class="support-copy">
-          <p class="section-kicker">Built to be used</p>
-          <h2>Shared to spark ideas.</h2>
-          <p>I build these tools to learn and experiment, then share them in case they’re useful to others.</p>
-          <p class="support-detail">You can explore them without creating an account, providing an email address, or requesting access.</p>
+          <p class="section-kicker">Behind the tools</p>
+          <h2>I build, learn, and share.</h2>
+          <p>These projects start as experiments. I learn by building them, then share the tools to give others a head start.</p>
         </div>
         <a class="button support-button" href="mailto:courtneychapman@gmail.com">Contact Me <span aria-hidden="true">↗</span></a>
       </div>
@@ -187,7 +207,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div><span class="footer-brand">Courtney Chapman</span><span class="footer-role">Solutions Architect</span></div>
-      <div class="footer-links"><a href="https://courtneypetersonchapman.notion.site/">Portfolio</a><a href="https://github.com/courtney-chapman/tools-public">GitHub</a><a href="https://www.linkedin.com/in/courtney-peterson-chapman/">LinkedIn</a></div>
+      <div class="footer-links"><a href="https://courtneypetersonchapman.notion.site/">Portfolio</a><a href="https://github.com/courtney-chapman">GitHub</a><a href="https://www.linkedin.com/in/courtney-peterson-chapman/">LinkedIn</a></div>
     </div>
     <div class="wrap footer-bottom"><div class="footer-legal"><p>These tools are free for noncommercial use. For commercial use, <a href="mailto:courtneychapman@gmail.com">please contact me</a>.</p><p>Independent demonstrations, provided as-is. Verify requirements and outputs for use.</p></div></div>
   </footer>

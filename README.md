@@ -2,7 +2,7 @@
 
 **Browse the solutions website:** [courtney-chapman.github.io/tools-public](https://courtney-chapman.github.io/tools-public/)
 
-**Start here:** [Procurement](#procurement) · [Government property](#government-property) · [Contracts](#contracts) · [Finance](#finance) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
+**Start here:** [Procurement](#procurement) · [Government Property](#government-property) · [Contracts](#contracts) · [Finance](#finance) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
 
 > **Provided as-is:** These browser apps and AI plugins help with research, records, and drafts. They may become outdated as rules or guidance change. Verify your contract requirements, current sources, and each output.
 
@@ -73,12 +73,14 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 | <img src="docs/readme/icons/software-saas-negotiation-strategy.png" width="56" alt=""> | **Software/SaaS Negotiation Strategy**<br>Build discovery questions and negotiation plans for SaaS buys under the Simplified Acquisition Threshold.<br><em>Try: “Help me prepare questions and negotiation points for this SaaS renewal.”</em><br>[Download ZIP](https://github.com/courtney-chapman/tools-public/releases/download/software-saas-negotiation-strategy-v0.1.5/software-saas-negotiation-strategy.zip) · [Release](https://github.com/courtney-chapman/tools-public/releases/tag/software-saas-negotiation-strategy-v0.1.5) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/software-saas-negotiation-strategy) |
 
 </details>
+<!-- catalog-extra:Procurement:start -->
+<!-- catalog-extra:Procurement:end -->
 
 ---
 
-## [Government property](#government-property)
+## [Government Property](#government-property)
 
-<img src="docs/readme/banner_property.png" alt="Government property: acquire, record, use, inventory, dispose." width="100%">
+<img src="docs/readme/banner_property.png" alt="Government Property: acquire, record, use, inventory, dispose." width="100%">
 
 ### Browser apps
 
@@ -127,6 +129,8 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 | <img src="docs/readme/icons/government-property-written-direction-request-generator.png" width="56" alt=""> | **Government Property Written Direction Request**<br>Draft and review requests for written Government direction on proposed property actions, conflicting instructions, and unresolved next steps.<br><em>Try: “Draft a request for written direction about property left after contract closeout.”</em><br>[Download ZIP](https://github.com/courtney-chapman/tools-public/releases/download/government-property-written-direction-request-generator-v0.1.3/government-property-written-direction-request-generator.zip) · [Release](https://github.com/courtney-chapman/tools-public/releases/tag/government-property-written-direction-request-generator-v0.1.3) · [Source](https://github.com/courtney-chapman/tools-public/tree/main/plugins/government-property-written-direction-request-generator) |
 
 </details>
+<!-- catalog-extra:Government Property:start -->
+<!-- catalog-extra:Government Property:end -->
 
 ---
 
@@ -156,6 +160,8 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 | <img src="docs/readme/icons/government-shutdown-coordination-tracker.png" width="56" alt=""> | **Government Shutdown Coordination Tracker**<br>Track contract status, Government direction, impacts, and department actions before, during, and after a shutdown in a local browser workspace.<br>[Try online](https://courtney-chapman.github.io/tools-public/apps/government-shutdown-coordination-tracker/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/government-shutdown-coordination-tracker-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/government-shutdown-coordination-tracker/README.md) |
 
 </details>
+<!-- catalog-extra:Contracts:start -->
+<!-- catalog-extra:Contracts:end -->
 
 ---
 

@@ -20,17 +20,30 @@ This directory contains repository-level maintenance guidance.
 
 The root [README](../README.md) is the capability catalog.
 
-The root `index.html` is the GitHub Pages homepage. Its cards come from
-`catalog.js`, generated from the README. When adding or changing a public
-app or plugin, update the README entry and its thumbnail in `assets/thumbs/`,
-then run `python3 support/scripts/build_homepage_catalog.py`. Use
-`python3 support/scripts/build_homepage_catalog.py --check` to confirm the
-catalog is current. The builder also updates the versioned `catalog.js`,
-`app.js`, and `style.css` URLs in `index.html` from their content hashes, so
-returning browsers fetch changed homepage assets. The repository validation
-workflow runs the check and fails when an asset version is stale. Run the
-builder after any homepage JavaScript or CSS change, even when the README
-catalog entries stay the same.
+The root `index.html` is the GitHub Pages homepage. `support/catalog.json` is
+the source for its cards, format directions, and the tool rows in the root
+README. Add or edit a public tool there, keep its thumbnail in
+`assets/thumbs/` and README icon in `docs/readme/icons/`, then run
+`python3 support/scripts/build_homepage_catalog.py`. The builder generates
+`catalog.js` and the README rows.
+It also updates the versioned `catalog.js`, `app.js`, `copy-prompt.js`, and
+`style.css` URLs so returning browsers fetch changed assets. Run the builder
+after any homepage JavaScript or CSS change, even if catalog entries did not
+change. Use `python3 support/scripts/build_homepage_catalog.py --check` to
+confirm generated files are current; repository validation runs this check.
+
+Each format has one entry in the `formats` array with its section name,
+directions, and card action labels. Add tools to `entries` with that format's
+ID. Formats without entries do not appear on the site or in the README. For
+future Python packages, provide a verified requirements note and a setup URL;
+for standalone videos, provide a watch URL. Keep a tool-specific demo with its
+tool or link it directly from that tool's card. AI plugin entries also need
+platforms supported by their manifests and marketplace listings, a fictional
+starter prompt, and an expected result. Cards link directly to each release
+ZIP; the AI Plugins section displays compact setup directions for ChatGPT web,
+Codex, and Claude Code. Keep them aligned with `docs/install-plugins.md`. The ZIP contents and
+repository manifests should support every listed platform; an AI response
+alone does not prove installation.
 Keep collection graphics in `assets/collections/` and the page's social
 preview metadata in `index.html` current when the site design changes.
 

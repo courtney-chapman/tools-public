@@ -110,3 +110,6 @@
 .copy-prompt{border:1px solid #95bfdf;border-radius:7px;background:#fff;color:#135b99;padding:7px 11px;font:inherit;font-weight:800;cursor:pointer}
 .copy-prompt:hover{background:#edf7ff}
 @media(max-width:600px){.catalog-jumps{gap:8px}.catalog-jumps a{font-size:.8rem}.catalog-format{margin-top:22px;padding-top:23px}}
+
+.catalog-format .tool-actions:has(a:nth-child(3)){flex-wrap:wrap}
+.catalog-format .tool-actions:has(a:nth-child(3)) a{white-space:normal}

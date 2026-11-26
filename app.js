@@ -104,6 +104,9 @@
     if (item.secondary_url && format.secondary_label) {
       actions.append(action(item.secondary_url, format.secondary_label));
     }
+    if (item.tertiary_url) {
+      actions.append(action(item.tertiary_url, "Download HTML"));
+    }
     content.append(actions);
     if (item.starter_prompt) content.append(promptBlock(item));
     article.append(media, content);

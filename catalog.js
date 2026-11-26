@@ -373,5 +373,15 @@ window.catalogItems = [
     "format": "browser-app",
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/government-shutdown-coordination-tracker/",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/government-shutdown-coordination-tracker-v1.0.0/government-shutdown-coordination-tracker.zip"
+  },
+  {
+    "id": "rea-coordination-package-builder",
+    "title": "REA Coordination & Package Builder",
+    "description": "Coordinate potential equitable adjustment events, track notices and impacts, and prepare working REA packages locally.",
+    "image": "assets/thumbs/thumb_rea-coordination-package-builder.png",
+    "domain": "Contracts",
+    "format": "browser-app",
+    "primary_url": "https://courtney-chapman.github.io/tools-public/apps/rea-coordination-package-builder/",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/rea-coordination-package-builder-v1.0.0/rea-coordination-package-builder.zip"
   }
 ];

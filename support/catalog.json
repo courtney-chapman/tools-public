@@ -543,6 +543,19 @@
       "offline_release_url": "https://github.com/courtney-chapman/tools-public/releases/tag/government-shutdown-coordination-tracker-v1.0.0",
       "guide_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/government-shutdown-coordination-tracker/README.md",
       "offline_zip_url": "https://github.com/courtney-chapman/tools-public/releases/download/government-shutdown-coordination-tracker-v1.0.0/government-shutdown-coordination-tracker.zip"
+    },
+    {
+      "id": "rea-coordination-package-builder",
+      "topic": "Contracts",
+      "format": "browser-app",
+      "title": "REA Coordination & Package Builder",
+      "description": "Coordinate potential equitable adjustment events, track notices and impacts, and prepare working REA packages locally.",
+      "image": "assets/thumbs/thumb_rea-coordination-package-builder.png",
+      "readme_icon": "docs/readme/icons/rea-coordination-package-builder.png",
+      "online_url": "https://courtney-chapman.github.io/tools-public/apps/rea-coordination-package-builder/",
+      "offline_release_url": "https://github.com/courtney-chapman/tools-public/releases/tag/rea-coordination-package-builder-v1.0.0",
+      "guide_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/rea-coordination-package-builder/README.md",
+      "offline_zip_url": "https://github.com/courtney-chapman/tools-public/releases/download/rea-coordination-package-builder-v1.0.0/rea-coordination-package-builder.zip"
     }
   ]
 }

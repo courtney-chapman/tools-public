@@ -171,6 +171,11 @@ Build the CDRLs and Contracts Deliverables download with
 nine-file ZIP contains the offline app, fictional CSV example, public guide,
 and PolyForm Noncommercial license. The release image is stored separately.
 
+Build the REA Coordination & Package Builder download with
+`python3 support/scripts/package_rea_coordination.py`. The deterministic,
+eight-file ZIP contains the offline app, public guide, source references,
+and PolyForm Noncommercial license. The release image is stored separately.
+
 - Use the product name shown on its release card as the release title. Keep the
   version in one descriptive Git tag; do not create an unversioned alias tag.
 - Store reviewed PNG release cards in `docs/release-images/`. Link each release

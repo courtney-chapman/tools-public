@@ -166,6 +166,12 @@ contains only the approved self-contained `index.html`; the public guide
 and license remain alongside it in the repository. The release image is
 stored separately from the app ZIP.
 
+Build the Behind the Buy: The Butterfly Effect training download with
+`python3 support/scripts/package_behind_the_buy_butterfly_effect.py`. Its
+deterministic ZIP contains only the approved self-contained `index.html`;
+the public guide and license remain alongside it in the repository. The
+release image is stored separately from the app ZIP.
+
 ## Release presentation
 
 Build the Weighted Guidelines Calculator download with

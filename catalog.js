@@ -396,12 +396,11 @@ window.catalogItems = [
     "id": "cpars-coordination-tracker",
     "title": "CPARS Coordination Tracker",
     "description": "Coordinate evaluations, Government outreach, department inputs, contractor responses, and follow-up in a local browser workspace.",
-    "image": "assets/thumbs/thumb_cpars-coordination-tracker.svg",
+    "image": "assets/thumbs/thumb_cpars-coordination-tracker.png",
     "domain": "Contracts",
     "format": "browser-app",
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/cpars-coordination-tracker/",
-    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/cpars-coordination-tracker-v1.0.0/cpars-coordination-tracker.zip",
-    "tertiary_url": "https://github.com/courtney-chapman/tools-public/releases/download/cpars-coordination-tracker-v1.0.0/cpars-coordination-tracker.html"
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/cpars-coordination-tracker-v1.0.0/cpars-coordination-tracker.html"
   },
   {
     "id": "behind-the-buy",

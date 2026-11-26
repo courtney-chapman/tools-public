@@ -84,13 +84,13 @@ def readme_row(entry: dict, format_: dict) -> str:
     icon, title, description = (entry[key] for key in ("readme_icon", "title", "description"))
     if entry["format"] == "browser-app":
         online, release, guide = (entry[key] for key in ("online_url", "offline_release_url", "guide_url"))
-        html_link = f' · [Download HTML]({entry["standalone_html_url"]})' if entry.get("standalone_html_url") else ""
+        download = entry.get("standalone_html_url", release)
         if entry["topic"] == "Procurement":
             return (f'    <tr><td><img src="{icon}" width="56" alt=""></td><td><strong>{title}</strong><br>'
-                    f'{description}<br><a href="{online}">Try online</a> · <a href="{release}">Download</a>'
-                    f' · <a href="{guide}">Guide</a>{html_link}</td></tr>')
+                    f'{description}<br><a href="{online}">Try online</a> · <a href="{download}">Download</a>'
+                    f' · <a href="{guide}">Guide</a></td></tr>')
         return (f'| <img src="{icon}" width="56" alt=""> | **{title}**<br>{description}<br>'
-                f'[Try online]({online}) · [Download]({release}) · [Guide]({guide}){html_link} |')
+                f'[Try online]({online}) · [Download]({download}) · [Guide]({guide}) |')
     if entry["format"] == "training":
         online, release, guide = (entry[key] for key in ("online_url", "offline_release_url", "guide_url"))
         return (f'| <img src="{icon}" width="56" alt=""> | **{title}**<br>{description}<br>'
@@ -165,9 +165,7 @@ def site_items(data: dict) -> list[dict]:
         item = {key: entry[key] for key in ("id", "title", "description", "image")}
         item.update(domain=entry["topic"], format=entry["format"])
         if entry["format"] in ("browser-app", "training"):
-            item.update(primary_url=entry["online_url"], secondary_url=entry["offline_zip_url"])
-            if entry.get("standalone_html_url"):
-                item["tertiary_url"] = entry["standalone_html_url"]
+            item.update(primary_url=entry["online_url"], secondary_url=entry.get("standalone_html_url", entry["offline_zip_url"]))
         elif entry["format"] == "ai-plugin":
             item.update(primary_url=entry["plugin_zip_url"], starter_prompt=entry["starter_prompt"],
                         expected_result=entry["expected_result"])

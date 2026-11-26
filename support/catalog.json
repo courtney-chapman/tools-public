@@ -571,7 +571,7 @@
       "format": "browser-app",
       "title": "CPARS Coordination Tracker",
       "description": "Coordinate evaluations, Government outreach, department inputs, contractor responses, and follow-up in a local browser workspace.",
-      "image": "assets/thumbs/thumb_cpars-coordination-tracker.svg",
+      "image": "assets/thumbs/thumb_cpars-coordination-tracker.png",
       "readme_icon": "docs/readme/icons/cpars-coordination-tracker.png",
       "online_url": "https://courtney-chapman.github.io/tools-public/apps/cpars-coordination-tracker/",
       "offline_release_url": "https://github.com/courtney-chapman/tools-public/releases/tag/cpars-coordination-tracker-v1.0.0",

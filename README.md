@@ -84,7 +84,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 |  |  |
 | --- | --- |
-| <img src="docs/readme/icons/behind-the-buy.png" width="56" alt=""> | **Behind the Buy**<br>See the records behind one purchase, from request to closeout, across four narrated scenarios.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-v1.0.1) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy/README.md) |
+| <img src="docs/readme/icons/behind-the-buy.png" width="56" alt=""> | **Behind the Buy**<br>See the records behind one purchase, from request to closeout, across four narrated scenarios.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-v1.0.2) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy/README.md) |
 
 </details>
 <!-- catalog-extra:Procurement:end -->

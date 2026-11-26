@@ -74,6 +74,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 </details>
 <!-- catalog-extra:Procurement:start -->
+
 ### Training
 
 *Watch a narrated walkthrough online, or download it to watch offline.*

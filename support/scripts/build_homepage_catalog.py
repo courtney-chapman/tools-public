@@ -154,8 +154,9 @@ def generated_readme(source: str, data: dict) -> str:
                                f'<summary><strong>See {format_["label"].lower()} ({len(group)})</strong></summary>',
                                '', '|  |  |', '| --- | --- |', *(readme_row(entry, format_) for entry in group),
                                '', '</details>', ''))
+        body = ("\n" if extras else "") + "\n".join(extras)
         source = replace_marked(source, f"<!-- catalog-extra:{topic}:start -->",
-                                f"<!-- catalog-extra:{topic}:end -->", "\n".join(extras))
+                                f"<!-- catalog-extra:{topic}:end -->", body)
     return source
 
 

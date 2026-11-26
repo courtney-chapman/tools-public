@@ -10,7 +10,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 ROOT = Path(__file__).resolve().parents[2]
 APP = ROOT / "apps/behind-the-buy"
 OUTPUT = ROOT / ".build/app-zips/behind-the-buy.zip"
-EXPECTED_HTML_SHA256 = "dba97b419cde12aeecc42f1191501a145e1bdc7b32cf168666a7b6cb3cf4805c"
+EXPECTED_HTML_SHA256 = "b53b787a332950667d30d475d8b827d2f34d15af335c052d3d26080b24283e0c"
 STAMP = (1980, 1, 1, 0, 0, 0)
 
 

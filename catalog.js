@@ -410,6 +410,6 @@ window.catalogItems = [
     "domain": "Procurement",
     "format": "training",
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/",
-    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-v1.0.0/behind-the-buy.zip"
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-v1.0.1/behind-the-buy.zip"
   }
 ];

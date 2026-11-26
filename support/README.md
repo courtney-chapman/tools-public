@@ -39,8 +39,9 @@ future Python packages, provide a verified requirements note and a setup URL;
 for standalone videos, provide a watch URL. Keep a tool-specific demo with its
 tool or link it directly from that tool's card. AI plugin entries also need
 platforms supported by their manifests and marketplace listings, a fictional
-starter prompt, and an expected result. Cards link directly to each release
-ZIP; the AI Plugins section displays compact setup directions for ChatGPT web,
+starter prompt, and an expected result. Browser-app cards link to the release
+ZIP or, when listed, a direct standalone HTML asset. The AI Plugins section
+displays compact setup directions for ChatGPT web,
 Codex, and Claude Code. Keep them aligned with `docs/install-plugins.md`. The ZIP contents and
 repository manifests should support every listed platform; an AI response
 alone does not prove installation.

@@ -73,6 +73,8 @@ jobs:
         run: python3 support/scripts/package_subcontract_closeout.py
       - name: Test subcontract closeout app
         run: node support/scripts/test_subcontract_closeout.cjs
+      - name: Validate Behind the Buy training package
+        run: python3 support/scripts/package_behind_the_buy.py
       - name: Validate Weighted Guidelines Calculator package
         run: python3 support/scripts/package_weighted_guidelines.py
       - name: Test Weighted Guidelines Calculator bundle

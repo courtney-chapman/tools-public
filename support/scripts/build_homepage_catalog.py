@@ -50,7 +50,7 @@ def validate(data: dict) -> None:
         assert entry["title"] and entry["description"], slug
         assert (ROOT / entry["image"]).is_file(), slug
         assert (ROOT / entry["readme_icon"]).is_file(), slug
-        if entry["format"] == "browser-app":
+        if entry["format"] in ("browser-app", "training"):
             assert (ROOT / "apps" / slug / "index.html").is_file(), slug
             assert entry["online_url"] == SITE + f"apps/{slug}/", slug
             assert entry["offline_release_url"].startswith(REPO + "/releases/tag/"), slug
@@ -91,6 +91,10 @@ def readme_row(entry: dict, format_: dict) -> str:
                     f' · <a href="{guide}">Guide</a>{html_link}</td></tr>')
         return (f'| <img src="{icon}" width="56" alt=""> | **{title}**<br>{description}<br>'
                 f'[Try online]({online}) · [Download]({release}) · [Guide]({guide}){html_link} |')
+    if entry["format"] == "training":
+        online, release, guide = (entry[key] for key in ("online_url", "offline_release_url", "guide_url"))
+        return (f'| <img src="{icon}" width="56" alt=""> | **{title}**<br>{description}<br>'
+                f'[Watch]({online}) · [Download]({release}) · [Guide]({guide}) |')
     if entry["format"] == "ai-plugin":
         zip_url, release, source = (entry[key] for key in ("plugin_zip_url", "plugin_release_url", "source_url"))
         return (f'| <img src="{icon}" width="56" alt=""> | **{title}**<br>{description}<br>'
@@ -160,7 +164,7 @@ def site_items(data: dict) -> list[dict]:
     for entry in data["entries"]:
         item = {key: entry[key] for key in ("id", "title", "description", "image")}
         item.update(domain=entry["topic"], format=entry["format"])
-        if entry["format"] == "browser-app":
+        if entry["format"] in ("browser-app", "training"):
             item.update(primary_url=entry["online_url"], secondary_url=entry["offline_zip_url"])
             if entry.get("standalone_html_url"):
                 item["tertiary_url"] = entry["standalone_html_url"]

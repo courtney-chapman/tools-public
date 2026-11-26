@@ -159,6 +159,12 @@ Build the Government Shutdown Coordination Tracker download with
 eight-file ZIP contains the browser app, public guide, and PolyForm Noncommercial license.
 The release image is stored separately.
 
+Build the Behind the Buy training download with
+`python3 support/scripts/package_behind_the_buy.py`. Its deterministic ZIP
+contains only the approved self-contained `index.html`; the public guide
+and license remain alongside it in the repository. The release image is
+stored separately from the app ZIP.
+
 ## Release presentation
 
 Build the Weighted Guidelines Calculator download with

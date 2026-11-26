@@ -16,6 +16,14 @@ window.catalogFormats = [
     "guide_template_id": "ai-plugin-install-guide"
   },
   {
+    "id": "training",
+    "label": "Training",
+    "singular": "Training",
+    "instruction": "Watch a narrated walkthrough online, or download it to watch offline.",
+    "primary_label": "Watch",
+    "secondary_label": "Download"
+  },
+  {
     "id": "python-package",
     "label": "Python Packages",
     "singular": "Python package",
@@ -394,5 +402,15 @@ window.catalogItems = [
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/cpars-coordination-tracker/",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/cpars-coordination-tracker-v1.0.0/cpars-coordination-tracker.zip",
     "tertiary_url": "https://github.com/courtney-chapman/tools-public/releases/download/cpars-coordination-tracker-v1.0.0/cpars-coordination-tracker.html"
+  },
+  {
+    "id": "behind-the-buy",
+    "title": "Behind the Buy",
+    "description": "See the records behind one purchase, from request to closeout, across four narrated scenarios.",
+    "image": "assets/thumbs/thumb_behind-the-buy.png",
+    "domain": "Procurement",
+    "format": "training",
+    "primary_url": "https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-v1.0.0/behind-the-buy.zip"
   }
 ];

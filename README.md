@@ -4,7 +4,7 @@
 
 **Start here:** [Procurement](#procurement) · [Government Property](#government-property) · [Contracts](#contracts) · [Finance](#finance) · [Releases](https://github.com/courtney-chapman/tools-public/releases)
 
-> **Provided as-is:** These browser apps and AI plugins help with research, records, and drafts. They may become outdated as rules or guidance change. Verify your contract requirements, current sources, and each output.
+> **Provided as-is:** These browser apps, AI plugins, and training materials help with research, records, learning, and drafts. They may become outdated as rules or guidance change. Verify your contract requirements, current sources, and each output.
 
 ## [Procurement](#procurement)
 
@@ -74,6 +74,18 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 
 </details>
 <!-- catalog-extra:Procurement:start -->
+### Training
+
+*Watch a narrated walkthrough online, or download it to watch offline.*
+
+<details markdown="1">
+<summary><strong>See training (1)</strong></summary>
+
+|  |  |
+| --- | --- |
+| <img src="docs/readme/icons/behind-the-buy.png" width="56" alt=""> | **Behind the Buy**<br>See the records behind one purchase, from request to closeout, across four narrated scenarios.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy/README.md) |
+
+</details>
 <!-- catalog-extra:Procurement:end -->
 
 ---

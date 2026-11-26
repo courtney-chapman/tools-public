@@ -411,5 +411,15 @@ window.catalogItems = [
     "format": "training",
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-v1.0.1/behind-the-buy.zip"
+  },
+  {
+    "id": "behind-the-buy-butterfly-effect",
+    "title": "Behind the Buy: The Butterfly Effect",
+    "description": "One procurement change, four ways it ripples: rework, hidden suppliers, payment terms and billing cycles.",
+    "image": "assets/thumbs/thumb_behind-the-buy-butterfly-effect.png",
+    "domain": "Procurement",
+    "format": "training",
+    "primary_url": "https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-butterfly-effect/",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-butterfly-effect-v1.0.0/behind-the-buy-butterfly-effect.zip"
   }
 ];

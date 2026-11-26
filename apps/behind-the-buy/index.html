@@ -1489,10 +1489,87 @@ function play(scenario) {
   document.addEventListener("keydown", e => { if (e.code === "Space" && e.target === document.body) { e.preventDefault(); playBtn.click(); } });
 }
 
-// ---- Narration ----
+// ---- Narration (Web Audio) ----
+// Phones, iPhone Safari especially, cut and skip when each clip is a separate
+// <audio> element started outside a tap and re-seeked to stay in sync. So the
+// clips are decoded once and scheduled on one AudioContext, which a single tap
+// unlocks. The animation clock (tl.time()) stays the master: on pause the clips
+// stop, and on resume, Replay or any jump they are rescheduled from the new time.
+function startNarration(tl, state, isPlaying) {
+  const v = state.voice, btn = document.getElementById("sound");
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return startNarrationElements(tl, state, isPlaying);
+  // iPhone: treat this as media playback, so the silent switch doesn't mute it.
+  try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) { /* not supported */ }
+  const ctx = new Ctx(), gain = ctx.createGain();
+  gain.connect(ctx.destination);
+  let buffers = null, sources = [], anchor = null, soundOn = true;
+  const running = () => ctx.state === "running";
+  const label = () => {
+    btn.textContent = !running() ? "Turn on sound" : soundOn ? "Mute" : "Unmute";
+    btn.classList.toggle("attention", !running());
+  };
+  // Must run inside a tap or click. Playing a one-sample silent buffer completes the unlock on iOS.
+  const unlock = () => {
+    ctx.resume().then(label, label);
+    const s = ctx.createBufferSource();
+    s.buffer = ctx.createBuffer(1, 1, 22050);
+    s.connect(ctx.destination);
+    s.start(0);
+  };
+  const stopAll = () => { sources.forEach(s => { try { s.stop(); } catch (e) { /* already stopped */ } }); sources = []; anchor = null; };
+  // Start every clip that isn't over yet, at its place relative to animation time t.
+  const schedule = t => {
+    stopAll();
+    const now = ctx.currentTime + 0.05;
+    buffers.forEach((buf, i) => {
+      const c = state.cues[i];
+      if (c == null || !buf) return;
+      const offset = t - c;
+      if (offset >= buf.duration) return;
+      const s = ctx.createBufferSource();
+      s.buffer = buf;
+      s.connect(gain);
+      if (offset >= 0) s.start(now, offset); else s.start(now - offset);
+      sources.push(s);
+    });
+    anchor = { t, at: now };
+  };
+
+  btn.hidden = false;
+  btn.addEventListener("click", () => {
+    if (ctx.state === "closed") return;     // fell back to <audio>
+    if (!running()) unlock();
+    else { soundOn = !soundOn; gain.gain.value = soundOn ? 1 : 0; }
+    label();
+  });
+  // Any click on the playback controls also counts as permission for sound.
+  document.querySelectorAll(".controls button, #start").forEach(b => b.addEventListener("click", () => { if (ctx.state !== "closed" && !running()) unlock(); }));
+  ctx.onstatechange = label;
+  unlock();   // succeeds when the scenario was started by a click (the chooser); otherwise "Turn on sound" shows
+  label();
+
+  const decode = src => fetch(src).then(r => r.arrayBuffer())
+    .then(a => new Promise((res, rej) => ctx.decodeAudioData(a, res, rej))).catch(() => null);
+  Promise.all(v.clips.map(decode)).then(bufs => {
+    if (bufs.some(b => !b)) {            // Any failed clip needs the complete fallback narration.
+      ctx.close(); return startNarrationElements(tl, state, isPlaying);
+    }
+    buffers = bufs;
+    (function tick() {
+      const t = tl.time(), go = isPlaying() && running();
+      if (!go) { if (anchor) stopAll(); }
+      // (Re)schedule when starting, after a jump, or if the clocks ever drift apart.
+      else if (!anchor || Math.abs(t - (anchor.t + ctx.currentTime - anchor.at)) > 0.35) schedule(t);
+      requestAnimationFrame(tick);
+    })();
+  });
+}
+
+// Fallback: one <audio> element per clip, kept in step with the animation clock.
 // Each clip plays while the animation clock is inside its cue. The clock drives
 // everything, so pause, resume and replay stay in sync.
-function startNarration(tl, state, isPlaying) {
+function startNarrationElements(tl, state, isPlaying) {
   const v = state.voice, btn = document.getElementById("sound");
   const audios = v.clips.map(src => { const a = new Audio(src); a.preload = "auto"; return a; });
   let soundOn = true, blocked = false;

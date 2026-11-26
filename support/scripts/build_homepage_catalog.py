@@ -56,6 +56,8 @@ def validate(data: dict) -> None:
             assert entry["offline_release_url"].startswith(REPO + "/releases/tag/"), slug
             tag = entry["offline_release_url"].split("/releases/tag/", 1)[1]
             assert entry["offline_zip_url"] == REPO + f"/releases/download/{tag}/{slug}.zip", slug
+            if html_url := entry.get("standalone_html_url"):
+                assert html_url == REPO + f"/releases/download/{tag}/{slug}.html", slug
         elif entry["format"] == "ai-plugin":
             assert entry["source_url"] == REPO + f"/tree/main/plugins/{slug}", slug
             assert "fictional" in entry["starter_prompt"].lower(), f"Starter prompt needs fictional context: {slug}"
@@ -82,12 +84,13 @@ def readme_row(entry: dict, format_: dict) -> str:
     icon, title, description = (entry[key] for key in ("readme_icon", "title", "description"))
     if entry["format"] == "browser-app":
         online, release, guide = (entry[key] for key in ("online_url", "offline_release_url", "guide_url"))
+        html_link = f' · [Download HTML]({entry["standalone_html_url"]})' if entry.get("standalone_html_url") else ""
         if entry["topic"] == "Procurement":
             return (f'    <tr><td><img src="{icon}" width="56" alt=""></td><td><strong>{title}</strong><br>'
                     f'{description}<br><a href="{online}">Try online</a> · <a href="{release}">Download</a>'
-                    f' · <a href="{guide}">Guide</a></td></tr>')
+                    f' · <a href="{guide}">Guide</a>{html_link}</td></tr>')
         return (f'| <img src="{icon}" width="56" alt=""> | **{title}**<br>{description}<br>'
-                f'[Try online]({online}) · [Download]({release}) · [Guide]({guide}) |')
+                f'[Try online]({online}) · [Download]({release}) · [Guide]({guide}){html_link} |')
     if entry["format"] == "ai-plugin":
         zip_url, release, source = (entry[key] for key in ("plugin_zip_url", "plugin_release_url", "source_url"))
         return (f'| <img src="{icon}" width="56" alt=""> | **{title}**<br>{description}<br>'
@@ -159,6 +162,8 @@ def site_items(data: dict) -> list[dict]:
         item.update(domain=entry["topic"], format=entry["format"])
         if entry["format"] == "browser-app":
             item.update(primary_url=entry["online_url"], secondary_url=entry["offline_zip_url"])
+            if entry.get("standalone_html_url"):
+                item["tertiary_url"] = entry["standalone_html_url"]
         elif entry["format"] == "ai-plugin":
             item.update(primary_url=entry["plugin_zip_url"], starter_prompt=entry["starter_prompt"],
                         expected_result=entry["expected_result"])

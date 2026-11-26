@@ -176,6 +176,11 @@ Build the REA Coordination & Package Builder download with
 eight-file ZIP contains the offline app, public guide, source references,
 and PolyForm Noncommercial license. The release image is stored separately.
 
+Build the CPARS Coordination Tracker downloads with
+`python3 support/scripts/package_cpars_coordination.py`. It creates an
+eight-file offline ZIP and a direct one-file HTML asset under `.build/app-zips/`.
+The HTML includes the license text; both assets are for the same release tag.
+
 - Use the product name shown on its release card as the release title. Keep the
   version in one descriptive Git tag; do not create an unversioned alias tag.
 - Store reviewed PNG release cards in `docs/release-images/`. Link each release

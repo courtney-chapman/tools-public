@@ -1,0 +1,210 @@
+/* Tools color tokens, version 1.0.
+   Drop this file into an app and use only these variables in its own CSS.
+   Light is the default. Dark follows the system setting, and a page can
+   force either one with <html data-theme="light"> or <html data-theme="dark">.
+   Printing always uses light. */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg: #F4F6F9;            /* page background */
+  --surface: #FFFFFF;       /* cards, panels, form fields, the document preview */
+  --surface-2: #E7EFF8;     /* table headers, sidebars, inset areas */
+  --border: #D2E1F2;        /* dividers and card outlines (decorative) */
+  --border-strong: #6F89AA; /* input, checkbox and select outlines (3:1) */
+
+  /* Text */
+  --text: #0E2841;          /* body text and headings */
+  --text-muted: #4B5563;    /* hints, captions, secondary labels */
+
+  /* Brand and actions */
+  --primary: #1D5FA6;       /* primary buttons, links, selected step */
+  --primary-hover: #174E8A;
+  --on-primary: #FFFFFF;    /* text on --primary */
+  --primary-soft: #D2E1F2;  /* selected rows, active nav item background */
+  --focus: #1D5FA6;         /* focus ring */
+  --accent: #F2B84B;        /* small highlights only, never text */
+  --header: #0E2841;        /* app header bar (navy in both themes) */
+  --on-header: #FFFFFF;
+
+  /* Status: pair the strong color (text, icon, left bar) with its soft background */
+  --success: #1E7B3A;  --success-soft: #E5F3E9;
+  --warning: #8A5A00;  --warning-soft: #FDF3DC;
+  --danger:  #B42318;  --danger-soft:  #FCE9E7;
+  --info:    #1D5FA6;  --info-soft:    #E7EFF8;
+
+  --shadow: 0 1px 2px rgba(14, 40, 65, .06), 0 8px 24px rgba(14, 40, 65, .08);
+
+  /* Type: the apps run offline, so nothing is downloaded. Source Sans 3 and
+     Source Serif 4 are used when installed; otherwise the system font. */
+  --font-sans: "Source Sans 3", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "SF Mono", Menlo, Consolas, monospace;
+  --fs-xs: 12px; --fs-sm: 14px; --fs-base: 16px; --fs-lg: 18px; --fs-xl: 22px; --fs-2xl: 28px;
+  --lh: 1.5;
+
+  /* Space, shape, size */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 48px;
+  --radius-sm: 4px; --radius: 8px; --radius-lg: 12px;
+  --control-h: 40px;   /* buttons and inputs */
+  --content-max: 1200px;
+  --paper-bg: #FFFFFF; --paper-text: #000000; --paper-border: #8A8A8A; --paper-muted: #333333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0A1828;
+    --surface: #0F2238;
+    --surface-2: #152C47;
+    --border: #264463;
+    --border-strong: #5A7DA3;
+    --text: #E7EFF8;
+    --text-muted: #A3B8D1;
+    --primary: #4FB3FF;
+    --primary-hover: #7CC6FF;
+    --on-primary: #0E2841;
+    --primary-soft: #16314F;
+    --focus: #4FB3FF;
+    --accent: #F2B84B;
+    --header: #071322;
+    --on-header: #E7EFF8;
+    --success: #6FCF8E;  --success-soft: #12301F;
+    --warning: #F2B84B;  --warning-soft: #33270C;
+    --danger:  #FF8A80;  --danger-soft:  #3A1614;
+    --info:    #4FB3FF;  --info-soft:    #16314F;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0A1828;
+  --surface: #0F2238;
+  --surface-2: #152C47;
+  --border: #264463;
+  --border-strong: #5A7DA3;
+  --text: #E7EFF8;
+  --text-muted: #A3B8D1;
+  --primary: #4FB3FF;
+  --primary-hover: #7CC6FF;
+  --on-primary: #0E2841;
+  --primary-soft: #16314F;
+  --focus: #4FB3FF;
+  --accent: #F2B84B;
+  --header: #071322;
+  --on-header: #E7EFF8;
+  --success: #6FCF8E;  --success-soft: #12301F;
+  --warning: #F2B84B;  --warning-soft: #33270C;
+  --danger:  #FF8A80;  --danger-soft:  #3A1614;
+  --info:    #4FB3FF;  --info-soft:    #16314F;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+/* Printed forms are always light, black on white. */
+@media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    color-scheme: light;
+    --bg: #FFFFFF; --surface: #FFFFFF; --surface-2: #FFFFFF;
+    --border: #8A8A8A; --border-strong: #000000;
+    --text: #000000; --text-muted: #333333;
+  }
+}
+
+/* Base wiring every app should keep */
+body { background: var(--bg); color: var(--text); font: var(--fs-base)/var(--lh) var(--font-sans); }
+a { color: var(--primary); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+::selection { background: var(--primary-soft); color: var(--text); }
+
+/* Keep navigation and controls comfortable when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Shared app shell. Keep this block identical in every standalone app. */
+header.app-brand-header {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  background: var(--header) !important;
+  color: var(--on-header) !important;
+  width: 100% !important;
+  height: 88px !important;
+  margin: 0 !important;
+  padding: 16px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+header.app-brand-header .app-brand-header__inner {
+  width: 100% !important;
+  max-width: var(--content-max, 1200px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: block !important;
+  text-align: left !important;
+}
+header.app-brand-header .app-brand-header__eyebrow {
+  color: var(--on-header) !important;
+  opacity: .78;
+  font: 700 12px/1.3 var(--font-sans) !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin: 0 0 6px !important;
+}
+header.app-brand-header h1 {
+  color: var(--on-header) !important;
+  font: 700 18px/1.25 var(--font-sans) !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+.app-brand-intro {
+  box-sizing: border-box;
+  width: min(var(--content-max, 1200px), calc(100% - 32px));
+  margin: 16px auto 0;
+  color: var(--text-muted);
+  font: 400 16px/1.45 var(--font-sans);
+}
+.app-brand-intro p { margin: 0 !important; }
+.app-brand-intro__links { margin-top: 4px !important; }
+
+footer.app-brand-footer {
+  box-sizing: border-box !important;
+  background: var(--header) !important;
+  color: var(--on-header) !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font: 400 14px/1.5 var(--font-sans) !important;
+}
+footer.app-brand-footer .app-brand-footer__inner {
+  width: min(var(--content-max, 1200px), calc(100% - 32px)) !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 8px 24px !important;
+}
+footer.app-brand-footer a {
+  color: inherit !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 600px) {
+  header.app-brand-header { height: auto !important; min-height: 110px !important; }
+  .app-brand-intro { font-size: 15px; }
+}
+@media print { .app-brand-intro { display: none !important; } }

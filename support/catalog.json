@@ -556,6 +556,20 @@
       "offline_release_url": "https://github.com/courtney-chapman/tools-public/releases/tag/rea-coordination-package-builder-v1.0.0",
       "guide_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/rea-coordination-package-builder/README.md",
       "offline_zip_url": "https://github.com/courtney-chapman/tools-public/releases/download/rea-coordination-package-builder-v1.0.0/rea-coordination-package-builder.zip"
+    },
+    {
+      "id": "cpars-coordination-tracker",
+      "topic": "Contracts",
+      "format": "browser-app",
+      "title": "CPARS Coordination Tracker",
+      "description": "Coordinate evaluations, Government outreach, department inputs, contractor responses, and follow-up in a local browser workspace.",
+      "image": "assets/thumbs/thumb_cpars-coordination-tracker.svg",
+      "readme_icon": "docs/readme/icons/cpars-coordination-tracker.png",
+      "online_url": "https://courtney-chapman.github.io/tools-public/apps/cpars-coordination-tracker/",
+      "offline_release_url": "https://github.com/courtney-chapman/tools-public/releases/tag/cpars-coordination-tracker-v1.0.0",
+      "guide_url": "https://github.com/courtney-chapman/tools-public/blob/main/apps/cpars-coordination-tracker/README.md",
+      "offline_zip_url": "https://github.com/courtney-chapman/tools-public/releases/download/cpars-coordination-tracker-v1.0.0/cpars-coordination-tracker.zip",
+      "standalone_html_url": "https://github.com/courtney-chapman/tools-public/releases/download/cpars-coordination-tracker-v1.0.0/cpars-coordination-tracker.html"
     }
   ]
 }

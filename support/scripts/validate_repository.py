@@ -124,8 +124,20 @@ def validate() -> list[str]:
                 if not (path.parent / target).resolve().exists():
                     errors.append(f"{relative_path}:{number}: broken local link: {raw}")
 
+    catalog = json.loads((ROOT / "support/catalog.json").read_text(encoding="utf-8"))
+    training_ids = {entry["id"] for entry in catalog["entries"] if entry["format"] == "training"}
     for index_path in sorted((ROOT / "apps").glob("*/index.html")):
         markup = index_path.read_text(encoding="utf-8")
+        if index_path.parent.name in training_ids:
+            footer = AppFooterParser()
+            footer.feed(markup)
+            if footer.count != 2 or "Built by Courtney" not in " ".join(footer.text) or APP_CATALOG_URL not in footer.links:
+                errors.append(f"{index_path.parent.name}: training footer credit or More tools link is missing")
+            if not all(term in markup for term in ("<title>", 'name="description"', 'property="og:title"', "What this training covers")):
+                errors.append(f"{index_path.parent.name}: training metadata or summary is missing")
+            if re.search(r"<(?:script|link)\b[^>]*(?:src|href)=[\"\'](?!https://courtney-chapman.github.io/tools-public/)", markup, re.IGNORECASE):
+                errors.append(f"{index_path.parent.name}: training uses an external script or style")
+            continue
         footer = AppFooterParser()
         footer.feed(markup)
         label = index_path.parent.name

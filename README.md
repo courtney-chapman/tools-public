@@ -85,7 +85,7 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 |  |  |
 | --- | --- |
 | <img src="docs/readme/icons/behind-the-buy.png" width="56" alt=""> | **Behind the Buy**<br>See the records behind one purchase, from request to closeout, across four narrated scenarios.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-v1.0.2) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy/README.md) |
-| <img src="docs/readme/icons/behind-the-buy-butterfly-effect.png" width="56" alt=""> | **Behind the Buy: The Butterfly Effect**<br>One procurement change, four ways it ripples: rework, hidden suppliers, payment terms and billing cycles.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-butterfly-effect/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-butterfly-effect-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy-butterfly-effect/README.md) |
+| <img src="docs/readme/icons/behind-the-buy-butterfly-effect.png" width="56" alt=""> | **Behind the Buy: The Butterfly Effect**<br>One procurement change, four ways it ripples: rework, hidden suppliers, payment terms and billing cycles.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-butterfly-effect/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-butterfly-effect-v1.0.1) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy-butterfly-effect/README.md) |
 
 </details>
 <!-- catalog-extra:Procurement:end -->

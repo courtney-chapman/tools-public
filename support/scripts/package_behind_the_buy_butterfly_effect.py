@@ -10,7 +10,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 ROOT = Path(__file__).resolve().parents[2]
 APP = ROOT / "apps/behind-the-buy-butterfly-effect"
 OUTPUT = ROOT / ".build/app-zips/behind-the-buy-butterfly-effect.zip"
-EXPECTED_HTML_SHA256 = "df5c80a3bf4e62e56494f47127497b75fa49289f9edade1377aba56feaa2edc0"
+EXPECTED_HTML_SHA256 = "023679d113d848f197e33635cd70dc24fbc2a6d30384905bc8b0b9efe3867878"
 STAMP = (1980, 1, 1, 0, 0, 0)
 
 

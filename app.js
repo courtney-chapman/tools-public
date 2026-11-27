@@ -204,15 +204,47 @@
   const demoVideos = [...document.querySelectorAll('.demo-video')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const visibleVideos = new Set();
+  const userPausedVideos = new WeakSet();
+  const userPlayedVideos = new WeakSet();
   function syncDemo(video) {
-    if (visibleVideos.has(video) && !reducedMotion.matches) video.play().catch(() => {});
+    if (visibleVideos.has(video) && !userPausedVideos.has(video) &&
+        (!reducedMotion.matches || userPlayedVideos.has(video))) video.play().catch(() => {});
     else video.pause();
   }
+  demoVideos.forEach(video => {
+    if (reducedMotion.matches) {
+      video.autoplay = false;
+      video.pause();
+      video.load();
+    }
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        userPausedVideos.delete(video);
+        userPlayedVideos.add(video);
+        video.play().catch(() => {});
+      } else {
+        userPlayedVideos.delete(video);
+        userPausedVideos.add(video);
+        video.pause();
+      }
+    });
+    video.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        video.click();
+      }
+    });
+    video.addEventListener('play', () => video.setAttribute('aria-pressed', 'true'));
+    video.addEventListener('pause', () => video.setAttribute('aria-pressed', 'false'));
+  });
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) visibleVideos.add(entry.target);
-        else visibleVideos.delete(entry.target);
+        else {
+          visibleVideos.delete(entry.target);
+          if (reducedMotion.matches) userPlayedVideos.delete(entry.target);
+        }
         syncDemo(entry.target);
       });
     }, { threshold: 0.5 });

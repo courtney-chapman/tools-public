@@ -420,7 +420,7 @@ window.catalogItems = [
     "domain": "Procurement",
     "format": "training",
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-butterfly-effect/",
-    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-butterfly-effect-v1.0.0/behind-the-buy-butterfly-effect.zip"
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-butterfly-effect-v1.0.1/behind-the-buy-butterfly-effect.zip"
   },
   {
     "id": "behind-the-buy-true-cost-of-a-supplier",

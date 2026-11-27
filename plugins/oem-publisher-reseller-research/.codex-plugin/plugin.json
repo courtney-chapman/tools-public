@@ -1,0 +1,31 @@
+{
+  "name": "oem-publisher-reseller-research",
+  "version": "0.1.5",
+  "description": "Research public evidence of product ownership, distribution channels, supplier authorization, and reseller relationships.",
+  "author": {
+    "name": "courtney-chapman",
+    "url": "https://github.com/courtney-chapman"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "OEM & Reseller Research",
+    "shortDescription": "Research supplier channels",
+    "longDescription": "Investigate public evidence of manufacturers, publishers, distributors, resellers, authorization scope, affiliations, and purchasing channel restrictions.",
+    "developerName": "courtney-chapman",
+    "category": "Productivity",
+    "capabilities": [
+      "Web Search"
+    ],
+    "defaultPrompt": [
+      "Explain the documented relationship between this publisher and distributor.",
+      "Verify whether this reseller is authorized for this product and customer segment.",
+      "Compare documented purchasing channels for this product."
+    ],
+    "websiteURL": "https://github.com/courtney-chapman",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/oem-publisher-reseller-research",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

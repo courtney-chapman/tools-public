@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "oem-publisher-reseller-research",
+  "version": "0.1.5",
+  "description": "Research public evidence of product ownership, distribution channels, supplier authorization, and reseller relationships.",
+  "author": { "name": "courtney-chapman" },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "OEM, Publisher & Reseller Research",
+        "shortDescription": "Research supplier channels",
+        "longDescription": "Investigate public evidence of manufacturers, publishers, distributors, resellers, authorization scope, affiliations, and purchasing channel restrictions.",
+        "developerName": "courtney-chapman",
+        "category": "Productivity",
+        "capabilities": ["Web Search"],
+        "defaultPrompt": [
+          "Explain the documented relationship between this publisher and distributor.",
+          "Verify whether this reseller is authorized for this product and customer segment.",
+          "Compare documented purchasing channels for this product."
+        ]
+      }
+    }
+  }
+}

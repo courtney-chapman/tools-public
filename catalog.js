@@ -173,6 +173,17 @@ window.catalogItems = [
     "expected_result": "A sourced supplier comparison with price evidence and limitations."
   },
   {
+    "id": "oem-publisher-reseller-research",
+    "title": "OEM, Publisher & Reseller Research",
+    "description": "Map documented maker, distributor, reseller, VAR, and other purchasing channels; distinguish verified relationships from potential RFQ contacts.",
+    "image": "assets/thumbs/thumb_oem-publisher-reseller-research.png",
+    "domain": "Procurement",
+    "format": "ai-plugin",
+    "primary_url": "https://github.com/courtney-chapman/tools-public/releases/download/oem-publisher-reseller-research-v0.1.5/oem-publisher-reseller-research.zip",
+    "starter_prompt": "For a fictional prime contractor, map public U.S. sales channels for the specific server model I provide. Identify the maker’s direct route, documented distributors, and several potential reseller or VAR RFQ contacts. Separate exact-model listings from broader brand channels, and label current model-specific authorization only when the maker confirms it.",
+    "expected_result": "A sourced channel map separating verified roles, supplier claims, potential RFQ contacts, and unresolved authorization scope."
+  },
+  {
     "id": "far-compliant-commercial-item-determination",
     "title": "FAR-Compliant Commercial Item Determination",
     "description": "Assess commercial product, service, and COTS status under FAR 2.101.",

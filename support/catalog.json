@@ -233,6 +233,25 @@
       "expected_result": "A sourced supplier comparison with price evidence and limitations."
     },
     {
+      "id": "oem-publisher-reseller-research",
+      "topic": "Procurement",
+      "format": "ai-plugin",
+      "title": "OEM, Publisher & Reseller Research",
+      "description": "Map documented maker, distributor, reseller, VAR, and other purchasing channels; distinguish verified relationships from potential RFQ contacts.",
+      "image": "assets/thumbs/thumb_oem-publisher-reseller-research.png",
+      "readme_icon": "docs/readme/icons/oem-publisher-reseller-research.png",
+      "readme_prompt": "Verify whether this reseller is authorized for this product and customer segment.",
+      "plugin_zip_url": "https://github.com/courtney-chapman/tools-public/releases/download/oem-publisher-reseller-research-v0.1.5/oem-publisher-reseller-research.zip",
+      "plugin_release_url": "https://github.com/courtney-chapman/tools-public/releases/tag/oem-publisher-reseller-research-v0.1.5",
+      "source_url": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/oem-publisher-reseller-research",
+      "platforms": [
+        "codex",
+        "claude-code"
+      ],
+      "starter_prompt": "For a fictional prime contractor, map public U.S. sales channels for the specific server model I provide. Identify the maker’s direct route, documented distributors, and several potential reseller or VAR RFQ contacts. Separate exact-model listings from broader brand channels, and label current model-specific authorization only when the maker confirms it.",
+      "expected_result": "A sourced channel map separating verified roles, supplier claims, potential RFQ contacts, and unresolved authorization scope."
+    },
+    {
       "id": "far-compliant-commercial-item-determination",
       "topic": "Procurement",
       "format": "ai-plugin",

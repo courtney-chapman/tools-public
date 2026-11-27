@@ -14,6 +14,12 @@
       "category": "productivity"
     },
     {
+      "name": "oem-publisher-reseller-research",
+      "source": "./plugins/oem-publisher-reseller-research",
+      "description": "Investigate public evidence of manufacturers, publishers, distributors, resellers, authorization scope, affiliations, and purchasing channel restrictions.",
+      "category": "productivity"
+    },
+    {
       "name": "government-property-ltdd-relief-letter-generator",
       "source": "./plugins/government-property-ltdd-relief-letter-generator",
       "description": "Generate or validate fact-based, audit-defensive Government Property LTDD relief packages under FAR 52.245-1(f)(1)(vii)(B).",

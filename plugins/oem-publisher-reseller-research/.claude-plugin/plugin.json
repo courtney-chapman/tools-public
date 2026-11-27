@@ -1,0 +1,11 @@
+{
+  "name": "oem-publisher-reseller-research",
+  "version": "0.1.5",
+  "description": "Investigate public evidence of manufacturers, publishers, distributors, resellers, authorization scope, affiliations, and purchasing channel restrictions.",
+  "author": {
+    "name": "courtney-chapman"
+  },
+  "homepage": "https://github.com/courtney-chapman/tools-public/tree/main/plugins/oem-publisher-reseller-research",
+  "repository": "https://github.com/courtney-chapman/tools-public",
+  "license": "CC-BY-NC-4.0"
+}

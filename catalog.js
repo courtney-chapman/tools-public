@@ -431,5 +431,15 @@ window.catalogItems = [
     "format": "training",
     "primary_url": "https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-true-cost-of-a-supplier/",
     "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-true-cost-of-a-supplier-v1.0.0/behind-the-buy-true-cost-of-a-supplier.zip"
+  },
+  {
+    "id": "behind-the-buy-competition-question",
+    "title": "Behind the Buy: The Competition Question",
+    "description": "A requested supplier, one product, three quotes, one justified source: see what the facts say about competition, and why the price needs its own support.",
+    "image": "assets/thumbs/thumb_behind-the-buy-competition-question.png",
+    "domain": "Procurement",
+    "format": "training",
+    "primary_url": "https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-competition-question/",
+    "secondary_url": "https://github.com/courtney-chapman/tools-public/releases/download/behind-the-buy-competition-question-v1.0.0/behind-the-buy-competition-question.zip"
   }
 ];

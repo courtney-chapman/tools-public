@@ -80,13 +80,14 @@ Try an app online, or download its ZIP from Releases to use it offline. The onli
 *Watch a narrated walkthrough online, or download it to watch offline.*
 
 <details markdown="1">
-<summary><strong>See training (3)</strong></summary>
+<summary><strong>See training (4)</strong></summary>
 
 |  |  |
 | --- | --- |
 | <img src="docs/readme/icons/behind-the-buy.png" width="56" alt=""> | **Behind the Buy**<br>See the records behind one purchase, from request to closeout, across four narrated scenarios.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-v1.0.2) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy/README.md) |
 | <img src="docs/readme/icons/behind-the-buy-butterfly-effect.png" width="56" alt=""> | **Behind the Buy: The Butterfly Effect**<br>One procurement change, four ways it ripples: rework, hidden suppliers, payment terms and billing cycles.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-butterfly-effect/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-butterfly-effect-v1.0.1) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy-butterfly-effect/README.md) |
 | <img src="docs/readme/icons/behind-the-buy-true-cost-of-a-supplier.png" width="56" alt=""> | **Behind the Buy: The True Cost of a Supplier**<br>Three supplier quotes, one requirement: see how missing scope, unknown costs and contract exceptions change the comparison.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-true-cost-of-a-supplier/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-true-cost-of-a-supplier-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy-true-cost-of-a-supplier/README.md) |
+| <img src="docs/readme/icons/behind-the-buy-competition-question.png" width="56" alt=""> | **Behind the Buy: The Competition Question**<br>A requested supplier, one product, three quotes, one justified source: see what the facts say about competition, and why the price needs its own support.<br>[Watch](https://courtney-chapman.github.io/tools-public/apps/behind-the-buy-competition-question/) · [Download](https://github.com/courtney-chapman/tools-public/releases/tag/behind-the-buy-competition-question-v1.0.0) · [Guide](https://github.com/courtney-chapman/tools-public/blob/main/apps/behind-the-buy-competition-question/README.md) |
 
 </details>
 <!-- catalog-extra:Procurement:end -->
